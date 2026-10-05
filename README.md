@@ -1,5 +1,7 @@
 # Portfolio
 
+**Live site: https://elisheva-shiri.github.io/**
+
 A personal portfolio site: a library of projects grouped by category, where each project gets its own page with optional gallery, video, publication, PDF and links.
 
 - **[Astro 7](https://astro.build)**: static site, plain Astro components and CSS (no UI framework)
