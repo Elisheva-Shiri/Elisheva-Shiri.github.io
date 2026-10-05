@@ -177,7 +177,10 @@ const hasBody = Boolean(project.body?.trim());
   }
 
   .project-cover {
-    width: 100%;
+    /* Full width, but never stretched beyond the image's own size (stays sharp). */
+    width: auto;
+    max-width: 100%;
+    margin-inline: auto;
     max-height: 80vh;
     object-fit: cover;
     border-radius: var(--radius);
