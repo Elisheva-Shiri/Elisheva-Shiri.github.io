@@ -14,6 +14,8 @@ tags:
   - Environment
   - Bezalel
 
+github: https://github.com/Elisheva-Shiri/river-cleaning-game
+
 cover: /projects/river-cleaning/cover.webp
 coverAlt: Game screen with plastic bags and bottles floating on a cartoon river, and goldfish swimming where rubbish was cleaned
 
