@@ -18,12 +18,15 @@ const publicFile = z
     message: 'File not found in the public/ folder',
   });
 
-const galleryImage = z.union([
+// A gallery item: an image, or a video (.mp4/.webm) that plays as a silent loop.
+const galleryItem = z.union([
   publicFile,
   z.object({
     src: publicFile,
     alt: z.string().optional(),
-    caption: z.string().optional(),
+    caption: z.string().optional(), // 1–2 sentences, shown under the item
+    keywords: z.array(z.string()).default([]), // shown on hover
+    poster: publicFile.optional(), // still image shown before a video plays
   }),
 ]);
 
@@ -40,7 +43,7 @@ const projects = defineCollection({
 
     cover: publicFile.optional(),
     coverAlt: z.string().optional(),
-    gallery: z.array(galleryImage).default([]),
+    gallery: z.array(galleryItem).default([]),
 
     youtube: z
       .string()
@@ -49,6 +52,8 @@ const projects = defineCollection({
     github: z.url().optional(),
     website: z.url().optional(),
     pdf: publicFile.optional(),
+    // Any other links, each shown as a button, e.g. { label: Instagram, url: https://... }
+    links: z.array(z.object({ label: z.string(), url: z.url() })).default([]),
 
     publication: z
       .object({

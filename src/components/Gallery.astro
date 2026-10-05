@@ -1,21 +1,31 @@
 ---
-// Responsive image gallery with a lightbox.
-// Each thumbnail is a normal link to the full image, so it still works without
+// Responsive gallery of images and videos, with a lightbox.
+// Each item can have a short caption (shown under it) and keywords (shown on
+// hover; always visible on touch screens). Videos (.mp4/.webm) play as silent
+// loops while on screen, unless the visitor prefers reduced motion.
+// Each thumbnail is a normal link to the full file, so it still works without
 // JavaScript. With JavaScript, it opens in a <dialog> with previous/next controls.
 // Keyboard: Enter opens, ←/→ navigate, Esc closes. Touch: swipe left/right.
 import { withBase } from '../lib/projects';
 
-type Image = string | { src: string; alt?: string; caption?: string };
+type Item = string | { src: string; alt?: string; caption?: string; keywords?: string[]; poster?: string };
 
 interface Props {
-  images: Image[];
+  items: Item[];
   title: string;
 }
 
-const { images, title } = Astro.props;
-const items = images.map((image, i) => {
-  const { src, alt, caption } = typeof image === 'string' ? { src: image } : image;
-  return { src: withBase(src), alt: alt ?? `${title} — image ${i + 1}`, caption };
+const { items: input, title } = Astro.props;
+const items = input.map((item, i) => {
+  const { src, alt, caption, keywords = [], poster } = typeof item === 'string' ? { src: item } : item;
+  return {
+    src: withBase(src),
+    alt: alt ?? `${title} — item ${i + 1}`,
+    caption,
+    keywords,
+    poster: poster && withBase(poster),
+    isVideo: /\.(mp4|webm)$/i.test(src),
+  };
 });
 ---
 
@@ -28,11 +38,18 @@ const items = images.map((image, i) => {
             <a
               href={item.src}
               data-gallery-item={i}
+              data-video={item.isVideo ? '' : undefined}
               data-alt={item.alt}
               data-caption={item.caption}
-              aria-label={`Open image ${i + 1} of ${items.length}: ${item.alt}`}
+              data-poster={item.poster}
+              aria-label={`Open ${item.isVideo ? 'video' : 'image'} ${i + 1} of ${items.length}: ${item.alt}`}
             >
-              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+              {item.isVideo ? (
+                <video src={item.src} poster={item.poster} muted loop playsinline preload="metadata" aria-hidden="true" />
+              ) : (
+                <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+              )}
+              {item.keywords.length > 0 && <span class="gallery-keywords">{item.keywords.join(' · ')}</span>}
             </a>
             {item.caption && <figcaption>{item.caption}</figcaption>}
           </figure>
@@ -41,9 +58,10 @@ const items = images.map((image, i) => {
     }
   </ul>
 
-  <dialog class="lightbox" aria-label="Image viewer">
+  <dialog class="lightbox" aria-label="Media viewer">
     <figure class="lightbox-figure">
       <img alt="" />
+      <video controls muted loop playsinline hidden></video>
       <figcaption>
         <span data-caption></span>
         <span class="lightbox-counter" data-counter></span>
@@ -53,8 +71,8 @@ const items = images.map((image, i) => {
     {
       items.length > 1 && (
         <>
-          <button type="button" class="lightbox-button lightbox-prev" data-prev aria-label="Previous image">‹</button>
-          <button type="button" class="lightbox-button lightbox-next" data-next aria-label="Next image">›</button>
+          <button type="button" class="lightbox-button lightbox-prev" data-prev aria-label="Previous">‹</button>
+          <button type="button" class="lightbox-button lightbox-next" data-next aria-label="Next">›</button>
         </>
       )
     }
@@ -62,19 +80,45 @@ const items = images.map((image, i) => {
 </div>
 
 <script>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   for (const gallery of document.querySelectorAll<HTMLElement>('[data-gallery]')) {
     const links = [...gallery.querySelectorAll<HTMLAnchorElement>('[data-gallery-item]')];
     const dialog = gallery.querySelector('dialog')!;
     const image = dialog.querySelector('img')!;
+    const video = dialog.querySelector('video')!;
     const caption = dialog.querySelector<HTMLElement>('[data-caption]')!;
     const counter = dialog.querySelector<HTMLElement>('[data-counter]')!;
     let index = 0;
 
+    // Thumbnail videos play only while visible.
+    if (!reducedMotion) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const { target, isIntersecting } of entries) {
+          const clip = target as HTMLVideoElement;
+          isIntersecting ? clip.play().catch(() => {}) : clip.pause();
+        }
+      });
+      gallery.querySelectorAll('.gallery-grid video').forEach((clip) => observer.observe(clip));
+    }
+
     const show = (i: number) => {
       index = (i + links.length) % links.length;
       const link = links[index];
-      image.src = link.href;
-      image.alt = link.dataset.alt ?? '';
+      const isVideo = link.hasAttribute('data-video');
+      image.hidden = isVideo;
+      video.hidden = !isVideo;
+      if (isVideo) {
+        video.src = link.href;
+        video.poster = link.dataset.poster ?? '';
+        video.setAttribute('aria-label', link.dataset.alt ?? '');
+        if (!reducedMotion) video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.removeAttribute('src');
+        image.src = link.href;
+        image.alt = link.dataset.alt ?? '';
+      }
       caption.textContent = link.dataset.caption ?? '';
       counter.textContent = links.length > 1 ? `${index + 1} / ${links.length}` : '';
     };
@@ -91,7 +135,7 @@ const items = images.map((image, i) => {
     dialog.querySelector('[data-prev]')?.addEventListener('click', () => show(index - 1));
     dialog.querySelector('[data-next]')?.addEventListener('click', () => show(index + 1));
 
-    // Clicking the dark backdrop (outside the image and buttons) closes the viewer.
+    // Clicking the dark backdrop (outside the media and buttons) closes the viewer.
     dialog.addEventListener('click', (event) => {
       if (event.target === dialog || event.target === dialog.querySelector('figure')) dialog.close();
     });
@@ -111,8 +155,11 @@ const items = images.map((image, i) => {
       startX = null;
     });
 
-    // Return keyboard focus to the thumbnail that was last shown.
-    dialog.addEventListener('close', () => links[index].focus());
+    // Stop the video and return keyboard focus to the thumbnail that was last shown.
+    dialog.addEventListener('close', () => {
+      video.pause();
+      links[index].focus();
+    });
   }
 </script>
 
@@ -127,7 +174,7 @@ const items = images.map((image, i) => {
 
   .gallery-grid li {
     break-inside: avoid;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
 
   figure {
@@ -135,26 +182,55 @@ const items = images.map((image, i) => {
   }
 
   .gallery-grid a {
+    position: relative;
     display: block;
     border-radius: var(--radius);
     overflow: hidden;
     background: var(--placeholder);
+    color: inherit;
+    text-decoration: none;
     cursor: zoom-in;
   }
 
-  .gallery-grid img {
+  .gallery-grid img,
+  .gallery-grid video {
+    display: block;
     width: 100%;
-    transition: opacity var(--transition);
+    height: auto;
   }
 
-  .gallery-grid a:hover img {
-    opacity: 0.88;
+  .gallery-keywords {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+
+  /* Devices that can hover: keywords appear over the image on hover/focus */
+  @media (hover: hover) and (pointer: fine) {
+    .gallery-keywords {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: var(--space-lg) var(--space-md) var(--space-md);
+      background: linear-gradient(transparent, var(--overlay));
+      color: #fff;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .gallery-grid a:hover .gallery-keywords,
+    .gallery-grid a:focus-visible .gallery-keywords {
+      opacity: 1;
+    }
   }
 
   .gallery-grid figcaption {
-    margin-top: var(--space-xs);
+    margin-top: var(--space-sm);
     font-size: var(--font-size-sm);
     color: var(--muted);
+    line-height: 1.5;
   }
 
   .lightbox {
@@ -183,17 +259,24 @@ const items = images.map((image, i) => {
     padding: var(--space-xl) var(--space-xl) var(--space-md);
   }
 
-  .lightbox-figure img {
+  .lightbox-figure img,
+  .lightbox-figure video {
     max-width: 100%;
-    max-height: calc(100dvh - 7rem);
+    max-height: calc(100dvh - 8rem);
     object-fit: contain;
+  }
+
+  .lightbox-figure [hidden] {
+    display: none;
   }
 
   .lightbox-figure figcaption {
     display: flex;
     gap: var(--space-md);
+    max-width: var(--text-width);
     font-size: var(--font-size-sm);
     color: rgb(255 255 255 / 0.85);
+    text-align: center;
   }
 
   .lightbox-button {

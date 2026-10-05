@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props as { project: Project };
-const { title, summary, year, categories, tags, cover, coverAlt, gallery, youtube, github, website, pdf, publication } =
+const { title, summary, year, categories, tags, cover, coverAlt, gallery, youtube, github, website, pdf, links, publication } =
   project.data;
 const { Content } = await render(project);
 const hasBody = Boolean(project.body?.trim());
@@ -40,7 +40,7 @@ const hasBody = Boolean(project.body?.trim());
       <p class="project-summary">{summary}</p>
 
       {
-        (github || website || pdf) && (
+        (github || website || pdf || links.length > 0) && (
           <p class="project-links">
             {website && (
               <a class="button button-primary" href={website}>
@@ -57,6 +57,11 @@ const hasBody = Boolean(project.body?.trim());
                 Download PDF
               </a>
             )}
+            {links.map((link) => (
+              <a class="button" href={link.url}>
+                {link.label}
+              </a>
+            ))}
           </p>
         )
       }
@@ -88,7 +93,7 @@ const hasBody = Boolean(project.body?.trim());
       gallery.length > 0 && (
         <section class="project-section" aria-labelledby="gallery-heading">
           <h2 id="gallery-heading">Gallery</h2>
-          <Gallery images={gallery} title={title} />
+          <Gallery items={gallery} title={title} />
         </section>
       )
     }

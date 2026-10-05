@@ -21,15 +21,24 @@ cover: /projects/my-project/cover.webp
 coverAlt: Describe what the cover image shows
 
 gallery:
-  - /projects/my-project/image-01.webp
+  - /projects/my-project/image-01.webp # just a path also works
   - src: /projects/my-project/image-02.webp
-    alt: Describe the image
-    caption: Optional caption shown under the image
+    alt: Describe the image (for screen readers)
+    caption: One or two sentences shown under the image.
+    keywords: [Keyword, Another, Third] # shown when hovering the image
+  - src: /projects/my-project/clip.mp4 # short silent loop (keep under ~5 MB)
+    poster: /projects/my-project/clip-poster.webp # still frame shown before it plays
+    alt: Describe the video
+    caption: Videos can sit in the gallery next to images.
+    keywords: [Video art]
 
 youtube: https://www.youtube.com/watch?v=VIDEO_ID
 github: https://github.com/username/repository
 website: https://example.com
 pdf: /projects/my-project/document.pdf
+links: # any other buttons
+  - label: Artist on Instagram
+    url: https://www.instagram.com/username/
 
 publication:
   title: Publication title

@@ -44,11 +44,12 @@ You never edit the homepage, routing or components to add a project. The file na
 | `tags`        | no       | List, shown at the bottom of the project page |
 | `cover`       | no       | `/projects/<slug>/cover.webp`. Card image, page hero and social preview |
 | `coverAlt`    | no       | Description of the cover image for screen readers |
-| `gallery`     | no       | List of image paths, or `{ src, alt, caption }` entries |
+| `gallery`     | no       | List of image/video paths, or `{ src, alt, caption, keywords, poster }` entries. `caption` (1–2 sentences) shows under the item; `keywords` appear on hover (always visible on touch screens). `.mp4`/`.webm` files play as silent loops; `poster` is their still frame |
 | `youtube`     | no       | Any normal YouTube link (`watch?v=`, `youtu.be/`, `shorts/`, `embed/`, `live/`) |
 | `github`      | no       | Repository URL → "View on GitHub" button |
 | `website`     | no       | External URL → "Visit website" button |
 | `pdf`         | no       | Local PDF → "Download PDF" button |
+| `links`       | no       | Extra buttons: list of `{ label, url }` (e.g. an artist's Instagram) |
 | `publication` | no       | `title` (required), `authors`, `venue`, `year`, `doi`, `url`, `pdf` |
 | `draft`       | no       | `true` hides the project from the site |
 
@@ -60,7 +61,7 @@ Sections only appear when they have content: no `youtube`, no video section, and
 
 **Images:** prefer `.webp` or `.jpg`, about 2000px on the long side and under ~500 KB each. Large files slow the site down. Don't put video files in the repository; use YouTube.
 
-**Videos:** upload to YouTube (Public or Unlisted) and paste the link into `youtube`. Embeds use YouTube's privacy-enhanced `youtube-nocookie.com` domain.
+**Videos:** short silent loops (video art, a few seconds, under ~5 MB) can go straight into the gallery as `.mp4`. Anything longer, or with sound, should go on YouTube (Public or Unlisted), with the link pasted into `youtube`. Embeds use YouTube's privacy-enhanced `youtube-nocookie.com` domain.
 
 ## How it's organised
 
@@ -74,7 +75,7 @@ src/
 │   └── youtube.ts           Extracts the video ID from YouTube URLs
 ├── components/
 │   ├── ProjectCard.astro    Image card (hover overlay on desktop, always-visible text on touch)
-│   ├── Gallery.astro        Image grid + lightbox (keyboard, swipe, works without JS)
+│   ├── Gallery.astro        Image/video grid with captions, hover keywords and a lightbox
 │   ├── YouTube.astro        Responsive privacy-enhanced embed
 │   └── Publication.astro    Citation block with PDF / URL / DOI links
 ├── layouts/BaseLayout.astro Page shell: <head> metadata, navigation, footer
