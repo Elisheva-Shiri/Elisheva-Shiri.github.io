@@ -97,6 +97,9 @@ helps with delicate holds.
 that technology is shaping: longer, more flexible fingers for typing and touch devices, and
 stronger thumb muscles from using smartphones.
 
+The idea was then tested physically with 3D-printed finger extensions. See
+[What If? Imagining Different Fingers](../what-if-fingers/).
+
 ## Sources
 
 - BarCharts, Inc. _The Hand_. BarCharts Publishing, 2013.
