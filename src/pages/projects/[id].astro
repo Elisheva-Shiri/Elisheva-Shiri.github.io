@@ -1,0 +1,196 @@
+---
+// Template for every project page. One page is generated per Markdown file in
+// src/content/projects; the URL is /projects/<file-name>/.
+// Each section only appears if the project has content for it.
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Gallery from '../../components/Gallery.astro';
+import YouTube from '../../components/YouTube.astro';
+import Publication from '../../components/Publication.astro';
+import { getProjects, slugify, withBase, type Project } from '../../lib/projects';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props as { project: Project };
+const { title, summary, year, categories, tags, cover, coverAlt, gallery, youtube, github, website, pdf, publication } =
+  project.data;
+const { Content } = await render(project);
+const hasBody = Boolean(project.body?.trim());
+---
+
+<BaseLayout title={title} description={summary} image={cover}>
+  <article class="container project">
+    <header class="project-header">
+      <a class="back" href={withBase('/')}>← All projects</a>
+      <p class="project-categories">
+        {
+          categories.map((category, i) => (
+            <>
+              {i > 0 && ' · '}
+              <a href={withBase(`/#${slugify(category)}`)}>{category}</a>
+            </>
+          ))
+        }
+        {year && <span> · {year}</span>}
+      </p>
+      <h1>{title}</h1>
+      <p class="project-summary">{summary}</p>
+
+      {
+        (github || website || pdf) && (
+          <p class="project-links">
+            {website && (
+              <a class="button button-primary" href={website}>
+                Visit website
+              </a>
+            )}
+            {github && (
+              <a class="button" href={github}>
+                View on GitHub
+              </a>
+            )}
+            {pdf && (
+              <a class="button" href={withBase(pdf)}>
+                Download PDF
+              </a>
+            )}
+          </p>
+        )
+      }
+    </header>
+
+    {
+      cover && (
+        <img class="project-cover" src={withBase(cover)} alt={coverAlt ?? ''} fetchpriority="high" decoding="async" />
+      )
+    }
+
+    {
+      youtube && (
+        <section class="project-section" aria-label="Video">
+          <YouTube url={youtube} title={title} />
+        </section>
+      )
+    }
+
+    {
+      hasBody && (
+        <section class="project-section prose">
+          <Content />
+        </section>
+      )
+    }
+
+    {
+      gallery.length > 0 && (
+        <section class="project-section" aria-labelledby="gallery-heading">
+          <h2 id="gallery-heading">Gallery</h2>
+          <Gallery images={gallery} title={title} />
+        </section>
+      )
+    }
+
+    {
+      publication && (
+        <section class="project-section" aria-labelledby="publication-heading">
+          <h2 id="publication-heading">Publication</h2>
+          <Publication publication={publication} />
+        </section>
+      )
+    }
+
+    {
+      tags.length > 0 && (
+        <section class="project-section" aria-label="Tags">
+          <ul class="tags">
+            {tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .project-header {
+    max-width: var(--text-width);
+    padding-block: var(--space-lg);
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: var(--space-lg);
+    color: var(--muted);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+
+  .back:hover {
+    color: var(--foreground);
+  }
+
+  .project-categories {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--font-size-sm);
+  }
+
+  .project-categories a {
+    color: inherit;
+  }
+
+  h1 {
+    margin: var(--space-sm) 0 var(--space-md);
+    font-size: var(--font-size-xl);
+  }
+
+  .project-summary {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    color: var(--muted);
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0 0;
+  }
+
+  .project-cover {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+
+  .project-section {
+    margin-top: var(--space-xl);
+  }
+
+  .project-section > h2 {
+    margin: 0 0 var(--space-md);
+    font-size: var(--font-size-lg);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tags li {
+    padding: 0.2em 0.75em;
+    border-radius: 999px;
+    background: var(--placeholder);
+    font-size: var(--font-size-sm);
+  }
+</style>

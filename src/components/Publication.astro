@@ -1,0 +1,84 @@
+---
+// Citation block for a project's academic publication, with DOI / URL / PDF links.
+import { withBase } from '../lib/projects';
+
+interface Props {
+  publication: {
+    title: string;
+    authors: string[];
+    venue?: string;
+    year?: number;
+    doi?: string;
+    url?: string;
+    pdf?: string;
+  };
+}
+
+const { title, authors, venue, year, doi, url, pdf } = Astro.props.publication;
+// Accept either "10.1234/abc" or a full https://doi.org/... link.
+const doiUrl = doi && (doi.startsWith('http') ? doi : `https://doi.org/${doi}`);
+const doiLabel = doi?.replace(/^https?:\/\/(dx\.)?doi\.org\//, '');
+---
+
+<div class="publication">
+  <p class="publication-title">{title}</p>
+  {authors.length > 0 && <p class="publication-authors">{authors.join(', ')}</p>}
+  {(venue || year) && <p class="publication-venue">{[venue, year].filter(Boolean).join(', ')}</p>}
+  {
+    (doiUrl || url || pdf) && (
+      <p class="publication-links">
+        {pdf && (
+          <a class="button button-primary" href={withBase(pdf)}>
+            Read PDF
+          </a>
+        )}
+        {url && (
+          <a class="button" href={url}>
+            View publication
+          </a>
+        )}
+        {doiUrl && (
+          <a class="button" href={doiUrl}>
+            DOI: {doiLabel}
+          </a>
+        )}
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .publication {
+    max-width: var(--text-width);
+    padding: var(--space-lg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  p {
+    margin: 0 0 var(--space-xs);
+  }
+
+  .publication-title {
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    line-height: 1.3;
+  }
+
+  .publication-authors,
+  .publication-venue {
+    color: var(--muted);
+  }
+
+  .publication-venue {
+    font-style: italic;
+  }
+
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+</style>

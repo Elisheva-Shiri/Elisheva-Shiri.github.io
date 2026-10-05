@@ -1,0 +1,125 @@
+---
+// Image card linking to a project page.
+// Mouse/trackpad: details appear in an overlay on hover or keyboard focus.
+// Touch screens: details are always shown below the image.
+import { projectUrl, withBase, type Project } from '../lib/projects';
+
+interface Props {
+  project: Project;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { project, headingLevel: Heading = 'h3' } = Astro.props;
+const { title, summary, year, cover, coverAlt, categories } = project.data;
+---
+
+<article class="card">
+  <a class="card-link" href={projectUrl(project)}>
+    <div class="card-media">
+      {
+        cover ? (
+          <img src={withBase(cover)} alt={coverAlt ?? ''} loading="lazy" decoding="async" />
+        ) : (
+          <div class="card-placeholder" aria-hidden="true">{title}</div>
+        )
+      }
+    </div>
+    <div class="card-info">
+      <Heading class="card-title">{title}</Heading>
+      <p class="card-summary">{summary}</p>
+      <p class="card-meta">
+        {[year, ...categories].filter(Boolean).join(' · ')}
+      </p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .card-link {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .card-media {
+    aspect-ratio: 4 / 3;
+    background: var(--placeholder);
+    overflow: hidden;
+  }
+
+  .card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+
+  .card-placeholder {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: var(--space-md);
+    color: var(--muted);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .card-info {
+    padding: var(--space-md);
+  }
+
+  .card-title {
+    margin: 0 0 var(--space-xs);
+    font-size: var(--font-size-lg);
+  }
+
+  .card-summary {
+    margin: 0 0 var(--space-sm);
+    font-size: var(--font-size-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-meta {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--muted);
+  }
+
+  /* Devices with a precise pointer that can hover: overlay on the image */
+  @media (hover: hover) and (pointer: fine) {
+    .card-info {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: var(--overlay);
+      color: #fff;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .card-meta {
+      color: rgb(255 255 255 / 0.8);
+    }
+
+    .card-link:hover .card-info,
+    .card-link:focus-visible .card-info {
+      opacity: 1;
+    }
+
+    .card-link:hover img,
+    .card-link:focus-visible img {
+      transform: scale(1.03);
+    }
+  }
+</style>

@@ -1,0 +1,254 @@
+---
+// Responsive image gallery with a lightbox.
+// Each thumbnail is a normal link to the full image, so it still works without
+// JavaScript. With JavaScript, it opens in a <dialog> with previous/next controls.
+// Keyboard: Enter opens, ←/→ navigate, Esc closes. Touch: swipe left/right.
+import { withBase } from '../lib/projects';
+
+type Image = string | { src: string; alt?: string; caption?: string };
+
+interface Props {
+  images: Image[];
+  title: string;
+}
+
+const { images, title } = Astro.props;
+const items = images.map((image, i) => {
+  const { src, alt, caption } = typeof image === 'string' ? { src: image } : image;
+  return { src: withBase(src), alt: alt ?? `${title} — image ${i + 1}`, caption };
+});
+---
+
+<div class="gallery" data-gallery>
+  <ul class="gallery-grid">
+    {
+      items.map((item, i) => (
+        <li>
+          <figure>
+            <a
+              href={item.src}
+              data-gallery-item={i}
+              data-alt={item.alt}
+              data-caption={item.caption}
+              aria-label={`Open image ${i + 1} of ${items.length}: ${item.alt}`}
+            >
+              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+            </a>
+            {item.caption && <figcaption>{item.caption}</figcaption>}
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+
+  <dialog class="lightbox" aria-label="Image viewer">
+    <figure class="lightbox-figure">
+      <img alt="" />
+      <figcaption>
+        <span data-caption></span>
+        <span class="lightbox-counter" data-counter></span>
+      </figcaption>
+    </figure>
+    <button type="button" class="lightbox-button lightbox-close" data-close aria-label="Close">✕</button>
+    {
+      items.length > 1 && (
+        <>
+          <button type="button" class="lightbox-button lightbox-prev" data-prev aria-label="Previous image">‹</button>
+          <button type="button" class="lightbox-button lightbox-next" data-next aria-label="Next image">›</button>
+        </>
+      )
+    }
+  </dialog>
+</div>
+
+<script>
+  for (const gallery of document.querySelectorAll<HTMLElement>('[data-gallery]')) {
+    const links = [...gallery.querySelectorAll<HTMLAnchorElement>('[data-gallery-item]')];
+    const dialog = gallery.querySelector('dialog')!;
+    const image = dialog.querySelector('img')!;
+    const caption = dialog.querySelector<HTMLElement>('[data-caption]')!;
+    const counter = dialog.querySelector<HTMLElement>('[data-counter]')!;
+    let index = 0;
+
+    const show = (i: number) => {
+      index = (i + links.length) % links.length;
+      const link = links[index];
+      image.src = link.href;
+      image.alt = link.dataset.alt ?? '';
+      caption.textContent = link.dataset.caption ?? '';
+      counter.textContent = links.length > 1 ? `${index + 1} / ${links.length}` : '';
+    };
+
+    links.forEach((link, i) =>
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        show(i);
+        dialog.showModal();
+      }),
+    );
+
+    dialog.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('[data-prev]')?.addEventListener('click', () => show(index - 1));
+    dialog.querySelector('[data-next]')?.addEventListener('click', () => show(index + 1));
+
+    // Clicking the dark backdrop (outside the image and buttons) closes the viewer.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog || event.target === dialog.querySelector('figure')) dialog.close();
+    });
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') show(index - 1);
+      if (event.key === 'ArrowRight') show(index + 1);
+    });
+
+    // Swipe on touch screens.
+    let startX: number | null = null;
+    dialog.addEventListener('touchstart', (event) => (startX = event.touches[0].clientX), { passive: true });
+    dialog.addEventListener('touchend', (event) => {
+      if (startX === null) return;
+      const distance = event.changedTouches[0].clientX - startX;
+      if (Math.abs(distance) > 50) show(distance < 0 ? index + 1 : index - 1);
+      startX = null;
+    });
+
+    // Return keyboard focus to the thumbnail that was last shown.
+    dialog.addEventListener('close', () => links[index].focus());
+  }
+</script>
+
+<style>
+  .gallery-grid {
+    columns: 3 16rem;
+    column-gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gallery-grid li {
+    break-inside: avoid;
+    margin-bottom: var(--space-md);
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .gallery-grid a {
+    display: block;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--placeholder);
+    cursor: zoom-in;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    transition: opacity var(--transition);
+  }
+
+  .gallery-grid a:hover img {
+    opacity: 0.88;
+  }
+
+  .gallery-grid figcaption {
+    margin-top: var(--space-xs);
+    font-size: var(--font-size-sm);
+    color: var(--muted);
+  }
+
+  .lightbox {
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgb(0 0 0 / 0.92);
+    color: #fff;
+  }
+
+  .lightbox::backdrop {
+    background: rgb(0 0 0 / 0.6);
+  }
+
+  .lightbox-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    height: 100%;
+    padding: var(--space-xl) var(--space-xl) var(--space-md);
+  }
+
+  .lightbox-figure img {
+    max-width: 100%;
+    max-height: calc(100dvh - 7rem);
+    object-fit: contain;
+  }
+
+  .lightbox-figure figcaption {
+    display: flex;
+    gap: var(--space-md);
+    font-size: var(--font-size-sm);
+    color: rgb(255 255 255 / 0.85);
+  }
+
+  .lightbox-button {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.12);
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .lightbox-button:hover {
+    background: rgb(255 255 255 / 0.25);
+  }
+
+  .lightbox-button:focus-visible {
+    outline-color: #fff;
+  }
+
+  .lightbox-close {
+    top: var(--space-md);
+    right: var(--space-md);
+    font-size: 1.25rem;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-prev {
+    left: var(--space-md);
+  }
+
+  .lightbox-next {
+    right: var(--space-md);
+  }
+
+  @media (max-width: 40rem) {
+    .lightbox-figure {
+      padding: 4.5rem var(--space-sm) 5rem;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      top: auto;
+      bottom: var(--space-md);
+      transform: none;
+    }
+  }
+</style>

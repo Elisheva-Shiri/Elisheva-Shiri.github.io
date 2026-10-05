@@ -1,17 +1,122 @@
 ---
+// Homepage: the project library. Category sections are built automatically
+// from the `categories` field of each project — nothing to edit here when
+// adding a project.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getProjects, groupByCategory } from '../lib/projects';
+import { SITE } from '../site.config';
 
+const projects = await getProjects();
+const categories = groupByCategory(projects);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <div class="container">
+    <section class="intro">
+      <h1>{SITE.name}</h1>
+      {SITE.intro && <p>{SITE.intro}</p>}
+    </section>
+
+    {
+      categories.length > 1 && (
+        <nav class="category-nav" aria-label="Categories">
+          <ul>
+            {categories.map((category) => (
+              <li>
+                <a href={`#${category.slug}`}>
+                  {category.name} <span>{category.projects.length}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    {
+      categories.map((category) => (
+        <section class="category" id={category.slug} aria-labelledby={`${category.slug}-heading`}>
+          <h2 id={`${category.slug}-heading`}>{category.name}</h2>
+          <ul class="project-grid">
+            {category.projects.map((project) => (
+              <li>
+                <ProjectCard project={project} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+
+    {projects.length === 0 && <p class="empty">No projects yet. See README.md → “Adding a New Project”.</p>}
+  </div>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-block: var(--space-xl) var(--space-lg);
+  }
+
+  .intro h1 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+  }
+
+  .intro p {
+    max-width: var(--text-width);
+    margin: var(--space-md) 0 0;
+    font-size: var(--font-size-lg);
+    color: var(--muted);
+  }
+
+  .category-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: 0 0 var(--space-lg);
+    padding: 0;
+    list-style: none;
+  }
+
+  .category-nav a {
+    display: inline-block;
+    padding: 0.35em 0.9em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--foreground);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+
+  .category-nav a:hover {
+    border-color: var(--foreground);
+  }
+
+  .category-nav span {
+    color: var(--muted);
+  }
+
+  .category {
+    padding-block: var(--space-lg);
+    scroll-margin-top: var(--space-md);
+  }
+
+  .category h2 {
+    margin: 0 0 var(--space-md);
+    font-size: var(--font-size-lg);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-lg) var(--space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .empty {
+    color: var(--muted);
+  }
+</style>
