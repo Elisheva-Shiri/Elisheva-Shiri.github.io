@@ -5,7 +5,7 @@ import { satteri } from '@astrojs/markdown-satteri';
 // Where the site is published. Set once the GitHub repository exists:
 //   repository "USERNAME.github.io" → SITE = 'https://USERNAME.github.io', BASE = '/'
 //   any other repository name     → SITE = 'https://USERNAME.github.io', BASE = '/REPOSITORY'
-const SITE = undefined;
+const SITE = 'https://elisheva-shiri.github.io';
 const BASE = '/';
 
 // Root-relative links and images written inside Markdown text (e.g.
