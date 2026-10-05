@@ -164,17 +164,16 @@ const items = input.map((item, i) => {
 </script>
 
 <style>
+  /* Row-by-row grid, so items read in the order they're listed (important for
+     projects that tell a story). Every thumbnail gets the same frame and shows
+     the whole image inside it; the lightbox shows it full size. */
   .gallery-grid {
-    columns: 3 16rem;
-    column-gap: var(--space-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-lg) var(--space-md);
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-
-  .gallery-grid li {
-    break-inside: avoid;
-    margin-bottom: var(--space-lg);
   }
 
   figure {
@@ -196,7 +195,8 @@ const items = input.map((item, i) => {
   .gallery-grid video {
     display: block;
     width: 100%;
-    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
   }
 
   .gallery-keywords {

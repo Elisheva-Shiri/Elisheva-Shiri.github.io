@@ -59,6 +59,8 @@ Sections only appear when they have content: no `youtube`, no video section, and
 
 **Paths:** always write local files as `/projects/<slug>/file.ext` (starting with `/`, without `public`). This also works inside the Markdown text, e.g. `![Diagram](/projects/solar-car/diagram.webp)`. The site's sub-folder on GitHub Pages is added automatically.
 
+**Private files:** anything inside a folder named `_private/` (e.g. `public/projects/<slug>/_private/full-presentation.pptx`) is ignored by Git, so it stays on your computer and is never published. The repository is public, so keep full originals you don't want to share there.
+
 **Images:** prefer `.webp` or `.jpg`, about 2000px on the long side and under ~500 KB each. Large files slow the site down. Don't put video files in the repository; use YouTube.
 
 **Videos:** short silent loops (video art, a few seconds, under ~5 MB) can go straight into the gallery as `.mp4`. Anything longer, or with sound, should go on YouTube (Public or Unlisted), with the link pasted into `youtube`. Embeds use YouTube's privacy-enhanced `youtube-nocookie.com` domain.

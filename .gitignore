@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # local tool state
 .omc/
+
+# Private source files (e.g. full original presentations): kept locally, never published
+_private/
