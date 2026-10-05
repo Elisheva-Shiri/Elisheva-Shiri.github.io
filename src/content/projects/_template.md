@@ -12,7 +12,8 @@ categories:
   - Category name # the homepage sections are built from these
 
 # ── Optional ──────────────────────────────────────────────
-year: 2026
+date: '2026-03' # YYYY or YYYY-MM
+dateEnd: '2026-05' # optional, for projects that ran over several months
 tags:
   - Tag
 collaborators: # shown as "In collaboration with …"

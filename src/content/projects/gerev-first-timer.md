@@ -6,7 +6,7 @@ summary: >
   a venue filled with socks. Designed and built in 18 working hours.
 categories:
   - Art Installation
-year: 2026
+date: '2026-01'
 tags:
   - Stage design
   - Video art

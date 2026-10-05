@@ -4,14 +4,28 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type Project = CollectionEntry<'projects'>;
 
-/** All published projects, newest first (projects without a year go last). */
+/** All published projects, newest first (projects without a date go last). */
 export async function getProjects(): Promise<Project[]> {
   const projects = await getCollection('projects', ({ data }) => !data.draft);
-  return projects.sort(
-    (a, b) =>
-      (b.data.year ?? -Infinity) - (a.data.year ?? -Infinity) ||
-      a.data.title.localeCompare(b.data.title),
-  );
+  const key = (p: Project) => p.data.dateEnd ?? p.data.date ?? '';
+  return projects.sort((a, b) => key(b).localeCompare(key(a)) || a.data.title.localeCompare(b.data.title));
+}
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+/**
+ * Human-readable project date: "January 2026", "November – December 2024",
+ * "November 2024 – January 2025", or just "2024". Undefined if the project has no date.
+ */
+export function formatProjectDate({ date, dateEnd }: { date?: string; dateEnd?: string }): string | undefined {
+  if (!date) return undefined;
+  const parse = (d: string) => ({ year: d.slice(0, 4), month: d.length > 4 ? MONTHS[Number(d.slice(5, 7)) - 1] : undefined });
+  const start = parse(date);
+  const one = (d: ReturnType<typeof parse>) => [d.month, d.year].filter(Boolean).join(' ');
+  if (!dateEnd || dateEnd === date) return one(start);
+  const end = parse(dateEnd);
+  if (start.year === end.year && start.month && end.month) return `${start.month} – ${end.month} ${end.year}`;
+  return `${one(start)} – ${one(end)}`;
 }
 
 /**

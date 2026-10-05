@@ -6,7 +6,7 @@ summary: >
   the regional environmental unit and regulators act.
 categories:
   - App Development
-year: 2025
+date: '2025-01'
 tags:
   - Augmented reality
   - UX research

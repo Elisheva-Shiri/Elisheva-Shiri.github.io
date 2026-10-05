@@ -7,7 +7,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Gallery from '../../components/Gallery.astro';
 import YouTube from '../../components/YouTube.astro';
 import Publication from '../../components/Publication.astro';
-import { getProjects, slugify, withBase, type Project } from '../../lib/projects';
+import { formatProjectDate, getProjects, slugify, withBase, type Project } from '../../lib/projects';
 
 export async function getStaticPaths() {
   const projects = await getProjects();
@@ -15,7 +15,8 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props as { project: Project };
-const { title, summary, year, categories, tags, collaborators, cover, coverAlt, gallery, youtube, github, website, pdf, links, publication } =
+const date = formatProjectDate(project.data);
+const { title, summary, categories, tags, collaborators, cover, coverAlt, gallery, youtube, github, website, pdf, links, publication } =
   project.data;
 const collaboratorList = new Intl.ListFormat('en', { type: 'conjunction' }).format(collaborators);
 const { Content } = await render(project);
@@ -35,7 +36,7 @@ const hasBody = Boolean(project.body?.trim());
             </>
           ))
         }
-        {year && <span> · {year}</span>}
+        {date && <span> · {date}</span>}
       </p>
       <h1>{title}</h1>
       <p class="project-summary">{summary}</p>

@@ -40,12 +40,13 @@ You never edit the homepage, routing or components to add a project. The file na
 | `title`       | yes      | |
 | `summary`     | yes      | 1–2 sentences: card text, page intro, search/social description |
 | `categories`  | yes      | List. A project with several categories appears in each homepage section |
-| `year`        | no       | Number. Projects are sorted newest first |
+| `date`        | no       | `'2024'` or `'2024-11'` (in quotes). Shown as "November 2024"; projects are sorted newest first |
+| `dateEnd`     | no       | End of a project that ran over several months, e.g. `'2025-01'` → "November 2024 – January 2025" |
 | `tags`        | no       | List, shown at the bottom of the project page |
 | `collaborators` | no     | List of names, shown as "In collaboration with …" under the summary |
 | `cover`       | no       | `/projects/<slug>/cover.webp`. Card image, page hero and social preview |
 | `coverAlt`    | no       | Description of the cover image for screen readers |
-| `gallery`     | no       | List of image/video paths, or `{ src, alt, caption, keywords, poster }` entries. `caption` (1–2 sentences) shows under the item; `keywords` appear on hover (always visible on touch screens). `.mp4`/`.webm` files play as silent loops; `poster` is their still frame |
+| `gallery`     | no       | List of image/video paths, or `{ src, alt, caption, keywords, poster, credit }` entries. `credit` names the source of third-party material in the image. `caption` (1–2 sentences) shows under the item; `keywords` appear on hover (always visible on touch screens). `.mp4`/`.webm` files play as silent loops; `poster` is their still frame |
 | `youtube`     | no       | Any normal YouTube link (`watch?v=`, `youtu.be/`, `shorts/`, `embed/`, `live/`) |
 | `github`      | no       | Repository URL → "View on GitHub" button |
 | `website`     | no       | External URL → "Visit website" button |

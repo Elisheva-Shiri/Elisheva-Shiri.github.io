@@ -5,7 +5,8 @@ summary: >
   spread from home to home into a chain of light.
 categories:
   - Electronics
-year: 2024
+date: '2024-11'
+dateEnd: '2024-12'
 tags:
   - PCB design
   - LEDs

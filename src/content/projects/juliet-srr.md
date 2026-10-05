@@ -6,7 +6,8 @@ summary: >
   that shows the deformations to come.
 categories:
   - Haptics
-year: 2024
+date: '2024-11'
+dateEnd: '2025-01'
 tags:
   - Design research
   - Rhizomatic mapping
@@ -22,10 +23,12 @@ gallery:
     alt: 'Research board asking: How can we show the deformations that technology will create in us in the future? With images of gloves, a prosthetic extra thumb and human evolution'
     caption: The research question. How can we show the deformations that technology will create in us in the future?
     keywords: [Research question, Speculative design]
+    credit: "Includes: cover of Gloves and Glove-Making, Mike Redwood (Shire Publications, 2016); video still, Liberare (@liberare.co); The Third Thumb, Dani Clode (2017); a variation on Rudolph Zallinger's “March of Progress” (1965)."
   - src: /projects/juliet-srr/map-overview.webp
     alt: Overview of a large digital research map with images and notes connected by lines
     caption: The full rhizomatic map, a non-hierarchical web of images, sources and notes connected by lines of thought.
     keywords: [Rhizome, Mapping, Overview]
+    credit: Research map of images collected from books, articles and online sources for study purposes. See Sources below.
   - src: /projects/juliet-srr/map-wall.webp
     alt: The research map printed and pinned across a white wall
     caption: The map printed and pinned up across a wall, ready to be read and rearranged.
@@ -42,6 +45,7 @@ gallery:
     alt: 'Research board titled The Glove, Rhizomatic Research 2024, describing the role of each finger next to hand anatomy charts'
     caption: The role of each finger, mapped from hand anatomy. Which fingers grip, which steady, which add precision.
     keywords: [Hand anatomy, Function, Translated board]
+    credit: 'Anatomy charts: The Hand, BarCharts, Inc. (2013).'
   - src: /projects/juliet-srr/board-concept.webp
     alt: 'Concept board: a glove that shows the typical deformation, built with 3D-printed aids; longer, more flexible fingers and stronger thumb muscles'
     caption: The concept. A glove that shows the typical deformation, with longer, more flexible fingers and a stronger thumb, built with 3D-printed aids.
@@ -97,7 +101,22 @@ stronger thumb muscles from using smartphones.
 
 - BarCharts, Inc. _The Hand_. BarCharts Publishing, 2013.
 - Timothy M. Ryan and Colin N. Shaw. "Gracility of the modern _Homo sapiens_ skeleton is the result
-  of decreased biomechanical loading."
+  of decreased biomechanical loading." _PNAS_ 112 (2), 372–377, 2015.
+  [doi:10.1073/pnas.1418646112](https://doi.org/10.1073/pnas.1418646112)
 - Tracy L. Kivell, Pierre Lemelin, Brian G. Richmond and Daniel Schmitt (eds.). _The Evolution of
-  the Primate Hand_. Springer.
-- Mike Redwood. _Gloves and Glove-Making_.
+  the Primate Hand: Anatomical, Developmental, Functional, and Paleontological Evidence_.
+  Springer, 2016.
+- Mike Redwood. _Gloves and Glove-Making_. Shire Publications, 2016.
+
+## Image credits
+
+Research boards include images by others, collected for study:
+
+- _The Third Thumb_ by Dani Clode, a 3D-printed extra robotic thumb (2017).
+  ([TED talk](https://www.ted.com/talks/dani_clode_why_i_created_a_third_thumb))
+- Video still from Liberare, an adaptive-clothing brand ([@liberare.co](https://www.tiktok.com/@liberare.co)).
+- Book covers: _Gloves and Glove-Making_ (Shire Publications) and _The Evolution of the Primate
+  Hand_ (Springer).
+- Anatomy charts from _The Hand_ (BarCharts, Inc.).
+- Variations on the "March of Progress", originally _The Road to Homo Sapiens_ by Rudolph Zallinger
+  for Time-Life's _Early Man_ (1965).

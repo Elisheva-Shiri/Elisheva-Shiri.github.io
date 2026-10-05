@@ -8,7 +8,7 @@
 // Keyboard: Enter opens, ←/→ navigate, Esc closes. Touch: swipe left/right.
 import { withBase } from '../lib/projects';
 
-type Item = string | { src: string; alt?: string; caption?: string; keywords?: string[]; poster?: string };
+type Item = string | { src: string; alt?: string; caption?: string; keywords?: string[]; poster?: string; credit?: string };
 
 interface Props {
   items: Item[];
@@ -17,11 +17,12 @@ interface Props {
 
 const { items: input, title } = Astro.props;
 const items = input.map((item, i) => {
-  const { src, alt, caption, keywords = [], poster } = typeof item === 'string' ? { src: item } : item;
+  const { src, alt, caption, keywords = [], poster, credit } = typeof item === 'string' ? { src: item } : item;
   return {
     src: withBase(src),
     alt: alt ?? `${title} — item ${i + 1}`,
     caption,
+    credit,
     keywords,
     poster: poster && withBase(poster),
     isVideo: /\.(mp4|webm)$/i.test(src),
@@ -40,7 +41,7 @@ const items = input.map((item, i) => {
               data-gallery-item={i}
               data-video={item.isVideo ? '' : undefined}
               data-alt={item.alt}
-              data-caption={item.caption}
+              data-caption={[item.caption, item.credit].filter(Boolean).join(' — ')}
               data-poster={item.poster}
               aria-label={`Open ${item.isVideo ? 'video' : 'image'} ${i + 1} of ${items.length}: ${item.alt}`}
             >
@@ -51,7 +52,12 @@ const items = input.map((item, i) => {
               )}
               {item.keywords.length > 0 && <span class="gallery-keywords">{item.keywords.join(' · ')}</span>}
             </a>
-            {item.caption && <figcaption>{item.caption}</figcaption>}
+            {(item.caption || item.credit) && (
+              <figcaption>
+                {item.caption}
+                {item.credit && <small class="gallery-credit">{item.credit}</small>}
+              </figcaption>
+            )}
           </figure>
         </li>
       ))
@@ -231,6 +237,14 @@ const items = input.map((item, i) => {
     font-size: var(--font-size-sm);
     color: var(--muted);
     line-height: 1.5;
+  }
+
+  .gallery-credit {
+    display: block;
+    margin-top: var(--space-xs);
+    font-size: 0.75rem;
+    font-style: italic;
+    opacity: 0.85;
   }
 
   .lightbox {

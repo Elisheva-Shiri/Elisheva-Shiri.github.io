@@ -26,6 +26,7 @@ const galleryItem = z.union([
     alt: z.string().optional(),
     caption: z.string().optional(), // 1–2 sentences, shown under the item
     keywords: z.array(z.string()).default([]), // shown on hover
+    credit: z.string().optional(), // source of third-party material, shown under the caption
     poster: publicFile.optional(), // still image shown before a video plays
   }),
 ]);
@@ -38,7 +39,9 @@ const projects = defineCollection({
     title: z.string(),
     summary: z.string(),
     categories: z.array(z.string()).min(1),
-    year: z.number().int().optional(),
+    // When the project happened: "2024" or "2024-11"; add dateEnd for a range.
+    date: z.string().regex(/^\d{4}(-(0[1-9]|1[0-2]))?$/, 'Use YYYY or YYYY-MM').optional(),
+    dateEnd: z.string().regex(/^\d{4}(-(0[1-9]|1[0-2]))?$/, 'Use YYYY or YYYY-MM').optional(),
     tags: z.array(z.string()).default([]),
     // People you made the project with, shown as "In collaboration with …".
     collaborators: z.array(z.string()).default([]),

@@ -2,7 +2,7 @@
 // Image card linking to a project page.
 // Mouse/trackpad: details appear in an overlay on hover or keyboard focus.
 // Touch screens: details are always shown below the image.
-import { projectUrl, withBase, type Project } from '../lib/projects';
+import { formatProjectDate, projectUrl, withBase, type Project } from '../lib/projects';
 
 interface Props {
   project: Project;
@@ -10,7 +10,8 @@ interface Props {
 }
 
 const { project, headingLevel: Heading = 'h3' } = Astro.props;
-const { title, summary, year, cover, coverAlt, categories } = project.data;
+const { title, summary, cover, coverAlt, categories } = project.data;
+const date = formatProjectDate(project.data);
 ---
 
 <article class="card">
@@ -28,7 +29,7 @@ const { title, summary, year, cover, coverAlt, categories } = project.data;
       <Heading class="card-title">{title}</Heading>
       <p class="card-summary">{summary}</p>
       <p class="card-meta">
-        {[year, ...categories].filter(Boolean).join(' · ')}
+        {[date, ...categories].filter(Boolean).join(' · ')}
       </p>
     </div>
   </a>
