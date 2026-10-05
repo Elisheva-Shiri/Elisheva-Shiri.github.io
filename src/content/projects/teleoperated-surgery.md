@@ -41,6 +41,14 @@ gallery:
     caption: The space of possible interfaces between the surgeon and the robot, from haptics and wearables to AR and AI assistants.
     keywords: [Landscape, Haptics, AR/MR]
     credit: 'Diagram: "Advanced user interfaces for teleoperated surgical robotic systems", Advanced Sensor Research 2 (4), 2023.'
+  - src: /projects/teleoperated-surgery/slide-stock-flow.webp
+    alt: 'Stock-and-flow diagram: inflows such as surgeon, patient, nurse, family, emotions and imaging; outflows such as robot movement, learning, recovery and change of habits'
+    caption: The operation as a complex system. People, signals and emotions flow in, and actions, learning and outcomes flow out. Translated from Hebrew.
+    keywords: [Systems thinking, Stock and flow]
+  - src: /projects/teleoperated-surgery/slide-causal-loops.webp
+    alt: Causal loop diagram linking surgeon, patient, family, anaesthesia, robot, sensors, display, AI assistance, motion tracking and developers with reinforcing loops
+    caption: A causal loop diagram. Better sensing, displays and AI assistance reinforce the surgeon's performance, and through the operation, the patient and family.
+    keywords: [Causal loops, Reinforcing loops]
   - src: /projects/teleoperated-surgery/slide-feedback-senses.webp
     alt: 'Slide listing tactile, visual and audio feedback next to a wheel of the five senses'
     caption: Replacing lost touch. Tactile, visual and audio feedback can stand in for it, which is the basis of pseudo-haptics.
@@ -70,6 +78,22 @@ patient. The approach is precise and minimally invasive, but it creates two gaps
   in the console, even though they operate as one team. Members of the operating-room team rate
   their collaboration very differently: surgeons rate their teamwork with nurses far higher than
   nurses rate theirs with surgeons.
+
+## The system around the operation
+
+In a _Complex Systems_ course, I mapped teleoperated surgery as a whole system, not just a
+surgeon and a robot:
+
+- **A stock-and-flow model.** Into the operation flow the surgeon, patient, nurse and family; the
+  illness; the senses of sight and touch; electrical signals; emotions such as stress, anxiety,
+  faith and hope; computer imaging and control. Out of it flow robot movement, actions, signals,
+  learning, reports, recovery or deterioration, the risk of rejection, and changes of habit.
+- **A causal loop diagram.** Motion tracking, AI assistance, sensors, displays, lighting, the robot
+  and the chair connect the developer, surgeon, anaesthesia, patient and family in **reinforcing
+  loops**. Improving one part strengthens the others.
+
+This systems view showed where interaction design can make the biggest difference: at the
+surgeon's senses and in communication between the team.
 
 ## Challenge 1: pseudo-haptics
 
