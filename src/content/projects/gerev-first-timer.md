@@ -13,6 +13,8 @@ tags:
   - 3D printing
   - Live music
   - Tel Aviv
+collaborators:
+  - Merav Veder
 
 cover: /projects/gerev-first-timer/cover.webp
 coverAlt: Brightly coloured socks raining down onto a growing pile on a dark stage floor
@@ -47,7 +49,8 @@ gallery:
 ---
 
 **Gerev** (Ayal Regev) is a rapper whose work mixes rap and tech. For the launch of
-his debut album, _First Timer_, I designed the art installations for the show, held on
+his debut album, _First Timer_, I designed the art installations for the show together with
+**Merav Veder**. The show was held on
 **7 January 2026 in Tel Aviv, Israel**.
 
 ## Concept

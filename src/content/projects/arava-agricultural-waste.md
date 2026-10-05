@@ -14,6 +14,11 @@ tags:
   - Systems thinking
   - Team project
   - Bezalel
+collaborators:
+  - Aya Dekel
+  - Tomi Boyarchik
+  - Adi Kfiri
+  - Amit Shahaf
 
 cover: /projects/arava-agricultural-waste/cover.webp
 coverAlt: Aerial view of a large waste fire in the desert, sending up thick black smoke

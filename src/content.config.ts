@@ -40,6 +40,8 @@ const projects = defineCollection({
     categories: z.array(z.string()).min(1),
     year: z.number().int().optional(),
     tags: z.array(z.string()).default([]),
+    // People you made the project with, shown as "In collaboration with …".
+    collaborators: z.array(z.string()).default([]),
 
     cover: publicFile.optional(),
     coverAlt: z.string().optional(),

@@ -15,6 +15,8 @@ categories:
 year: 2026
 tags:
   - Tag
+collaborators: # shown as "In collaboration with …"
+  - Partner Name
 
 # Images live in public/projects/my-project/ and are referenced from "/projects/..."
 cover: /projects/my-project/cover.webp

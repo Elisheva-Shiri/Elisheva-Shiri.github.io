@@ -42,6 +42,7 @@ You never edit the homepage, routing or components to add a project. The file na
 | `categories`  | yes      | List. A project with several categories appears in each homepage section |
 | `year`        | no       | Number. Projects are sorted newest first |
 | `tags`        | no       | List, shown at the bottom of the project page |
+| `collaborators` | no     | List of names, shown as "In collaboration with …" under the summary |
 | `cover`       | no       | `/projects/<slug>/cover.webp`. Card image, page hero and social preview |
 | `coverAlt`    | no       | Description of the cover image for screen readers |
 | `gallery`     | no       | List of image/video paths, or `{ src, alt, caption, keywords, poster }` entries. `caption` (1–2 sentences) shows under the item; `keywords` appear on hover (always visible on touch screens). `.mp4`/`.webm` files play as silent loops; `poster` is their still frame |
