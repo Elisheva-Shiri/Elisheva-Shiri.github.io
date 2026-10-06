@@ -1,17 +1,21 @@
 ---
 title: Communication Dolls for Children
 summary: >
-  A family of soft dinosaur dolls with electronics inside, made to help children communicate.
-  Each doll has its own character, with crowns, capes, pompoms and patterned fabrics.
+  Talking dinosaur dolls for children aged 3 to 6 with motor disabilities and cerebral palsy.
+  The dolls were built at a Good Deeds Day workshop at Shenkar with Tikkun Olam Makers and given
+  to a kindergarten.
 categories:
   - Electronics
   - Interaction Design
-date: '2022-05'
+date: '2022-03'
+dateEnd: '2022-06'
 tags:
   - Soft toys
   - Sewing
   - Electronics
   - Children
+  - Assistive design
+  - Tikkun Olam Makers
 
 cover: /projects/communication-dolls/cover.webp
 coverAlt: A large group of handmade soft dinosaur dolls in red, black and patterned fabrics on a wooden shelf
@@ -25,6 +29,21 @@ gallery:
     alt: The group of dolls from another angle
     caption: Every doll is different, so each child can choose one.
     keywords: [Characters, Variety]
+  - src: /projects/communication-dolls/kindergarten-dolls.webp
+    alt: Finished dinosaur dolls standing on a round table in a kindergarten
+    caption: The dolls arrive at the kindergarten.
+    keywords: [Delivery, Kindergarten]
+    credit: Still from the Good Deeds Day event video
+  - src: /projects/communication-dolls/dolls-basket.webp
+    alt: Dinosaur dolls in a wicker basket, one with tiger stripes and one with a bead necklace
+    caption: A basket of dolls, ready for the children to choose from.
+    keywords: [Delivery, Choice]
+    credit: Still from the Good Deeds Day event video
+  - src: /projects/communication-dolls/event-poster.webp
+    alt: A poster in Hebrew announcing Good Deeds Day, building talking dinosaur dolls, Tuesday 29.3, 10:00 to 14:00
+    caption: 'The event poster: “Good Deeds Day. Building and designing talking dinosaur dolls for children aged 3–6 born with motor disabilities and cerebral palsy.”'
+    keywords: [Event, Good Deeds Day]
+    credit: Still from the Good Deeds Day event video
   - src: /projects/communication-dolls/red-dino.webp
     alt: A red soft dinosaur with colourful pompoms along its back
     caption: A red dinosaur with pompom spikes.
@@ -81,8 +100,16 @@ gallery:
 
 ## The dolls
 
-A family of handmade **soft dinosaur dolls** for children. Each one has its own character, with
-crowns, capes, hats, pompoms and patterned fabrics, so every child can find one that feels like
-theirs.
+**Talking dinosaur dolls** for children aged 3 to 6 who were born with motor disabilities and
+cerebral palsy. Each doll has its own character, with crowns, capes, hats, pompoms and patterned
+fabrics, so every child can find one that feels like theirs.
 
-Inside, the dolls carry **electronics** to help children communicate.
+Inside, the dolls carry **electronics** that let them talk, giving children another way to
+communicate.
+
+## Good Deeds Day
+
+The dolls were built and designed at a **Good Deeds Day** workshop at **Shenkar** on 29 March
+2022, together with **Tikkun Olam Makers**, the Shenkar Students' Union, the Dean of Students'
+Social Involvement Unit and Bank Hapoalim. The finished dolls were then given to a kindergarten
+in Ramat Gan.

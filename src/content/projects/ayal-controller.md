@@ -14,9 +14,17 @@ tags:
   - Accessibility
 
 cover: /projects/ayal-controller/cover.webp
-coverAlt: A mint-green 3D-printed oval plate fitted with knobs, buttons, two slide faders and two joysticks
+coverAlt: A mint-green oval controller with coloured buttons, two joysticks, two slide faders and knobs
 
 gallery:
+  - src: /projects/ayal-controller/final-controls.webp
+    alt: A mint-green oval controller with coloured buttons, two joysticks, two slide faders and knobs, wires around it
+    caption: The new layout, September 2022. Colour-coded buttons, two joysticks, two faders and knobs.
+    keywords: [Final, Layout]
+  - src: /projects/ayal-controller/clear-plate.webp
+    alt: The underside of a clear printed plate with red slide potentiometers, joystick modules and knobs fitted
+    caption: The components mounted on a clear inner plate.
+    keywords: [Assembly, Components]
   - src: /projects/ayal-controller/controls-fitted.webp
     alt: A mint-green 3D-printed oval plate fitted with knobs, buttons, two slide faders and two joysticks
     caption: The controls fitted. Rotary knobs around the edge, buttons, two slide faders and two joysticks.
