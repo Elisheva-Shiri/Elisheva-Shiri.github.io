@@ -45,6 +45,10 @@ gallery:
     alt: A dancer in a blue dress with arms raised, painted in soft washes of colour
     caption: A dancer in a blue dress, August 2018.
     keywords: [Figure, Movement]
+  - src: /projects/wall-murals/terrace-mural.webp
+    alt: A mural of green shapes and a large orange sun with red figures, on the wall of a rooftop terrace with plants and sofas
+    caption: A mural on a rooftop terrace, green shapes around a glowing orange sun.
+    keywords: [Terrace, Colour]
   - src: /projects/wall-murals/seawall.webp
     alt: A long concrete seawall under trees, with a small colourful figure painted near its top among other graffiti
     caption: A long concrete seawall, December 2018.
