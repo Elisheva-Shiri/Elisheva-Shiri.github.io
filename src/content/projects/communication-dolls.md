@@ -17,6 +17,8 @@ tags:
   - Assistive design
   - Tikkun Olam Makers
 
+pdf: /projects/communication-dolls/dinosaur-doll-guidebook.pdf
+
 cover: /projects/communication-dolls/cover.webp
 coverAlt: A large group of handmade soft dinosaur dolls in red, black and patterned fabrics on a wooden shelf
 
@@ -89,6 +91,46 @@ gallery:
     alt: A dark dinosaur doll with a red felt crown and a blue cape
     caption: A dinosaur with a red crown and blue cape.
     keywords: [Character, Accessories]
+  - src: /projects/communication-dolls/guide-materials.webp
+    alt: Guidebook page listing work tools and materials, including fabric, filling and an electrical circuit with speaker, battery and controller
+    caption: 'From the guidebook: the tools and materials, including a sound circuit with a speaker, battery and controller.'
+    keywords: [Guidebook, Materials]
+  - src: /projects/communication-dolls/guide-cutting.webp
+    alt: Guidebook page showing the paper pattern traced onto black fabric
+    caption: 'From the guidebook: tracing the pattern onto the fabric.'
+    keywords: [Guidebook, Pattern]
+  - src: /projects/communication-dolls/guide-circuit.webp
+    alt: Guidebook page showing the circuit placed in its plastic cover with cut-outs for the cable and volume control
+    caption: 'From the guidebook: preparing the sound circuit to go inside the doll.'
+    keywords: [Guidebook, Electronics]
+  - src: /projects/communication-dolls/guide-decorate.webp
+    alt: Guidebook page showing the finished black dinosaur doll, captioned And decorate
+    caption: 'The last step of the guidebook: decorate!'
+    keywords: [Guidebook, Finished]
+  - src: /projects/communication-dolls/sound-module.webp
+    alt: A recordable sound module with a speaker, a battery and a cable, next to a bottle of glue
+    caption: The recordable sound module, with its speaker and battery.
+    keywords: [Electronics, Sound]
+  - src: /projects/communication-dolls/unsealing-circuit.webp
+    alt: Hands taking the circuit out of its sealed plastic case
+    caption: Taking the circuit out of its case.
+    keywords: [Electronics, Making]
+  - src: /projects/communication-dolls/circuit-inside.webp
+    alt: The sound circuit placed inside the half-sewn black doll
+    caption: The circuit goes in before the stuffing.
+    keywords: [Assembly]
+  - src: /projects/communication-dolls/sewing.webp
+    alt: Hands sewing the seam of the black plush doll
+    caption: Sewing it closed.
+    keywords: [Sewing]
+  - src: /projects/communication-dolls/gluing-cable.webp
+    alt: Gluing the charging cable at the edge of the doll's foot
+    caption: The cable is glued at the foot, so the doll can be recharged and re-recorded.
+    keywords: [Assembly, Detail]
+  - src: /projects/communication-dolls/finished-doll.webp
+    alt: The finished black plush dinosaur doll standing on a desk
+    caption: The first finished doll, the sample for the workshop.
+    keywords: [Prototype, Finished]
   - src: /projects/communication-dolls/doll-prototype.webp
     alt: A black plush doll wearing a red felt crown and a blue cape on a workbench
     caption: An early doll on the workbench.
@@ -118,3 +160,11 @@ The dolls were built and designed at a **Good Deeds Day** workshop at **Shenkar*
 2022, together with **Tikkun Olam Makers**, the Shenkar Students' Union, the Dean of Students'
 Social Involvement Unit and Bank Hapoalim. The finished dolls were then given to a kindergarten
 in Ramat Gan.
+
+## The guidebook
+
+A step-by-step guidebook lets every volunteer at the workshop build a doll: print
+and cut the pattern, sew the body inside-out, prepare the sound circuit, stuff the doll, fit the
+circuit with its button near the tail and the speaker in the middle, and finish by decorating.
+The doll pattern is based on a Dinosaur Plush DIY (Brachiosaurus) tutorial on
+[YouTube](https://www.youtube.com/watch?v=lrOXCXZzHFk).

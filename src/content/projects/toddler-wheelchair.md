@@ -17,6 +17,11 @@ cover: /projects/toddler-wheelchair/cover.webp
 coverAlt: A yellow baby seat on a curved plywood frame on a workbench
 
 gallery:
+  - src: /projects/toddler-wheelchair/all-parts.webp
+    alt: Guide page showing all parts of the wheelchair laid out and labelled, the soft baby seat, wheels, CNC plywood parts and hardware
+    caption: Every part of the chair, from the soft seat and wheels to the CNC-cut plywood and metal fittings.
+    keywords: [Parts, Guide]
+    credit: © 2021 Tikkun Olam Makers (TOM)
   - src: /projects/toddler-wheelchair/frame-side.webp
     alt: A yellow baby seat on a curved plywood frame on a workbench in a large workshop
     caption: The first prototype, a baby seat on a curved plywood frame.
@@ -40,6 +45,9 @@ gallery:
 
 A wheelchair sized for **toddlers**. A soft moulded baby seat supports the child, and it sits on a
 **plywood frame** with wheels.
+
+It is a **Tikkun Olam Makers (TOM)** design. Each chair is built from a kit of CNC-cut plywood
+parts, wheels and metal fittings, so that many chairs can be built at once.
 
 The first version was a seat on a curved frame. The next build was assembled in a workshop:
 plywood parts cut, joined, and fitted with two large wheels.

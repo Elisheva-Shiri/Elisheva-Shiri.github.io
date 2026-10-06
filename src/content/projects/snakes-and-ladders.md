@@ -65,6 +65,14 @@ gallery:
     alt: A hand turning over blue printed parts with an internal gear and a column
     caption: The first printed column and gear housing.
     keywords: [3D printing, Parts]
+  - src: /projects/snakes-and-ladders/planetary-gear.webp
+    alt: 3D render of a planetary gear set, a sun gear and three planet gears inside a toothed ring
+    caption: The planetary gear model, a sun gear and three planets inside a ring.
+    keywords: [Gears, CAD]
+  - src: /projects/snakes-and-ladders/master-pin.webp
+    alt: 3D render of a hollow pin with a wide flange, designed in SolidWorks
+    caption: The master pin, the hollow axle that joins the tiers, designed in SolidWorks.
+    keywords: [CAD, SolidWorks]
   - src: /projects/snakes-and-ladders/slicing.webp
     alt: A 3D model of the boards in FlashPrint slicing software
     caption: Slicing the board parts in FlashPrint before printing.
