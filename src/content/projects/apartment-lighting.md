@@ -1,7 +1,7 @@
 ---
 title: Immersive Apartment Lighting
 summary: >
-  The final project of my Lighting Design course: a full lighting plan for a large luxury
+  The final project of my Optical Design course: a full lighting plan for a large luxury
   apartment in Tel Aviv, modelled and calculated in DIALux evo with daylight, from the living
   room to the balconies.
 categories:
@@ -63,4 +63,4 @@ The apartment was modelled in **DIALux evo** with real luminaires, mostly from A
 Ateljé Lyktan, FLOS and others. Daylight for Tel Aviv was included, and light levels were
 calculated room by room. The full report is 566 pages long.
 
-Made with Dean Plobar, at Shenkar.
+Made with Dean Plobar for the **Optical Design** course at Shenkar. See also the [restaurant](/projects/immersive-restaurant/), [office](/projects/office-lighting/) and [theatre](/projects/theater-lighting/) designs.
