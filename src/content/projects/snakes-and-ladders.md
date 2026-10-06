@@ -20,6 +20,21 @@ cover: /projects/snakes-and-ladders/cover.webp
 coverAlt: A 3D-printed tower of three pink game boards on yellow columns
 
 gallery:
+  - src: /projects/snakes-and-ladders/tower-turning.mp4
+    poster: /projects/snakes-and-ladders/tower-turning-poster.webp
+    alt: The pink and yellow printed tower with its boards turning
+    caption: The finished tower in motion, January 2022.
+    keywords: [Motion, Finished]
+  - src: /projects/snakes-and-ladders/tiers-rotating.mp4
+    poster: /projects/snakes-and-ladders/tiers-rotating-poster.webp
+    alt: The three printed tiers of the tower turning on their bearings
+    caption: The tiers turning on their own.
+    keywords: [Motion, Mechanism]
+  - src: /projects/snakes-and-ladders/sensor-test.mp4
+    poster: /projects/snakes-and-ladders/sensor-test-poster.webp
+    alt: A sensor held over a card with black squares, with readings shown on a laptop
+    caption: Testing a sensor over black markers, with the readings on the laptop.
+    keywords: [Sensor, Testing]
   - src: /projects/snakes-and-ladders/cardboard-prototype.webp
     alt: Three cardboard game boards stacked at different heights, joined by a cardboard ladder, with a foam die
     caption: The first prototype. Three boards made from boxes, connected by a cardboard ladder, with a soft foam die.
@@ -40,6 +55,16 @@ gallery:
     alt: Side view of the turntable bearing showing its row of steel balls
     caption: Looking inside the bearing.
     keywords: [Bearing, Research]
+  - src: /projects/snakes-and-ladders/gear-ring.mp4
+    poster: /projects/snakes-and-ladders/gear-ring-poster.webp
+    alt: A finger turning a blue printed planetary gear set
+    caption: Testing a printed planetary gear.
+    keywords: [Gears, Testing]
+  - src: /projects/snakes-and-ladders/printed-parts.mp4
+    poster: /projects/snakes-and-ladders/printed-parts-poster.webp
+    alt: A hand turning over blue printed parts with an internal gear and a column
+    caption: The first printed column and gear housing.
+    keywords: [3D printing, Parts]
   - src: /projects/snakes-and-ladders/slicing.webp
     alt: A 3D model of the boards in FlashPrint slicing software
     caption: Slicing the board parts in FlashPrint before printing.

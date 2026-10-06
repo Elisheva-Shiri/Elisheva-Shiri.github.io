@@ -26,6 +26,61 @@ gallery:
     alt: Testing the electronics, then playing on the green board by hitting the wooden domes
     caption: From the first electronics test to playing on the board.
     keywords: [Gameplay, Testing]
+  - src: /projects/whack-a-mole/screen-play.mp4
+    poster: /projects/whack-a-mole/screen-play-poster.webp
+    alt: Hitting the wooden domes on the board while the green game grid shows on a monitor behind it
+    caption: Playing on the board, with the game running on the screen behind it.
+    keywords: [Gameplay, Screen]
+  - src: /projects/whack-a-mole/domes-light-up.mp4
+    poster: /projects/whack-a-mole/domes-light-up-poster.webp
+    alt: The domes on the board glowing red one by one as the game runs on the screen
+    caption: The domes glow when their mole appears, in sync with the game on screen.
+    keywords: [Lights, Gameplay]
+  - src: /projects/whack-a-mole/lit-box.mp4
+    poster: /projects/whack-a-mole/lit-box-poster.webp
+    alt: The finished game box with a glowing Whack a Mole sign on its side and LED strips inside
+    caption: The finished box, with a glowing “Whack a Mole” sign and LED strips inside.
+    keywords: [Finished, Lighting]
+  - src: /projects/whack-a-mole/box-wiring.mp4
+    poster: /projects/whack-a-mole/box-wiring-poster.webp
+    alt: The green board on a clear box, with the wiring visible inside
+    caption: The board on its clear box, with all the wiring inside.
+    keywords: [Enclosure, Wiring]
+  - src: /projects/whack-a-mole/lights-under.mp4
+    poster: /projects/whack-a-mole/lights-under-poster.webp
+    alt: Wiring under the board and LEDs lighting up beneath the domes
+    caption: The LEDs under the board, lighting the domes from below.
+    keywords: [LEDs, Wiring]
+  - src: /projects/whack-a-mole/building-box.mp4
+    poster: /projects/whack-a-mole/building-box-poster.webp
+    alt: Hands assembling the wooden frame and fitting white domes into the board
+    caption: Building the wooden frame and fitting the domes.
+    keywords: [Fabrication, Assembly]
+  - src: /projects/whack-a-mole/fitting-domes.mp4
+    poster: /projects/whack-a-mole/fitting-domes-poster.webp
+    alt: Hands placing the painted wooden domes into the green 3×3 board
+    caption: Placing the painted domes into the board.
+    keywords: [Assembly]
+  - src: /projects/whack-a-mole/multimeter-test.mp4
+    poster: /projects/whack-a-mole/multimeter-test-poster.webp
+    alt: Testing each square of the empty green board with a multimeter
+    caption: Checking each square's switch with a multimeter.
+    keywords: [Testing, Electronics]
+  - src: /projects/whack-a-mole/button-test.mp4
+    poster: /projects/whack-a-mole/button-test-poster.webp
+    alt: Pressing a row of buttons on a breadboard while the game responds on the screen
+    caption: Testing the game with a row of buttons on a breadboard.
+    keywords: [Prototype, Testing]
+  - src: /projects/whack-a-mole/screen-test.mp4
+    poster: /projects/whack-a-mole/screen-test-poster.webp
+    alt: Testing the game on a screen with a single button
+    caption: An early test of the game on screen.
+    keywords: [Testing]
+  - src: /projects/whack-a-mole/play-2022.mp4
+    poster: /projects/whack-a-mole/play-2022-poster.webp
+    alt: A hand pressing the wooden domes on the green board
+    caption: Still playing, June 2022.
+    keywords: [Play]
   - src: /projects/whack-a-mole/board.webp
     alt: A green 3×3 board with wooden half-sphere domes in each square
     caption: The board, nine wooden domes in a green frame, one for each hole in the game.

@@ -20,6 +20,11 @@ cover: /projects/asif-bread-story/cover.webp
 coverAlt: A vertical strip of photographs about bread hanging in an exhibition space at night
 
 gallery:
+  - src: /projects/asif-bread-story/hand-mill.mp4
+    poster: /projects/asif-bread-story/hand-mill-poster.webp
+    alt: Hands turning the handle of a black hand mill next to bowls of grain and wheat stalks
+    caption: Turning the hand mill beside bowls of grain and wheat.
+    keywords: [Interaction, Grinding]
   - src: /projects/asif-bread-story/stepper-test.mp4
     poster: /projects/asif-bread-story/stepper-test-poster.webp
     alt: A stepper motor on a desk connected to a driver board and a laptop

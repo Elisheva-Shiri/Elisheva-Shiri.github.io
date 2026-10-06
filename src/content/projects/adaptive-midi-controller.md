@@ -15,6 +15,7 @@ tags:
   - MIDI
   - Mixxx
   - Accessibility
+  - Tikkun Olam Makers
   - Laser cutting
 
 github: https://github.com/Elisheva-Shiri/adaptive-MIDI-controller
@@ -28,6 +29,22 @@ gallery:
     alt: Playing music in Mixxx on a laptop using the black controller with glowing arcade buttons
     caption: The finished controller playing music in Mixxx. Big glowing buttons, faders and joysticks replace a small DJ deck.
     keywords: [Demo, Mixxx]
+  - src: /projects/adaptive-midi-controller/tom-product.mp4
+    poster: /projects/adaptive-midi-controller/tom-product-poster.webp
+    alt: Close-up shots of the finished black controller with coloured arcade buttons and soft joystick caps, ending with the Tikkun Olam Makers logo
+    caption: The finished controller, from the Tikkun Olam Makers project video.
+    keywords: [Finished, TOM]
+    credit: Tikkun Olam Makers
+  - src: /projects/adaptive-midi-controller/tom-finished.webp
+    alt: The black angled controller with green, yellow, blue and red arcade buttons and white joystick caps
+    caption: The final controller, with oversized arcade buttons and soft joystick caps.
+    keywords: [Finished, Design]
+    credit: Still from the Tikkun Olam Makers project video
+  - src: /projects/adaptive-midi-controller/tom-cardboard.webp
+    alt: A hand pressing large red and green arcade buttons mounted in a cardboard box
+    caption: An early cardboard prototype, testing button size and reach.
+    keywords: [Prototype, Cardboard]
+    credit: Still from the Tikkun Olam Makers project video
   - src: /projects/adaptive-midi-controller/boot-to-mixxx.mp4
     poster: /projects/adaptive-midi-controller/boot-to-mixxx-poster.webp
     alt: The controller next to a screen that boots the Raspberry Pi and opens Mixxx
@@ -42,6 +59,11 @@ gallery:
     alt: A hand pressing a large blue arcade button wired to a laptop
     caption: Testing a large arcade button, easy to press with a whole hand.
     keywords: [Accessibility, Input]
+  - src: /projects/adaptive-midi-controller/three-buttons.mp4
+    poster: /projects/adaptive-midi-controller/three-buttons-poster.webp
+    alt: Pressing red, yellow and green arcade buttons in a cardboard box while Mixxx runs on a laptop
+    caption: An early cardboard version with three arcade buttons playing Mixxx.
+    keywords: [Prototype, Mixxx]
   - src: /projects/adaptive-midi-controller/small-button.mp4
     poster: /projects/adaptive-midi-controller/small-button-poster.webp
     alt: A small lit button being pressed while the Hairless MIDI bridge shows the message on screen
@@ -84,6 +106,9 @@ Standard DJ controllers are dense: small knobs, thin faders and tightly packed b
 fine motor control. This **adaptive MIDI controller** keeps the same musical possibilities but
 makes them physically easier: **large arcade buttons** you can press with a whole hand, long
 **faders**, and **thumb joysticks**, all colour-coded in an angled box.
+
+It was made as a **Tikkun Olam Makers (TOM)** project, designed together with the person who
+uses it, and presented at Impact Labs in September 2021.
 
 ## How it works
 

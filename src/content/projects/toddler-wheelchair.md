@@ -6,7 +6,7 @@ summary: >
 categories:
   - Interaction Design
 date: '2021-11'
-dateEnd: '2021-12'
+dateEnd: '2022-03'
 tags:
   - Assistive design
   - Plywood
@@ -29,6 +29,11 @@ gallery:
     alt: Top view of an orange baby seat mounted on a plywood frame with two large wheels
     caption: The assembled chair, with an orange seat and two large wheels.
     keywords: [Assembly, Wheels]
+  - src: /projects/toddler-wheelchair/finished-chairs.webp
+    alt: Several finished wooden toddler wheelchairs with yellow, orange and blue seats on a brick pavement
+    caption: A row of finished chairs, each with its own colour seat, March 2022.
+    keywords: [Finished, Series]
+    credit: Still from the event video
 ---
 
 ## The chair

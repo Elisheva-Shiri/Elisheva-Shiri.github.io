@@ -25,6 +25,21 @@ gallery:
     alt: The iPlant pot with its control panel and wiring, filmed close up
     caption: The iPlant system running.
     keywords: [Demo]
+  - src: /projects/smart-plant/shade-demo.mp4
+    poster: /projects/smart-plant/shade-demo-poster.webp
+    alt: The plant pot with a white servo-driven shade arm, next to a laptop showing the dashboard
+    caption: The servo shade at work, with the dashboard on the laptop.
+    keywords: [Shade, Servo]
+  - src: /projects/smart-plant/phone-control.mp4
+    poster: /projects/smart-plant/phone-control-poster.webp
+    alt: A phone showing the plant dashboard with toggle buttons being pressed
+    caption: Controlling the plant remotely from a phone.
+    keywords: [Remote control, IoT]
+  - src: /projects/smart-plant/breadboard-test.mp4
+    poster: /projects/smart-plant/breadboard-test-poster.webp
+    alt: A breadboard with an ESP32, a sensor, a relay and blinking LEDs
+    caption: An early breadboard test, May 2021.
+    keywords: [Prototype, Testing]
   - src: /projects/smart-plant/setup.webp
     alt: A succulent in a white pot on a sensor box marked iPlant, next to a laptop with a dashboard
     caption: The plant and its live dashboard on Adafruit IO.

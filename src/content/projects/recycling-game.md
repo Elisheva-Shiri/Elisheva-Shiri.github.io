@@ -34,6 +34,16 @@ gallery:
     alt: The recycled figure moving in the frame, seen from the side
     caption: The same figure from another angle.
     keywords: [Motion]
+  - src: /projects/recycling-game/building-figure.mp4
+    poster: /projects/recycling-game/building-figure-poster.webp
+    alt: Hands connecting recycled segments into a long figure on a table covered with salvaged parts
+    caption: Building a figure from salvaged parts, segment by segment.
+    keywords: [Making, Workshop]
+  - src: /projects/recycling-game/assembling.mp4
+    poster: /projects/recycling-game/assembling-poster.webp
+    alt: Players around a table assembling a figure from recycled electronics and a game controller
+    caption: Players assembling a figure together.
+    keywords: [Play, Collaboration]
   - src: /projects/recycling-game/wall-figure.webp
     alt: A jointed figure made of recycled cans and cartons hanging from a control board on a wall
     caption: A figure built from cans and cartons. Each segment is a joint.

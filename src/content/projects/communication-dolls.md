@@ -21,6 +21,11 @@ cover: /projects/communication-dolls/cover.webp
 coverAlt: A large group of handmade soft dinosaur dolls in red, black and patterned fabrics on a wooden shelf
 
 gallery:
+  - src: /projects/communication-dolls/talking-doll.mp4
+    poster: /projects/communication-dolls/talking-doll-poster.webp
+    alt: A hand pressing the belly of a black plush dinosaur doll so it plays a sound
+    caption: Pressing the doll's belly makes it talk.
+    keywords: [Talking, Interaction]
   - src: /projects/communication-dolls/all-dolls.webp
     alt: A large group of handmade soft dinosaur dolls in red, black and patterned fabrics on a wooden shelf
     caption: The whole family of dolls.
