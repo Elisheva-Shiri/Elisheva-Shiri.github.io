@@ -8,7 +8,7 @@ categories:
   - Art Installation
   - Electronics
 date: '2021-11'
-dateEnd: '2022-02'
+dateEnd: '2022-06'
 tags:
   - Stepper motor
   - 3D printing
@@ -35,6 +35,11 @@ gallery:
     alt: Round printed discs turning on top of the stepper motor
     caption: The motor turning printed discs.
     keywords: [Motion, Prototype]
+  - src: /projects/asif-bread-story/laser-cutting.mp4
+    poster: /projects/asif-bread-story/laser-cutting-poster.webp
+    alt: The head of a laser cutter moving over a wooden sheet
+    caption: Laser-cutting parts.
+    keywords: [Laser cutting, Fabrication]
   - src: /projects/asif-bread-story/gear-slicing.webp
     alt: A large gear model in FlashPrint slicing software
     caption: Slicing a gear for the mechanism.

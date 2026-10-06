@@ -56,6 +56,11 @@ gallery:
     alt: Closer view of the chain of recycled segments in the metal frame
     caption: The segments up close.
     keywords: [Detail]
+  - src: /projects/recycling-game/can-segment.mp4
+    poster: /projects/recycling-game/can-segment-poster.webp
+    alt: Hands folding a strip cut from a drinks can into a segment
+    caption: Folding a strip cut from a drinks can into a segment.
+    keywords: [Making, Cans]
   - src: /projects/recycling-game/segments.webp
     alt: Teal and yellow segments made from recycled material laid out on a wooden table
     caption: Segments ready to be joined.
