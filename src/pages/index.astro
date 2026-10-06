@@ -1,119 +1,242 @@
 ---
-// Homepage: the project library. Category sections are built automatically
-// from the `categories` field of each project — nothing to edit here when
-// adding a project.
+// Homepage: the live signal header, selected work, the full project index and About.
+// Everything is built from the project files — nothing to edit here when adding a
+// project. Mark a project `featured: true` to show it under "Selected work".
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import { getProjects, groupByCategory } from '../lib/projects';
+import SignalHero from '../components/SignalHero.astro';
+import ProjectIndex from '../components/ProjectIndex.astro';
+import { getProjects, groupByCategory, projectUrl, projectYear, withBase } from '../lib/projects';
 import { SITE } from '../site.config';
 
 const projects = await getProjects();
 const categories = groupByCategory(projects);
+const featured = projects.filter((p) => p.data.featured);
+const years = projects.map((p) => p.data.date?.slice(0, 4)).filter(Boolean).sort() as string[];
+const stats = [
+  { label: 'Projects', value: String(projects.length) },
+  { label: 'Disciplines', value: String(categories.length) },
+  ...(years.length ? [{ label: 'Years', value: `${years[0]} — ${years.at(-1)}` }] : []),
+];
 ---
 
 <BaseLayout>
-  <div class="container">
-    <section class="intro">
-      <h1>{SITE.name}</h1>
-      {SITE.intro && <p>{SITE.intro}</p>}
-    </section>
+  <SignalHero stats={stats} />
 
-    {
-      categories.length > 1 && (
-        <nav class="category-nav" aria-label="Categories">
-          <ul>
-            {categories.map((category) => (
-              <li>
-                <a href={`#${category.slug}`}>
-                  {category.name} <span>{category.projects.length}</span>
+  {
+    featured.length > 0 && (
+      <section class="featured container" aria-labelledby="featured-heading">
+        <div class="section-head">
+          <h2 id="featured-heading">Selected work</h2>
+          <a class="label" href="#index">All projects ↓</a>
+        </div>
+        <ul class="featured-grid">
+          {featured.map((project) => (
+            <li>
+              <a class="feature" href={projectUrl(project)}>
+                <span class="feature-media">
+                  {project.data.cover && (
+                    <img src={withBase(project.data.cover)} alt={project.data.coverAlt ?? ''} loading="lazy" decoding="async" />
+                  )}
+                </span>
+                <span class="feature-meta label">
+                  <span>{project.data.categories.join(' / ')}</span>
+                  <span>{projectYear(project.data)}</span>
+                </span>
+                <span class="feature-title">{project.data.title}</span>
+                <span class="feature-summary">{project.data.summary}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <ProjectIndex projects={projects} categories={categories} />
+
+  {
+    SITE.about.text.length > 0 && (
+      <section class="about container" id="about" aria-labelledby="about-heading">
+        <div class="section-head">
+          <h2 id="about-heading">About</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            {SITE.about.text.map((p) => (
+              <p>{p}</p>
+            ))}
+            <p class="about-links">
+              {SITE.links.map((link) => (
+                <a class="button" href={link.href}>
+                  {link.label}
                 </a>
-              </li>
+              ))}
+            </p>
+          </div>
+          <dl class="about-cv">
+            {SITE.about.education.map((e) => (
+              <div>
+                <dt class="label">{e.year}</dt>
+                <dd>
+                  {e.what}
+                  <span>{e.where}</span>
+                </dd>
+              </div>
             ))}
-          </ul>
-        </nav>
-      )
-    }
+          </dl>
+        </div>
+      </section>
+    )
+  }
 
-    {
-      categories.map((category) => (
-        <section class="category" id={category.slug} aria-labelledby={`${category.slug}-heading`}>
-          <h2 id={`${category.slug}-heading`}>{category.name}</h2>
-          <ul class="project-grid">
-            {category.projects.map((project) => (
-              <li>
-                <ProjectCard project={project} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))
-    }
-
-    {projects.length === 0 && <p class="empty">No projects yet. See README.md → “Adding a New Project”.</p>}
-  </div>
+  {projects.length === 0 && <p class="container empty">No projects yet. See README.md → “Adding a New Project”.</p>}
 </BaseLayout>
 
 <style>
-  .intro {
-    padding-block: var(--space-xl) var(--space-lg);
+  .featured {
+    padding-top: var(--space-xl);
   }
 
-  .intro h1 {
-    margin: 0;
-    font-size: var(--font-size-xl);
-  }
-
-  .intro p {
-    max-width: var(--text-width);
-    margin: var(--space-md) 0 0;
-    font-size: var(--font-size-lg);
-    color: var(--muted);
-  }
-
-  .category-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    margin: 0 0 var(--space-lg);
-    padding: 0;
-    list-style: none;
-  }
-
-  .category-nav a {
-    display: inline-block;
-    padding: 0.35em 0.9em;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--foreground);
-    font-size: var(--font-size-sm);
+  .featured .section-head a {
     text-decoration: none;
   }
 
-  .category-nav a:hover {
-    border-color: var(--foreground);
-  }
-
-  .category-nav span {
-    color: var(--muted);
-  }
-
-  .category {
-    padding-block: var(--space-lg);
-    scroll-margin-top: var(--space-md);
-  }
-
-  .category h2 {
-    margin: 0 0 var(--space-md);
-    font-size: var(--font-size-lg);
-  }
-
-  .project-grid {
+  .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: var(--space-lg) var(--space-md);
-    margin: 0;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-xl) var(--space-md);
+    margin: var(--space-lg) 0 0;
     padding: 0;
     list-style: none;
+  }
+
+  /* An editorial rhythm instead of a uniform matrix: wide, narrow, narrow, wide... */
+  .featured-grid li {
+    grid-column: span 12;
+  }
+
+  @media (min-width: 48rem) {
+    .featured-grid li:nth-child(4n + 1),
+    .featured-grid li:nth-child(4n + 4) {
+      grid-column: span 7;
+    }
+
+    .featured-grid li:nth-child(4n + 2),
+    .featured-grid li:nth-child(4n + 3) {
+      grid-column: span 5;
+    }
+
+    .featured-grid li:nth-child(4n + 2) {
+      margin-top: var(--space-xl);
+    }
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .feature-media {
+    display: block;
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+    background: var(--placeholder);
+  }
+
+  .feature-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 900ms var(--ease);
+  }
+
+  .feature:hover .feature-media img,
+  .feature:focus-visible .feature-media img {
+    transform: scale(1.035);
+  }
+
+  .feature-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-top: var(--space-xs);
+  }
+
+  .feature-title {
+    font-size: var(--font-size-xl);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    transition: color var(--transition);
+  }
+
+  .feature:hover .feature-title {
+    color: var(--accent);
+  }
+
+  .feature-summary {
+    max-width: 34rem;
+    color: var(--muted);
+    font-size: var(--font-size-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .about {
+    padding-top: var(--space-xl);
+    scroll-margin-top: 4rem;
+  }
+
+  .about-grid {
+    display: grid;
+    gap: var(--space-lg) var(--space-xl);
+    margin-top: var(--space-lg);
+  }
+
+  @media (min-width: 52rem) {
+    .about-grid {
+      grid-template-columns: 1.4fr 1fr;
+    }
+  }
+
+  .about-text p {
+    margin: 0 0 var(--space-md);
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .about-text .about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .about-cv {
+    margin: 0;
+  }
+
+  .about-cv div {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-cv dd {
+    margin: 0;
+  }
+
+  .about-cv dd span {
+    display: block;
+    color: var(--muted);
+    font-size: var(--font-size-sm);
   }
 
   .empty {

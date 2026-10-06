@@ -4,6 +4,7 @@ summary: >
   A startup I co-founded in the Joy Ventures wellbeing incubator. FlowSense is a multi-sensory
   device that lets grandparents and grandchildren play together through synchronised movement,
   with lights, sounds and vibration, even when they live far apart.
+featured: true
 categories:
   - Design Research
   - Interaction Design

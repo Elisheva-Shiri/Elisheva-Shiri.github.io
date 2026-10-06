@@ -28,6 +28,14 @@ export function formatProjectDate({ date, dateEnd }: { date?: string; dateEnd?: 
   return `${one(start)} – ${one(end)}`;
 }
 
+/** Short year label for lists: "2021", "2021–22", or "" if the project has no date. */
+export function projectYear({ date, dateEnd }: { date?: string; dateEnd?: string }): string {
+  if (!date) return '';
+  const start = date.slice(0, 4);
+  const end = dateEnd?.slice(0, 4);
+  return end && end !== start ? `${start}–${end.slice(2)}` : start;
+}
+
 /**
  * Groups projects by category, derived from each project's `categories` list.
  * A project with several categories appears in each of them.

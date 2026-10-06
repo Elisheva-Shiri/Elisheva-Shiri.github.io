@@ -4,6 +4,7 @@ summary: >
   Talking dinosaur dolls for children aged 3 to 6 with motor disabilities and cerebral palsy.
   The dolls were built at a Good Deeds Day workshop at Shenkar with Tikkun Olam Makers and given
   to a kindergarten.
+featured: true
 categories:
   - Electronics
   - Interaction Design

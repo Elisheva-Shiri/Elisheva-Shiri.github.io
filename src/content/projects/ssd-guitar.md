@@ -4,6 +4,7 @@ summary: >
   An adaptive guitar for a man who plays with one hand after severe injuries. Servo motors pluck
   the strings in fingerpicking patterns while he frets the chords, and buttons switch between
   patterns. A Tikkun Olam Makers project.
+featured: true
 categories:
   - Electronics
   - Interaction Design

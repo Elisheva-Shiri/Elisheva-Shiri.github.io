@@ -4,6 +4,7 @@ summary: >
   A DJ controller built for accessibility. Oversized arcade buttons, faders and joysticks in a
   laser-cut box let you play music in Mixxx without fine finger movements. It runs on an Arduino
   and starts automatically on a Raspberry Pi.
+featured: true
 categories:
   - Electronics
 date: '2021-07'

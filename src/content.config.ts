@@ -72,6 +72,9 @@ const projects = defineCollection({
       })
       .optional(),
 
+    // Set to true to show the project in "Selected work" at the top of the homepage.
+    featured: z.boolean().default(false),
+
     // Set to true to hide a project from the built site while working on it.
     draft: z.boolean().default(false),
   }),

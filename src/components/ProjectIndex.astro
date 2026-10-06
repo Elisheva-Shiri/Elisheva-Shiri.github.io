@@ -1,0 +1,417 @@
+---
+// The full project index: every project once, newest first.
+// - Filter by discipline (buttons; "/#<category-slug>" in the URL preselects one).
+// - Switch between a List view (cover image follows the pointer on hover) and a Grid view.
+// Without JavaScript it is a plain, complete list of links.
+import { projectUrl, projectYear, slugify, withBase, type Project } from '../lib/projects';
+
+interface Props {
+  projects: Project[];
+  categories: { name: string; slug: string; projects: Project[] }[];
+}
+
+const { projects, categories } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<section class="index container" id="index" aria-labelledby="index-heading" data-index>
+  <div class="section-head">
+    <h2 id="index-heading">Index — <span data-count>{projects.length}</span> projects</h2>
+    <div class="view-toggle" role="group" aria-label="View" hidden data-enhanced>
+      <button type="button" class="label" data-view="list" aria-pressed="true">List</button>
+      <button type="button" class="label" data-view="grid" aria-pressed="false">Grid</button>
+    </div>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter by discipline" hidden data-enhanced>
+    <button type="button" data-filter="all" aria-pressed="true">All <sup>{projects.length}</sup></button>
+    {
+      categories.map((category) => (
+        <button type="button" data-filter={category.slug} aria-pressed="false">
+          {category.name} <sup>{category.projects.length}</sup>
+        </button>
+      ))
+    }
+  </div>
+
+  <ol class="rows" data-rows data-mode="list">
+    {
+      projects.map((project, i) => {
+        const { title, summary, cover, coverAlt, categories: cats } = project.data;
+        return (
+          <li data-cats={cats.map(slugify).join(' ')}>
+            <a class="row" href={projectUrl(project)} data-cover={cover ? withBase(cover) : undefined}>
+              <span class="row-media" aria-hidden="true">
+                {cover ? <img src={withBase(cover)} alt="" loading="lazy" decoding="async" /> : <span class="row-blank">{title}</span>}
+              </span>
+              <span class="row-num label">{pad(projects.length - i)}</span>
+              <span class="row-title">{title}</span>
+              <span class="row-summary">{summary}</span>
+              <span class="row-cats label">{cats.join(' / ')}</span>
+              <span class="row-year label">{projectYear(project.data)}</span>
+              <span class="row-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ol>
+
+  <div class="preview" aria-hidden="true" data-preview><img alt="" /></div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-index]');
+  if (root) {
+    const rows = root.querySelector<HTMLElement>('[data-rows]')!;
+    const items = [...rows.querySelectorAll<HTMLLIElement>('li')];
+    const filterButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const viewButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-view]')];
+    const count = root.querySelector<HTMLElement>('[data-count]')!;
+    root.querySelectorAll<HTMLElement>('[data-enhanced]').forEach((el) => (el.hidden = false));
+
+    // --- Filters ---
+    const applyFilter = (slug: string) => {
+      let shown = 0;
+      for (const item of items) {
+        const match = slug === 'all' || item.dataset.cats!.split(' ').includes(slug);
+        item.hidden = !match;
+        if (match) shown++;
+      }
+      filterButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === slug)));
+      count.textContent = String(shown);
+    };
+    filterButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        const slug = button.dataset.filter!;
+        applyFilter(slug);
+        history.replaceState(null, '', slug === 'all' ? '#index' : `#${slug}`);
+      }),
+    );
+    // Links like "/#electronics" (from project pages) open the index filtered.
+    const fromHash = () => {
+      const slug = decodeURIComponent(location.hash.slice(1));
+      if (filterButtons.some((b) => b.dataset.filter === slug)) {
+        applyFilter(slug);
+        root.scrollIntoView();
+      }
+    };
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+
+    // --- List / Grid ---
+    const setView = (mode: string) => {
+      rows.dataset.mode = mode;
+      viewButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === mode)));
+      try {
+        localStorage.setItem('index-view', mode);
+      } catch {}
+    };
+    viewButtons.forEach((b) => b.addEventListener('click', () => setView(b.dataset.view!)));
+    try {
+      const saved = localStorage.getItem('index-view');
+      if (saved === 'grid' || saved === 'list') setView(saved);
+    } catch {}
+
+    // --- Cover preview that follows the pointer (list view, precise pointers only) ---
+    const preview = root.querySelector<HTMLElement>('[data-preview]')!;
+    const previewImg = preview.querySelector('img')!;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (finePointer) {
+      let x = 0, y = 0, cx = 0, cy = 0, raf = 0;
+      const follow = () => {
+        cx += (x - cx) * (reducedMotion ? 1 : 0.18);
+        cy += (y - cy) * (reducedMotion ? 1 : 0.18);
+        preview.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+        raf = Math.abs(x - cx) + Math.abs(y - cy) > 0.5 ? requestAnimationFrame(follow) : 0;
+      };
+      rows.addEventListener('pointermove', (e) => {
+        x = e.clientX + 24;
+        y = e.clientY - 120;
+        if (!raf) raf = requestAnimationFrame(follow);
+      });
+      for (const link of rows.querySelectorAll<HTMLAnchorElement>('.row')) {
+        link.addEventListener('pointerenter', (e) => {
+          if (rows.dataset.mode !== 'list' || !link.dataset.cover) return;
+          if (!preview.classList.contains('on')) {
+            cx = x = e.clientX + 24;
+            cy = y = e.clientY - 120;
+          }
+          previewImg.src = link.dataset.cover;
+          preview.classList.add('on');
+        });
+        link.addEventListener('pointerleave', () => preview.classList.remove('on'));
+      }
+    }
+  }
+</script>
+
+<style>
+  .index {
+    padding-top: var(--space-xl);
+    scroll-margin-top: 4rem;
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .view-toggle button {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  .view-toggle button[aria-pressed='true'] {
+    color: var(--foreground);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 0.35em;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0;
+  }
+
+  /* Phones: one swipeable row instead of a tall wall of chips. */
+  @media (max-width: 40rem) {
+    .filters {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin-inline: calc(var(--gutter) * -1);
+      padding-inline: var(--gutter);
+      scrollbar-width: none;
+    }
+
+    .filters button {
+      flex: none;
+    }
+  }
+
+  .filters button {
+    padding: 0.45em 0.85em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--foreground);
+    font: inherit;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: border-color var(--transition), background var(--transition), color var(--transition);
+  }
+
+  .filters button:hover {
+    border-color: var(--foreground);
+  }
+
+  .filters button[aria-pressed='true'] {
+    background: var(--foreground);
+    border-color: var(--foreground);
+    color: var(--background);
+  }
+
+  .filters sup {
+    font-family: var(--font-mono);
+    font-size: 0.65em;
+    opacity: 0.7;
+  }
+
+  .rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .rows li[hidden] {
+    display: none;
+  }
+
+  .row {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ---------- List view ---------- */
+  .rows[data-mode='list'] li {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .rows[data-mode='list'] .row {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      'num title year'
+      'num cats cats';
+    align-items: baseline;
+    gap: 0.15rem var(--space-md);
+    padding: var(--space-md) 0;
+    transition: color var(--transition), padding var(--transition);
+  }
+
+  .rows[data-mode='list'] .row-media,
+  .rows[data-mode='list'] .row-summary {
+    display: none;
+  }
+
+  .row-num {
+    grid-area: num;
+  }
+
+  .rows[data-mode='list'] .row-title {
+    grid-area: title;
+    font-size: clamp(1.25rem, 0.9rem + 1.4vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .rows[data-mode='list'] .row-cats {
+    grid-area: cats;
+  }
+
+  .row-year {
+    grid-area: year;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rows[data-mode='list'] .row-arrow {
+    display: none;
+  }
+
+  @media (min-width: 52rem) {
+    .rows[data-mode='list'] .row {
+      grid-template-columns: 3.5rem minmax(0, 1.4fr) minmax(0, 1fr) 6rem 1.5rem;
+      grid-template-areas: 'num title cats year arrow';
+    }
+
+    .rows[data-mode='list'] .row-arrow {
+      display: block;
+      grid-area: arrow;
+      opacity: 0;
+      transform: translateX(-0.5rem);
+      transition: opacity var(--transition), transform var(--transition);
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .rows[data-mode='list'] .row:hover {
+      color: var(--accent);
+      padding-left: var(--space-sm);
+    }
+
+    .rows[data-mode='list'] .row:hover .row-arrow {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Dim the other rows while one is hovered: the focused row "lights up". */
+    .rows[data-mode='list']:has(.row:hover) .row:not(:hover) .row-title {
+      opacity: 0.35;
+    }
+  }
+
+  /* ---------- Grid view ---------- */
+  .rows[data-mode='grid'] {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-xl) var(--space-md);
+    padding-top: var(--space-md);
+  }
+
+  .rows[data-mode='grid'] .row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'media media media'
+      'num title year'
+      '. cats cats';
+    gap: var(--space-xs) var(--space-sm);
+    align-items: baseline;
+  }
+
+  .rows[data-mode='grid'] .row-media {
+    grid-area: media;
+    display: block;
+    aspect-ratio: 4 / 3;
+    margin-bottom: var(--space-sm);
+    overflow: hidden;
+    background: var(--placeholder);
+  }
+
+  .rows[data-mode='grid'] .row-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.35);
+    transition: transform 600ms var(--ease), filter var(--transition);
+  }
+
+  .rows[data-mode='grid'] .row:hover .row-media img,
+  .rows[data-mode='grid'] .row:focus-visible .row-media img {
+    transform: scale(1.04);
+    filter: none;
+  }
+
+  .row-blank {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: var(--space-md);
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .rows[data-mode='grid'] .row-title {
+    grid-area: title;
+    font-size: var(--font-size-lg);
+    line-height: 1.2;
+  }
+
+  .rows[data-mode='grid'] .row-cats {
+    grid-area: cats;
+  }
+
+  .rows[data-mode='grid'] .row-summary,
+  .rows[data-mode='grid'] .row-arrow {
+    display: none;
+  }
+
+  .rows[data-mode='grid'] .row:hover .row-title {
+    color: var(--accent);
+  }
+
+  /* ---------- Pointer-following preview ---------- */
+  .preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 18rem;
+    aspect-ratio: 4 / 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+
+  .preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.25);
+    transform: scale(0.92);
+    transition: transform 300ms var(--ease);
+  }
+
+  .preview.on {
+    opacity: 1;
+  }
+
+  .preview.on img {
+    transform: none;
+  }
+</style>

@@ -1,213 +1,402 @@
 ---
 // Template for every project page. One page is generated per Markdown file in
 // src/content/projects; the URL is /projects/<file-name>/.
+// Layout: a big title, a sticky "spec sheet" (year, disciplines, team, tools,
+// links) beside the story and gallery, and previous/next project at the end.
 // Each section only appears if the project has content for it.
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Gallery from '../../components/Gallery.astro';
 import YouTube from '../../components/YouTube.astro';
 import Publication from '../../components/Publication.astro';
-import { formatProjectDate, getProjects, slugify, withBase, type Project } from '../../lib/projects';
+import { formatProjectDate, getProjects, projectUrl, slugify, withBase, type Project } from '../../lib/projects';
 
 export async function getStaticPaths() {
   const projects = await getProjects();
-  return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
+  return projects.map((project, i) => ({
+    params: { id: project.id },
+    props: {
+      project,
+      // Wraps around, so every page has a "next" and a "previous".
+      prev: projects[(i - 1 + projects.length) % projects.length],
+      next: projects[(i + 1) % projects.length],
+      number: projects.length - i,
+    },
+  }));
 }
 
-const { project } = Astro.props as { project: Project };
+const { project, prev, next, number } = Astro.props as { project: Project; prev: Project; next: Project; number: number };
 const date = formatProjectDate(project.data);
 const { title, summary, categories, tags, collaborators, cover, coverAlt, gallery, youtube, github, website, pdf, links, publication } =
   project.data;
-const collaboratorList = new Intl.ListFormat('en', { type: 'conjunction' }).format(collaborators);
 const { Content } = await render(project);
 const hasBody = Boolean(project.body?.trim());
+const hasLinks = Boolean(github || website || pdf || links.length > 0);
 ---
 
 <BaseLayout title={title} description={summary} image={cover}>
-  <article class="container project">
-    <header class="project-header">
-      <a class="back" href={withBase('/')}>← All projects</a>
-      <p class="project-categories">
-        {
-          categories.map((category, i) => (
-            <>
-              {i > 0 && ' · '}
-              <a href={withBase(`/#${slugify(category)}`)}>{category}</a>
-            </>
-          ))
-        }
-        {date && <span> · {date}</span>}
+  <div class="progress" aria-hidden="true"></div>
+  <article class="project">
+    <header class="container project-header">
+      <p class="crumbs label">
+        <a href={withBase('/#index')}>Index</a>
+        <span aria-hidden="true">/</span>
+        <span>{String(number).padStart(2, '0')}</span>
       </p>
       <h1>{title}</h1>
       <p class="project-summary">{summary}</p>
-      {collaborators.length > 0 && <p class="project-collaborators">In collaboration with {collaboratorList}</p>}
-
-      {
-        (github || website || pdf || links.length > 0) && (
-          <p class="project-links">
-            {website && (
-              <a class="button button-primary" href={website}>
-                Visit website
-              </a>
-            )}
-            {github && (
-              <a class="button" href={github}>
-                View on GitHub
-              </a>
-            )}
-            {pdf && (
-              <a class="button" href={withBase(pdf)}>
-                Download PDF
-              </a>
-            )}
-            {links.map((link) => (
-              <a class="button" href={link.url}>
-                {link.label}
-              </a>
-            ))}
-          </p>
-        )
-      }
     </header>
 
     {
       cover && (
-        <img class="project-cover" src={withBase(cover)} alt={coverAlt ?? ''} fetchpriority="high" decoding="async" />
+        <div class="container">
+          <img class="project-cover" src={withBase(cover)} alt={coverAlt ?? ''} fetchpriority="high" decoding="async" />
+        </div>
       )
     }
 
-    {
-      youtube && (
-        <section class="project-section" aria-label="Video">
-          <YouTube url={youtube} title={title} />
-        </section>
-      )
-    }
+    <div class="container project-body">
+      <aside class="spec" aria-label="Project details">
+        <dl>
+          {
+            date && (
+              <div>
+                <dt class="label">Year</dt>
+                <dd>{date}</dd>
+              </div>
+            )
+          }
+          <div>
+            <dt class="label">Discipline</dt>
+            <dd>
+              {categories.map((category) => (
+                <a href={withBase(`/#${slugify(category)}`)}>{category}</a>
+              ))}
+            </dd>
+          </div>
+          {
+            collaborators.length > 0 && (
+              <div>
+                <dt class="label">With</dt>
+                <dd>
+                  {collaborators.map((c) => (
+                    <span>{c}</span>
+                  ))}
+                </dd>
+              </div>
+            )
+          }
+          {
+            tags.length > 0 && (
+              <div>
+                <dt class="label">Tools &amp; topics</dt>
+                <dd class="tags">
+                  {tags.map((tag) => (
+                    <span>{tag}</span>
+                  ))}
+                </dd>
+              </div>
+            )
+          }
+        </dl>
 
-    {
-      hasBody && (
-        <section class="project-section prose">
-          <Content />
-        </section>
-      )
-    }
+        {
+          hasLinks && (
+            <p class="spec-links">
+              {website && (
+                <a class="button button-primary" href={website}>
+                  Visit website
+                </a>
+              )}
+              {github && (
+                <a class="button" href={github}>
+                  Code on GitHub
+                </a>
+              )}
+              {pdf && (
+                <a class="button" href={withBase(pdf)}>
+                  Read the PDF
+                </a>
+              )}
+              {links.map((link) => (
+                <a class="button" href={link.url}>
+                  {link.label}
+                </a>
+              ))}
+            </p>
+          )
+        }
+      </aside>
+
+      <div class="story">
+        {
+          youtube && (
+            <section class="project-section" aria-label="Video">
+              <YouTube url={youtube} title={title} />
+            </section>
+          )
+        }
+
+        {
+          hasBody && (
+            <section class="project-section prose">
+              <Content />
+            </section>
+          )
+        }
+
+        {
+          publication && (
+            <section class="project-section" aria-labelledby="publication-heading">
+              <div class="section-head">
+                <h2 id="publication-heading">Publication</h2>
+              </div>
+              <Publication publication={publication} />
+            </section>
+          )
+        }
+      </div>
+    </div>
 
     {
       gallery.length > 0 && (
-        <section class="project-section" aria-labelledby="gallery-heading">
-          <h2 id="gallery-heading">Gallery</h2>
+        <section class="container project-gallery" aria-labelledby="gallery-heading">
+          <div class="section-head">
+            <h2 id="gallery-heading">Process &amp; gallery</h2>
+            <span class="label">{gallery.length} items</span>
+          </div>
           <Gallery items={gallery} title={title} />
         </section>
       )
     }
 
     {
-      publication && (
-        <section class="project-section" aria-labelledby="publication-heading">
-          <h2 id="publication-heading">Publication</h2>
-          <Publication publication={publication} />
-        </section>
-      )
-    }
-
-    {
-      tags.length > 0 && (
-        <section class="project-section" aria-label="Tags">
-          <ul class="tags">
-            {tags.map((tag) => (
-              <li>{tag}</li>
-            ))}
-          </ul>
-        </section>
+      next.id !== project.id && (
+        <nav class="container pager" aria-label="More projects">
+          <a class="pager-link" href={projectUrl(prev)} rel="prev">
+            <span class="label">← Previous</span>
+            <span class="pager-title">{prev.data.title}</span>
+          </a>
+          <a class="pager-link pager-next" href={projectUrl(next)} rel="next">
+            <span class="label">Next →</span>
+            <span class="pager-title">{next.data.title}</span>
+            {next.data.cover && <img src={withBase(next.data.cover)} alt="" loading="lazy" decoding="async" />}
+          </a>
+        </nav>
       )
     }
   </article>
 </BaseLayout>
 
 <style>
-  .project-header {
-    max-width: var(--text-width);
-    padding-block: var(--space-lg);
+  /* Reading progress: a thin accent line under the header (CSS scroll timeline, no JS). */
+  .progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
   }
 
-  .back {
-    display: inline-block;
-    margin-bottom: var(--space-lg);
-    color: var(--muted);
-    font-size: var(--font-size-sm);
+  @supports (animation-timeline: scroll()) {
+    .progress {
+      animation: grow linear both;
+      animation-timeline: scroll(root);
+    }
+
+    @keyframes grow {
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .project-header {
+    padding-block: var(--space-xl) var(--space-lg);
+  }
+
+  .crumbs {
+    display: flex;
+    gap: var(--space-sm);
+    margin: 0 0 var(--space-lg);
+  }
+
+  .crumbs a {
+    color: inherit;
     text-decoration: none;
   }
 
-  .back:hover {
-    color: var(--foreground);
-  }
-
-  .project-categories {
-    margin: 0;
-    color: var(--muted);
-    font-size: var(--font-size-sm);
-  }
-
-  .project-categories a {
-    color: inherit;
+  .crumbs a:hover {
+    color: var(--accent);
   }
 
   h1 {
-    margin: var(--space-sm) 0 var(--space-md);
-    font-size: var(--font-size-xl);
+    max-width: 20ch;
+    margin: 0;
+    font-size: clamp(2.4rem, 1rem + 5.5vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
   }
 
   .project-summary {
-    margin: 0;
-    font-size: var(--font-size-lg);
-    color: var(--muted);
-  }
-
-  .project-collaborators {
-    margin: var(--space-md) 0 0;
-    font-size: var(--font-size-sm);
-    color: var(--muted);
-  }
-
-  .project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
+    max-width: 44rem;
     margin: var(--space-lg) 0 0;
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+    line-height: 1.4;
+    color: var(--muted);
   }
 
   .project-cover {
-    /* Full width, but never stretched beyond the image's own size (stays sharp). */
-    width: auto;
-    max-width: 100%;
-    margin-inline: auto;
-    max-height: 80vh;
+    width: 100%;
+    max-height: 82vh;
     object-fit: cover;
-    border-radius: var(--radius);
+    background: var(--placeholder);
   }
 
-  .project-section {
-    margin-top: var(--space-xl);
+  .project-body {
+    display: grid;
+    gap: var(--space-lg) var(--space-xl);
+    padding-top: var(--space-xl);
   }
 
-  .project-section > h2 {
-    margin: 0 0 var(--space-md);
-    font-size: var(--font-size-lg);
+  @media (min-width: 60rem) {
+    .project-body {
+      grid-template-columns: 17rem minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .spec {
+      position: sticky;
+      top: 5rem;
+    }
   }
 
-  .tags {
+  .spec dl {
+    margin: 0;
+  }
+
+  .spec dl div {
+    padding: var(--space-sm) 0 var(--space-md);
+    border-top: 1px solid var(--border);
+  }
+
+  .spec dd {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin: var(--space-xs) 0 0;
+    font-size: var(--font-size-sm);
+  }
+
+  .spec dd a {
+    color: inherit;
+  }
+
+  .spec dd a:hover {
+    color: var(--accent);
+  }
+
+  .spec .tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .spec .tags span {
+    padding: 0.1em 0.55em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: var(--font-size-xs);
+  }
+
+  .spec-links {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    margin: var(--space-md) 0 0;
   }
 
-  .tags li {
-    padding: 0.2em 0.75em;
-    border-radius: 999px;
-    background: var(--placeholder);
-    font-size: var(--font-size-sm);
+  .story {
+    min-width: 0;
+  }
+
+  .project-section + .project-section {
+    margin-top: var(--space-xl);
+  }
+
+  .project-gallery {
+    margin-top: var(--space-xl);
+  }
+
+  .project-gallery :global(.gallery) {
+    margin-top: var(--space-lg);
+  }
+
+  .pager {
+    display: grid;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  @media (min-width: 48rem) {
+    .pager {
+      grid-template-columns: 1fr 1.6fr;
+    }
+  }
+
+  .pager-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    min-height: 9rem;
+    padding: var(--space-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color var(--transition);
+  }
+
+  .pager-link:hover {
+    border-color: var(--foreground);
+  }
+
+  .pager-title {
+    position: relative;
+    z-index: 1;
+    font-size: var(--font-size-lg);
+    line-height: 1.15;
+  }
+
+  .pager-next {
+    justify-content: flex-end;
+    background: var(--foreground);
+    color: var(--background);
+  }
+
+  .pager-next .label {
+    position: relative;
+    z-index: 1;
+    color: inherit;
+  }
+
+  .pager-next img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.28;
+    transition: opacity var(--transition), transform 900ms var(--ease);
+  }
+
+  .pager-next:hover img {
+    opacity: 0.45;
+    transform: scale(1.04);
   }
 </style>

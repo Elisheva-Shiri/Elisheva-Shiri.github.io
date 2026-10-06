@@ -2,7 +2,7 @@
 
 **Live site: https://elisheva-shiri.github.io/**
 
-A personal portfolio site: a library of projects grouped by category, where each project gets its own page with optional gallery, video, publication, PDF and links.
+A personal portfolio site: a filterable index of projects, where each project gets its own page with optional gallery, video, publication, PDF and links.
 
 - **[Astro 7](https://astro.build)**: static site, plain Astro components and CSS (no UI framework)
 - **Markdown** content collections: one file per project
@@ -31,7 +31,7 @@ Requires Node.js 24 (see `.nvmrc`; with nvm-windows: `nvm use 24.21.0`).
 8. **Push**: `git push`.
 9. GitHub automatically rebuilds and updates the public site (takes about 1–2 minutes).
 
-You never edit the homepage, routing or components to add a project. The file name becomes the URL (`/projects/<project-slug>/`), and the homepage sections come from each project's `categories`.
+You never edit the homepage, routing or components to add a project. The file name becomes the URL (`/projects/<project-slug>/`), and the homepage filters come from each project's `categories`.
 
 ### Project fields
 
@@ -39,11 +39,12 @@ You never edit the homepage, routing or components to add a project. The file na
 | ------------- | -------- | ----- |
 | `title`       | yes      | |
 | `summary`     | yes      | 1–2 sentences: card text, page intro, search/social description |
-| `categories`  | yes      | List. A project with several categories appears in each homepage section |
+| `categories`  | yes      | List. Each category becomes a filter button on the homepage index |
+| `featured`    | no       | `true` shows the project in "Selected work" at the top of the homepage |
 | `date`        | no       | `'2024'` or `'2024-11'` (in quotes). Shown as "November 2024"; projects are sorted newest first |
 | `dateEnd`     | no       | End of a project that ran over several months, e.g. `'2025-01'` → "November 2024 – January 2025" |
-| `tags`        | no       | List, shown at the bottom of the project page |
-| `collaborators` | no     | List of names, shown as "In collaboration with …" under the summary |
+| `tags`        | no       | List, shown as "Tools & topics" in the project's side panel |
+| `collaborators` | no     | List of names, shown under "With" in the project's side panel |
 | `cover`       | no       | `/projects/<slug>/cover.webp`. Card image, page hero and social preview |
 | `coverAlt`    | no       | Description of the cover image for screen readers |
 | `gallery`     | no       | List of image/video paths, or `{ src, alt, caption, keywords, poster, credit }` entries. `credit` names the source of third-party material in the image. `caption` (1–2 sentences) shows under the item; `keywords` appear on hover (always visible on touch screens). `.mp4`/`.webm` files play as silent loops; `poster` is their still frame |
@@ -73,19 +74,20 @@ Sections only appear when they have content: no `youtube`, no video section, and
 src/
 ├── content.config.ts        Project schema (fields + validation)
 ├── content/projects/        One Markdown file per project (_template.md is ignored)
-├── site.config.ts           Site name, intro text and header links
+├── site.config.ts           Site name, role, intro line, links and About text
 ├── lib/
 │   ├── projects.ts          Loading/sorting projects, grouping by category, base-path helper
 │   └── youtube.ts           Extracts the video ID from YouTube URLs
 ├── components/
-│   ├── ProjectCard.astro    Image card (hover overlay on desktop, always-visible text on touch)
+│   ├── SignalHero.astro     Homepage header: name over interactive signal waves (canvas)
+│   ├── ProjectIndex.astro   Project index: filters, list/grid views, cover that follows the pointer
 │   ├── Gallery.astro        Image/video grid with captions, hover keywords and a lightbox
 │   ├── YouTube.astro        Responsive privacy-enhanced embed
 │   └── Publication.astro    Citation block with PDF / URL / DOI links
 ├── layouts/BaseLayout.astro Page shell: <head> metadata, navigation, footer
 ├── pages/
-│   ├── index.astro          Homepage library (sections derived from categories)
-│   ├── projects/[id].astro  Template for every project page
+│   ├── index.astro          Homepage: hero, selected work, project index, About
+│   ├── projects/[id].astro  Project page: title, side panel, story, gallery, next/previous
 │   └── 404.astro
 └── styles/global.css        Design tokens (colours, spacing, widths) and base styles
 public/projects/<slug>/      Images and PDFs for each project

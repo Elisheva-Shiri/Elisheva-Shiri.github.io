@@ -4,6 +4,7 @@ summary: >
   My B.Sc. final project in Electrical and Electronics Engineering. A simulation that tests
   supervised machine-learning models for separating a soundscape into its sources, a step
   towards hearing aids that cope with the cocktail party problem.
+featured: true
 categories:
   - Machine Learning
   - Design Research

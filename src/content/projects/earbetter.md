@@ -4,6 +4,7 @@ summary: >
   Adaptive headphones guided by your body. Skin and heart sensors notice rising stress in noisy
   places, and the audio softens the sounds that overwhelm you while keeping the voices and alerts you
   need, with a playful companion app. A continuation of my sound-separation project Sorona Wav.
+featured: true
 categories:
   - Haptics
   - App Development
