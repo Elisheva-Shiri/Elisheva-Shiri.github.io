@@ -7,7 +7,7 @@ summary: >
 categories:
   - Electronics
 date: '2021-07'
-dateEnd: '2021-10'
+dateEnd: '2022-03'
 tags:
   - Arduino
   - Teensy
@@ -28,6 +28,11 @@ gallery:
     alt: Playing music in Mixxx on a laptop using the black controller with glowing arcade buttons
     caption: The finished controller playing music in Mixxx. Big glowing buttons, faders and joysticks replace a small DJ deck.
     keywords: [Demo, Mixxx]
+  - src: /projects/adaptive-midi-controller/boot-to-mixxx.mp4
+    poster: /projects/adaptive-midi-controller/boot-to-mixxx-poster.webp
+    alt: The controller next to a screen that boots the Raspberry Pi and opens Mixxx
+    caption: Plug and play. The Raspberry Pi boots and opens Mixxx on its own, ready for the controller.
+    keywords: [Raspberry Pi, Plug and play]
   - src: /projects/adaptive-midi-controller/waveforms.gif
     alt: Animation of oscilloscope readings showing sine and square waves and modulated signals
     caption: Measuring the signals on an oscilloscope while developing the electronics.

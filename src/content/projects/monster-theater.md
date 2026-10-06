@@ -7,7 +7,7 @@ categories:
   - Electronics
   - Art Installation
 date: '2021-09'
-dateEnd: '2021-10'
+dateEnd: '2022-01'
 tags:
   - Arduino
   - Servo motors
@@ -38,6 +38,15 @@ gallery:
     alt: Side view of the wooden frame with the Arduino and a bundle of wires
     caption: The electronics, wired and mounted.
     keywords: [Wiring, Electronics]
+  - src: /projects/monster-theater/servo-test-2022.mp4
+    poster: /projects/monster-theater/servo-test-2022-poster.webp
+    alt: A micro servo connected to an Arduino through a small breadboard, turning back and forth
+    caption: A later servo test, January 2022.
+    keywords: [Servo, Testing]
+  - src: /projects/monster-theater/servo-arduino-2022.webp
+    alt: An Arduino Uno-compatible board wired to a mini breadboard and a micro servo on a chipboard surface
+    caption: The test setup, an Arduino, a mini breadboard and a micro servo.
+    keywords: [Arduino, Servo]
 ---
 
 ## The show
