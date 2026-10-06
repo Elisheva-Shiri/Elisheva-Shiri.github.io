@@ -20,6 +20,25 @@ cover: /projects/asif-bread-story/cover.webp
 coverAlt: A vertical strip of photographs about bread hanging in an exhibition space at night
 
 gallery:
+  - src: /projects/asif-bread-story/prototype-grinding.mp4
+    poster: /projects/asif-bread-story/prototype-grinding-poster.webp
+    alt: A hand turning a 3D-printed millstone on a table, with bowls of grain and a strip of wheat photos behind
+    caption: The working prototype. Turning the 3D-printed millstone moves the strip of photographs.
+    keywords: [Prototype, Interaction]
+  - src: /projects/asif-bread-story/prototype-strip.mp4
+    poster: /projects/asif-bread-story/prototype-strip-poster.webp
+    alt: The photo strip of the wheat story moving as the millstone is turned
+    caption: The story moves like a film strip, from sowing to bread.
+    keywords: [Motion, Storytelling]
+  - src: /projects/asif-bread-story/prototype-top.mp4
+    poster: /projects/asif-bread-story/prototype-top-poster.webp
+    alt: A top view of hands grinding at the millstone beside bowls of grain
+    caption: From above, grinding at the millstone beside bowls of grain.
+    keywords: [Prototype, Senses]
+  - src: /projects/asif-bread-story/concept-sketch.webp
+    alt: A sketch of visitors watching a tall loop of photographs that turns behind a glass wall
+    caption: The concept sketch. A tall loop of photographs uses the high ceiling and faces the glass wall, inviting passers-by in.
+    keywords: [Sketch, Concept]
   - src: /projects/asif-bread-story/hand-mill.mp4
     poster: /projects/asif-bread-story/hand-mill-poster.webp
     alt: Hands turning the handle of a black hand mill next to bowls of grain and wheat stalks

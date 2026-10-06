@@ -57,6 +57,10 @@ gallery:
     alt: A circuit diagram of two Arduinos, each with a button and LEDs, wired to each other
     caption: The first prototype plan. Two Arduinos, each with a button and LEDs, so a press on one lights up the other.
     keywords: [Prototype, Arduino]
+  - src: /projects/flowsense/flip-flop-circuit.webp
+    alt: A circuit simulation with two 74LS73 flip-flop chips, a function generator and blue LED indicators
+    caption: An early circuit test with two flip-flops and LEDs, for lights that answer each other.
+    keywords: [Circuit, Simulation]
   - src: /projects/flowsense/enjoyment-results.webp
     alt: A bar chart of enjoyment scores for experiment and control groups in two sessions
     caption: 'Validation: both groups enjoyed the sessions. The movement group scored 4.25 out of 5 in the first session.'

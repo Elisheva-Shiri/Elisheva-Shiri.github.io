@@ -20,6 +20,20 @@ cover: /projects/snakes-and-ladders/cover.webp
 coverAlt: A 3D-printed tower of three pink game boards on yellow columns
 
 gallery:
+  - src: /projects/snakes-and-ladders/playtest.mp4
+    poster: /projects/snakes-and-ladders/playtest-poster.webp
+    alt: An overhead view of players around a table moving pieces on the pink three-tier tower and rolling a die
+    caption: Playtesting the finished tower. Players roll, move their pieces, and the tiers turn.
+    keywords: [Playtest, Gameplay]
+  - src: /projects/snakes-and-ladders/playtest-2.mp4
+    poster: /projects/snakes-and-ladders/playtest-2-poster.webp
+    alt: Hands reaching in to move pieces on the tower during a game
+    caption: Another round of the playtest.
+    keywords: [Playtest, Users]
+  - src: /projects/snakes-and-ladders/playtest-top.webp
+    alt: The pink tower from above on a white table, with game pieces in its holes and players' hands around it
+    caption: The tower from above during play.
+    keywords: [Playtest, Top view]
   - src: /projects/snakes-and-ladders/tower-turning.mp4
     poster: /projects/snakes-and-ladders/tower-turning-poster.webp
     alt: The pink and yellow printed tower with its boards turning
@@ -39,6 +53,18 @@ gallery:
     alt: Three cardboard game boards stacked at different heights, joined by a cardboard ladder, with a foam die
     caption: The first prototype. Three boards made from boxes, connected by a cardboard ladder, with a soft foam die.
     keywords: [Prototype, Cardboard]
+  - src: /projects/snakes-and-ladders/cardboard-ladders.webp
+    alt: Cardboard game boards stacked with drawn snakes and ladders, and a pink foam die
+    caption: The cardboard boards with their snakes and ladders drawn on.
+    keywords: [Prototype, Cardboard]
+  - src: /projects/snakes-and-ladders/tower-model.webp
+    alt: A cardboard model of round tiers on a central column, with a printed ladder and a rotating base
+    caption: A round tower model, tiers on a central column above a rotating base.
+    keywords: [Model, Tower]
+  - src: /projects/snakes-and-ladders/tower-model-2.webp
+    alt: The round cardboard tower model from another angle, showing the inner mechanism
+    caption: The mechanism inside the model.
+    keywords: [Model, Mechanism]
   - src: /projects/snakes-and-ladders/motor-holder.webp
     alt: A hand holding a small DC motor inside a blue 3D-printed holder
     caption: A motor in a 3D-printed holder, to turn the boards.
@@ -86,6 +112,10 @@ gallery:
     alt: A pink disc held in a helping-hand clamp, with wires through it, on a soldering desk
     caption: Wiring a board.
     keywords: [Electronics, Soldering]
+  - src: /projects/snakes-and-ladders/soldering-tier.webp
+    alt: A pink printed tier held in a flexible clamp, with wires through it, at a soldering station
+    caption: Soldering the wiring of a tier.
+    keywords: [Soldering, Electronics]
   - src: /projects/snakes-and-ladders/tower.webp
     alt: A 3D-printed tower of three pink game boards on yellow columns with blue bearing rings
     caption: The printed tower. Three boards with holes for the pieces, on columns, with bearings in between.

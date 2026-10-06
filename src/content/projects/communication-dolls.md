@@ -25,8 +25,8 @@ coverAlt: A large group of handmade soft dinosaur dolls in red, black and patter
 gallery:
   - src: /projects/communication-dolls/talking-doll.mp4
     poster: /projects/communication-dolls/talking-doll-poster.webp
-    alt: A hand pressing the belly of a black plush dinosaur doll so it plays a sound
-    caption: Pressing the doll's belly makes it talk.
+    alt: A hand pressing a black plush dinosaur doll so it plays a sound
+    caption: Press the dinosaur's tail and it plays its recorded sound.
     keywords: [Talking, Interaction]
   - src: /projects/communication-dolls/all-dolls.webp
     alt: A large group of handmade soft dinosaur dolls in red, black and patterned fabrics on a wooden shelf
@@ -151,15 +151,22 @@ gallery:
 cerebral palsy. Each doll has its own character, with crowns, capes, hats, pompoms and patterned
 fabrics, so every child can find one that feels like theirs.
 
-Inside, the dolls carry **electronics** that let them talk, giving children another way to
-communicate.
+Inside each doll is a **recorder and speaker** that can hold a wide range of sounds. By pressing
+the dinosaur's tail, children can express their feelings and take part in activities with the
+people around them.
 
 ## Good Deeds Day
 
-The dolls were built and designed at a **Good Deeds Day** workshop at **Shenkar** on 29 March
-2022, together with **Tikkun Olam Makers**, the Shenkar Students' Union, the Dean of Students'
-Social Involvement Unit and Bank Hapoalim. The finished dolls were then given to a kindergarten
-in Ramat Gan.
+I designed the doll and led the project. At a **Good Deeds Day** workshop at **Shenkar** on 29
+March 2022, students from many departments sewed **30 dinosaur dolls** with me. We worked with
+**Tikkun Olam Makers**, the Shenkar Students' Union, the Dean of Students' Social Involvement
+Unit and Bank Hapoalim. The dolls went to **Gan Spivak** in Ramat Gan, a kindergarten for
+children with physical and cognitive disabilities, where they help the children join in the
+activities.
+
+Designing the doll, including its circuit, took about two days, and collecting components and
+materials took another week. The filling and fabric were donated leftovers from Shenkar's fashion
+and textile design departments.
 
 ## The guidebook
 

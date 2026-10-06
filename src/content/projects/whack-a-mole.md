@@ -26,6 +26,14 @@ gallery:
     alt: Testing the electronics, then playing on the green board by hitting the wooden domes
     caption: From the first electronics test to playing on the board.
     keywords: [Gameplay, Testing]
+  - src: /projects/whack-a-mole/lit-domes.webp
+    alt: The green board with nine wooden domes decorated with faces, lit from below
+    caption: The finished board, nine moles with faces, lit from underneath.
+    keywords: [Finished, Lighting]
+  - src: /projects/whack-a-mole/board-wiring.webp
+    alt: The green board on a desk with its wiring and boards spread out in front of a monitor
+    caption: Wiring the board.
+    keywords: [Wiring, Build]
   - src: /projects/whack-a-mole/screen-play.mp4
     poster: /projects/whack-a-mole/screen-play-poster.webp
     alt: Hitting the wooden domes on the board while the green game grid shows on a monitor behind it
@@ -98,7 +106,8 @@ gallery:
 
 ## The game
 
-A classic Whack-a-Mole, brought into the physical world. The game runs in **PyGame** on a
+My final project for a **Python programming** course, made for the **Shikma kindergarten** in
+Ramla. A classic Whack-a-Mole, brought into the physical world. The game runs in **PyGame** on a
 **Raspberry Pi**, with a 3×3 grid of holes. Every 10 points you level up, and moles appear more
 often and faster.
 
@@ -110,4 +119,7 @@ Raspberry Pi and added:
 - **A light matrix.** The Pi's GPIO pins drive a light for each hole, so the physical board
   shows where the mole is.
 - **A physical board.** Nine wooden domes in a green 3×3 frame, one per hole.
-- **Sound.** Hit, miss and level-up effects and background music.
+- **Sound.** Hit, miss and level-up effects, and background music that can be changed.
+
+The board is made from **recycled wood** offcuts from a local carpentry shop, and the code is open
+source on GitHub.

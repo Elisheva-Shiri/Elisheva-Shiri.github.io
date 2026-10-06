@@ -41,13 +41,27 @@ gallery:
     credit: Still from the event video
 ---
 
+## The need
+
+Toddlers up to age three who are born with developmental challenges and need help moving around
+outgrow their wheelchairs every few months. The chairs are expensive, and some families can't get
+them at all.
+
 ## The chair
 
-A wheelchair sized for **toddlers**. A soft moulded baby seat supports the child, and it sits on a
+A **modular** wheelchair that the child grows into, sized for **toddlers**. A soft moulded baby seat supports the child, and it sits on a
 **plywood frame** with wheels.
 
 It is a **Tikkun Olam Makers (TOM)** design. Each chair is built from a kit of CNC-cut plywood
 parts, wheels and metal fittings, so that many chairs can be built at once.
 
 The first version was a seat on a curved frame. The next build was assembled in a workshop:
-plywood parts cut, joined, and fitted with two large wheels.
+plywood parts cut, joined, and fitted with two large wheels. Most of the materials can be found in
+any hardware store.
+
+## The hackathon
+
+The design took about a month, with advisors from engineering and design. After it worked, we ran
+a **hackathon** where we built **30 chairs** for families in Bnei Brak and the surrounding area.
+Tikkun Olam Makers then repeated the event in other locations. Read more in
+[Haaretz](https://www.haaretz.co.il/family/.premium.HIGHLIGHT-1.10520061) (in Hebrew).

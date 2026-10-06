@@ -36,6 +36,10 @@ gallery:
     alt: A hand holding a membrane keypad next to an Arduino and an ultrasonic sensor on a breadboard
     caption: The first prototype on the breadboard.
     keywords: [Prototype]
+  - src: /projects/safe-box/circuit.webp
+    alt: A Fritzing diagram of an Arduino Mega wired to a keypad, a 7-segment display, an ultrasonic sensor, LEDs and a servo
+    caption: The circuit. An Arduino Mega with the keypad, display, ultrasonic sensor, LEDs and servo lock.
+    keywords: [Circuit, Fritzing]
 ---
 
 ## How it works
