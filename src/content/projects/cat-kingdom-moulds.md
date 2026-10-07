@@ -64,9 +64,49 @@ gallery:
     alt: "A 3D model of a seated cat with many fanned-out tails turning on screen"
     caption: "The 3D model of the cat statue, with fanned-out tails."
     keywords: [3D model, Sculpture]
+  - src: /projects/cat-kingdom-moulds/gold-statue.webp
+    alt: "The finished cat statue painted gold: a smiling cat with many fanned-out tails, seated with crossed legs"
+    caption: "The cat statue, painted gold."
+    keywords: [Statue, Finish]
+  - src: /projects/cat-kingdom-moulds/slicer-model.webp
+    alt: "The many-tailed cat statue model in 3D-printing slicer software"
+    caption: "The statue in the slicer, ready to print."
+    keywords: [3D printing, Model]
+  - src: /projects/cat-kingdom-moulds/slicer-parts.webp
+    alt: "Parts of the statue, the head, tails and body, laid out on print beds in slicer software"
+    caption: "Split into parts to fit the printer."
+    keywords: [3D printing, Parts]
+  - src: /projects/cat-kingdom-moulds/slicer-tails.webp
+    alt: "Tail sections of the statue arranged on virtual print beds"
+    caption: "The tails, printed section by section."
+    keywords: [3D printing, Tails]
+  - src: /projects/cat-kingdom-moulds/printing-head.webp
+    alt: "A hand holding the red 3D-printed cat head beside the printer"
+    caption: "The head, off the printer."
+    keywords: [3D printing, Head]
+  - src: /projects/cat-kingdom-moulds/head-and-base.webp
+    alt: "The red printed cat head held above a painted base of folded robes"
+    caption: "Fitting the head to the body."
+    keywords: [Assembly]
+  - src: /projects/cat-kingdom-moulds/red-print.webp
+    alt: "The red printed cat statue seated with crossed legs, its robe painted black and red"
+    caption: "The body, printed in red, with the robe painted."
+    keywords: [3D printing, Painting]
+  - src: /projects/cat-kingdom-moulds/painting-tails.webp
+    alt: "Printed tails painted dark red and black drying on a green mat, with the statue behind"
+    caption: "Painting the tails."
+    keywords: [Painting]
+  - src: /projects/cat-kingdom-moulds/primed-statue.webp
+    alt: "The whole statue primed white, with all its tails fanned out, on a workshop shelf"
+    caption: "Assembled and primed white."
+    keywords: [Assembly, Primer]
+  - src: /projects/cat-kingdom-moulds/paper-flowers.webp
+    alt: "Colourful folded flowers in many colours spread on a tiled floor"
+    caption: "Flowers to surround the statue."
+    keywords: [Flowers, Decoration]
   - src: /projects/cat-kingdom-moulds/statue-concept.webp
     alt: "A concept image of a golden many-tailed cat statue on a pink lotus in a stone niche framed by a glowing arch of light, with purple figures at its base"
-    caption: "Next: a concept for a golden cat statue on a lotus, set in a stone niche under an arch of light."
+    caption: "The concept: a golden cat statue on a lotus, set in a stone niche under an arch of light."
     keywords: [Concept, Statue]
   - src: /projects/cat-kingdom-moulds/statue-sculpts.webp
     alt: "Digital sculpts of the cat statue: two colour-coded part maps, grey clay renders from the front, side and back, and normal-map renders"
@@ -127,9 +167,13 @@ inflatable dancing figures lit from inside, speakers hidden in a 3D-printed **sp
 the centre a mosaic and a surprise box. At its heart stands a **cat totem** with fanned-out tails,
 glowing at night.
 
-## Next: the cat statue
+## The cat statue
 
-The work continues with a **cat statue**: a golden, many-tailed cat sitting on a pink lotus, placed
-in a stone niche under an arch of light. It was sculpted digitally, studied from every side in clay
-and normal-map renders, and sketched with a moving arm for interaction. The design board is titled
-after *The Cat Returns* (*Neko no Ongaeshi*), the Studio Ghibli film with its own Cat Kingdom.
+The cat totem began as a concept: a golden, many-tailed cat sitting on a pink lotus under an arch of
+light. It was **sculpted digitally**, studied from every side in clay and normal-map renders, and
+sketched with a moving arm for interaction. The design board is titled after *The Cat Returns*
+(*Neko no Ongaeshi*), the Studio Ghibli film with its own Cat Kingdom.
+
+The statue was then split into parts in the slicer and **3D-printed**: head, body and every tail.
+The parts were painted, assembled, primed white and finished in **gold**, then set on its lotus in
+the camp and lit at night.

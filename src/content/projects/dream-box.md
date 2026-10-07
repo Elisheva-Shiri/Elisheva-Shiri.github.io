@@ -17,10 +17,62 @@ tags:
   - SolidWorks
   - Quiet space
 
-cover: /projects/dream-box/cover.webp
-coverAlt: "The Dream Box at night, a canopy of white fabric and a mattress with cushions, glowing purple and pink"
+cover: /projects/dream-box/night-lit-front.webp
+coverAlt: "The Dream Box at night, its open front framed by white curtains and an LED frame, a mattress with cloud cushions glowing purple inside"
 
 gallery:
+  - src: /projects/dream-box/night-lit-front.webp
+    alt: "The Dream Box at night, its open front framed by white curtains and a frame of LED lights, with a mattress and cloud cushions glowing purple inside"
+    caption: "The Dream Box at night: curtains, cloud cushions and a frame of light."
+    keywords: [Night, Installation]
+  - src: /projects/dream-box/day-front.webp
+    alt: "The Dream Box by day in a dry field: a patchwork of animal-print, sequinned and coloured fabric outside, white curtains and a mattress inside"
+    caption: "By day: a patchwork of animal prints, sequins and colour outside, white curtains inside."
+    keywords: [Day, Patchwork]
+  - src: /projects/dream-box/sign-side.webp
+    alt: "A side of the box covered in patchwork fabric, with a fluffy sign reading The Dream Box in Hebrew"
+    caption: "The sign reads The Dream Box (in Hebrew, Argaz HaChalomot)."
+    keywords: [Sign, Fabric]
+  - src: /projects/dream-box/dusk-lit-front.webp
+    alt: "The box at dusk with the LED frame lit, white curtains tied back and the mattress inside"
+    caption: "At dusk, as the lights come on."
+    keywords: [Dusk, LED]
+  - src: /projects/dream-box/dusk-lit-side.webp
+    alt: "The box from the side at dusk, glowing pink and blue through the curtains, with a fur panel and a sequinned heart"
+    caption: "From the side, a fur panel and a sequinned heart under the glow."
+    keywords: [Dusk, Patchwork]
+  - src: /projects/dream-box/lit-heart-side.webp
+    alt: "Close view of a side panel with a large sequinned heart on blue fabric, lit by pink and blue LEDs"
+    caption: "The heart panel, lit from the frame."
+    keywords: [Detail, Light]
+  - src: /projects/dream-box/side-fur.webp
+    alt: "The box by day from the corner, showing a faux-fur panel, a blue panel with a heart and zebra print"
+    caption: "Fur, zebra print and a heart: every side is different."
+    keywords: [Patchwork, Texture]
+  - src: /projects/dream-box/sign-field.webp
+    alt: "The box standing in a dry field under a blue sky, showing the side with the sign"
+    caption: "In the field at Euphoria."
+    keywords: [Site, Day]
+  - src: /projects/dream-box/back-field.webp
+    alt: "The back of the box in a dry field, covered in blue, fur and zebra fabric"
+    caption: "The back of the box."
+    keywords: [Site]
+  - src: /projects/dream-box/desert-open.webp
+    alt: "The box in the desert with its curtains open and the mattress inside, mountains in the distance"
+    caption: "Later, in the desert."
+    keywords: [Desert, Site]
+  - src: /projects/dream-box/desert-mirror.webp
+    alt: "The box from the side in the desert, with a large round mirror on the patchwork"
+    caption: "In the desert, with a round mirror added to its side."
+    keywords: [Desert, Mirror]
+  - src: /projects/dream-box/patchwork-panel.webp
+    alt: "A large patchwork panel laid on the workshop floor: zebra, giraffe, fur, sequins and a blue piece with a dark heart"
+    caption: "Making the patchwork: one panel laid out on the floor."
+    keywords: [Making, Fabric]
+  - src: /projects/dream-box/sewing-patchwork.webp
+    alt: "Hands pinning pieces of zebra, leopard, sequinned, pink and green fabric into a patchwork on the floor"
+    caption: "Pinning the pieces together."
+    keywords: [Making, Sewing]
   - src: /projects/dream-box/dream-box-night.webp
     alt: "The Dream Box at night, a canopy of white fabric over a mattress with cushions, glowing purple and pink"
     caption: "The Dream Box at night, a quiet corner glowing in purple and pink."
@@ -91,7 +143,7 @@ mattress and cushions, built-in shade, and a wall where you can write your dream
 
 The box is made of four strong, light **birch panels**, with a support of glued-laminated timber at
 every corner. The top is cut into a perforated pattern and covered with shade netting, so it gives
-shade but cannot be sat on. White Lycra and fabrics soften the inside, and **addressable LED strips**
+shade but cannot be sat on. White Lycra and curtains soften the inside, the outside is wrapped in a **patchwork** of animal prints, faux fur, sequins and colour, with a fluffy sign reading *The Dream Box*, and **addressable LED strips**
 run along the frame. They light up in a slow sequence with a soft sound, driven by a controller and
 a custom PCB.
 

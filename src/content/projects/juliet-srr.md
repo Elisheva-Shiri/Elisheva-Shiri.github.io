@@ -56,6 +56,10 @@ gallery:
     alt: "Two heat maps of hand movement for two setups"
     caption: "Overall movement was similar between the two setups."
     keywords: [Results, Movement]
+  - src: /projects/juliet-srr/poster-presentation.webp
+    alt: "The research poster on finger-pair cutaneous feedback in stiffness perception, with the coloured 3D-printed mechanism held in front of it"
+    caption: "Presenting the research poster, with the 3D-printed mechanism in hand."
+    keywords: [Poster, Conference]
   - src: /projects/juliet-srr/kinematics-research.gif
     alt: "Animation of whiteboard sketches of the parallel mechanism, frames and a Denavit–Hartenberg table"
     caption: "Working out the kinematics on the whiteboard, summer 2024."

@@ -21,6 +21,14 @@ gallery:
     alt: "A framed spiral of iridescent pieces glowing gold, lit by a bulb on a pole at dusk in the desert"
     caption: "Tatuei in the desert, November 2025."
     keywords: [Desert, Light]
+  - src: /projects/tatuei/spiral-layout.webp
+    alt: "Iridescent striped tiles arranged in curved rows forming a seven-armed spiral on a white board"
+    caption: "The spiral laid out: rows of iridescent tiles curving around the centre."
+    keywords: [Layout, Spiral]
+  - src: /projects/tatuei/parts-workshop.webp
+    alt: "Curved paper templates with rows of slots and striped iridescent pieces on a workshop table"
+    caption: "The parts in the workshop: slotted templates and striped iridescent pieces."
+    keywords: [Making, Parts]
   - src: /projects/tatuei/plan.webp
     alt: "A plan of the piece: a 1.5 m frame on two posts, 110 cm above ground and 40 cm deep, with a bulb on a separate pole"
     caption: "The plan. A 1.5 m frame on posts staked 40 cm into the ground, lit by a bulb on its own pole."
