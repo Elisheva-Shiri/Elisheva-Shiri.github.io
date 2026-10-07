@@ -43,31 +43,31 @@ gallery:
     keywords: [Sketch, Pattern]
   - src: /projects/cat-kingdom-moulds/felt-flowers-workshop.webp
     alt: A workshop table covered with colourful felt flowers, fabric and tools
-    caption: 'Making felt flowers, October 2025.'
+    caption: "Making felt flowers, October 2025."
     keywords: [Felt, Making]
   - src: /projects/cat-kingdom-moulds/fabric-rocks.webp
     alt: White fabric-covered rock forms stacked on a wooden pallet
-    caption: 'Soft rock forms covered in white fabric.'
+    caption: "Soft rock forms covered in white fabric."
     keywords: [Fabric, Forms]
   - src: /projects/cat-kingdom-moulds/rocks-and-flowers.webp
     alt: White fabric rocks topped with colourful felt flowers on a table outdoors
-    caption: 'The rocks topped with felt flowers.'
+    caption: "The rocks topped with felt flowers."
     keywords: [Assembly, Colour]
   - src: /projects/cat-kingdom-moulds/radial-lamp-frame.webp
     alt: A circular frame of radiating rods in a cardboard box seen from above
-    caption: 'The frame of a radial light sculpture.'
+    caption: "The frame of a radial light sculpture."
     keywords: [Light sculpture, Frame]
   - src: /projects/cat-kingdom-moulds/light-pattern.webp
     alt: A radiating pattern of green and white light cast on a furry surface
-    caption: 'The pattern the sculpture casts when it is lit.'
+    caption: "The pattern the sculpture casts when it is lit."
     keywords: [Light, Pattern]
   - src: /projects/cat-kingdom-moulds/lamp-electronics.webp
     alt: Small black lamp housings and wiring spread on a table
-    caption: 'The lamp electronics before assembly.'
+    caption: "The lamp electronics before assembly."
     keywords: [Electronics]
   - src: /projects/cat-kingdom-moulds/desert-site.webp
     alt: Bags and crates on the ground in a desert landscape at dusk
-    caption: 'Arriving at the desert site, November 2025.'
+    caption: "Arriving at the desert site, November 2025."
     keywords: [Site, Desert]
 ---
 

@@ -23,43 +23,43 @@ coverAlt: Research board with images of gloves, a prosthetic thumb and illustrat
 gallery:
   - src: /projects/juliet-srr/mechanism-motion.gif
     alt: Animation of the yellow 3D-printed parallel mechanism with red legs, its centre platform moving between positions
-    caption: 'The finger mechanism in motion, January 2026. As the red legs move, the yellow fingertip platform shifts and tilts.'
+    caption: "The finger mechanism in motion, January 2026. As the red legs move, the yellow fingertip platform shifts and tilts."
     keywords: [Mechanism, Motion]
   - src: /projects/juliet-srr/glove-parts.webp
-    alt: White 3D-printed glove parts laid out on a workbench: a curved hand plate, slotted straps, rows of finger segments and two small actuators
-    caption: 'The glove parts, December 2025: a hand plate, straps, rows of finger segments and two actuators.'
+    alt: "White 3D-printed glove parts laid out on a workbench: a curved hand plate, slotted straps, rows of finger segments and two small actuators"
+    caption: "The glove parts, December 2025: a hand plate, straps, rows of finger segments and two actuators."
     keywords: [Glove, 3D printing]
   - src: /projects/juliet-srr/glove-parts-2.webp
     alt: The white glove parts from above, with the finger segments and an actuator module
-    caption: 'The parts from above, before assembly.'
+    caption: "The parts from above, before assembly."
     keywords: [Parts, Assembly]
   - src: /projects/juliet-srr/finger-prototype.webp
     alt: A fingertip wearing a small 3D-printed parallel mechanism in red, yellow and green
-    caption: 'The finger mechanism on a fingertip, a small parallel robot with three legs, October 2024.'
+    caption: "The finger mechanism on a fingertip, a small parallel robot with three legs, October 2024."
     keywords: [Prototype, Wearable]
   - src: /projects/juliet-srr/finger-prototype-side.webp
     alt: The coloured finger mechanism seen from the side
-    caption: 'From the side, the legs hinge to move the fingertip platform.'
+    caption: "From the side, the legs hinge to move the fingertip platform."
     keywords: [Mechanism, Joints]
   - src: /projects/juliet-srr/printed-mechanism.webp
     alt: A grey 3D-printed parallel mechanism with three jointed legs on a base
-    caption: 'The first printed mechanism, three jointed legs between a base and a platform.'
+    caption: "The first printed mechanism, three jointed legs between a base and a platform."
     keywords: [3D printing, Mechanism]
   - src: /projects/juliet-srr/printed-linkage.webp
     alt: Grey printed parts laid out, a three-armed linkage and a curved base
-    caption: 'The parts before assembly, the three-legged linkage and the base.'
+    caption: "The parts before assembly, the three-legged linkage and the base."
     keywords: [Parts]
   - src: /projects/juliet-srr/printed-parts.webp
     alt: The linkage parts arranged above the base
-    caption: 'Laying out the linkage.'
+    caption: "Laying out the linkage."
     keywords: [Assembly]
   - src: /projects/juliet-srr/whiteboard-kinematics.webp
     alt: A whiteboard of kinematics notes, frames, vectors, an inverse kinematics equation and a Denavit–Hartenberg table
-    caption: 'Working out the kinematics on the whiteboard: the working space, the forward and inverse kinematics, and a Denavit–Hartenberg table for each leg.'
+    caption: "Working out the kinematics on the whiteboard: the working space, the forward and inverse kinematics, and a Denavit–Hartenberg table for each leg."
     keywords: [Kinematics, Inverse kinematics]
   - src: /projects/juliet-srr/whiteboard-workspace.webp
     alt: The whiteboard of kinematics notes in the studio
-    caption: 'The kinematics board in the studio.'
+    caption: "The kinematics board in the studio."
     keywords: [Process]
   - src: /projects/juliet-srr/board-question.webp
     alt: 'Research board asking: How can we show the deformations that technology will create in us in the future? With images of gloves, a prosthetic extra thumb and human evolution'
