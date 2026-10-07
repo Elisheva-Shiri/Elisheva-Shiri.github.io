@@ -80,6 +80,38 @@ gallery:
     alt: Moving yellow slide faders while Mixxx responds on the screen
     caption: The faders driving Mixxx live.
     keywords: [Faders, Mixxx]
+  - src: /projects/adaptive-midi-controller/cardboard-mockups.webp
+    alt: Cardboard boxes of different sizes with big red, green, yellow and white arcade buttons on a table
+    caption: "Cardboard mock-ups, trying out different heights, angles and button layouts."
+    keywords: [Mock-ups, Ergonomics]
+  - src: /projects/adaptive-midi-controller/layout-test.webp
+    alt: Arcade buttons and faders laid out on a blue sheet from above
+    caption: "Testing the layout of buttons and faders."
+    keywords: [Layout, Testing]
+  - src: /projects/adaptive-midi-controller/two-button-box.webp
+    alt: A small white box with a blue and a red arcade button
+    caption: "A two-button test box."
+    keywords: [Prototype]
+  - src: /projects/adaptive-midi-controller/enclosure-cad.webp
+    alt: A CAD model of an angled box with finger-joint edges
+    caption: "The enclosure designed in CAD, with finger joints for laser cutting."
+    keywords: [CAD, Laser cutting]
+  - src: /projects/adaptive-midi-controller/plywood-box.webp
+    alt: The laser-cut plywood box assembled, with holes for buttons
+    caption: "The first laser-cut plywood box."
+    keywords: [Fabrication, Plywood]
+  - src: /projects/adaptive-midi-controller/plywood-front.webp
+    alt: The plywood box from the front, with holes for the controls
+    caption: "The plywood box from the front."
+    keywords: [Fabrication]
+  - src: /projects/adaptive-midi-controller/black-box-buttons.webp
+    alt: The black box with yellow, green and blue arcade buttons fitted
+    caption: "The final black box with the buttons fitted."
+    keywords: [Assembly]
+  - src: /projects/adaptive-midi-controller/black-box-side.webp
+    alt: The black controller box seen from the side
+    caption: "From the side, the angle that brings every button within reach."
+    keywords: [Ergonomics]
   - src: /projects/adaptive-midi-controller/fader-board.webp
     alt: A board with three slide potentiometers and two joystick modules mounted on it
     caption: The control board, with three slide potentiometers and two joysticks.

@@ -45,6 +45,10 @@ gallery:
     alt: Arcade buttons mounted inside the open box, a small control unit beside it, cables in fabric sleeves
     caption: The buttons mounted, with the cables sleeved in fabric.
     keywords: [Buttons, Wiring]
+  - src: /projects/monster-theater-button-box/soldering-desk.webp
+    alt: A desk with a soldering station, the blue box with yellow buttons and a laptop
+    caption: "At the soldering desk, wiring the box to the laptop."
+    keywords: [Soldering, Build]
   - src: /projects/monster-theater-button-box/cable.webp
     alt: A long multi-wire cable wrapped in black tape coming out of a printed part
     caption: Preparing the long cable.

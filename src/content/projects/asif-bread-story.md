@@ -20,6 +20,16 @@ cover: /projects/asif-bread-story/cover.webp
 coverAlt: A vertical strip of photographs about bread hanging in an exhibition space at night
 
 gallery:
+  - src: /projects/asif-bread-story/pr-story-1.webp
+    alt: Asif's Instagram story showing a hand turning the black millstone, with a Hebrew title
+    caption: 'Asif shared the project on Instagram. The title reads “The Story of Wheat: a display solution for the narrow space of the Asif gallery”.'
+    keywords: [Press, Instagram]
+    credit: Instagram story by Asif (@asif.tlv)
+  - src: /projects/asif-bread-story/pr-story-2.webp
+    alt: A second Asif Instagram story with an illustration of a bowl and orange slices on green
+    caption: "A second story from the same campaign."
+    keywords: [Press, Instagram]
+    credit: Instagram story by Asif (@asif.tlv)
   - src: /projects/asif-bread-story/prototype-grinding.mp4
     poster: /projects/asif-bread-story/prototype-grinding-poster.webp
     alt: A hand turning a 3D-printed millstone on a table, with bowls of grain and a strip of wheat photos behind
@@ -59,6 +69,18 @@ gallery:
     alt: The head of a laser cutter moving over a wooden sheet
     caption: Laser-cutting parts.
     keywords: [Laser cutting, Fabrication]
+  - src: /projects/asif-bread-story/screen-station.webp
+    alt: A yellow stand holding a tablet screen on a table in a workshop
+    caption: "A screen station for the story, an early idea."
+    keywords: [Prototype, Station]
+  - src: /projects/asif-bread-story/rig-in-space.webp
+    alt: The tall rig with the motor and strip set up in the gallery space, with a screen and a red plinth
+    caption: "Setting up the rig in the space."
+    keywords: [Installation, Setup]
+  - src: /projects/asif-bread-story/wheat-millstone.webp
+    alt: A grey printed millstone hanging under dried wheat stalks
+    caption: "The millstone among the wheat."
+    keywords: [Detail, Millstone]
   - src: /projects/asif-bread-story/gear-slicing.webp
     alt: A large gear model in FlashPrint slicing software
     caption: Slicing a gear for the mechanism.

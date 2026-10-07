@@ -33,6 +33,10 @@ gallery:
     alt: Close-up of the pink cast pieces, each with a fairy light in its hollow centre
     caption: Each light sits in the hollow centre of a piece.
     keywords: [Light, Detail]
+  - src: /projects/cat-kingdom-moulds/pattern-study.webp
+    alt: A sketchbook page with a repeating pattern of blue geometric shapes and a purple twisted form
+    caption: "A pattern study in the sketchbook, April 2021."
+    keywords: [Sketch, Pattern]
 ---
 
 ## The moulds

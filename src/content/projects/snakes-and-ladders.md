@@ -49,6 +49,18 @@ gallery:
     alt: A sensor held over a card with black squares, with readings shown on a laptop
     caption: Testing a sensor over black markers, with the readings on the laptop.
     keywords: [Sensor, Testing]
+  - src: /projects/snakes-and-ladders/finished-tower.webp
+    alt: The finished two-tier pink tower with a yellow column, an orange ladder and coloured pieces, wired to cables
+    caption: "The finished tower, January 2022, with a ladder between the tiers and pieces in the holes."
+    keywords: [Finished, Tower]
+  - src: /projects/snakes-and-ladders/finished-tower-2.webp
+    alt: The finished tower from the front, with the orange ladder and a crown on top
+    caption: "The tower from the front."
+    keywords: [Finished]
+  - src: /projects/snakes-and-ladders/tower-on-plinth.webp
+    alt: The three-tier tower on a white plinth
+    caption: "On display, three tiers on a plinth."
+    keywords: [Display]
   - src: /projects/snakes-and-ladders/cardboard-prototype.webp
     alt: Three cardboard game boards stacked at different heights, joined by a cardboard ladder, with a foam die
     caption: The first prototype. Three boards made from boxes, connected by a cardboard ladder, with a soft foam die.
@@ -116,6 +128,50 @@ gallery:
     alt: A pink printed tier held in a flexible clamp, with wires through it, at a soldering station
     caption: Soldering the wiring of a tier.
     keywords: [Soldering, Electronics]
+  - src: /projects/snakes-and-ladders/foam-tiers.webp
+    alt: Two pink foam tiers with drawn snakes and ladders on a table
+    caption: "Foam tiers with the snakes and ladders drawn on."
+    keywords: [Prototype, Foam]
+  - src: /projects/snakes-and-ladders/tier-measure.webp
+    alt: A pink tier with a blue printed hub, measured with a ruler
+    caption: "Measuring a tier and its printed hub."
+    keywords: [Measuring, Fit]
+  - src: /projects/snakes-and-ladders/pink-tier.webp
+    alt: A round pink printed tier
+    caption: "A printed tier."
+    keywords: [3D printing]
+  - src: /projects/snakes-and-ladders/tier-holes.webp
+    alt: A pink tier with rings of holes for the pieces
+    caption: "Rings of holes for the playing pieces."
+    keywords: [Board, Detail]
+  - src: /projects/snakes-and-ladders/printing-snake.webp
+    alt: An orange snake printing on the 3D printer bed
+    caption: "Printing a snake."
+    keywords: [3D printing, Snakes]
+  - src: /projects/snakes-and-ladders/printed-snakes.webp
+    alt: A row of red printed snakes standing on the printer
+    caption: "A batch of printed snakes."
+    keywords: [3D printing]
+  - src: /projects/snakes-and-ladders/tier-gear-centre.webp
+    alt: A pink tier with a yellow gear in its centre
+    caption: "The gear at the centre of a tier."
+    keywords: [Gears, Mechanism]
+  - src: /projects/snakes-and-ladders/sensor-ring.webp
+    alt: A white ring with black markers next to a smaller printed hub with a gear
+    caption: "The ring of markers the sensor reads to know where each tier is."
+    keywords: [Sensor, Position]
+  - src: /projects/snakes-and-ladders/contacts-ring.webp
+    alt: A pink disc with wires laid out in a star around the centre, beside a yellow hub
+    caption: "Wiring the contacts under a tier."
+    keywords: [Wiring, Contacts]
+  - src: /projects/snakes-and-ladders/wired-base.webp
+    alt: The yellow base with wires running down to a Raspberry Pi
+    caption: "The base wired to the Raspberry Pi."
+    keywords: [Raspberry Pi, Wiring]
+  - src: /projects/snakes-and-ladders/raspberry-pi-wiring.webp
+    alt: A Raspberry Pi and breadboards with many wires on a desk
+    caption: "The Raspberry Pi and breadboards that run the game."
+    keywords: [Electronics]
   - src: /projects/snakes-and-ladders/tower.webp
     alt: A 3D-printed tower of three pink game boards on yellow columns with blue bearing rings
     caption: The printed tower. Three boards with holes for the pieces, on columns, with bearings in between.
