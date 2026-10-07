@@ -46,10 +46,6 @@ gallery:
     alt: "A low view along the rays of tubes as they switch between green, white, red and gold"
     caption: "A low view along the rays as the colours change."
     keywords: [Sequence, Colour]
-  - src: /projects/galactic-forest/v2-dawn-centre.webp
-    alt: "At dawn, the tubes lying in rays around the central box on the desert ground"
-    caption: "The same layout at dawn."
-    keywords: [Daylight, Layout]
   - src: /projects/galactic-forest/v2-dawn-wide.webp
     alt: "A wide view of the installation in the desert at sunrise"
     caption: "Sunrise over the installation."
