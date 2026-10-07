@@ -6,7 +6,7 @@ summary: >
 categories:
   - Electronics
 date: '2022-05'
-dateEnd: '2022-09'
+dateEnd: '2023-03'
 tags:
   - MIDI
   - 3D printing
@@ -42,6 +42,10 @@ gallery:
     alt: A 3D printer printing a new mint-green plate, with an earlier plate on the desk beside it
     caption: Printing a new version of the plate, September 2022.
     keywords: [3D printing, Iteration]
+  - src: /projects/ayal-controller/wiring-2023.webp
+    alt: The underside of the clear oval plate with dozens of red, blue and yellow wires soldered to a long microcontroller board
+    caption: 'Rewiring the controller, March 2023: dozens of wires from every button, knob and fader to the board.'
+    keywords: [Wiring, Soldering]
 ---
 
 ## The controller
