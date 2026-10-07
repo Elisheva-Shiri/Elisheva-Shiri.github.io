@@ -64,6 +64,18 @@ gallery:
     alt: "A 3D model of a seated cat with many fanned-out tails turning on screen"
     caption: "The 3D model of the cat statue, with fanned-out tails."
     keywords: [3D model, Sculpture]
+  - src: /projects/cat-kingdom-moulds/statue-concept.webp
+    alt: "A concept image of a golden many-tailed cat statue on a pink lotus in a stone niche framed by a glowing arch of light, with purple figures at its base"
+    caption: "Next: a concept for a golden cat statue on a lotus, set in a stone niche under an arch of light."
+    keywords: [Concept, Statue]
+  - src: /projects/cat-kingdom-moulds/statue-sculpts.webp
+    alt: "Digital sculpts of the cat statue: two colour-coded part maps, grey clay renders from the front, side and back, and normal-map renders"
+    caption: "Sculpting the statue: colour-coded parts, clay renders from every side, and normal maps."
+    keywords: [3D sculpting, Model]
+  - src: /projects/cat-kingdom-moulds/interaction-sketch.webp
+    alt: "A hand sketch of a figure beside the statue's raised arm, with arrows showing the arm swinging"
+    caption: "An interaction sketch: arrows show the statue's arm swinging as a person approaches."
+    keywords: [Sketch, Interaction]
   - src: /projects/cat-kingdom-moulds/speaker-box-parts.webp
     alt: "Renders of the four 3D-printed parts of the speaker box"
     caption: "The speaker box, designed in SolidWorks and printed in four parts."
@@ -114,3 +126,10 @@ The installation covers **15 × 15 metres**: curving paths of shaggy rug edged w
 inflatable dancing figures lit from inside, speakers hidden in a 3D-printed **speaker box**, and in
 the centre a mosaic and a surprise box. At its heart stands a **cat totem** with fanned-out tails,
 glowing at night.
+
+## Next: the cat statue
+
+The work continues with a **cat statue**: a golden, many-tailed cat sitting on a pink lotus, placed
+in a stone niche under an arch of light. It was sculpted digitally, studied from every side in clay
+and normal-map renders, and sketched with a moving arm for interaction. The design board is titled
+after *The Cat Returns* (*Neko no Ongaeshi*), the Studio Ghibli film with its own Cat Kingdom.

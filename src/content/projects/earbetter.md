@@ -20,6 +20,12 @@ tags:
   - 3D printing
   - Brown–BGU
 
+collaborators:
+  - Itamar Avitan
+  - Alyssa Ignaco
+  - Yuval Partok
+  - Lewis Núñez Severino
+
 links:
   - label: Try the live demo
     url: https://elisheva-shiri.github.io/projects/earbetter/demo/
@@ -33,6 +39,47 @@ gallery:
     alt: Screen recording of the EarBetter app, from sign-in and avatar to the check-in, sound tuning and progress pages
     caption: The companion app. Sign in, choose your buddy, check in, tune your sound and see your calm progress.
     keywords: [App walkthrough, PWA]
+  - src: /projects/earbetter/app-tablet-demo.mp4
+    poster: /projects/earbetter/app-tablet-demo-poster.webp
+    alt: "The EarBetter app on a tablet: sign-in, choosing a buddy, first check-in, the home screen, and Tune your way with a slider for each street sound"
+    caption: "The app on a tablet. In Tune your way, each street sound (voices, cars, bikes, footsteps, traffic lights, scooters, roadworks) gets its own slider."
+    keywords: [App, Sound tuning]
+  - src: /projects/earbetter/deck-solution.webp
+    alt: "Pitch slide Our Solution: an exploded view of a silicone ear cover with GSR sensor, EEG module, biosignal module, antenna, battery, EEG electrodes and pulse sensor"
+    caption: "The solution: a silicone cover for the earbuds you already have, with skin-conductance, pulse and EEG sensing, a biosignal module, antenna and battery."
+    keywords: [Hardware, Exploded view]
+  - src: /projects/earbetter/deck-app.webp
+    alt: "Pitch slide with the EarBetter app on a phone and the words Helps remain present, connected, and in control"
+    caption: "Helps you stay present, connected and in control."
+    keywords: [App, Pitch]
+  - src: /projects/earbetter/deck-survey.webp
+    alt: "Pitch slide with two pie charts: which noises cause the most anxiety, and whether people use noise-cancelling headphones to ease anxiety (56.7% yes)"
+    caption: "Survey of 40 headphone users. Chewing sounds and sudden sirens top the list (29% each), and 56.7% use noise cancelling to ease anxiety."
+    keywords: [Survey, Evidence]
+  - src: /projects/earbetter/deck-interviews.webp
+    alt: "Pitch slide summarising interviews with people aged 10, 19, 27 and 35 about noise, anxiety and treatment"
+    caption: "Interviews with people aged 10 to 35: crowds, sensitivity at the end of the day, and how hard it is to find and pay for anxiety treatment."
+    keywords: [Interviews, Evidence]
+  - src: /projects/earbetter/deck-competition.webp
+    alt: "Pitch slide comparing EarBetter with Loop, Sony, Apple, NextSense and Neurable on noise cancellation, personalised filtering, biosignal sensing, anxiety relief and compatibility"
+    caption: "Use the audio device you already love. EarBetter is the only one in the comparison that combines sensing, anxiety relief and works with all earphones."
+    keywords: [Competition, Market]
+  - src: /projects/earbetter/deck-market.webp
+    alt: "Pitch slide on market growth with TAM, SAM and SOM and a chart of noise-cancelling headphone and mental-health app revenue to 2030"
+    caption: "The market: about $7.5B (TAM), $2.9B (SAM) and $704M (SOM), at an estimated $299 a year."
+    keywords: [Market, Business]
+  - src: /projects/earbetter/deck-path.webp
+    alt: "Pitch slide The Path: testing phases from proof of concept to clinical application, and funding from grants to campus contracts to insurers"
+    caption: "The path: from a proof of concept to clinical testing, and from grants to campus contracts to insurers."
+    keywords: [Roadmap, Business]
+  - src: /projects/earbetter/study-protocol.webp
+    alt: "A study plan: a crossover trial flowchart with 15 participants, baseline and visit questionnaires, GSR and heart-rate-variability thresholds, and expected results"
+    caption: "The planned study: a randomised crossover of EarBetter against noise-cancelling headphones, with questionnaires and GSR and HRV stress thresholds."
+    keywords: [Study design, Biosignals]
+  - src: /projects/earbetter/deck-demonstration.webp
+    alt: "Pitch slide Demonstration, with a pair of headphones on a stand"
+    caption: "The demonstration slide of the pitch."
+    keywords: [Pitch]
   - src: /projects/earbetter/sonav-concept.mp4
     poster: /projects/earbetter/sonav-concept-poster.webp
     alt: Concept film of a man in a loud stadium whose earbuds sense his stress and soften the crowd noise
@@ -150,6 +197,22 @@ including the voice you want to hear and the sounds that keep you safe.
   try the demo live** (button above). It runs entirely in your browser with simulated data.
 
 _EarBetter is a wellness prototype, not a medical device._
+
+## Testing the idea
+
+The plan is a **randomised crossover study**: 15 participants, aged 14–21 with diagnosed anxiety,
+try both EarBetter and traditional noise-cancelling headphones in a loud setting (a version of the
+Trier Social Stress Test), then swap. The primary outcome is a drop in anxiety symptoms; the
+secondary one is engagement with treatment. Stress is read from **skin conductance** (rises over a
+personal calm baseline) and **heart rate variability** (RMSSD falls under stress).
+
+## The pitch
+
+EarBetter was pitched as a startup: a silicone cover that turns **the earbuds you already own** into
+a biosensing device, at an estimated $299 a year, with a path from grants and university wellness
+budgets to insurers and student health plans. I was the team's **CPO**, working with Itamar Avitan
+(CEO), Alyssa Ignaco (CTO), Yuval Partok (CDO) and Lewis Núñez Severino (CSO), with Stephanie Foster,
+MD, PhD, as clinical consultant.
 
 ## Where it started: Sorona Wav
 
