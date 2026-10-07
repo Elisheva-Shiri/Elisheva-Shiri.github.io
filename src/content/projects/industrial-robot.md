@@ -34,6 +34,14 @@ gallery:
     alt: The URSim simulator on a screen, showing the program tree and a 3D view of the arm moving through waypoints
     caption: The program in the URSim simulator, with the program tree and the arm moving through its waypoints.
     keywords: [URSim, Simulation]
+  - src: /projects/industrial-robot/ursim-waypoints.webp
+    alt: The URSim screen with a robot program tree of waypoints and the 3D arm
+    caption: 'The program tree, a loop of MoveL and MoveP steps through named waypoints.'
+    keywords: [URSim, Waypoints]
+  - src: /projects/industrial-robot/ursim-program-tree.webp
+    alt: The URSim program on a screen, showing the waypoint list
+    caption: 'The waypoint list in URSim.'
+    keywords: [URSim, Program]
 ---
 
 ## The task

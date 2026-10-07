@@ -24,6 +24,26 @@ cover: /projects/sorona/cover.webp
 coverAlt: Diagram of the deep mask pipeline, from audio wave to spectrogram, CNN, mask and source estimate
 
 gallery:
+  - src: /projects/sorona/presentation-title.webp
+    alt: Presenting on stage in front of a big screen showing the Sorona Wav title over a sea landscape
+    caption: 'Presenting Sorona Wav at the final-project day, June 2023.'
+    keywords: [Presentation, Final project]
+  - src: /projects/sorona/presentation-architecture.webp
+    alt: A slide titled High-Level Architecture Dataset, showing stems mixed into a spectrogram and separated by a model
+    caption: 'Explaining the architecture: stems are mixed, turned into a spectrogram, and separated again by the model.'
+    keywords: [Architecture, Presentation]
+  - src: /projects/sorona/presentation-solutions.webp
+    alt: A slide on existing solutions and challenges
+    caption: 'Existing solutions and their challenges.'
+    keywords: [Presentation, Research]
+  - src: /projects/sorona/presentation-spectrogram.webp
+    alt: A slide of colourful spectrograms on the big screen
+    caption: 'Spectrograms on the big screen.'
+    keywords: [Spectrogram, Results]
+  - src: /projects/sorona/video-editing.webp
+    alt: A video editing timeline with the project video on screen
+    caption: 'Editing the project video.'
+    keywords: [Video, Editing]
   - src: /projects/sorona/deep-mask-pipeline.webp
     alt: Diagram of the pipeline, from audio wave to spectrogram, CNN, feature maps, mask and source estimate
     caption: The deep mask. A CNN reads the spectrogram and learns a mask that keeps only one source.
