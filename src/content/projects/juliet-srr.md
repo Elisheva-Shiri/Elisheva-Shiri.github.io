@@ -1,9 +1,11 @@
 ---
-title: 'JULIET-SRR: The Glove'
+title: 'JULIET-SRR: Skin-Stretch Feedback for the Fingertip'
 summary: >
-  The design-research stage of JULIET-SRR, a haptic project. A rhizomatic map exploring
-  gloves, the hand and how technology reshapes our bodies, which led to the concept of a glove
-  that shows the deformations to come.
+  A wearable fingertip interface for multidirectional skin-stretch feedback. A five-gram,
+  3D-printed parallel mechanism on the fingertip is driven by off-finger actuators through Bowden
+  cables, for teleoperation and virtual interaction. It grew out of a design-research map of how
+  technology reshapes the hand.
+featured: true
 categories:
   - Haptics
 date: '2024-11'
@@ -21,6 +23,43 @@ cover: /projects/juliet-srr/cover.webp
 coverAlt: Research board with images of gloves, a prosthetic thumb and illustrations of human evolution
 
 gallery:
+  - src: /projects/juliet-srr/device-video.mp4
+    poster: /projects/juliet-srr/device-video-poster.webp
+    alt: "The JULIET-SRR project video: the green fingertip module on a finger, the Bowden cables, 3D printing, the haptic rendering diagram and the workspace"
+    caption: "The project video. A wearable fingertip interface for multidirectional skin-stretch feedback."
+    keywords: [Video, Device]
+  - src: /projects/juliet-srr/video-module-legs.webp
+    alt: "Diagram of the fingertip module, a frame with three SRR legs and a moving platform with a dome-shaped tactor"
+    caption: "The fingertip module: three SRR legs, a moving platform with a dome-shaped tactor, and a frame."
+    keywords: [Mechanism, Tactor]
+  - src: /projects/juliet-srr/video-printing.webp
+    alt: "Blue mechanism parts printing on a 3D printer bed"
+    caption: "Printed in PLA+ on an FDM printer without any support, for straightforward fabrication and assembly."
+    keywords: [Fabrication, 3D printing]
+  - src: /projects/juliet-srr/video-workspace.webp
+    alt: "The parallel mechanism diagram next to a plot of its measured planar workspace"
+    caption: "The measured planar workspace, 8.3 × 8.9 mm."
+    keywords: [Workspace, Kinematics]
+  - src: /projects/juliet-srr/video-study-accuracy.webp
+    alt: "The stiffness-discrimination task on screen, asking which of two squares is stiffer"
+    caption: "A two-alternative forced-choice task: which object is stiffer? Participants achieved 81% discrimination accuracy."
+    keywords: [User study, Results]
+  - src: /projects/juliet-srr/video-success-curves.webp
+    alt: "Success-rate curves for the index, middle, ring and pinky fingers across stiffness levels"
+    caption: "Across all four fingers, success was highest at gains well below the standard, dropped near it and recovered at higher gains."
+    keywords: [Results, Fingers]
+  - src: /projects/juliet-srr/video-pse-plots.webp
+    alt: "Psychometric curves for each finger with the point of subjective equality marked"
+    caption: "The pooled point of subjective equality was 8.41 mm/m against an 8.5 mm/m standard, with no bias between fingers or setups."
+    keywords: [Psychophysics, PSE]
+  - src: /projects/juliet-srr/video-movement-heatmap.webp
+    alt: "Two heat maps of hand movement for two setups"
+    caption: "Overall movement was similar between the two setups."
+    keywords: [Results, Movement]
+  - src: /projects/juliet-srr/kinematics-research.gif
+    alt: "Animation of whiteboard sketches of the parallel mechanism, frames and a Denavit–Hartenberg table"
+    caption: "Working out the kinematics on the whiteboard, summer 2024."
+    keywords: [Kinematics, Process]
   - src: /projects/juliet-srr/mechanism-motion.gif
     alt: Animation of the yellow 3D-printed parallel mechanism with red legs, its centre platform moving between positions
     caption: "The finger mechanism in motion, January 2026. As the red legs move, the yellow fingertip platform shifts and tilts."
@@ -97,18 +136,45 @@ gallery:
 _JULIET-SRR is a larger haptic project. This page shows one part of it: the design research
 behind the glove._
 
-## The question
+## The device
+
+**JULIET-SRR** is a wearable fingertip interface that delivers **multidirectional skin-stretch
+feedback**. The part on the finger is a **five-gram module**. The actuators stay off the finger,
+and their motion reaches the fingertip through **Bowden cables**, so the hand keeps its natural
+movement during teleoperation and virtual interaction.
+
+- **Mechanism.** The fingertip module is a **three-leg SRR parallel mechanism** that moves a
+  dome-shaped tactor across the fingertip, in a measured **8.3 × 8.9 mm** planar workspace. One
+  module size fits every finger.
+- **Fabrication.** It is FDM-printed in PLA+ without supports, designed for straightforward
+  fabrication and easy assembly, and documented in a step-by-step guide.
+- **Haptic rendering.** A camera tracks the fingertip in real time. When the finger moves into a
+  virtual object, Hooke's law turns the displacement into an opposing force, the software computes
+  the inverse kinematics and motor commands, and the device turns them into skin stretch.
+
+## The study
+
+We evaluated JULIET-SRR in a **two-alternative forced-choice stiffness-discrimination study**: 43
+participants, four non-thumb fingers and eight feedback levels. Participants reached **81%**
+accuracy, and the pooled point of subjective equality was **8.41 mm/m** against an 8.5 mm/m
+standard, with no bias between fingers or setups.
+
+## Where it began: the research
+
+The project started as design research into how technology reshapes the hand.
+
+### The question
 
 How can we show the deformations that technology will create in us in the future?
 
-## Method: a rhizomatic map
+### Method: a rhizomatic map
 
 Instead of a linear process, the research grew as a **rhizome**, a non-hierarchical web where every
 idea can connect to any other. Starting from gloves and glove-making, it branched into the anatomy
 of the hand, the evolution of the primate hand, and the ways our bodies have changed alongside
 the tools we use.
 
-## The body keeps changing
+### The body keeps changing
 
 The map traced how human bodies have adapted across eras:
 
@@ -126,7 +192,7 @@ Today our hands are shaped by screens. Typing on a touchscreen relies mostly on 
 finger. Scrolling a smartphone means swiping up and down with the thumb. Gesture recognition uses
 the whole hand.
 
-## The role of the fingers
+### The role of the fingers
 
 Each finger has its own job. The **thumb** opposes the other fingers and makes precise tasks
 possible. The **index finger** adds precision and secondary strength. The **middle finger**, the
@@ -140,7 +206,7 @@ revolute joints (S-R-R), connect a base to a fingertip platform. I worked out it
 its forward and **inverse kinematics**, with a Denavit–Hartenberg table for each leg, and wrote code
 that calculates the joint angles needed to reach a desired fingertip position.
 
-## The concept
+### The concept
 
 **A glove that shows the typical deformation**, built with 3D-printed aids. It imagines the hand
 that technology is shaping: longer, more flexible fingers for typing and touch devices, and
