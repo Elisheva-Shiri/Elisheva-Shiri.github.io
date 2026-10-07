@@ -2,23 +2,35 @@
 title: Industrial Robot Pick and Place
 summary: >
   Programming a Universal Robots collaborative arm with an OnRobot gripper to pick blocks from a
-  conveyor and place them in order. The program was built and tested in the URSim simulator before
-  running on the real robot.
+  conveyor and place them in order, first in the URSim simulator, then on the real robot. Later,
+  muscle signals (EMG) from the arm were added, so each hand movement triggers a programmed robot
+  movement.
 categories:
   - Electronics
 date: '2023-05'
-dateEnd: '2023-06'
+dateEnd: '2025-03'
 tags:
   - Universal Robots
   - URSim
   - Robotics
   - Pick and place
   - Automation
+  - EMG
+  - MyoWare
 
 cover: /projects/industrial-robot/cover.webp
 coverAlt: A Universal Robots arm with an OnRobot gripper above a conveyor belt and three white blocks
 
 gallery:
+  - src: /projects/industrial-robot/emg-gestures.mp4
+    poster: /projects/industrial-robot/emg-gestures-poster.webp
+    alt: A hand with EMG electrodes on it making different gestures while a plotter on the laptop shows muscle signal peaks
+    caption: 'Reading muscle signals with EMG electrodes. Each hand movement makes a distinct pattern of peaks, which is mapped to a robot movement.'
+    keywords: [EMG, Gestures]
+  - src: /projects/industrial-robot/myoware-sensor.webp
+    alt: A red triangular MyoWare muscle sensor board held in a hand, with its cables
+    caption: 'The MyoWare muscle sensor that reads the EMG signal.'
+    keywords: [Sensor, Hardware]
   - src: /projects/industrial-robot/pick-and-place.mp4
     poster: /projects/industrial-robot/pick-and-place-poster.webp
     alt: The robot arm picking white blocks from a conveyor belt and placing them on a tray
@@ -55,3 +67,10 @@ The program was written and tested in **URSim**, Universal Robots' simulator, wh
 virtual machine. In the simulator the arm moves through the same waypoints, gripper actions and
 conveyor steps, so the motion could be checked safely before running it on the real robot in the
 lab.
+
+## Controlling the robot with muscles
+
+In a later stage (2025), I added **EMG** control. A **MyoWare** muscle sensor with electrodes on
+the arm reads the electrical activity of the muscles. Each hand movement produces its own pattern
+of signal peaks, and each one is **pre-programmed to a robot movement**, so the arm can be driven
+by moving your hand.
