@@ -18,6 +18,10 @@ gallery:
     alt: An illustration of a bowl of red and orange chilli peppers on a cream background
     caption: A first image for the emoji.
     keywords: [Emoji, Sketch]
+  - src: /projects/emoji-suggestion/chili-event-poster.webp
+    alt: A colourful event poster for Chili at Chili, a hot pepper contest
+    caption: 'The Chili @ Chili event, December 2023.'
+    keywords: [Event, Poster]
 ---
 
 Work in progress. More to come.

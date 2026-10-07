@@ -44,6 +44,36 @@ gallery:
     alt: The xLights sequencer, with the forest preview, colour and effect settings, an audio waveform and timelines of effects for groups of poles
     caption: Sequencing in xLights. Effects are placed on a timeline against the music, for groups such as circles, columns and odd and even poles.
     keywords: [xLights, Sequencing]
+  - src: /projects/galactic-forest/sketch-pole.webp
+    alt: A pen sketch of a pole with its LED strips and a base, with notes
+    caption: 'Sketching a pole, its LED strips and its base.'
+    keywords: [Sketch, Pole]
+  - src: /projects/galactic-forest/sketch-pole-2.webp
+    alt: A second pen sketch of the pole base with wiring notes
+    caption: 'The pole base and wiring, sketched.'
+    keywords: [Sketch, Wiring]
+  - src: /projects/galactic-forest/pole-map-phone.webp
+    alt: A phone screenshot of the forest map, rings of yellow and green lines
+    caption: 'The map of the forest, rings of poles seen from above.'
+    keywords: [Map, Layout]
+  - src: /projects/galactic-forest/pcb-sparklezord.webp
+    alt: A PCB layout for an ESP32 board with ten LED outputs, a microphone and power inputs
+    caption: 'The controller board, an ESP32 with ten LED outputs and a microphone, one board for every ten poles.'
+    keywords: [PCB, ESP32]
+    credit: Board design “Sparklezord” by Jon Levin
+  - src: /projects/galactic-forest/schematic.webp
+    alt: The schematic of the controller board with level shifters and LED channels
+    caption: 'The board schematic.'
+    keywords: [Schematic]
+    credit: Schematic by Jon Levin
+  - src: /projects/galactic-forest/pcb-in-hand.webp
+    alt: A finished blue controller board held in a hand
+    caption: 'A finished controller board.'
+    keywords: [PCB, Hardware]
+  - src: /projects/galactic-forest/control-box.webp
+    alt: An open grey control box with power supplies, boards and many wires
+    caption: 'The control box, with the power supplies and controllers.'
+    keywords: [Power, Control box]
   - src: /projects/galactic-forest/pole-mapping.mp4
     poster: /projects/galactic-forest/pole-mapping-poster.webp
     alt: A grid view on a screen mapping every pole's LEDs, in red and white
@@ -74,7 +104,8 @@ them.
 
 ## The system
 
-- **Controllers.** **Ten ESP32** boards drive the lights on the poles.
+- **Controllers.** **Ten ESP32** boards drive the lights, each with ten LED outputs and a
+  microphone, on a custom board (designed by Jon Levin).
 - **Sync.** A **Raspberry Pi** communicates with all of them, so the whole forest moves together.
 - **Mapping.** Every pole is numbered and mapped to its position, so effects can travel through
   the forest as rings, rows, waves and sweeps.
