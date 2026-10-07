@@ -44,6 +44,21 @@ gallery:
     alt: Players around a table assembling a figure from recycled electronics and a game controller
     caption: Players assembling a figure together.
     keywords: [Play, Collaboration]
+  - src: /projects/recycling-game/figure-swinging.mp4
+    poster: /projects/recycling-game/figure-swinging-poster.webp
+    alt: A figure made from recycled materials swinging inside a black metal frame
+    caption: A figure swinging in its frame.
+    keywords: [Motion, Figure]
+  - src: /projects/recycling-game/snake-figure.mp4
+    poster: /projects/recycling-game/snake-figure-poster.webp
+    alt: A long jointed figure of recycled circuit boards on a table, beside a game controller and salvaged parts
+    caption: A long jointed figure built from salvaged circuit boards, with a game controller to move it.
+    keywords: [Electronics, Upcycling]
+  - src: /projects/recycling-game/snake-figure-2.mp4
+    poster: /projects/recycling-game/snake-figure-2-poster.webp
+    alt: Hands adjusting the jointed circuit-board figure on the table
+    caption: Adjusting the joints of the circuit-board figure, August 2022.
+    keywords: [Making, Testing]
   - src: /projects/recycling-game/wall-figure.webp
     alt: A jointed figure made of recycled cans and cartons hanging from a control board on a wall
     caption: A figure built from cans and cartons. Each segment is a joint.

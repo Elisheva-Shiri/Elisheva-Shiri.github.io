@@ -7,6 +7,7 @@ categories:
   - Electronics
   - Art Installation
 date: '2023-11'
+dateEnd: '2023-12'
 tags:
   - Kinetic sculpture
   - DC motor
@@ -28,6 +29,11 @@ gallery:
     alt: The fish glowing purple, blue and white from the LEDs in its base
     caption: The LEDs shift through purple, blue and white beneath the fish.
     keywords: [RGB LEDs, Colour]
+  - src: /projects/moving-fish/red-glow.mp4
+    poster: /projects/moving-fish/red-glow-poster.webp
+    alt: The base of the fish glowing deep red in a dark room
+    caption: The base glowing red in the dark, December 2023.
+    keywords: [Light, Night]
   - src: /projects/moving-fish/light-test.mp4
     poster: /projects/moving-fish/light-test-poster.webp
     alt: Testing the lights in the base, which glow white, green and red
