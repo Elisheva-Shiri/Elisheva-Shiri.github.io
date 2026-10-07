@@ -7,7 +7,7 @@ summary: >
 categories:
   - Haptics
 date: '2024-11'
-dateEnd: '2025-01'
+dateEnd: '2026-01'
 tags:
   - Design research
   - Rhizomatic mapping
@@ -21,6 +21,18 @@ cover: /projects/juliet-srr/cover.webp
 coverAlt: Research board with images of gloves, a prosthetic thumb and illustrations of human evolution
 
 gallery:
+  - src: /projects/juliet-srr/mechanism-motion.gif
+    alt: Animation of the yellow 3D-printed parallel mechanism with red legs, its centre platform moving between positions
+    caption: 'The finger mechanism in motion, January 2026. As the red legs move, the yellow fingertip platform shifts and tilts.'
+    keywords: [Mechanism, Motion]
+  - src: /projects/juliet-srr/glove-parts.webp
+    alt: White 3D-printed glove parts laid out on a workbench: a curved hand plate, slotted straps, rows of finger segments and two small actuators
+    caption: 'The glove parts, December 2025: a hand plate, straps, rows of finger segments and two actuators.'
+    keywords: [Glove, 3D printing]
+  - src: /projects/juliet-srr/glove-parts-2.webp
+    alt: The white glove parts from above, with the finger segments and an actuator module
+    caption: 'The parts from above, before assembly.'
+    keywords: [Parts, Assembly]
   - src: /projects/juliet-srr/finger-prototype.webp
     alt: A fingertip wearing a small 3D-printed parallel mechanism in red, yellow and green
     caption: 'The finger mechanism on a fingertip, a small parallel robot with three legs, October 2024.'
