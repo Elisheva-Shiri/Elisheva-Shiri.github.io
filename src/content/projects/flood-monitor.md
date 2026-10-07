@@ -1,8 +1,9 @@
 ---
-title: Flood Monitor
+title: 'FlooDrop: Where Floods Fuel Growth'
 summary: >
-  A concept for monitoring flooding in agricultural fields: a network of small sensor heads spread
-  across the field, sketched by hand and visualised with AI-generated renders.
+  An agricultural water-management concept that helps farmers handle excess water during floods,
+  preventing crop damage and saving the water for reuse. Sensor heads spread across the field,
+  sketched by hand, visualised with AI renders and backed by a sustainability report.
 categories:
   - Design Research
   - Electronics
@@ -18,6 +19,11 @@ cover: /projects/flood-monitor/cover.webp
 coverAlt: A pencil sketch of a sensor head on a pipe, with rows of small sensors across a field and blue lines of water
 
 gallery:
+  - src: /projects/flood-monitor/floodrop-report.webp
+    alt: "The FlooDrop sustainability report, with charts of US flood and drought losses and renders of the system"
+    caption: "The FlooDrop sustainability report: US flood losses reached $7.02 billion in 2021 and $7.23 billion in 2022, and drought losses $4.25 billion in 2021."
+    keywords: [Report, Data]
+    credit: Charts based on Statista data
   - src: /projects/flood-monitor/flooded-field.webp
     alt: A green agricultural field with large puddles of standing water, houses and palm trees behind
     caption: The problem, a field flooded after rain.
@@ -49,6 +55,11 @@ gallery:
 
 ## The idea
 
+**FlooDrop** is an agricultural water-management system that helps farmers deal with excess water
+during floods, preventing crop damage and keeping the water for reuse in the field.
+
+Floods and droughts are getting more frequent and more costly. In the United States alone, floods
+caused $7.02 billion of losses in 2021 and $7.23 billion in 2022, and droughts $4.25 billion in 2021.
 Fields can flood after heavy rain, and farmers often find out too late. The **Flood Monitor**
 places small **sensor heads** in rows across a field, so the water level can be followed and
 problems spotted early.
@@ -56,4 +67,3 @@ problems spotted early.
 I sketched the sensor head and the layout by hand, then used an AI image tool to visualise the
 sketches in a real field.
 
-More details to come.

@@ -1,9 +1,9 @@
 ---
 title: Cat Kingdom
 summary: >
-  Art pieces for the Cat Kingdom: glowing cast pieces made in self-made egg-carton moulds (2021),
-  and later felt flowers, fabric rock forms and a radial light sculpture taken out to the desert
-  (2025).
+  Art for the Cat Kingdom camp: glowing cast pieces made in egg-carton moulds (2021), and in 2025 a
+  15 × 15 m installation for Midburn with a glowing cat totem, felt flowers, fabric rocks, LED-lit
+  paths and a 3D-printed speaker box.
 categories:
   - Art Installation
 date: '2021-05'
@@ -15,9 +15,11 @@ tags:
   - Upcycling
   - Felt
   - LED
+  - 3D printing
+  - Midburn
 
-cover: /projects/cat-kingdom-moulds/cover.webp
-coverAlt: Pink cast pieces in an egg carton with a string of fairy lights threaded through them
+cover: /projects/cat-kingdom-moulds/totem-night.webp
+coverAlt: "A cat totem glowing red at night in the desert, surrounded by lit felt flowers"
 
 gallery:
   - src: /projects/cat-kingdom-moulds/pouring.mp4
@@ -41,6 +43,31 @@ gallery:
     alt: A sketchbook page with a repeating pattern of blue geometric shapes and a purple twisted form
     caption: "A pattern study in the sketchbook, April 2021."
     keywords: [Sketch, Pattern]
+  - src: /projects/cat-kingdom-moulds/totem-night.webp
+    alt: "A cat totem glowing red at night in the desert, surrounded by lit felt flowers"
+    caption: "The cat totem at night, Midburn 2025."
+    keywords: [Night, Totem]
+  - src: /projects/cat-kingdom-moulds/totem-night-2.webp
+    alt: "The glowing totem from another angle, with red light running along the ground"
+    caption: "Red light running along the ground around the totem."
+    keywords: [Night, Light]
+  - src: /projects/cat-kingdom-moulds/camp-plan.webp
+    alt: "A plan of the 15 by 15 metre area with curved shaggy-rug paths edged with LED strips, inflatable figures, speakers and a central mosaic"
+    caption: "The plan: a 15 × 15 m area with curving shaggy-rug paths edged with LED strips, inflatable dancing figures, speakers, and a central mosaic with a surprise box."
+    keywords: [Plan, Layout]
+  - src: /projects/cat-kingdom-moulds/camp-layout-site.webp
+    alt: "The rock forms and paths being laid out in the desert at dusk"
+    caption: "Laying out the paths and rocks on site."
+    keywords: [Site, Build]
+  - src: /projects/cat-kingdom-moulds/cat-statue-model.mp4
+    poster: /projects/cat-kingdom-moulds/cat-statue-model-poster.webp
+    alt: "A 3D model of a seated cat with many fanned-out tails turning on screen"
+    caption: "The 3D model of the cat statue, with fanned-out tails."
+    keywords: [3D model, Sculpture]
+  - src: /projects/cat-kingdom-moulds/speaker-box-parts.webp
+    alt: "Renders of the four 3D-printed parts of the speaker box"
+    caption: "The speaker box, designed in SolidWorks and printed in four parts."
+    keywords: [SolidWorks, 3D printing]
   - src: /projects/cat-kingdom-moulds/felt-flowers-workshop.webp
     alt: A workshop table covered with colourful felt flowers, fabric and tools
     caption: "Making felt flowers, October 2025."
@@ -81,4 +108,9 @@ cartons**, so every cup becomes a mould. Each piece has a hollow centre, and a s
 
 Four years later, a new set of pieces for the Cat Kingdom: **felt flowers**, soft **rock forms**
 covered in white fabric, and a **radial light sculpture** that casts a pattern of rays around it.
-Everything was made in the workshop and then taken out to the desert.
+Everything was made in the workshop and then taken out to the desert for **Midburn 2025**.
+
+The installation covers **15 × 15 metres**: curving paths of shaggy rug edged with LED strips,
+inflatable dancing figures lit from inside, speakers hidden in a 3D-printed **speaker box**, and in
+the centre a mosaic and a surprise box. At its heart stands a **cat totem** with fanned-out tails,
+glowing at night.

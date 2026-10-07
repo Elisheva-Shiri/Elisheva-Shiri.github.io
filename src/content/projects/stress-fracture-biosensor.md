@@ -17,10 +17,17 @@ tags:
   - QuickField
   - BGU
 
+pdf: /projects/stress-fracture-biosensor/stress-fractures-poster.pdf
+
 cover: /projects/stress-fracture-biosensor/cover.webp
 coverAlt: Diagram of a patch whose microneedle reaches a vein, with gold and platinum electrodes measuring alkaline phosphatase
 
 gallery:
+  - src: /projects/stress-fracture-biosensor/poster.webp
+    alt: "The Stress Fractures poster, with radiographs of a healing fracture over nine months and the challenge proposal"
+    caption: "The research poster: how a stress fracture looks over nine months, and the proposal for a lab-on-a-chip sensor that detects osteocalcin in a small sample."
+    keywords: [Poster, Research]
+    credit: "Radiographs from the cited literature"
   - src: /projects/stress-fracture-biosensor/concept-diagram.webp
     alt: Diagram of a patch whose microneedle reaches a vein, with gold and platinum electrodes measuring alkaline phosphatase
     caption: The concept. A patch on the leg with a microneedle that reaches the vein, where gold and platinum electrodes read the ALP level as an electric current.

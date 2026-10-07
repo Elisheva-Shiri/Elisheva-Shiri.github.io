@@ -1,14 +1,16 @@
 ---
 title: The Galactic Forest
 summary: >
-  A light installation: a forest of 100 poles, each 2.5 metres tall, made from recycled aluminium
-  tubes. Ten ESP32 controllers and a Raspberry Pi play choreographed light shows across the forest,
-  sequenced to music.
+  A light installation for Midburn: a forest of 100 clear tubes, each 2.5 metres long, salvaged
+  from a closed algae factory. Ten ESP32 controllers and a Raspberry Pi play light shows sequenced
+  to music. In 2023 the tubes stood as a forest; in 2024 they lay on the ground as rays around a
+  central box.
+featured: true
 categories:
   - Art Installation
   - Electronics
-date: '2023-09'
-dateEnd: '2024-04'
+date: '2023-07'
+dateEnd: '2024-06'
 tags:
   - LED
   - ESP32
@@ -16,11 +18,63 @@ tags:
   - xLights
   - Recycling
   - Light art
+  - Midburn
 
-cover: /projects/galactic-forest/cover.webp
-coverAlt: A 3D preview of a circular forest of glowing vertical poles in teal and violet over a green grid
+collaborators:
+  - Stav Cohen
+  - Elior Galon
+
+cover: /projects/galactic-forest/v2-colour-rays.webp
+coverAlt: "Glowing tubes in pink, cyan and green radiating across the desert ground at night, towards a central box"
 
 gallery:
+  - src: /projects/galactic-forest/v2-light-show.mp4
+    poster: /projects/galactic-forest/v2-light-show-poster.webp
+    alt: "Walking among the glowing tubes laid in rays on the desert ground as their colours change"
+    caption: "Version 2 at Midburn 2024: the tubes lie on the ground as rays, and the light runs along them in sequence."
+    keywords: [Midburn 2024, Light show]
+  - src: /projects/galactic-forest/v2-colour-rays.webp
+    alt: "Glowing tubes in pink, cyan and green radiating across the desert ground at night"
+    caption: "Rays of light radiating out from the centre."
+    keywords: [Version 2, Night]
+  - src: /projects/galactic-forest/v2-white-rays.webp
+    alt: "White glowing tubes radiating around a central box with a perforated panel of symbols"
+    caption: "In white, around the central box and its panel of symbols."
+    keywords: [Version 2, Centre]
+  - src: /projects/galactic-forest/v2-ground-rays.mp4
+    poster: /projects/galactic-forest/v2-ground-rays-poster.webp
+    alt: "A low view along the rays of tubes as they switch between green, white, red and gold"
+    caption: "A low view along the rays as the colours change."
+    keywords: [Sequence, Colour]
+  - src: /projects/galactic-forest/v2-dawn-centre.webp
+    alt: "At dawn, the tubes lying in rays around the central box on the desert ground"
+    caption: "The same layout at dawn."
+    keywords: [Daylight, Layout]
+  - src: /projects/galactic-forest/v2-dawn-wide.webp
+    alt: "A wide view of the installation in the desert at sunrise"
+    caption: "Sunrise over the installation."
+    keywords: [Desert, Site]
+  - src: /projects/galactic-forest/v2-dawn-field.webp
+    alt: "The tubes spread on the ground in the empty desert plain"
+    caption: "The tubes on the desert plain."
+    keywords: [Site]
+  - src: /projects/galactic-forest/v2-standing-test.webp
+    alt: "Tubes standing upright among trees at night, glowing purple"
+    caption: "A night test with the tubes standing upright, May 2024."
+    keywords: [Test, Night]
+  - src: /projects/galactic-forest/diagram-system.webp
+    alt: "A system diagram: a Raspberry Pi orchestrating ten ESP32 controllers, each driving ten pipes, with power supplies"
+    caption: "The system: a Raspberry Pi orchestrates all ten ESP32 microcontrollers; each ESP32 controls ten pipes, fed by 350 W power supplies."
+    keywords: [System, Diagram]
+  - src: /projects/galactic-forest/diagram-control-box.webp
+    alt: "A diagram of the central control box with the Raspberry Pi, ESP32 boards, LED power supplies and outgoing wires"
+    caption: "The central control box, connected to the grid by a 50 m cable."
+    keywords: [Control box, Diagram]
+  - src: /projects/galactic-forest/soldering.mp4
+    poster: /projects/galactic-forest/soldering-poster.webp
+    alt: "Soldering the controller wiring at a workbench, seen from above"
+    caption: "Soldering the controllers."
+    keywords: [Build, Soldering]
   - src: /projects/galactic-forest/forest-3d-preview.mp4
     poster: /projects/galactic-forest/forest-3d-preview-poster.webp
     alt: A 3D preview of the whole forest, poles lighting up in waves of white, teal, blue and violet over a green grid
@@ -103,17 +157,40 @@ gallery:
 
 ## The installation
 
-**The Galactic Forest** is a forest of light: **100 poles**, each **2.5 metres** high, built from
-**recycled aluminium tubes**. Visitors walk among the poles while light runs up, down and across
-them.
+**The Galactic Forest** was built for **Midburn**, the Israeli regional Burning Man event. It is made
+of **100 clear Perspex tubes**, each **2.5 metres** long and 3 inches (7.9 cm) wide, salvaged together
+with their cone mounts from an **algae factory that had closed down**. Inside every tube is a
+silicone-sealed LED strip wound around a threaded rod.
+
+> Imagine walking into a forest unlike any you have known. By day it is an ancient temple; by night
+> it comes alive. The deeper you go, the more the view changes, until you may find a clearing and
+> the beating heart of the forest.
+
+The concept draws on the year's theme, the **quantum leap**: an electron jumping between energy
+levels, and a person seeking a deep inner change.
+
+## Version 1: a forest (2023)
+
+The tubes stood upright across about 100 m², some spread far enough apart to walk between, and
+30 of them packed into an almost closed circle, 3 metres across, with a single opening. In the
+centre stood a table with plasma lamps and a vase for written wishes.
+
+## Version 2: rays (2024)
+
+In 2024 the tubes were laid on the ground as **rays** around a central box with a perforated panel
+of symbols, and the shows were sequenced again, to new music.
 
 ## The system
 
-- **Controllers.** **Ten ESP32** boards drive the lights, each with ten LED outputs and a
-  microphone, on a custom board (designed by Jon Levin).
-- **Sync.** A **Raspberry Pi** communicates with all of them, so the whole forest moves together.
-- **Mapping.** Every pole is numbered and mapped to its position, so effects can travel through
-  the forest as rings, rows, waves and sweeps.
-- **Sequencing.** The shows were sequenced in **xLights**, with effects like morphs, fades and
-  sparkles placed on a timeline against the beats of the music, and checked in a 3D preview before
-  they reached the real poles.
+- **Controllers.** **Ten ESP32** boards each drive ten tubes, on a custom board (designed by Jon
+  Levin) with ten LED outputs and a microphone.
+- **Sync.** A **Raspberry Pi** orchestrates all of them over Wi-Fi, so the whole forest moves together.
+- **Power.** Ten 350 W LED power supplies sit in one central control box, connected to the grid by a
+  50-metre cable.
+- **Mapping.** Every tube is numbered and mapped to its position, so effects can travel through the
+  forest as rings, rows, waves and sweeps.
+- **Sequencing.** The shows were sequenced in **xLights**, with effects placed on a timeline against
+  the beats of the music, and checked in a 3D preview before they reached the real tubes.
+
+Led by Stav Cohen and Elior Galon, with a team of about 20. I worked on the electronics, the control
+system and the light sequencing.
