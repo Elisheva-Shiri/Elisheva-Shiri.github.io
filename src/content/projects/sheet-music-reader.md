@@ -15,6 +15,8 @@ tags:
   - Signal processing
   - Computer vision
   - Music
+  - Python
+  - OpenCV
 
 cover: /projects/sheet-music-reader/cover.webp
 coverAlt: Two staves with the detected notes marked in red, climbing up the treble and bass clefs
@@ -73,5 +75,11 @@ The plan was to compare **smoothing against contrast enhancement**, to clean out
 added on purpose, and to aim for 90% of notes read correctly. Results were shown as spectrograms
 before and after filtering. I wrote the reader in MATLAB, adapted it to run in Octave, and tested
 it on several sheets, from simple scales to full songs.
+
+## Next: a Python version
+
+I started rewriting the reader in **Python** with **OpenCV**: a class that loads the sheet,
+converts it to grey, plots its histogram, blurs it with a Gaussian filter, and marks the detected
+lines, notes and text on the image.
 
 Final project for **Signal and Image Processing** with Dr. Zeev Wizman, at Shenkar.

@@ -8,7 +8,7 @@ categories:
   - Art Installation
   - Electronics
 date: '2023-09'
-dateEnd: '2023-10'
+dateEnd: '2024-04'
 tags:
   - LED
   - ESP32
@@ -70,6 +70,11 @@ gallery:
     alt: A finished blue controller board held in a hand
     caption: 'A finished controller board.'
     keywords: [PCB, Hardware]
+  - src: /projects/galactic-forest/power-wiring.mp4
+    poster: /projects/galactic-forest/power-wiring-poster.webp
+    alt: Hands wiring power cables and plugs on the floor beside the open power box
+    caption: 'Wiring the power for the forest, April 2024.'
+    keywords: [Power, Wiring]
   - src: /projects/galactic-forest/control-box.webp
     alt: An open grey control box with power supplies, boards and many wires
     caption: 'The control box, with the power supplies and controllers.'

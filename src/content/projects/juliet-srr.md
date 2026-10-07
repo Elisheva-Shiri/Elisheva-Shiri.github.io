@@ -15,10 +15,40 @@ tags:
   - 3D printing
   - Bezalel
 
+github: https://github.com/Elisheva-Shiri/SRR_IK
+
 cover: /projects/juliet-srr/cover.webp
 coverAlt: Research board with images of gloves, a prosthetic thumb and illustrations of human evolution
 
 gallery:
+  - src: /projects/juliet-srr/finger-prototype.webp
+    alt: A fingertip wearing a small 3D-printed parallel mechanism in red, yellow and green
+    caption: 'The finger mechanism on a fingertip, a small parallel robot with three legs, October 2024.'
+    keywords: [Prototype, Wearable]
+  - src: /projects/juliet-srr/finger-prototype-side.webp
+    alt: The coloured finger mechanism seen from the side
+    caption: 'From the side, the legs hinge to move the fingertip platform.'
+    keywords: [Mechanism, Joints]
+  - src: /projects/juliet-srr/printed-mechanism.webp
+    alt: A grey 3D-printed parallel mechanism with three jointed legs on a base
+    caption: 'The first printed mechanism, three jointed legs between a base and a platform.'
+    keywords: [3D printing, Mechanism]
+  - src: /projects/juliet-srr/printed-linkage.webp
+    alt: Grey printed parts laid out, a three-armed linkage and a curved base
+    caption: 'The parts before assembly, the three-legged linkage and the base.'
+    keywords: [Parts]
+  - src: /projects/juliet-srr/printed-parts.webp
+    alt: The linkage parts arranged above the base
+    caption: 'Laying out the linkage.'
+    keywords: [Assembly]
+  - src: /projects/juliet-srr/whiteboard-kinematics.webp
+    alt: A whiteboard of kinematics notes, frames, vectors, an inverse kinematics equation and a Denavit–Hartenberg table
+    caption: 'Working out the kinematics on the whiteboard: the working space, the forward and inverse kinematics, and a Denavit–Hartenberg table for each leg.'
+    keywords: [Kinematics, Inverse kinematics]
+  - src: /projects/juliet-srr/whiteboard-workspace.webp
+    alt: The whiteboard of kinematics notes in the studio
+    caption: 'The kinematics board in the studio.'
+    keywords: [Process]
   - src: /projects/juliet-srr/board-question.webp
     alt: 'Research board asking: How can we show the deformations that technology will create in us in the future? With images of gloves, a prosthetic extra thumb and human evolution'
     caption: The research question. How can we show the deformations that technology will create in us in the future?
@@ -90,6 +120,13 @@ Each finger has its own job. The **thumb** opposes the other fingers and makes p
 possible. The **index finger** adds precision and secondary strength. The **middle finger**, the
 longest, carries heavy loads and keeps the hand steady. The **ring finger** completes the grip and
 helps with delicate holds.
+
+## The mechanism
+
+The finger mechanism is a small **parallel robot**: three legs, each with a spherical joint and two
+revolute joints (S-R-R), connect a base to a fingertip platform. I worked out its working space and
+its forward and **inverse kinematics**, with a Denavit–Hartenberg table for each leg, and wrote code
+that calculates the joint angles needed to reach a desired fingertip position.
 
 ## The concept
 

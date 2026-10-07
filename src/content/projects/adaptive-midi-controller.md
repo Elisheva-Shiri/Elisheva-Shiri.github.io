@@ -8,7 +8,7 @@ featured: true
 categories:
   - Electronics
 date: '2021-07'
-dateEnd: '2023-09'
+dateEnd: '2024-12'
 tags:
   - Arduino
   - Teensy
@@ -30,6 +30,15 @@ gallery:
     alt: Playing music in Mixxx on a laptop using the black controller with glowing arcade buttons
     caption: The finished controller playing music in Mixxx. Big glowing buttons, faders and joysticks replace a small DJ deck.
     keywords: [Demo, Mixxx]
+  - src: /projects/adaptive-midi-controller/rebuild-2024.mp4
+    poster: /projects/adaptive-midi-controller/rebuild-2024-poster.webp
+    alt: Inside a wooden controller box, an arcade button pressed while the wiring and boards are visible
+    caption: 'Testing a rebuilt controller, December 2024.'
+    keywords: [Rebuild, Testing]
+  - src: /projects/adaptive-midi-controller/rebuild-2024.webp
+    alt: The inside of a wooden controller box with arcade buttons, wiring and a microcontroller
+    caption: 'Inside the rebuilt box, with the buttons, wiring and controller.'
+    keywords: [Rebuild, Wiring]
   - src: /projects/adaptive-midi-controller/in-use-2023.mp4
     poster: /projects/adaptive-midi-controller/in-use-2023-poster.webp
     alt: A hand pressing the big yellow and green arcade buttons of the black controller while DJ software plays on a screen
