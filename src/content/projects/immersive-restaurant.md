@@ -71,11 +71,6 @@ gallery:
     alt: Floor plan of the restaurant with dining tables, a bar, a kitchen and restrooms
     caption: The floor plan.
     keywords: [Floor plan, DIALux]
-  - src: /projects/immersive-restaurant/model-walkthrough.mp4
-    poster: /projects/immersive-restaurant/model-walkthrough-poster.webp
-    alt: Orbiting a 3D model of the restaurant space as its floor and walls change from yellow to purple light
-    caption: Orbiting the model while testing the light levels in false colour.
-    keywords: [3D model, Lighting]
 ---
 
 ## The project

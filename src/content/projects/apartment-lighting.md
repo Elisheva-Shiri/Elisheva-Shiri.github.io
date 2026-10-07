@@ -20,6 +20,11 @@ cover: /projects/apartment-lighting/cover.webp
 coverAlt: A 3D model of a long apartment seen from above, furnished and lit
 
 gallery:
+  - src: /projects/apartment-lighting/model-walkthrough.mp4
+    poster: /projects/apartment-lighting/model-walkthrough-poster.webp
+    alt: Orbiting the 3D model of the apartment as its floors and walls change from yellow to purple in the light calculation
+    caption: Orbiting the apartment model while the light levels are shown in false colour, June 2022.
+    keywords: [3D model, Light levels]
   - src: /projects/apartment-lighting/model-3d.webp
     alt: A 3D model of the L-shaped apartment seen from above, with furniture and lights
     caption: The apartment, modelled in DIALux evo.
