@@ -8,7 +8,7 @@ featured: true
 categories:
   - Electronics
 date: '2021-07'
-dateEnd: '2022-03'
+dateEnd: '2023-09'
 tags:
   - Arduino
   - Teensy
@@ -30,6 +30,11 @@ gallery:
     alt: Playing music in Mixxx on a laptop using the black controller with glowing arcade buttons
     caption: The finished controller playing music in Mixxx. Big glowing buttons, faders and joysticks replace a small DJ deck.
     keywords: [Demo, Mixxx]
+  - src: /projects/adaptive-midi-controller/in-use-2023.mp4
+    poster: /projects/adaptive-midi-controller/in-use-2023-poster.webp
+    alt: A hand pressing the big yellow and green arcade buttons of the black controller while DJ software plays on a screen
+    caption: In use, September 2023. The controller is still part of its user's music-making, two years on.
+    keywords: [In use, Real life]
   - src: /projects/adaptive-midi-controller/tom-product.mp4
     poster: /projects/adaptive-midi-controller/tom-product-poster.webp
     alt: Close-up shots of the finished black controller with coloured arcade buttons and soft joystick caps, ending with the Tikkun Olam Makers logo
