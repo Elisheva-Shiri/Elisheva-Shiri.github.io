@@ -28,6 +28,15 @@ gallery:
     alt: Eight black-and-white sock illustrations, each with a different pattern
     caption: The eight sock designs for the stage, from dollar signs and circuit boards to flames and clouds.
     keywords: [Illustration, Pattern design, 8 socks]
+  - src: /projects/gerev-first-timer/stage-socks-lit.mp4
+    poster: /projects/gerev-first-timer/stage-socks-lit-poster.webp
+    alt: "A dark concert stage with a keyboard, guitar and amplifier, and a row of glowing sock shapes along its front edge in changing purple and blue"
+    caption: "The stage before the show. The eight socks glow along the front edge as the colours shift."
+    keywords: [Stage, LED]
+  - src: /projects/gerev-first-timer/stage-socks-close.webp
+    alt: "A close view of clear sock shapes on the stage edge, each outlined by an LED strip in pink and blue"
+    caption: "Clear sock shapes, each outlined by the LED strip that links them."
+    keywords: [Detail, Edge lighting]
   - src: /projects/gerev-first-timer/video-art-01.mp4
     poster: /projects/gerev-first-timer/video-art-01-poster.webp
     alt: Neon-coloured socks and confetti falling onto a pile on a dark floor

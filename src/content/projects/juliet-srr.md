@@ -17,6 +17,15 @@ tags:
   - 3D printing
   - Bezalel
 
+collaborators:
+  - Prof. Ilana Nisky (supervisor)
+  - Noa Kadosh
+  - Malte Kuhlmann
+  - Tomer Fadael
+  - Dr. Nicolás Navarro-Guerrero
+  - Dr. Galit Katarivas Levy
+  - Prof. David Zarrouk
+
 github: https://github.com/Elisheva-Shiri/SRR_IK
 
 cover: /projects/juliet-srr/cover.webp
@@ -218,6 +227,33 @@ stronger thumb muscles from using smartphones.
 
 The idea was then tested physically with 3D-printed finger extensions. See
 [What If? Imagining Different Fingers](../what-if-fingers/).
+
+## Credits
+
+This is my thesis work, supervised by **Prof. Ilana Nisky**. I carried out most of it, together
+with and under her supervision: the design of the device, its software, the validation, the user
+study and the analysis. A manuscript based on the thesis was submitted for publication.
+
+- **Malte Kuhlmann** and **Dr. Nicolás Navarro-Guerrero** are partners in the
+  [ROMEO project](https://www.l3s.de/research-at-l3s/all-projects/romeo/), which this thesis is
+  part of, and took part in discussions throughout. Malte Kuhlmann also rebuilt the device in
+  Germany, validating the assembly guide.
+- **Noa Kadosh**, under the supervision of **Dr. Galit Katarivas Levy**, and **Tomer Fadael**
+  helped refine earlier versions of the mechanism for 3D printing. Tomer Fadael also took part in
+  brainstorming on the mechanism design.
+- **Prof. David Zarrouk** advised on the kinematics of the parallel mechanism and its validation.
+- **Ayal Regev** advised on the architecture of the parallel software pipeline, to lower its
+  latency.
+
+Thanks to the members of the Biomedical Robotics Lab, especially Dr. Shani Arusi, and to everyone
+who took part in the experiments.
+
+The research was partially funded by the Niedersächsisches Ministerium für Wissenschaft und Kultur
+via the Volkswagen Foundation, under the programme zukunft.niedersachsen: Forschungskooperation
+Niedersachsen–Israel (ROMEO, project No. 15-76251-5616/2023). It was supported by the Agricultural,
+Biological and Cognitive (ABC) Robotics Initiative and the Zelman Center for Brain Science Research,
+Ben-Gurion University of the Negev. The user study was approved by the Human Participants Research
+Committee of Ben-Gurion University of the Negev, and participants gave written informed consent.
 
 ## Sources
 
