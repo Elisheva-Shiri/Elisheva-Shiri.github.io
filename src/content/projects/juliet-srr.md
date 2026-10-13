@@ -34,8 +34,8 @@ coverAlt: Research board with images of gloves, a prosthetic thumb and illustrat
 gallery:
   - src: /projects/juliet-srr/device-video.mp4
     poster: /projects/juliet-srr/device-video-poster.webp
-    alt: "The JULIET-SRR project video: the green fingertip module on a finger, the Bowden cables, 3D printing, the haptic rendering diagram and the workspace"
-    caption: "The project video. A wearable fingertip interface for multidirectional skin-stretch feedback."
+    alt: "The green JULIET-SRR fingertip module moving on a finger, close up and then with the off-finger actuators beside it"
+    caption: "JULIET-SRR in motion: the five-gram fingertip module moves on the finger, driven by off-finger actuators through Bowden cables."
     keywords: [Video, Device]
   - src: /projects/juliet-srr/video-module-legs.webp
     alt: "Diagram of the fingertip module, a frame with three SRR legs and a moving platform with a dome-shaped tactor"
