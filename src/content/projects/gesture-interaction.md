@@ -25,6 +25,18 @@ gallery:
     alt: The setup, a laptop and a monitor showing the webcam view and the 3D cube, with a hand raised to the side
     caption: The setup. The webcam view in the corner shows what the tracker sees.
     keywords: [Setup, Computer vision]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Webcam hand tracking turns and moves a 3D object — no mouse, no touch.'
+chapter: touch
+order: 2
+body:
+  - at: rhand
+    dir: in
+    label: 'A hand moving and tilting in the air, tracked by a webcam'
+  - at: front
+    dir: out
+    label: 'A 3D cube on screen moves and turns with it'
 ---
 
 ## The aim

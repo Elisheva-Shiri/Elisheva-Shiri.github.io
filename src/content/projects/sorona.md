@@ -69,6 +69,21 @@ gallery:
     alt: A plot of SI-SDR values for the birds source, comparing the Wiener filter, the ground truth and the deep mask
     caption: For birds, the deep mask (red) comes close to the ideal ground-truth mask (green) and beats the Wiener filter (blue).
     keywords: [SI-SDR, Comparison]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'B.Sc. final project — ML models that separate a soundscape into its sources.'
+chapter: signals
+order: 2
+tools: ['PyTorch', 'Deep masks', 'nussl']
+mechanics: 'A convolutional network learns a mask over the spectrogram for each source in a mixture — birds, a paddle, the sea — and is compared with a Wiener filter and the ideal mask.'
+human: 'People with hearing loss are left out in busy soundscapes, where hearing aids struggle. With the sound split into its sources, the listener could choose what to hear.'
+body:
+  - at: ear
+    dir: out
+    label: 'The goal: hearing only the source you choose'
+  - at: beside
+    dir: in
+    label: 'A crowded soundscape: many voices at once'
 ---
 
 ## The problem

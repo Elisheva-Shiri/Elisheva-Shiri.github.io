@@ -47,6 +47,21 @@ gallery:
     alt: An Arduino Uno-compatible board wired to a mini breadboard and a micro servo on a chipboard surface
     caption: The test setup, an Arduino, a mini breadboard and a micro servo.
     keywords: [Arduino, Servo]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A row of Arduino-driven servos brings a monster show to life with the music.'
+chapter: motion
+order: 4
+body:
+  - at: ear
+    dir: out
+    label: 'The music the show moves to'
+  - at: eyes
+    dir: out
+    label: 'A row of servo-driven monsters comes to life'
+  - at: front
+    dir: out
+    label: 'The theatre, on a stage in front of the audience'
 ---
 
 ## The show

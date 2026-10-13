@@ -55,6 +55,21 @@ gallery:
     alt: 3D renders of a rectangular frame with a window and a flat mounting plate
     caption: The frame and mounting plate that complete the printed hardware.
     keywords: [SolidWorks, Fabrication, Hardware]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A stage of eight designed socks with music-synced sequences, built in 18 hours.'
+chapter: immersive
+order: 7
+body:
+  - at: feet
+    dir: out
+    label: 'Socks: the theme of the whole show'
+  - at: eyes
+    dir: out
+    label: 'Eight designed socks on stage, lit in sequences'
+  - at: ear
+    dir: out
+    label: 'The album, played live'
 ---
 
 **Gerev** (Ayal Regev) is a rapper whose work mixes rap and tech. For the launch of

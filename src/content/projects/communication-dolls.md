@@ -4,7 +4,6 @@ summary: >
   Talking dinosaur dolls for children aged 3 to 6 with motor disabilities and cerebral palsy.
   The dolls were built at a Good Deeds Day workshop at Shenkar with Tikkun Olam Makers and given
   to a kindergarten.
-featured: true
 categories:
   - Electronics
   - Interaction Design
@@ -152,6 +151,24 @@ gallery:
     alt: A pile of colourful soft dolls with pompoms and button eyes
     caption: Dolls ready to go.
     keywords: [Dolls]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Talking soft dinosaurs for children with motor disabilities and CP.'
+chapter: assistive
+order: 3
+tools: ['Sound circuit', 'Sewing', 'Guidebook']
+mechanics: 'Inside each sewn dinosaur is a recorder and a speaker, with the button near the tail. A step-by-step guidebook let volunteers build thirty of them in one workshop.'
+human: 'Children aged 3 to 6 with motor disabilities and cerebral palsy press the tail to express a feeling and join the activity around them.'
+body:
+  - at: rhand
+    dir: in
+    label: 'A press on the dinosaur’s tail'
+  - at: ear
+    dir: out
+    label: 'The recorded sound plays'
+  - at: beside
+    dir: out
+    label: 'The people around hear what the child feels'
 ---
 
 ## The dolls

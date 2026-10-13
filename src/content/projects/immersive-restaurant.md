@@ -71,6 +71,21 @@ gallery:
     alt: Floor plan of the restaurant with dining tables, a bar, a kitchen and restrooms
     caption: "The floor plan: dining tables around a central bar, kitchen and restrooms."
     keywords: [Floor plan, DIALux]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'From chalk sketches to a fully lit DIALux model with a glowing water-wall bar.'
+chapter: immersive
+order: 9
+body:
+  - at: whole
+    dir: out
+    label: 'Light falling on each table, around the people sitting at it'
+  - at: eyes
+    dir: out
+    label: 'Green walls and a glowing water-wall bar'
+  - at: belly
+    dir: out
+    label: 'A meal, under light planned table by table'
 ---
 
 ## The project

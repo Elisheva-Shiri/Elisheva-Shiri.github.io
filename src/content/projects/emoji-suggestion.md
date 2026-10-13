@@ -38,6 +38,21 @@ gallery:
     alt: "A colourful event poster for Chili at Chili, a hot pepper contest"
     caption: "The idea in real life: a Chili @ Chili evening, December 2023."
     keywords: [Event, Poster]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A family of chilli emojis for spicy, excited and “don’t touch”.'
+chapter: play
+order: 5
+body:
+  - at: tip
+    dir: in
+    label: 'A thumb sends a chilli'
+  - at: heart
+    dir: out
+    label: 'The feeling it carries: spicy, excited, happy, or “don’t touch”'
+  - at: away
+    dir: out
+    label: 'The person reading it at the other end of the chat'
 ---
 
 ## The idea

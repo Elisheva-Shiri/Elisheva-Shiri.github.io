@@ -7,6 +7,7 @@ summary: >
   technology reshapes the hand.
 featured: true
 categories:
+  - Robotics
   - Haptics
 date: '2024-11'
 dateEnd: '2026-01'
@@ -79,6 +80,24 @@ gallery:
     caption: The role of each finger, mapped from hand anatomy. Which fingers grip, which steady, which add precision.
     keywords: [Hand anatomy, Function, Translated board]
     credit: 'Anatomy charts: The Hand, BarCharts, Inc. (2013).'
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A five-gram wearable that stretches fingertip skin in any direction, giving back touch in teleoperation and VR.'
+chapter: touch
+order: 1
+tools: ['SRR parallel mechanism', 'Bowden cables', 'Inverse kinematics', '3D printing']
+mechanics: 'A five-gram, 3D-printed module on the fingertip: a three-leg SRR parallel mechanism moves a dome-shaped tactor across the skin. The actuators stay off the finger, and Bowden cables carry their motion.'
+human: 'The hand keeps its natural movement while the fingertip feels how stiff a virtual object is. In a study with 43 participants, people told stiffness apart with 81% accuracy, on any of four fingers.'
+body:
+  - at: rhand
+    dir: in
+    label: 'A camera tracks the fingertip as it moves into a virtual object'
+  - at: tip
+    dir: out
+    label: 'A dome-shaped tactor stretches the fingertip skin in any direction'
+  - at: front
+    dir: in
+    label: 'The virtual or remote object being touched'
 ---
 
 _JULIET-SRR is a larger haptic project. This page shows one part of it: the design research

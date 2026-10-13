@@ -59,6 +59,21 @@ gallery:
     caption: A row of finished chairs, each with its own colour seat, March 2022.
     keywords: [Finished, Series]
     credit: Still from the event video
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A soft baby seat on a wheeled plywood frame for supported sitting.'
+chapter: assistive
+order: 4
+body:
+  - at: seat
+    dir: out
+    label: 'A soft baby seat holds the child sitting'
+  - at: legs
+    dir: out
+    label: 'Wheels do what the legs do not yet'
+  - at: beside
+    dir: in
+    label: 'An adult moves the chair'
 ---
 
 ## The need

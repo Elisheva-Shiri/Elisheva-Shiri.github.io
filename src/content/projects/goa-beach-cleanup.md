@@ -32,6 +32,21 @@ gallery:
     alt: Silhouettes of people walking along the beach with the Earth balloon, the sea behind them
     caption: Walking the Earth along the shore.
     keywords: [Parade, Community]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A beach clean-up and community event led by a giant Earth balloon.'
+chapter: research
+order: 9
+body:
+  - at: rhand
+    dir: in
+    label: 'Hands picking plastic off the beach'
+  - at: ground
+    dir: in
+    label: 'A beach covered in plastic'
+  - at: above
+    dir: out
+    label: 'A giant Earth balloon leads the community event'
 ---
 
 ## The project

@@ -148,6 +148,21 @@ gallery:
     alt: A radiating pattern of green and white light cast on a furry surface
     caption: "The pattern the sculpture casts when it is lit."
     keywords: [Light, Pattern]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A 15 × 15 m Midburn installation with a glowing cat totem and LED-lit paths.'
+chapter: immersive
+order: 3
+body:
+  - at: whole
+    dir: out
+    label: 'A 15 × 15 m space to walk into, around a glowing cat totem'
+  - at: ground
+    dir: out
+    label: 'LED-lit paths under the feet'
+  - at: eyes
+    dir: out
+    label: 'Glowing cast pieces, felt flowers and fabric rocks'
 ---
 
 ## 2021: the moulds

@@ -5,7 +5,6 @@ summary: >
   from a closed algae factory. Ten ESP32 controllers and a Raspberry Pi play light shows sequenced
   to music. In 2023 the tubes stood as a forest; in 2024 they lay on the ground as rays around a
   central box.
-featured: true
 categories:
   - Art Installation
   - Electronics
@@ -145,6 +144,27 @@ gallery:
     alt: A white pole marked with the number 44 and symbols, standing on straw
     caption: Every pole is numbered, so it matches its place in the light map. This is pole 44.
     keywords: [Build, Installation]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: '100 salvaged tubes, ten ESP32s and a Raspberry Pi playing light shows to music.'
+chapter: immersive
+order: 1
+tools: ['ESP32 ×10', 'Raspberry Pi', 'xLights', 'LED']
+mechanics: '100 clear tubes, 2.5 m each, salvaged from a closed algae factory, with an LED strip in every one. Ten ESP32 boards drive ten tubes each, and a Raspberry Pi syncs them over Wi-Fi to shows sequenced to music.'
+human: 'You walk in between the tubes, and the deeper you go, the more the view changes — until you find a clearing at the centre.'
+body:
+  - at: legs
+    dir: in
+    label: 'Walking in between the tubes, deeper into the forest'
+  - at: eyes
+    dir: out
+    label: 'Light travelling across 100 tubes'
+  - at: ear
+    dir: out
+    label: 'The music the light shows are sequenced to'
+  - at: whole
+    dir: out
+    label: 'A forest that surrounds you, with a clearing at its centre'
 ---
 
 ## The installation

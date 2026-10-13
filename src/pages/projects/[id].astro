@@ -1,202 +1,236 @@
 ---
 // Template for every project page. One page is generated per Markdown file in
 // src/content/projects; the URL is /projects/<file-name>/.
-// Layout: a big title, a sticky "spec sheet" (year, disciplines, team, tools,
-// links) beside the story and gallery, and previous/next project at the end.
+// Layout: the cover and title, "Where it meets the body" (body map and the two
+// lenses), the story, the gallery, the credits and the next project.
 // Each section only appears if the project has content for it.
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BodyMap from '../../components/BodyMap.astro';
 import Gallery from '../../components/Gallery.astro';
+import PhotoWalk from '../../components/PhotoWalk.astro';
 import YouTube from '../../components/YouTube.astro';
 import Publication from '../../components/Publication.astro';
-import { formatProjectDate, getProjects, projectUrl, slugify, withBase, type Project } from '../../lib/projects';
+import {
+  formatProjectDate,
+  getProjects,
+  getSelected,
+  groupByChapter,
+  projectColor,
+  projectUrl,
+  slugify,
+  withBase,
+  type Project,
+} from '../../lib/projects';
 
 export async function getStaticPaths() {
   const projects = await getProjects();
-  return projects.map((project, i) => ({
-    params: { id: project.id },
-    props: {
-      project,
-      // Wraps around, so every page has a "next" and a "previous".
-      prev: projects[(i - 1 + projects.length) % projects.length],
-      next: projects[(i + 1) % projects.length],
-      number: projects.length - i,
-    },
-  }));
+  // Two reading sequences: the selected projects, and the archive in chapter order.
+  const selected = getSelected(projects);
+  const archive = groupByChapter(projects).flatMap((chapter) => chapter.projects);
+  return projects.map((project) => {
+    const sequence = project.data.featured ? selected : archive;
+    const i = sequence.indexOf(project);
+    return {
+      params: { id: project.id },
+      props: {
+        project,
+        // Wraps around, so every page has a "next" and a "previous".
+        prev: sequence[(i - 1 + sequence.length) % sequence.length],
+        next: sequence[(i + 1) % sequence.length],
+        number: i + 1,
+        total: sequence.length,
+      },
+    };
+  });
 }
 
-const { project, prev, next, number } = Astro.props as { project: Project; prev: Project; next: Project; number: number };
+const { project, prev, next, number, total } = Astro.props as { project: Project; prev: Project; next: Project; number: number; total: number };
 const date = formatProjectDate(project.data);
-const { title, summary, categories, tags, collaborators, cover, coverAlt, gallery, youtube, github, website, pdf, links, publication } =
+const { title, summary, categories, tags, tools, collaborators, cover, coverAlt, gallery, youtube, github, website, pdf, links, publication } =
   project.data;
+const { featured, chapter, mechanics, human, body, immersive } = project.data;
 const { Content } = await render(project);
 const hasBody = Boolean(project.body?.trim());
 const hasLinks = Boolean(github || website || pdf || links.length > 0);
+const hasLenses = Boolean(mechanics && human);
 // The cover is the page's hero. If the same file is also a gallery item, show its
 // caption under the hero and leave it out of the gallery so it isn't shown twice.
 const srcOf = (item: (typeof gallery)[number]) => (typeof item === 'string' ? item : item.src);
 const coverItem = gallery.find((item) => srcOf(item) === cover);
 const coverCaption = coverItem && typeof coverItem !== 'string' ? [coverItem.caption, coverItem.credit].filter(Boolean).join(' — ') : '';
 const galleryItems = gallery.filter((item) => srcOf(item) !== cover);
+const back = featured
+  ? { label: '← Main projects', href: withBase('/#work') }
+  : { label: '← Archive', href: withBase(`/projects/${chapter ? `#${chapter}` : ''}`) };
+const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
 <BaseLayout title={title} description={summary} image={cover}>
   <div class="progress" aria-hidden="true"></div>
-  <article class="project">
-    <header class="container project-header">
-      <p class="crumbs label">
-        <a href={withBase('/#index')}>Index</a>
-        <span aria-hidden="true">/</span>
-        <span>{String(number).padStart(2, '0')}</span>
-      </p>
-      <h1>{title}</h1>
-      <p class="project-summary">{summary}</p>
-    </header>
+  <article class="project" style={`--col: ${projectColor(project)}`}>
+    <nav class="topbar" aria-label="Projects">
+      <a class="back" href={back.href}>{back.label}</a>
+      {
+        total > 1 && (
+          <span class="stepper">
+            <a href={projectUrl(prev)} rel="prev" aria-label={`Previous project: ${prev.data.title}`}>‹</a>
+            <span>{pad(number)} / {pad(total)}</span>
+            <a href={projectUrl(next)} rel="next" aria-label={`Next project: ${next.data.title}`}>›</a>
+          </span>
+        )
+      }
+    </nav>
 
-    {
-      cover && (
-        <figure class="container project-hero">
-          <img class="project-cover" src={withBase(cover)} alt={coverAlt ?? ''} fetchpriority="high" decoding="async" />
-          {coverCaption && <figcaption>{coverCaption}</figcaption>}
-        </figure>
-      )
-    }
-
-    <div class="container project-body">
-      <aside class="spec" aria-label="Project details">
-        <dl>
-          {
-            date && (
-              <div>
-                <dt class="label">Year</dt>
-                <dd>{date}</dd>
-              </div>
-            )
-          }
-          <div>
-            <dt class="label">Discipline</dt>
-            <dd>
-              {categories.map((category) => (
-                <a href={withBase(`/#${slugify(category)}`)}>{category}</a>
-              ))}
-            </dd>
-          </div>
-          {
-            collaborators.length > 0 && (
-              <div>
-                <dt class="label">With</dt>
-                <dd>
-                  {collaborators.map((c) => (
-                    <span>{c}</span>
-                  ))}
-                </dd>
-              </div>
-            )
-          }
-          {
-            tags.length > 0 && (
-              <div>
-                <dt class="label">Tools &amp; topics</dt>
-                <dd class="tags">
-                  {tags.map((tag) => (
-                    <span>{tag}</span>
-                  ))}
-                </dd>
-              </div>
-            )
-          }
-        </dl>
-
+    <header class="head">
+      {
+        cover && (
+          <figure class="hero">
+            <img src={withBase(cover)} alt={coverAlt ?? ''} fetchpriority="high" decoding="async" />
+            {coverCaption && <figcaption>{coverCaption}</figcaption>}
+          </figure>
+        )
+      }
+      <div class="head-text">
+        <p class="tag">
+          {categories.map((category, i) => <>{i > 0 && ' · '}<a href={withBase(`/#${slugify(category)}`)}>{category.toUpperCase()}</a></>)}
+        </p>
+        <h1>{title}</h1>
+        <p class="summary">{summary}</p>
+        <p class="meta">{[date, ...tools].filter(Boolean).join(' · ')}</p>
         {
           hasLinks && (
-            <p class="spec-links">
-              {website && (
-                <a class="button button-primary" href={website}>
-                  Visit website
-                </a>
-              )}
-              {github && (
-                <a class="button" href={github}>
-                  Code on GitHub
-                </a>
-              )}
-              {pdf && (
-                <a class="button" href={withBase(pdf)}>
-                  Read the PDF
-                </a>
-              )}
-              {links.map((link) => (
-                <a class="button" href={link.url}>
-                  {link.label}
-                </a>
-              ))}
+            <p class="links">
+              {website && <a class="button button-primary" href={website}>Visit website ↗</a>}
+              {github && <a class="button" href={github}>Code on GitHub ↗</a>}
+              {pdf && <a class="button" href={withBase(pdf)}>Read the PDF ↗</a>}
+              {links.map((link) => <a class="button" href={link.url}>{link.label} ↗</a>)}
             </p>
           )
         }
-      </aside>
-
-      <div class="story">
-        {
-          youtube && (
-            <section class="project-section" aria-label="Video">
-              <YouTube url={youtube} title={title} />
-            </section>
-          )
-        }
-
-        {
-          hasBody && (
-            <section class="project-section prose">
-              <Content />
-            </section>
-          )
-        }
-
-        {
-          publication && (
-            <section class="project-section" aria-labelledby="publication-heading">
-              <div class="section-head">
-                <h2 id="publication-heading">Publication</h2>
-              </div>
-              <Publication publication={publication} />
-            </section>
-          )
-        }
       </div>
-    </div>
+    </header>
+
+    {
+      (body.length > 0 || hasLenses) && (
+        <section class="block meets" aria-labelledby="meets-heading">
+          <div class="section-head">
+            <h2 id="meets-heading">{body.length > 0 ? 'Where it meets the body' : 'Two bodies: machine and human'}</h2>
+          </div>
+          {body.length > 0 && <BodyMap points={body} />}
+          {
+            hasLenses && (
+              <div class="lenses">
+                <div class="lens-col reveal">
+                  <h3>MECHANICS</h3>
+                  <p>{mechanics}</p>
+                </div>
+                <div class="lens-col human reveal">
+                  <h3>HUMAN</h3>
+                  <p>{human}</p>
+                </div>
+              </div>
+            )
+          }
+        </section>
+      )
+    }
+
+    {
+      youtube && (
+        <section class="block" aria-label="Video">
+          <YouTube url={youtube} title={title} />
+        </section>
+      )
+    }
+
+    {
+      hasBody && (
+        <section class="block" aria-labelledby="story-heading">
+          <div class="section-head">
+            <h2 id="story-heading">The story</h2>
+          </div>
+          <div class="prose">
+            <Content />
+          </div>
+        </section>
+      )
+    }
+
+    {
+      publication && (
+        <section class="block" aria-labelledby="publication-heading">
+          <div class="section-head">
+            <h2 id="publication-heading">Publication</h2>
+          </div>
+          <Publication publication={publication} />
+        </section>
+      )
+    }
 
     {
       galleryItems.length > 0 && (
-        <section class="container project-gallery" aria-labelledby="gallery-heading">
+        <section class="block" aria-labelledby="gallery-heading">
           <div class="section-head">
-            <h2 id="gallery-heading">Process &amp; gallery</h2>
-            <span class="label">{galleryItems.length} items</span>
+            <h2 id="gallery-heading">{immersive ? 'The walk' : 'Process & gallery'}</h2>
+            <span class="label">{immersive ? 'Scroll to walk through ↓' : `${galleryItems.length} items`}</span>
           </div>
-          <Gallery items={galleryItems} title={title} />
+          {immersive ? <PhotoWalk items={gallery} title={title} /> : <Gallery items={galleryItems} title={title} />}
+        </section>
+      )
+    }
+
+    {
+      (collaborators.length > 0 || tags.length > 0) && (
+        <section class="block" aria-labelledby="details-heading">
+          <div class="section-head">
+            <h2 id="details-heading">Details</h2>
+          </div>
+          <dl class="details">
+            {
+              collaborators.length > 0 && (
+                <div>
+                  <dt class="label">With</dt>
+                  <dd>
+                    {collaborators.map((person) => (
+                      <span>{person}</span>
+                    ))}
+                  </dd>
+                </div>
+              )
+            }
+            {
+              tags.length > 0 && (
+                <div>
+                  <dt class="label">Tools &amp; topics</dt>
+                  <dd>
+                    <ul class="tools">
+                      {tags.map((tag) => (
+                        <li>{tag}</li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              )
+            }
+          </dl>
         </section>
       )
     }
 
     {
       next.id !== project.id && (
-        <nav class="container pager" aria-label="More projects">
-          <a class="pager-link" href={projectUrl(prev)} rel="prev">
-            <span class="label">← Previous</span>
-            <span class="pager-title">{prev.data.title}</span>
-          </a>
-          <a class="pager-link pager-next" href={projectUrl(next)} rel="next">
-            <span class="label">Next →</span>
-            <span class="pager-title">{next.data.title}</span>
-            {next.data.cover && <img src={withBase(next.data.cover)} alt="" loading="lazy" decoding="async" />}
-          </a>
-        </nav>
+        <a class="next" href={projectUrl(next)} rel="next">
+          <span class="label">Next project</span>
+          <span class="next-title">{next.data.title} →</span>
+        </a>
       )
     }
   </article>
 </BaseLayout>
 
 <style>
-  /* Reading progress: a thin accent line under the header (CSS scroll timeline, no JS). */
+  /* Reading progress: a thin line at the top of the window (CSS scroll timeline, no JS). */
   .progress {
     position: fixed;
     top: 0;
@@ -204,7 +238,7 @@ const galleryItems = gallery.filter((item) => srcOf(item) !== cover);
     z-index: 25;
     width: 100%;
     height: 2px;
-    background: var(--accent);
+    background: linear-gradient(90deg, var(--pink), var(--cyan));
     transform-origin: 0 50%;
     transform: scaleX(0);
   }
@@ -222,198 +256,229 @@ const galleryItems = gallery.filter((item) => srcOf(item) !== cover);
     }
   }
 
-  .project-header {
-    padding-block: var(--space-xl) var(--space-lg);
-  }
-
-  .crumbs {
-    display: flex;
-    gap: var(--space-sm);
-    margin: 0 0 var(--space-lg);
-  }
-
-  .crumbs a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .crumbs a:hover {
-    color: var(--accent);
-  }
-
-  h1 {
-    max-width: 20ch;
-    margin: 0;
-    font-size: clamp(2.4rem, 1rem + 5.5vw, 6rem);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
-  }
-
-  .project-summary {
-    max-width: 44rem;
-    margin: var(--space-lg) 0 0;
-    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
-    line-height: 1.4;
-    color: var(--muted);
-  }
-
-  .project-hero {
-    margin-block: 0;
-  }
-
-  .project-hero figcaption {
-    margin-top: var(--space-xs);
-    color: var(--muted);
-    font-size: 0.875rem;
-  }
-
-  .project-cover {
-    width: 100%;
-    max-height: 82vh;
-    object-fit: cover;
-    background: var(--placeholder);
-  }
-
-  .project-body {
-    display: grid;
-    gap: var(--space-lg) var(--space-xl);
-    padding-top: var(--space-xl);
-  }
-
-  @media (min-width: 60rem) {
-    .project-body {
-      grid-template-columns: 17rem minmax(0, 1fr);
-      align-items: start;
-    }
-
-    .spec {
-      position: sticky;
-      top: 5rem;
-    }
-  }
-
-  .spec dl {
-    margin: 0;
-  }
-
-  .spec dl div {
-    padding: var(--space-sm) 0 var(--space-md);
-    border-top: 1px solid var(--border);
-  }
-
-  .spec dd {
+  .project {
+    --col: var(--cyan);
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
-    margin: var(--space-xs) 0 0;
-    font-size: var(--font-size-sm);
+    gap: 72px;
+    width: 100%;
+    max-width: 1040px;
+    margin-inline: auto;
+    padding: 0 var(--gutter) 96px;
   }
 
-  .spec dd a {
-    color: inherit;
-  }
-
-  .spec dd a:hover {
-    color: var(--accent);
-  }
-
-  .spec .tags {
-    flex-direction: row;
+  .topbar {
+    display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: -48px;
+    font-family: var(--font-mono);
   }
 
-  .spec .tags span {
-    padding: 0.1em 0.55em;
+  .back {
+    font-size: 0.8125rem;
+  }
+
+  .stepper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--faint);
+    font-size: 0.75rem;
+  }
+
+  .stepper a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     border: 1px solid var(--border);
     border-radius: 999px;
-    font-size: var(--font-size-xs);
+    color: var(--foreground);
+    font-size: 1rem;
+    transition: border-color var(--transition), transform var(--transition);
   }
 
-  .spec-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    margin: var(--space-md) 0 0;
-  }
-
-  .story {
-    min-width: 0;
-  }
-
-  .project-section + .project-section {
-    margin-top: var(--space-xl);
-  }
-
-  .project-gallery {
-    margin-top: var(--space-xl);
-  }
-
-  .project-gallery :global(.gallery) {
-    margin-top: var(--space-lg);
-  }
-
-  .pager {
-    display: grid;
-    gap: var(--space-md);
-    margin-top: var(--space-xl);
-  }
-
-  @media (min-width: 48rem) {
-    .pager {
-      grid-template-columns: 1fr 1.6fr;
-    }
-  }
-
-  .pager-link {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    min-height: 9rem;
-    padding: var(--space-md);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    color: inherit;
-    text-decoration: none;
-    transition: border-color var(--transition);
-  }
-
-  .pager-link:hover {
+  .stepper a:hover {
     border-color: var(--foreground);
   }
 
-  .pager-title {
-    position: relative;
-    z-index: 1;
-    font-size: var(--font-size-lg);
-    line-height: 1.15;
+  .stepper a[rel='prev']:hover {
+    transform: translateX(-2px);
   }
 
-  .pager-next {
-    justify-content: flex-end;
-    background: var(--foreground);
-    color: var(--background);
+  .stepper a[rel='next']:hover {
+    transform: translateX(2px);
   }
 
-  .pager-next .label {
-    position: relative;
-    z-index: 1;
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .head > * {
+    animation: rise-in 800ms var(--ease) both;
+  }
+
+  .head > :nth-child(2) {
+    animation-delay: 100ms;
+  }
+
+  .hero {
+    margin: 0;
+  }
+
+  .hero img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 20px;
+    background: var(--placeholder);
+  }
+
+  .hero figcaption {
+    margin-top: var(--space-sm);
+    color: var(--faint);
+    font-size: 0.875rem;
+  }
+
+  .head-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 820px;
+  }
+
+  .head-text p {
+    margin: 0;
+  }
+
+  .tag {
+    color: var(--col);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+
+  .tag a {
     color: inherit;
   }
 
-  .pager-next img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.28;
-    transition: opacity var(--transition), transform 900ms var(--ease);
+  .tag a:hover {
+    color: var(--foreground);
   }
 
-  .pager-next:hover img {
-    opacity: 0.45;
-    transform: scale(1.04);
+  h1 {
+    margin: 0;
+    font-size: clamp(1.875rem, 4vw, 3.125rem);
+    line-height: 1.08;
+  }
+
+  .summary {
+    color: #c9c7d9;
+    font-size: 1.25rem;
+    line-height: 1.55;
+  }
+
+  .meta {
+    color: var(--faint);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 8px;
+  }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+  }
+
+  .lenses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: 40px;
+    padding-top: 12px;
+  }
+
+  .lens-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 2px solid var(--cyan);
+  }
+
+  .lens-col.human {
+    border-color: var(--pink);
+  }
+
+  .lens-col h3 {
+    margin: 0;
+    color: var(--cyan);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+
+  .lens-col.human h3 {
+    color: var(--pink);
+  }
+
+  .lens-col p {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 28px 40px;
+    margin: 0;
+  }
+
+  .details dd {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 10px 0 0;
+    color: var(--text);
+  }
+
+  .next {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--foreground);
+  }
+
+  .next-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: right;
+    transition: color var(--transition), transform var(--transition);
+  }
+
+  .next:hover .next-title {
+    color: var(--cyan);
+    transform: translateX(4px);
   }
 </style>

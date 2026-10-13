@@ -4,7 +4,6 @@ summary: >
   Adaptive headphones guided by your body. Skin and heart sensors notice rising stress in noisy
   places, and the audio softens the sounds that overwhelm you while keeping the voices and alerts you
   need, with a playful companion app. A continuation of my sound-separation project Sorona Wav.
-featured: true
 categories:
   - Haptics
   - App Development
@@ -29,6 +28,8 @@ collaborators:
 links:
   - label: Try the live demo
     url: https://elisheva-shiri.github.io/projects/earbetter/demo/
+
+github: https://github.com/Itamar-Avitan/earbetter-ebt-practicum
 
 cover: /projects/earbetter/cover.webp
 coverAlt: The EarBetter logo, a glowing purple-to-teal monogram shaped like an ear
@@ -162,6 +163,24 @@ gallery:
     alt: Spectrograms comparing the original input, Sorona Wav's deep mask and a Wiener filter
     caption: The learned deep mask compared with a classic Wiener filter, against the ground truth.
     keywords: [Evaluation, Spectrograms]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Adaptive headphones guided by your body: biosensors notice stress and soften the sounds that overwhelm you.'
+chapter: signals
+order: 0.5
+tools: ['GSR · ESP32', 'PPG · Muse 2', 'Audio pipeline', 'Web app']
+mechanics: 'Skin conductance (GSR) through an ESP32 and heart rhythm (PPG) from a Muse 2 headband feed a stress estimate. When it rises, the audio pipeline softens background noise and lowers the volume.'
+human: 'For people with anxiety or sound sensitivity, who told us noise cancelling blocks everything, including the voice they want to hear. The aim: soften only the triggers, keep speech and safety sounds.'
+body:
+  - at: heart
+    dir: in
+    label: 'Heart rhythm (PPG) and skin conductance (GSR) show rising stress'
+  - at: ear
+    dir: out
+    label: 'Background noise softens; voices and safety sounds stay'
+  - at: beside
+    dir: in
+    label: 'The noisy place around you: classroom, café, street'
 ---
 
 ## The problem

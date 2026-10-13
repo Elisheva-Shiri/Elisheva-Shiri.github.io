@@ -5,6 +5,7 @@ summary: >
   AI-made avatars that act as your digital twin, and a world whose colours follow each friend's
   time, weather and place help keep closeness emotional, not just technical. My Bezalel final
   project.
+featured: true
 categories:
   - App Development
   - Interaction Design
@@ -108,6 +109,24 @@ gallery:
     alt: A visitor standing beside the vertical exhibition screen
     caption: The vertical screen in the exhibition space.
     keywords: [Exhibition]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+chapter: play
+order: 4
+short: 'An intimate social network for childhood friends far apart: a shared journal, AI avatars and a world coloured by each friend’s time and weather.'
+tools: ['UX/UI', 'AI avatars', 'User research']
+mechanics: 'An app built around a shared journal. Each friend has an AI-designed avatar and a city built from their photos, and the colours follow their time of day, season, weather and place.'
+human: 'For childhood friends who now live in different time zones. The avatar is a gentle mask that makes sharing easier, and there is no pressure: at most three posts a day.'
+body:
+  - at: heart
+    dir: out
+    label: 'Closeness that is emotional, not only technical'
+  - at: eyes
+    dir: out
+    label: 'A world coloured by each friend’s time of day, weather and place'
+  - at: away
+    dir: in
+    label: 'A childhood friend in another time zone'
 ---
 
 ## The problem

@@ -105,6 +105,18 @@ gallery:
     alt: Hands soldering wires to a black box with a large yellow push button
     caption: Wiring a box with a big push button.
     keywords: [Electronics, Soldering]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Old keyboards and cans become jointed creatures driven by servo motors.'
+chapter: motion
+order: 6
+body:
+  - at: rhand
+    dir: in
+    label: 'Taking old keyboards apart and building jointed creatures'
+  - at: front
+    dir: out
+    label: 'The creatures move, driven by servo motors'
 ---
 
 ## The game

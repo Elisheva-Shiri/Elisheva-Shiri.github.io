@@ -26,6 +26,21 @@ gallery:
     caption: Voice Comments, a VS Code extension that turns speech into code comments.
     keywords: [Extension, Speech]
     credit: Artwork from the open-source voice-comments project by 4a1c0 and contributors
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Speaking code comments instead of typing, for strain and motor difficulty.'
+chapter: assistive
+order: 5
+body:
+  - at: mouth
+    dir: in
+    label: 'Spoken comments, turned into text by speech recognition'
+  - at: wrist
+    dir: out
+    label: 'Hands rest from the keyboard'
+  - at: eyes
+    dir: out
+    label: 'Less strain from long hours at the screen'
 ---
 
 ## The experience

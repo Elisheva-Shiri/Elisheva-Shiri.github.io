@@ -1,0 +1,638 @@
+---
+// The live lab at the top of the homepage: two linked simulations drawn in SVG.
+// - A dexterous hand that pre-shapes and closes as the pointer approaches, and
+//   opens to yield when the pointer moves abruptly.
+// - A headset view of a remote cell. Moving the pointer turns the head; looking
+//   at the cube selects it, and the hand on the left closes to pick it up.
+// Left alone, both run an idle demo. Without JavaScript the still drawing stays.
+const fingers = ['Thumb', 'Index', 'Middle', 'Ring', 'Pinky'];
+const grasps = [
+  { id: 'power', label: 'Power' },
+  { id: 'pinch', label: 'Pinch' },
+  { id: 'point', label: 'Point' },
+];
+---
+
+<section class="lab container" id="lab" aria-label="Interactive lab" data-lab>
+  <div class="lab-grid">
+    <div class="panel">
+      <div class="panel-head">
+        <p class="panel-title">DEXTEROUS HAND · 15 JOINTS · <span data-k="hMode" data-state="idle">IDLE DEMO</span></p>
+        <div class="segmented" role="group" aria-label="Grasp type">
+          {grasps.map((g, i) => <button class="pill" type="button" data-grasp={g.id} aria-pressed={i === 0 ? 'true' : 'false'}>{g.label}</button>)}
+        </div>
+      </div>
+      <div class="stage stage-hand" data-stage="hand">
+        <svg viewBox="0 0 400 440" role="img" aria-label="Robotic hand that pre-shapes and grasps as your pointer approaches, and opens to yield when you move abruptly">
+          <rect x="150" y="380" width="96" height="60" rx="10" fill="#14141F" stroke="#34344C" stroke-width="1.5"></rect>
+          <line x1="170" y1="392" x2="170" y2="440" stroke="#24243A" stroke-width="2"></line>
+          <line x1="198" y1="392" x2="198" y2="440" stroke="#24243A" stroke-width="2"></line>
+          <line x1="226" y1="392" x2="226" y2="440" stroke="#24243A" stroke-width="2"></line>
+          <rect x="116" y="236" width="164" height="156" rx="34" fill="#14141F" stroke="#34344C" stroke-width="1.5"></rect>
+          <g fill="#FF6FB5" opacity="0" data-k="contact">
+            <circle cx="168" cy="300" r="5"></circle>
+            <circle cx="198" cy="290" r="5"></circle>
+            <circle cx="228" cy="300" r="5"></circle>
+            <circle cx="183" cy="330" r="5"></circle>
+            <circle cx="213" cy="330" r="5"></circle>
+            <circle cx="198" cy="358" r="5"></circle>
+          </g>
+          <g fill="none" stroke="#2C2C42" stroke-linecap="round" stroke-linejoin="round">
+            <path data-k="f0" stroke-width="22" d="M 140 252 L 140 203 L 140 172 L 140 149"></path>
+            <path data-k="f1" stroke-width="23" d="M 178 252 L 178 197 L 178 162 L 178 137"></path>
+            <path data-k="f2" stroke-width="22" d="M 216 252 L 216 201 L 216 169 L 216 146"></path>
+            <path data-k="f3" stroke-width="19" d="M 254 252 L 254 213 L 254 188 L 254 169"></path>
+            <path data-k="f4" stroke-width="24" d="M 124 346 L 100.6 316.1 L 82.1 292.5 L 67.3 273.6"></path>
+          </g>
+          <path data-k="tendons" fill="none" stroke="#4DF0D8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></path>
+          <path data-k="joints" fill="none" stroke="#4DF0D8" stroke-width="8" stroke-linecap="round"></path>
+          <path data-k="tips" fill="none" stroke="#FF6FB5" stroke-width="9" stroke-linecap="round"></path>
+          <g data-k="cursor" opacity="0">
+            <circle class="ping" data-k="cursorDot" cx="200" cy="200" r="6" fill="none" stroke="#FF6FB5" stroke-width="1.5"></circle>
+            <circle data-k="cursorDot" cx="200" cy="200" r="3" fill="#FF6FB5"></circle>
+          </g>
+        </svg>
+      </div>
+      <div class="flex-bars">
+        {
+          fingers.map((name, i) => (
+            <div class="flex-bar">
+              <span class="flex-name"><span>{name}</span> <span><span data-k={`deg${i}`}>0</span>°</span></span>
+              <div class="track"><div class:list={['fill', { thumb: i === 0 }]} data-k={`bar${i}`}></div></div>
+            </div>
+          ))
+        }
+      </div>
+      <dl class="readout">
+        <div><dt>GRIP FORCE</dt><dd class="pink"><span data-k="gripN">0</span> N</dd></div>
+        <div><dt>TENDON (IDX)</dt><dd><span data-k="tendonN">1.5</span> N</dd></div>
+        <div><dt>MOTOR I</dt><dd><span data-k="motorA">0.14</span> A</dd></div>
+        <div><dt>LOOP</dt><dd>500 Hz</dd></div>
+      </dl>
+      <dl class="dialogue">
+        <div><dt class="pink">HUMAN MOTION</dt><dd data-k="humanMotion">No one nearby</dd></div>
+        <div><dt class="cyan">ROBOT RESPONSE</dt><dd data-k="robotResp">Open, waiting</dd></div>
+      </dl>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <p class="panel-title">MIXED-REALITY TELEOPERATION · HEADSET VIEW · <span data-k="xrMode" data-state="idle">IDLE DEMO</span></p>
+        <p class="panel-title">90 Hz · stereo</p>
+      </div>
+      <div class="stage stage-xr" data-stage="xr">
+        <svg viewBox="0 0 400 440" role="img" aria-label="Headset view of a virtual teleoperation scene. Move your pointer to turn your head; looking at the grasp target selects it and triggers a fingertip haptic cue">
+          <rect width="400" height="440" fill="#08080F"></rect>
+          <path data-k="xrGrid" fill="none" stroke="#1F4A4A" stroke-width="1"></path>
+          <circle data-k="ring" fill="none" stroke="#6E5BD6" stroke-width="2" stroke-dasharray="4 5"></circle>
+          <circle data-k="sphere" fill="#1A1630" stroke="#8F7DF0" stroke-width="1.5"></circle>
+          <path data-k="cubeFaces" fill="rgba(77,240,216,.07)" stroke="none"></path>
+          <path data-k="cubeEdges" fill="none" stroke="#4DF0D8" stroke-width="2" stroke-linejoin="round"></path>
+          <line data-k="proxyLine" stroke="#4DF0D8" stroke-width="1" stroke-dasharray="2 4" opacity="0"></line>
+          <circle data-k="proxyHalo" fill="#4DF0D8" opacity=".14"></circle>
+          <circle class="ping" data-k="proxyPing" cx="-50" cy="-50" r="6" fill="none" stroke="#4DF0D8" stroke-width="1.2"></circle>
+          <circle data-k="proxyDot" fill="#4DF0D8"></circle>
+          <text class="hud" data-k="linkLabel" x="364" y="44" text-anchor="end" fill="#4DF0D8">HAND PROXY · HOVERING</text>
+          <text class="hud hud-lg" data-k="cubeLabel" fill="#4DF0D8"></text>
+          <path d="M 24 60 V 24 H 60 M 340 24 H 376 V 60 M 376 380 V 416 H 340 M 60 416 H 24 V 380" fill="none" stroke="#34344C" stroke-width="2"></path>
+          <circle data-k="reticle" cx="200" cy="220" r="10" fill="none" stroke="#F2F1F7" stroke-width="2"></circle>
+          <circle data-k="reticleDot" cx="200" cy="220" r="2.5" fill="#F2F1F7"></circle>
+          <circle class="ping" data-k="reticlePing" cx="200" cy="220" r="6" fill="none" stroke="#FF6FB5" stroke-width="1.5" opacity="0"></circle>
+          <text class="hud" x="36" y="44" fill="#9C9AAE">REMOTE CELL · CAM 01</text>
+          <text class="hud" data-k="hudHaptic" x="364" y="404" text-anchor="end" fill="#9C9AAE">HAPTIC IDLE</text>
+        </svg>
+      </div>
+      <dl class="readout">
+        <div><dt>HEAD YAW</dt><dd><span data-k="yawDeg">0</span>°</dd></div>
+        <div><dt>PITCH</dt><dd><span data-k="pitchDeg">0</span>°</dd></div>
+        <div><dt>MOTION→PHOTON</dt><dd><span data-k="m2p">17.6</span> ms</dd></div>
+        <div><dt>SKIN STRETCH</dt><dd class="pink"><span data-k="hapMm">0.0</span> mm</dd></div>
+      </dl>
+      <dl class="dialogue">
+        <div><dt class="pink">OPERATOR GAZE</dt><dd data-k="gazeState">Scanning the scene</dd></div>
+        <div><dt class="cyan">SYSTEM FEEDBACK</dt><dd data-k="xrResp">Reticle free · no cue</dd></div>
+      </dl>
+      <p class="panel-note">
+        Move to look around the remote cell. Gaze selects the target and a fingertip skin-stretch cue (JULIET-SRR) confirms it — vision and
+        touch in one loop.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-lab]');
+
+  if (root) {
+    // ---- DOM writes, skipped when the value did not change ----
+    const nodes = new Map<string, Element[]>();
+    for (const el of root.querySelectorAll('[data-k]')) {
+      const key = el.getAttribute('data-k')!;
+      nodes.set(key, [...(nodes.get(key) ?? []), el]);
+    }
+    const last = new Map<string, string>();
+    const write = (key: string, slot: string, value: string | number, apply: (el: Element, v: string) => void) => {
+      const v = String(value);
+      const id = key + '|' + slot;
+      if (last.get(id) === v) return;
+      last.set(id, v);
+      for (const el of nodes.get(key) ?? []) apply(el, v);
+    };
+    const attr = (key: string, name: string, value: string | number) => write(key, name, value, (el, v) => el.setAttribute(name, v));
+    const text = (key: string, value: string | number) => write(key, '#text', value, (el, v) => (el.textContent = v));
+    const width = (key: string, percent: number) => write(key, 'width', percent, (el, v) => ((el as HTMLElement).style.width = v + '%'));
+
+    // ---- State ----
+    type Grasp = 'power' | 'pinch' | 'point';
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const s = {
+      t: 0,
+      g: 0.3, // how closed the hand is, 0–1
+      hx: 200,
+      hy: 200,
+      lastHand: 0,
+      startleUntil: 0,
+      prevMove: null as { x: number; y: number; t: number } | null,
+      mode: 'power' as Grasp,
+      yaw: 0,
+      pitch: 0,
+      yawT: 0,
+      pitchT: 0,
+      lastXr: 0,
+      gazeHold: 0,
+      noise: [0.5, 0.5, 0.5],
+      noiseAt: 0,
+    };
+
+    const D = Math.PI / 180;
+    const FL = 260; // focal length of the headset view
+    const NEAR = 0.35;
+    const IDLE_AFTER = 2500;
+    const r = (v: number) => Math.round(v * 10) / 10;
+    const clamp = (v: number) => Math.max(0, Math.min(1, v));
+    const MULT: Record<Grasp, number[]> = { power: [1, 1, 1, 1, 1], pinch: [0.85, 0.6, 0.12, 0.1, 0.1], point: [0.9, 0.03, 1, 1, 1] };
+    const FMAX: Record<Grasp, number> = { power: 22, pinch: 9, point: 4 };
+    const FINGERS = [
+      { bx: 140, L: [50, 31, 23] },
+      { bx: 178, L: [56, 35, 25] },
+      { bx: 216, L: [52, 32, 23] },
+      { bx: 254, L: [40, 25, 19] },
+    ];
+    const KNUCKLE_Y = 252;
+    const thumbSeq = (g: number) => clamp((g - 0.4) / 0.6);
+    const liftOf = (g: number) => Math.max(0, (thumbSeq(g) - 0.6) / 0.4);
+    // The grasp target in the remote cell rises as the hand closes around it.
+    const cubeCentre = (lift: number) => [-0.5, -0.35 + lift * 0.45, 3 - lift * 0.5];
+    const project = (x: number, y: number, z: number) => {
+      const cy = Math.cos(s.yaw), sy = Math.sin(s.yaw), cp = Math.cos(s.pitch), sp = Math.sin(s.pitch);
+      const x1 = x * cy - z * sy, z1 = x * sy + z * cy;
+      const y1 = y * cp - z1 * sp, z2 = y * sp + z1 * cp;
+      return { x: 200 + (FL * x1) / z2, y: 220 - (FL * y1) / z2, z: z2 };
+    };
+
+    // ---- Simulation step. `k` is elapsed time in 40 ms units, so speed is frame-rate independent. ----
+    const step = (k: number, now: number) => {
+      const ease = (rate: number) => 1 - Math.pow(1 - rate, k);
+      s.t += 0.04 * k;
+
+      const c = cubeCentre(liftOf(s.g));
+      const p = project(c[0], c[1], c[2]);
+      if (p.z > NEAR && Math.hypot(p.x - 200, p.y - 220) < 40) s.gazeHold = now + 4000;
+
+      const startled = now < s.startleUntil;
+      let target: number;
+      if (startled) target = 0;
+      else if (now - s.lastHand > IDLE_AFTER) target = now < s.gazeHold ? 1 : reducedMotion ? 0.3 : 0.5 + 0.5 * Math.sin(s.t * 0.42);
+      else target = clamp(1 - (Math.hypot(s.hx - 198, s.hy - 300) - 30) / 170);
+      s.g += (target - s.g) * ease(startled ? 0.1 : 0.035);
+
+      const xrIdle = now - s.lastXr > IDLE_AFTER;
+      const yawT = xrIdle ? (reducedMotion ? 0 : 0.42 * Math.sin(s.t * 0.22)) : s.yawT;
+      const pitchT = xrIdle ? (reducedMotion ? 0 : 0.1 * Math.sin(s.t * 0.15)) : s.pitchT;
+      s.yaw += (yawT - s.yaw) * ease(0.04);
+      s.pitch += (pitchT - s.pitch) * ease(0.04);
+
+      if (now - s.noiseAt > 160) {
+        s.noise = [Math.random(), Math.random(), Math.random()];
+        s.noiseAt = now;
+      }
+    };
+
+    // ---- Drawing ----
+    const render = (now: number) => {
+      const g = s.g;
+      const mult = MULT[s.mode];
+      const startled = now < s.startleUntil;
+      const handIdle = now - s.lastHand > IDLE_AFTER;
+      const xrIdle = now - s.lastXr > IDLE_AFTER;
+      const seq = (delay: number) => clamp((g - delay) / 0.6);
+      const dot = (x: number, y: number) => `M ${r(x)} ${r(y)} l 0 0.01 `;
+
+      // Hand: the thumb closes last, the fingers in sequence from the index.
+      const flex: number[] = [];
+      let joints = '', tips = '', tendons = '';
+      const ft = thumbSeq(g) * mult[0];
+      flex.push(ft);
+      let a = (-128 + ft * 72) * D, x = 124, y = 346;
+      const thumbLen = [38, 30, 24], thumbBend = [0, 34, 30];
+      let thumb = `M ${x} ${y}`;
+      joints += dot(x, y);
+      for (let j = 0; j < 3; j++) {
+        a += thumbBend[j] * ft * D;
+        x += thumbLen[j] * Math.cos(a);
+        y += thumbLen[j] * Math.sin(a);
+        thumb += ` L ${r(x)} ${r(y)}`;
+        if (j < 2) joints += dot(x, y);
+      }
+      tips += dot(x, y);
+      FINGERS.forEach((f, i) => {
+        const fl = seq(0.1 * i) * mult[i + 1];
+        flex.push(fl);
+        const bend = [85 * fl, 185 * fl, 260 * fl];
+        let cx = f.bx, cy = KNUCKLE_Y, path = `M ${cx} ${cy}`;
+        joints += dot(cx, cy);
+        for (let j = 0; j < 3; j++) {
+          cy -= f.L[j] * Math.cos(bend[j] * D);
+          cx += j > 0 ? 3 * fl : 0;
+          path += ` L ${r(cx)} ${r(cy)}`;
+          if (j < 2) joints += dot(cx, cy);
+        }
+        tips += dot(cx, cy);
+        attr('f' + i, 'd', path);
+        tendons += path + ' ';
+      });
+      attr('f4', 'd', thumb);
+      attr('tendons', 'd', tendons + thumb);
+      attr('joints', 'd', joints);
+      attr('tips', 'd', tips);
+
+      const lift = startled ? 0 : liftOf(g);
+      const picked = lift > 0.5;
+      const contactF = startled ? 0 : FMAX[s.mode] * lift * lift;
+      const tendonF = 1.5 + flex[1] * 6 + contactF * 2.2;
+      attr('contact', 'opacity', r(lift));
+      attr('cursor', 'opacity', handIdle ? 0 : 1);
+      attr('cursorDot', 'cx', r(s.hx));
+      attr('cursorDot', 'cy', r(s.hy));
+      flex.forEach((v, i) => {
+        text('deg' + i, Math.round(v * (i === 0 ? 72 : 85)));
+        width('bar' + i, Math.round(v * 100));
+      });
+      text('gripN', r(contactF + (contactF > 0.2 ? (s.noise[0] - 0.5) * 0.3 : 0)));
+      text('tendonN', r(tendonF));
+      text('motorA', (0.12 + tendonF * 0.014 + s.noise[1] * 0.01).toFixed(2));
+      text('hMode', startled ? 'YIELD' : handIdle ? (reducedMotion ? 'IDLE' : 'IDLE DEMO') : 'TRACKING YOU');
+      attr('hMode', 'data-state', startled ? 'alert' : handIdle ? 'idle' : 'live');
+      text('humanMotion', handIdle ? (s.gazeHold > now ? 'Gaze lock in XR → grasp command' : 'No one nearby') : startled ? 'Abrupt approach detected' : 'Calm approach');
+      text('robotResp', startled ? 'Open hand, hold still, yield' : picked ? 'Grasp closed — picking the XR target' : g > 0.05 ? 'Closing: index → middle → ring → pinky → thumb' : 'Open, waiting');
+
+      // Headset view: a floor grid, two landmarks, the grasp target and the hand proxy.
+      const seg = (from: number[], to: number[]) => {
+        let d = '', pen = false;
+        for (let i = 0; i <= 12; i++) {
+          const u = i / 12;
+          const q = project(from[0] + (to[0] - from[0]) * u, from[1] + (to[1] - from[1]) * u, from[2] + (to[2] - from[2]) * u);
+          if (q.z > NEAR) {
+            d += `${pen ? ' L' : ' M'} ${r(q.x)} ${r(q.y)}`;
+            pen = true;
+          } else pen = false;
+        }
+        return d;
+      };
+      let grid = '';
+      for (let gx = -5; gx <= 5; gx++) grid += seg([gx * 0.8, -1.1, 0.6], [gx * 0.8, -1.1, 14]);
+      for (let gz = 1; gz <= 14; gz++) grid += seg([-4, -1.1, gz], [4, -1.1, gz]);
+      attr('xrGrid', 'd', grid);
+
+      const C = cubeCentre(lift), half = 0.22;
+      const V = Array.from({ length: 8 }, (_, i) => project(C[0] + (i & 1 ? half : -half), C[1] + (i & 2 ? half : -half), C[2] + (i & 4 ? half : -half)));
+      const cubeOk = V.every((q) => q.z > NEAR);
+      const at = (i: number) => `${r(V[i].x)} ${r(V[i].y)}`;
+      const EDGES = [[0, 1], [1, 3], [3, 2], [2, 0], [4, 5], [5, 7], [7, 6], [6, 4], [0, 4], [1, 5], [2, 6], [3, 7]];
+      const FACES = [[0, 1, 3, 2], [0, 1, 5, 4], [2, 3, 7, 6]];
+      const pc = project(C[0], C[1], C[2]);
+      const gazeDist = Math.hypot(pc.x - 200, pc.y - 220);
+      const gazeOn = cubeOk && gazeDist < 40;
+      const hot = picked || gazeOn;
+      const cubeColour = hot ? '#FF6FB5' : '#4DF0D8';
+      attr('cubeEdges', 'd', cubeOk ? EDGES.map((e) => `M ${at(e[0])} L ${at(e[1])}`).join(' ') : '');
+      attr('cubeFaces', 'd', cubeOk ? FACES.map((f) => `M ${f.map(at).join(' L ')} Z`).join(' ') : '');
+      attr('cubeEdges', 'stroke', cubeColour);
+      attr('cubeFaces', 'fill', hot ? 'rgba(255,111,181,.22)' : 'rgba(77,240,216,.07)');
+      attr('cubeLabel', 'x', r(pc.x + 34));
+      attr('cubeLabel', 'y', r(pc.y - 4));
+      attr('cubeLabel', 'fill', cubeColour);
+      text('cubeLabel', cubeOk ? (picked ? `PICKED · ${r(contactF)} N` : gazeOn ? 'SELECTED · 0.91 m' : 'GRASP TARGET') : '');
+
+      const sphere = project(1.2, 0.25, 4.4), ring = project(-1.8, 0.55, 5.2);
+      attr('sphere', 'cx', r(sphere.x));
+      attr('sphere', 'cy', r(sphere.y));
+      attr('sphere', 'r', r(sphere.z > NEAR ? (FL * 0.3) / sphere.z : 0));
+      attr('ring', 'cx', r(ring.x));
+      attr('ring', 'cy', r(ring.y));
+      attr('ring', 'r', r(ring.z > NEAR ? (FL * 0.38) / ring.z : 0));
+
+      // The hand proxy hovers beside the target and moves in as the real hand closes.
+      const approach = clamp(g / 0.85), far = 1 - approach;
+      const bob = reducedMotion ? 0 : Math.sin(s.t * 1.1) * 0.04 * far;
+      const proxy = project(C[0] + 0.6 * far, C[1] + 0.5 * far + bob, C[2] - 0.35 * far);
+      const seen = proxy.z > NEAR;
+      const px = r(seen ? proxy.x : -50), py = r(seen ? proxy.y : -50);
+      for (const key of ['proxyHalo', 'proxyPing', 'proxyDot']) {
+        attr(key, 'cx', px);
+        attr(key, 'cy', py);
+      }
+      attr('proxyDot', 'r', r(seen ? Math.max(3, (FL * 0.022) / proxy.z) : 0));
+      attr('proxyHalo', 'r', r(seen ? (FL * 0.08) / proxy.z : 0));
+      attr('proxyLine', 'x1', px);
+      attr('proxyLine', 'y1', py);
+      attr('proxyLine', 'x2', r(pc.x));
+      attr('proxyLine', 'y2', r(pc.y));
+      attr('proxyLine', 'opacity', picked || !cubeOk ? 0 : 0.6);
+      text('linkLabel', 'HAND PROXY · ' + (picked ? 'HOLDING' : approach > 0.3 ? 'APPROACHING' : 'HOVERING'));
+
+      attr('reticle', 'r', gazeOn ? 16 : 10);
+      attr('reticle', 'stroke', gazeOn ? '#FF6FB5' : '#F2F1F7');
+      attr('reticleDot', 'fill', gazeOn ? '#FF6FB5' : '#F2F1F7');
+      attr('reticlePing', 'opacity', gazeOn ? 1 : 0);
+      text('hudHaptic', picked ? 'GRIP FORCE MIRRORED → FINGERTIP' : gazeOn ? 'HAPTIC CUE → FINGERTIP' : 'HAPTIC IDLE');
+      text('yawDeg', r(s.yaw / D));
+      text('pitchDeg', r(s.pitch / D));
+      text('m2p', r(17.6 + s.noise[2] * 2.4));
+      text('hapMm', (picked ? 0.8 + lift * 1.2 : gazeOn ? 0.9 - (gazeDist / 40) * 0.4 : 0).toFixed(1));
+      text('gazeState', xrIdle ? 'Scanning the scene' : gazeOn ? 'Fixating on target' : 'Searching');
+      text('xrResp', picked ? 'Object picked · grip mirrored to fingertip' : gazeOn ? 'Target locked · hand will grasp' : 'Reticle free · no cue');
+      text('xrMode', xrIdle ? (reducedMotion ? 'IDLE' : 'IDLE DEMO') : 'HEAD TRACKED');
+      attr('xrMode', 'data-state', xrIdle ? 'idle' : 'alert');
+    };
+
+    // ---- Input ----
+    const handStage = root.querySelector<HTMLElement>('[data-stage="hand"]')!;
+    const handSvg = handStage.querySelector('svg')!;
+    handStage.addEventListener('pointermove', (e) => {
+      const matrix = handSvg.getScreenCTM();
+      if (!matrix) return;
+      const point = new DOMPoint(e.clientX, e.clientY).matrixTransform(matrix.inverse());
+      const now = Date.now(), prev = s.prevMove;
+      // A fast swipe towards the hand startles it: it opens and holds still.
+      if (prev && now - prev.t > 0 && now - prev.t < 200 && Math.hypot(e.clientX - prev.x, e.clientY - prev.y) / (now - prev.t) > 2.2) {
+        s.startleUntil = now + 900;
+      }
+      s.hx = point.x;
+      s.hy = point.y;
+      s.lastHand = now;
+      s.prevMove = { x: e.clientX, y: e.clientY, t: now };
+    });
+    handStage.addEventListener('pointerleave', () => {
+      s.lastHand = 0;
+      s.prevMove = null;
+    });
+
+    const xrStage = root.querySelector<HTMLElement>('[data-stage="xr"]')!;
+    xrStage.addEventListener('pointermove', (e) => {
+      const box = xrStage.getBoundingClientRect();
+      s.yawT = ((e.clientX - box.left) / box.width - 0.5) * 1.3;
+      s.pitchT = -((e.clientY - box.top) / box.height - 0.5) * 0.7;
+      s.lastXr = Date.now();
+    });
+    xrStage.addEventListener('pointerleave', () => (s.lastXr = 0));
+
+    const graspButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-grasp]')];
+    for (const button of graspButtons) {
+      button.addEventListener('click', () => {
+        s.mode = button.dataset.grasp as Grasp;
+        graspButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      });
+    }
+
+    // ---- Loop: runs only while the lab is on screen and the tab is visible ----
+    let visible = true, frame = 0, previous = 0;
+    const loop = (time: number) => {
+      const dt = Math.min(100, previous ? time - previous : 16);
+      previous = time;
+      const now = Date.now();
+      step(dt / 40, now);
+      render(now);
+      frame = visible && !document.hidden ? requestAnimationFrame(loop) : 0;
+    };
+    const wake = () => {
+      if (!frame && visible && !document.hidden) {
+        previous = 0;
+        frame = requestAnimationFrame(loop);
+      }
+    };
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      wake();
+    }).observe(root);
+    document.addEventListener('visibilitychange', wake);
+    render(Date.now());
+    wake();
+  }
+</script>
+
+<style>
+  .lab {
+    padding-block: 16px 88px;
+  }
+
+  .lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
+    gap: 20px;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    animation: rise-in 700ms var(--ease) both;
+  }
+
+  .panel + .panel {
+    animation-delay: 120ms;
+  }
+
+  .panel-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 79px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .panel-title {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--faint);
+  }
+
+  [data-state] {
+    transition: color var(--transition);
+  }
+
+  [data-state='live'] {
+    color: var(--cyan);
+  }
+
+  [data-state='alert'] {
+    color: var(--pink);
+  }
+
+  .stage {
+    touch-action: pan-y;
+  }
+
+  .stage svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+  }
+
+  .stage-hand {
+    cursor: crosshair;
+    background: radial-gradient(circle at 50% 62%, rgb(77 240 216 / 0.08), transparent 60%);
+  }
+
+  .stage-xr {
+    flex-grow: 1;
+    cursor: move;
+    background: #08080f;
+  }
+
+  .hud {
+    font-family: var(--font-mono);
+    font-size: 10px;
+  }
+
+  .hud-lg {
+    font-size: 11px;
+  }
+
+  .flex-bars {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .flex-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .track {
+    height: 4px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--border-soft);
+  }
+
+  .fill {
+    width: 0;
+    height: 100%;
+    background: var(--cyan);
+  }
+
+  .fill.thumb {
+    background: var(--pink);
+  }
+
+  dl {
+    display: grid;
+    margin: 0;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  dl > div + div {
+    border-left: 1px solid var(--border-soft);
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  .readout {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+  }
+
+  .readout > div {
+    min-width: 0;
+    padding: 12px 16px;
+  }
+
+  .readout dt {
+    overflow: hidden;
+    color: var(--faint);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .readout dd {
+    font-size: 0.9375rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dialogue {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    font-size: 0.875rem;
+  }
+
+  .dialogue > div {
+    min-height: 4.6rem;
+    padding: 14px 20px;
+  }
+
+  .dialogue dt {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+  }
+
+  .panel-note {
+    margin: 0;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 30rem) {
+    .readout {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .readout > div:nth-child(3) {
+      border-left: 0;
+    }
+
+    .readout > div:nth-child(n + 3) {
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .flex-bars {
+      gap: 8px;
+      padding-inline: 14px;
+    }
+
+    .flex-name {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>

@@ -31,6 +31,18 @@ gallery:
     alt: A screen of Python code computing car speed, steering angle and position, with comments about the safety zone and intersections
     caption: Steering and position updates, with a safety zone around each car and rules for intersections.
     keywords: [Python, Kinematics]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Car-following models showing how one automated car smooths stop-and-go waves.'
+chapter: motion
+order: 2
+body:
+  - at: feet
+    dir: in
+    label: 'A human foot on the pedals makes the stop-and-go wave'
+  - at: front
+    dir: out
+    label: 'One automated car ahead smooths the wave out'
 ---
 
 ## The problem

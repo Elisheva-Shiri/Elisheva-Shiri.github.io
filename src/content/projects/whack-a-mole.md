@@ -102,6 +102,21 @@ gallery:
     alt: Hitting the wooden domes on the board
     caption: Playing.
     keywords: [Play]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A 3×3 physical board with a light matrix, synced to a PyGame game on a Raspberry Pi.'
+chapter: motion
+order: 13
+body:
+  - at: rhand
+    dir: in
+    label: 'Hitting the wooden domes as they light up'
+  - at: eyes
+    dir: out
+    label: 'A 3 × 3 matrix of lights'
+  - at: ear
+    dir: out
+    label: 'Sounds, and levels that speed up as you score'
 ---
 
 ## The game

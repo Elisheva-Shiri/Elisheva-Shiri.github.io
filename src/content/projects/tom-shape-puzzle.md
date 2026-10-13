@@ -36,6 +36,18 @@ gallery:
     alt: Close-up of the 3D models of the three shapes, each split into parts
     caption: Each shape is split into parts that fit together.
     keywords: [CAD, Design]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A 3D-printed shape-sorting game with split shapes and matching slots.'
+chapter: assistive
+order: 9
+body:
+  - at: rhand
+    dir: in
+    label: 'Fitting split shapes into their slots'
+  - at: brain
+    dir: out
+    label: 'Triangles, circles and hexagons to tell apart'
 ---
 
 ## The game

@@ -110,6 +110,21 @@ gallery:
     alt: 'Roadmap timeline: documentation protocol, aerial drone photography, app development, data collection and a community campaign'
     caption: A roadmap of about a year, from a documentation protocol and drone photography to app development, data collection and a community campaign.
     keywords: [Roadmap, Implementation]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'An AR monster-collecting game that builds a live waste database.'
+chapter: play
+order: 7
+body:
+  - at: feet
+    dir: in
+    label: 'Children and teens walk the area to find and document waste'
+  - at: eyes
+    dir: out
+    label: 'Monsters to collect appear over the real place, through the phone'
+  - at: ground
+    dir: in
+    label: 'Agricultural waste on the ground becomes a live database'
 ---
 
 **A Bezalel guest seminar project · mentored by Guy Blender**

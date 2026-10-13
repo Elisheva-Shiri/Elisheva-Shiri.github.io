@@ -25,6 +25,11 @@ gallery:
     alt: Glowing orange dot-matrix letters on black reading 3 days to go
     caption: The countdown to the reopening, “3 days to go”.
     keywords: [Countdown, Campaign]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Reopening a Jerusalem bar with a countdown teaser campaign.'
+chapter: play
+order: 9
 ---
 
 ## The project

@@ -58,6 +58,21 @@ gallery:
     caption: 'Research: studies on how exercise builds social networks, existing outdoor charging stations, and data on sport participation by generation.'
     keywords: [Research, Inspiration]
     credit: Charts from Statista; product images from their makers
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Face-to-face exercise that generates electricity to charge your phone.'
+chapter: play
+order: 4
+body:
+  - at: legs
+    dir: in
+    label: 'Working out: the movement generates electricity'
+  - at: front
+    dir: out
+    label: 'A partner, face to face'
+  - at: rhand
+    dir: out
+    label: 'The phone in your hand charges'
 ---
 
 ## The challenge

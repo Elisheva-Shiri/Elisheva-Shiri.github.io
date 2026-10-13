@@ -14,6 +14,24 @@ tags:
   - Lean canvas
   - Sustainability
   - South Korea
+
+cover: /projects/coppeecup/cover.webp
+coverAlt: 'A reusable coffee cup with a barcode and stickers at the centre, linked to four boxes: the drinker, the reward, the café and the friends'
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A barcoded reusable cup linking Seoul coffee drinkers and small cafés.'
+chapter: research
+order: 7
+body:
+  - at: rhand
+    dir: in
+    label: 'A personal cup, with a barcode scanned at the café'
+  - at: mouth
+    dir: out
+    label: 'Coffee from a reusable cup instead of a disposable one'
+  - at: beside
+    dir: out
+    label: 'Friends and small cafés, linked through the app'
 ---
 
 ## The problem

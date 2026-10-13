@@ -6,6 +6,7 @@ summary: >
   muscle signals (EMG) from the arm were added, so each hand movement triggers a programmed robot
   movement.
 categories:
+  - Robotics
   - Electronics
 date: '2023-05'
 dateEnd: '2025-03'
@@ -49,6 +50,21 @@ gallery:
     alt: The URSim program on a screen, showing the waypoint list
     caption: 'The waypoint list in URSim.'
     keywords: [URSim, Program]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+chapter: motion
+order: 0
+short: 'A collaborative arm picks blocks from a conveyor and places them in order — later driven by muscle signals from the operator’s arm.'
+tools: ['Universal Robots', 'OnRobot', 'URSim', 'EMG · MyoWare']
+mechanics: 'A Universal Robots arm with an OnRobot gripper picks blocks from a conveyor belt and places them in order on a tray. The program was tested in the URSim simulator, then run on the real robot.'
+human: 'A MyoWare sensor on the arm reads the muscles’ electrical activity. Each hand movement makes its own pattern of peaks, mapped to a robot movement: you move your hand, and the arm moves.'
+body:
+  - at: forearm
+    dir: in
+    label: 'Muscle signals (EMG), read by a MyoWare sensor on the arm'
+  - at: front
+    dir: out
+    label: 'The robot arm answers each hand movement with a programmed move'
 ---
 
 ## The task

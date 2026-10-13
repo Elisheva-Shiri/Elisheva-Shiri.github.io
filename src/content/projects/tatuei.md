@@ -49,6 +49,18 @@ gallery:
     alt: "A star-shaped pattern of light around a hanging bulb"
     caption: "The star pattern around the bulb."
     keywords: [Visual, Light]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'An iridescent spiral that casts a swirl of rainbow reflections from one bulb.'
+chapter: immersive
+order: 4
+body:
+  - at: eyes
+    dir: out
+    label: 'An iridescent spiral lit by a single bulb'
+  - at: whole
+    dir: out
+    label: 'A swirl of rainbow reflections falls around you'
 ---
 
 ## The piece

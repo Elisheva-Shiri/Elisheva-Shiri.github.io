@@ -1,6 +1,7 @@
 // Shared helpers for reading projects. Pages use these instead of calling
 // getCollection directly, so sorting and draft filtering live in one place.
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { CHAPTERS } from '../site.config';
 
 export type Project = CollectionEntry<'projects'>;
 
@@ -53,6 +54,62 @@ export function groupByCategory(projects: Project[]) {
     .map(([name, projects]) => ({ name, slug: slugify(name), projects }))
     .sort((a, b) => b.projects.length - a.projects.length || a.name.localeCompare(b.name));
 }
+
+const ACCENT = '#4DF0D8';
+
+const byOrder = (a: Project, b: Project) => (a.data.order ?? 1e9) - (b.data.order ?? 1e9);
+
+/** The selected projects, in their `order`. Input must be newest first (as from getProjects). */
+export function getSelected(projects: Project[]): Project[] {
+  return projects.filter((p) => p.data.featured).sort(byOrder);
+}
+
+/**
+ * The archive: every project that is not selected, grouped into the chapters of
+ * src/site.config.ts. Inside a chapter projects follow `order`, then newest first.
+ * Projects without a chapter land in a last "More projects" group.
+ */
+export function groupByChapter(projects: Project[]) {
+  const rest = projects.filter((p) => !p.data.featured);
+  const groups: { id: string; title: string; color: string; blurb: string; projects: Project[] }[] = CHAPTERS.map((chapter) => ({
+    ...chapter,
+    projects: rest.filter((p) => p.data.chapter === chapter.id).sort(byOrder),
+  }));
+  const loose = rest.filter((p) => !p.data.chapter);
+  if (loose.length) groups.push({ id: 'more', title: 'More projects', color: ACCENT, blurb: '', projects: loose });
+  return groups.filter((g) => g.projects.length > 0);
+}
+
+/** The project's accent colour: the colour of its archive chapter. */
+export function projectColor(project: Project): string {
+  return CHAPTERS.find((c) => c.id === project.data.chapter)?.color ?? ACCENT;
+}
+
+/** Up to two initials, shown in place of a missing cover image. */
+export function initials(title: string): string {
+  const words = title.replace(/[^\p{L}\p{N} ]/gu, ' ').split(' ').filter((w) => w.length > 2 || /\d/.test(w));
+  return words.slice(0, 2).map((w) => w[0].toUpperCase()).join('') || '··';
+}
+
+/** What the quick-view pop-up needs to show a project (see ProjectPopup.astro). */
+export function popupData(project: Project) {
+  const { title, summary, short, cover, chapter, categories, mechanics, human } = project.data;
+  return {
+    slug: project.id,
+    title,
+    year: projectYear(project.data),
+    label: (CHAPTERS.find((c) => c.id === chapter)?.title ?? categories.join(' · ')).toUpperCase(),
+    color: projectColor(project),
+    initials: initials(title),
+    short: short ?? summary,
+    url: projectUrl(project),
+    image: cover && withBase(cover),
+    mechanics,
+    human,
+  };
+}
+
+export type PopupProject = ReturnType<typeof popupData>;
 
 export function slugify(text: string): string {
   return text

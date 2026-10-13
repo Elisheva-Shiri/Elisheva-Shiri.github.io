@@ -69,6 +69,18 @@ gallery:
     alt: A breadboard with a microcontroller, a sensor and a blinking red LED
     caption: The first breadboard version, May 2021.
     keywords: [Prototype]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Sensors watch food and water; a servo dispenses more when the bowl is empty.'
+chapter: motion
+order: 10
+body:
+  - at: front
+    dir: out
+    label: 'The hamster’s bowl and bottle, watched by sensors and refilled by a servo'
+  - at: eyes
+    dir: out
+    label: 'LEDs report the water level: empty, low or high'
 ---
 
 ## The system

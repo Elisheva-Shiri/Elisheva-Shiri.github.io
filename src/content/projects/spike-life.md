@@ -62,6 +62,21 @@ gallery:
     alt: 'The thorn’s timeline in four steps: formation in the porcupine, fallout in the forest, turning into a bookmark and a hairpin makeover'
     caption: The full timeline from 2002 to 2024. It forms in the porcupine, falls out in the forest, becomes a bookmark and is made over into a hairpin.
     keywords: [Timeline, Summary]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Following one porcupine quill through every life it passes through.'
+chapter: research
+order: 1
+body:
+  - at: hair
+    dir: out
+    label: 'A porcupine quill ends its journey as a hairpin'
+  - at: rhand
+    dir: in
+    label: 'Before that, a bookmark held between pages'
+  - at: ground
+    dir: in
+    label: 'First, a quill lying on the forest floor'
 ---
 
 ## The exercise

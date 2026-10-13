@@ -42,6 +42,24 @@ gallery:
     alt: A golden fish swimming in dark blue water
     caption: Life passing by. You don't chase it; it simply moves around you.
     keywords: [Presence, Life]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A VR experience with nothing to do and nowhere to go — only the feeling of being beneath the surface.'
+chapter: immersive
+order: 0.5
+tools: ['Unity', 'Meta Quest', 'Sound design']
+mechanics: 'A Unity scene for the Meta Quest headset, built around sound: the movement and muffled hush of water surround you from every side.'
+human: 'You stand in the middle of the sea with nothing to do and nowhere to go. You can only listen, look around and be underwater.'
+body:
+  - at: whole
+    dir: out
+    label: 'Being beneath the surface: the sea all around the body'
+  - at: eyes
+    dir: out
+    label: 'Sea, light and space all around and above'
+  - at: ear
+    dir: out
+    label: 'The muffled hush of water from every side'
 ---
 
 ## The experience

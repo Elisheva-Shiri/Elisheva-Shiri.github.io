@@ -20,6 +20,18 @@ gallery:
     alt: A plan of a theatre hall with nine rows of seats, a stage at the top, steps at the side and a grid of calculation points
     caption: The theatre hall in AGI32, with rows of seats, the stage, and a grid of calculation points over the audience and the stage.
     keywords: [AGI32, Plan]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A theatre hall set up in AGI32 with a calculation grid.'
+chapter: immersive
+order: 11
+body:
+  - at: seat
+    dir: out
+    label: 'Rows of seats, each with its own view of the light'
+  - at: eyes
+    dir: out
+    label: 'The lit stage'
 ---
 
 ## The project

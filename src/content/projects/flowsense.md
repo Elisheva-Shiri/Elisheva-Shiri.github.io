@@ -82,6 +82,24 @@ gallery:
     alt: A bar chart of closeness scores before and after the activity for experiment and control groups
     caption: Closeness (the Inclusion of Other in the Self scale) went up after the activity, more in the movement group than in the control group.
     keywords: [Validation, Closeness]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A co-founded startup: light, sound and vibration sync grandparents and grandchildren.'
+chapter: play
+order: 3
+tools: ['Arduino', 'Lean Startup', 'User research']
+mechanics: 'Two physical devices, one in each home, connected through an app. Lights, sounds and vibration lead a co-operative game; the first prototype starts from a two-Arduino circuit.'
+human: 'A grandmother and a grandchild imitate each other’s movements, pressing, stroking and moving the device the same way. In a test with 24 women aged 65 to 79, closeness rose more after moving in synchrony.'
+body:
+  - at: whole
+    dir: in
+    label: 'Moving the body in time with someone else'
+  - at: rhand
+    dir: out
+    label: 'Vibration, light and sound answer the movement'
+  - at: away
+    dir: out
+    label: 'A grandchild far away, moving with you'
 ---
 
 ## The problem

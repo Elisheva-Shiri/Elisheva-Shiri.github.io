@@ -46,6 +46,21 @@ gallery:
     alt: Another walk around the pillar showing the figures and the dragon on all sides
     caption: Another look at all four sides.
     keywords: [Mural]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Dragons, meditating and dancing figures wrapped around a wooden pillar.'
+chapter: art
+order: 2
+body:
+  - at: rhand
+    dir: in
+    label: 'Painted by hand, all four sides'
+  - at: legs
+    dir: in
+    label: 'You walk around the pillar to see it all'
+  - at: whole
+    dir: out
+    label: 'Meditating and dancing figures at body height'
 ---
 
 ## The mural

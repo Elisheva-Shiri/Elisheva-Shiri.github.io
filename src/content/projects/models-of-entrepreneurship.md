@@ -11,6 +11,14 @@ tags:
   - Entrepreneurship
   - Philosophy of science
   - Essay
+
+cover: /projects/models-of-entrepreneurship/cover.webp
+coverAlt: 'A timeline of the idea of the entrepreneur: the word appears in the 14th century, Cantillon, Schumpeter in 1912, and the first courses in the 1970s'
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'An essay on entrepreneurship through the philosophy of science.'
+chapter: research
+order: 4
 ---
 
 ## The question

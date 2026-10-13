@@ -75,6 +75,27 @@ gallery:
     alt: Presenting the kit in front of a slide showing the game box
     caption: Presenting the final kit.
     keywords: [Presentation]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A therapeutic board game for children before surgery at Hadassah Ein Karem.'
+chapter: assistive
+order: 7
+tools: ['Board game', 'Field research', '3D printing']
+mechanics: 'A board-game kit whose squares are the real stations of a surgery day. A luck die gives a riddle or a task, and the kit holds a real first-aid kit and 3D-printed medical toys.'
+human: 'Children told us the waiting is the hardest part and anaesthesia the scariest. Riddles explain what comes next, and handling the equipment makes it familiar before the operation.'
+body:
+  - at: rhand
+    dir: in
+    label: 'Rolling the dice and handling real medical equipment'
+  - at: mouth
+    dir: out
+    label: 'The anaesthesia mask, met in play before the operation'
+  - at: brain
+    dir: out
+    label: 'Knowing what comes next, station by station'
+  - at: beside
+    dir: out
+    label: 'A parent and a teacher, playing along'
 ---
 
 ## The place

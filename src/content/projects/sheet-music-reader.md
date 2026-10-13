@@ -47,6 +47,18 @@ gallery:
     alt: Two staves with every detected note marked in red, a scale climbing in treble and bass clefs
     caption: 'Step 5: every detected note marked in red. Its height on the stave gives its pitch.'
     keywords: [Detection, Pitch]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Image processing finds notes on printed sheet music and plays them.'
+chapter: play
+order: 8
+body:
+  - at: eyes
+    dir: in
+    label: 'Printed notes, read by the program instead of by eye'
+  - at: ear
+    dir: out
+    label: 'The notes, played as sound, an octave up or down'
 ---
 
 ## The goal

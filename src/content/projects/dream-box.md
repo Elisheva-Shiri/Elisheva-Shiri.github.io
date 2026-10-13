@@ -124,6 +124,24 @@ gallery:
     alt: A tall chipboard panel standing in a dry field with LED strips running down it and the control box below
     caption: A panel standing in the field, ready for night.
     keywords: [Installation, Outdoor]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A birch-panel corner for dreaming, with slow LED sequences and soft sound.'
+chapter: immersive
+order: 2
+body:
+  - at: whole
+    dir: out
+    label: 'The whole body lies inside, on a mattress and cushions'
+  - at: eyes
+    dir: out
+    label: 'LED strips light up in a slow sequence'
+  - at: ear
+    dir: out
+    label: 'A soft sound'
+  - at: above
+    dir: out
+    label: 'A perforated roof for shade'
 ---
 
 ## The idea

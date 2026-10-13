@@ -61,6 +61,18 @@ gallery:
     alt: The box seen from above with a soldered board and wires inside
     caption: The circuit board inside the box.
     keywords: [Electronics]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A 3D-printed controller with three arcade buttons for the theatre.'
+chapter: motion
+order: 5
+body:
+  - at: rhand
+    dir: in
+    label: 'Three large arcade buttons'
+  - at: front
+    dir: out
+    label: 'The monster theatre it controls'
 ---
 
 ## The build

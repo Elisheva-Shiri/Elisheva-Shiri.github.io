@@ -34,6 +34,21 @@ gallery:
     alt: Two pie charts, 35.4 percent have more free time since COVID-19, and 60.7 percent say their volunteering place needs more volunteers
     caption: A third of people had more free time since COVID-19, and most volunteers said their place needs more help.
     keywords: [Survey, Demand]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Survey-led design of a light platform matching volunteers with need.'
+chapter: research
+order: 5
+body:
+  - at: feet
+    dir: out
+    label: 'Knowing where to go: the main thing that stops people volunteering'
+  - at: rhand
+    dir: out
+    label: 'A helping hand, matched with someone who needs it'
+  - at: beside
+    dir: out
+    label: 'The person who needs help'
 ---
 
 ## The problem

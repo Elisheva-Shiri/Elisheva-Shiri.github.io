@@ -48,6 +48,18 @@ gallery:
     alt: The motor, the white gear and the metal strip glued onto the base
     caption: The motor, gear and arm, close up.
     keywords: [Detail, Build]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A felt fish swims on a wire arm above a small motor and gear, lit from below.'
+chapter: motion
+order: 8
+body:
+  - at: eyes
+    dir: out
+    label: 'A felt fish swims on a wire arm, lit from below in changing colours'
+  - at: front
+    dir: out
+    label: 'A small object to watch on a table'
 ---
 
 ## The object

@@ -50,6 +50,21 @@ gallery:
     alt: Floor plan of the office with desk clusters, private offices, a meeting room surrounded by plants and a kitchen
     caption: The floor plan, with desk clusters, private offices, a planted meeting room and a kitchen.
     keywords: [Floor plan, DIALux]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Even desk light, calm focus booths and softer rest areas.'
+chapter: immersive
+order: 10
+body:
+  - at: eyes
+    dir: out
+    label: 'Bright, even light over the shared desks'
+  - at: brain
+    dir: out
+    label: 'Green-walled booths for focus'
+  - at: whole
+    dir: out
+    label: 'Calmer light where people meet and rest'
 ---
 
 ## The project

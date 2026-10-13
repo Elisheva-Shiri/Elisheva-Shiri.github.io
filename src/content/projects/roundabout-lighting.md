@@ -55,6 +55,21 @@ gallery:
     alt: A bar chart of total power, 4750 W and 3500 W for the two sodium designs and 2700 W for LED
     caption: 'Energy: 4,750 W and 3,500 W for the two sodium designs, and 2,700 W for LED.'
     keywords: [Energy, Comparison]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Three solutions compared; the LED design used 43% less power.'
+chapter: immersive
+order: 12
+body:
+  - at: above
+    dir: out
+    label: 'Street lamps over the roundabout and its approach roads'
+  - at: eyes
+    dir: out
+    label: 'Light level, uniformity and glare, as the driver meets them'
+  - at: seat
+    dir: in
+    label: 'A driver passing through'
 ---
 
 ## The brief

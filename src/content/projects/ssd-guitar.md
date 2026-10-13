@@ -4,8 +4,8 @@ summary: >
   An adaptive guitar for a man who plays with one hand after severe injuries. Servo motors pluck
   the strings in fingerpicking patterns while he frets the chords, and buttons switch between
   patterns. A Tikkun Olam Makers project.
-featured: true
 categories:
+  - Robotics
   - Electronics
   - Interaction Design
 date: '2021-09'
@@ -64,6 +64,24 @@ gallery:
     alt: Fritzing diagram of an Arduino Uno wired to six servos and two buttons on a breadboard
     caption: The circuit. An Arduino drives six servos, one per string, and reads the buttons.
     keywords: [Circuit, Fritzing]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'An adaptive guitar for a one-handed player: he frets the chords, servos pluck in fingerpicking patterns.'
+chapter: assistive
+order: 0.5
+tools: ['Servo motors', 'Arduino', 'SolidWorks', '3D printing']
+mechanics: 'Six servo motors, one per string, each with a pick. An Arduino plays them in fingerpicking patterns — a bass string first, then the treble strings in turn — and a three-button box switches patterns.'
+human: 'Built with a man who, after severe injuries, does almost everything with one hand. He frets the chords and the guitar plays the rhythm, so he can play music again.'
+body:
+  - at: lhand
+    dir: in
+    label: 'One hand frets the chords and presses the pattern buttons'
+  - at: rhand
+    dir: out
+    label: 'Six servos pluck the strings in place of the second hand'
+  - at: ear
+    dir: out
+    label: 'He hears himself play again'
 ---
 
 ## The need

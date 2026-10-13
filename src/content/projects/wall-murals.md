@@ -57,6 +57,21 @@ gallery:
     alt: Two views of a pillar painted on all sides with figures, a dragon and patterns
     caption: The painted pillar. See [the full pillar](/projects/pillar-mural/).
     keywords: [Pillar, Collage]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Jaguar-crowned woman, whales, reaching hands, a forest and a dancer.'
+chapter: art
+order: 1
+body:
+  - at: rhand
+    dir: in
+    label: 'Painted by hand on walls, stairs, pillars and beams'
+  - at: whole
+    dir: out
+    label: 'Figures larger than the body: reaching hands, a dancer'
+  - at: above
+    dir: out
+    label: 'Some of them overhead, on the beams'
 ---
 
 ## The murals

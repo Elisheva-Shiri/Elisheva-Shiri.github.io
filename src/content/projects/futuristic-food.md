@@ -24,6 +24,18 @@ gallery:
     alt: A line sketch of a person at a kitchen counter preparing food, with shelves and bowls around them
     caption: The first sketch, a person preparing food in the kitchen.
     keywords: [Sketch, Scenario]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A speculative countertop machine for the kitchen of the future.'
+chapter: research
+order: 2
+body:
+  - at: rhand
+    dir: in
+    label: 'Grinding, mixing and preparing food on a countertop machine'
+  - at: belly
+    dir: out
+    label: 'The meal of the kitchen of the future'
 ---
 
 ## The project

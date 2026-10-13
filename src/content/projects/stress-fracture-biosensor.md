@@ -52,6 +52,24 @@ gallery:
     alt: Line plot of electric energy density along the electrode gap
     caption: The energy-density profile, used to compare electrode geometries.
     keywords: [Energy density, Optimisation]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A microneedle patch that tracks ALP to catch bone damage early.'
+chapter: signals
+order: 2
+tools: ['Microneedle', 'Electrochemistry', 'QuickField']
+mechanics: 'A patch with a flexible microneedle about 1.2 mm long. A gold electrode coated with 4-APP turns the level of ALP in the blood into an electric current, read continuously.'
+human: 'For athletes and soldiers: today a stress fracture is found only after pain is reported. The patch would flag bone damage before it hurts.'
+body:
+  - at: legs
+    dir: in
+    label: 'ALP, a blood marker of bone damage, sampled from a vein in the leg'
+  - at: feet
+    dir: in
+    label: 'Repeated loading: running, marching'
+  - at: brain
+    dir: out
+    label: 'A warning before the pain'
 ---
 
 ## The problem

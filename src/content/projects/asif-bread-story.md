@@ -117,6 +117,21 @@ gallery:
     alt: The full photo strip, with images of fields, wheat, grain and bread
     caption: 'The story in order: field, wheat, grain, flour and bread.'
     keywords: [Storytelling, Bread]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A tall photo strip moved by a stepper motor, from wheat field to loaf.'
+chapter: motion
+order: 9
+body:
+  - at: front
+    dir: out
+    label: 'A tall strip of photographs moves by a column, in front of the visitor'
+  - at: eyes
+    dir: out
+    label: 'The story from wheat field to millstone to loaf'
+  - at: belly
+    dir: out
+    label: 'It is a story about bread'
 ---
 
 ## The installation

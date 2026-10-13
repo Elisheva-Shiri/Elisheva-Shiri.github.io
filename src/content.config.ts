@@ -6,6 +6,7 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { getYouTubeId } from './lib/youtube';
+import { BODY_POINTS, CHAPTERS } from './site.config';
 
 // A file in /public, referenced as "/projects/<slug>/file.webp".
 // The build fails with a clear message if the file does not exist (catches typos early).
@@ -28,6 +29,7 @@ const galleryItem = z.union([
     keywords: z.array(z.string()).default([]), // shown on hover
     credit: z.string().optional(), // source of third-party material, shown under the caption
     poster: publicFile.optional(), // still image shown before a video plays
+    group: z.string().optional(), // series name; starts a new section in an immersive gallery
   }),
 ]);
 
@@ -49,6 +51,8 @@ const projects = defineCollection({
     cover: publicFile.optional(),
     coverAlt: z.string().optional(),
     gallery: z.array(galleryItem).default([]),
+    // true shows the gallery as a full-screen walk, one image at a time, instead of a grid.
+    immersive: z.boolean().default(false),
 
     youtube: z
       .string()
@@ -72,8 +76,29 @@ const projects = defineCollection({
       })
       .optional(),
 
-    // Set to true to show the project in "Selected work" at the top of the homepage.
+    // Set to true to make the project one of the selected projects on the homepage.
+    // Selected projects stay out of the archive page.
     featured: z.boolean().default(false),
+
+    // One line for cards and the quick-view pop-up (the summary is used if missing).
+    short: z.string().optional(),
+    // Archive chapter (ids are listed in src/site.config.ts) and position inside it.
+    chapter: z.enum(CHAPTERS.map((c) => c.id)).optional(),
+    order: z.number().optional(),
+    // The two lenses: what was built, and what it does for the person.
+    tools: z.array(z.string()).default([]),
+    mechanics: z.string().optional(),
+    human: z.string().optional(),
+    // Where the project meets the body: `in` = body → machine, `out` = machine → body.
+    body: z
+      .array(
+        z.object({
+          at: z.enum(Object.keys(BODY_POINTS)),
+          dir: z.enum(['in', 'out']),
+          label: z.string(),
+        }),
+      )
+      .default([]),
 
     // Set to true to hide a project from the built site while working on it.
     draft: z.boolean().default(false),

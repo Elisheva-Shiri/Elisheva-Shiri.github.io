@@ -20,6 +20,21 @@ gallery:
     alt: "A hand holding an open booklet with a drawn timeline, handwritten notes and three round stickers"
     caption: "A filled-in page of the kit: a timeline of the day, with handwritten notes and three round stickers."
     keywords: [Kit, Play]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A fold-out kit with a 3D-printed medal to turn waiting into play.'
+chapter: assistive
+order: 8
+body:
+  - at: rhand
+    dir: in
+    label: 'Drawing, sticking and folding through the waiting'
+  - at: chest
+    dir: out
+    label: 'A 3D-printed medal to wear'
+  - at: brain
+    dir: out
+    label: 'Waiting and treatment time turned into play'
 ---
 
 ## The kit

@@ -47,6 +47,18 @@ gallery:
     alt: A pink-lit crystal shape held up in the dark
     caption: A pink-lit crystal form.
     keywords: [Material, Light]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'RGB light reveals different lines of drawn figures, so the posture seems to shift.'
+chapter: immersive
+order: 5
+body:
+  - at: whole
+    dir: out
+    label: 'Drawn bodies whose posture seems to change with the colour of the light'
+  - at: eyes
+    dir: out
+    label: 'Different lines appear and disappear'
 ---
 
 ## The idea

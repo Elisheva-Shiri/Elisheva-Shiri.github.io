@@ -36,6 +36,24 @@ gallery:
     alt: The designer standing in front of a projected screen of code, next to a laptop
     caption: Presenting the project, with the code that decides your “destiny” projected behind.
     keywords: [Presentation, Code]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A camera reads your palm lines and AI turns the reading into a song.'
+chapter: touch
+order: 4
+tools: ['OpenCV', 'MediaPipe', 'Generative AI']
+mechanics: 'OpenCV finds the heart, head and life lines in a live image of the palm. Their length and position pick a palmistry reading, and AI turns the reading into a song.'
+human: 'A fortune-teller that is a computer: you hold out your hand, the camera measures it, and your destiny is sung back to you.'
+body:
+  - at: rhand
+    dir: in
+    label: 'The lines of the palm, found by a camera'
+  - at: ear
+    dir: out
+    label: 'The reading, sung back as a song'
+  - at: brain
+    dir: out
+    label: 'A destiny to believe, or not'
 ---
 
 ## The idea

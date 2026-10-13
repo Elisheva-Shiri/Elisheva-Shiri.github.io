@@ -55,6 +55,24 @@ gallery:
     alt: Thatched round huts among green grass and banana plants under a cloudy sky
     caption: "Round thatched huts and banana plants along the path at Sabai Gardens."
     keywords: [Place, Community]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Rainwater filtering and distribution for a community garden in Thailand.'
+chapter: research
+order: 8
+tools: ['Rainwater tanks', 'Filtration', 'Drip irrigation']
+mechanics: 'Water is collected in a tower of tanks, filtered, and carried by pipes across the garden to drip lines in the beds, so the organic garden is watered evenly.'
+human: 'Built by volunteers, in a community space anyone could join: the people who use the water are the people who built the system that brings it.'
+body:
+  - at: rhand
+    dir: in
+    label: 'Built by hand, with volunteers'
+  - at: ground
+    dir: out
+    label: 'Drip lines carry filtered water to the garden beds'
+  - at: above
+    dir: in
+    label: 'Rain, collected in a tower of tanks'
 ---
 
 ## The place
@@ -68,3 +86,10 @@ as long as they wanted.
 I worked on the garden's **water filtering and distribution system**. Water is collected in a
 tower of tanks, filtered, and then carried by pipes across the garden to drip lines in the beds,
 so the new organic garden could be watered evenly.
+
+## Where it led
+
+Building a water system by hand, with the community that uses it, came before the research. Two
+years later I studied the other half of the question, not how water reaches people but how they
+can know it is safe, in
+[Water Monitoring in Indian Communities by Women](../water-quality-kerala/).

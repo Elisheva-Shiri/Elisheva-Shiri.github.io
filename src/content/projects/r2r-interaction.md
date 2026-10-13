@@ -23,6 +23,24 @@ gallery:
     alt: 'Diagram: words read by the camera choose a mood and background music; the tracked body is recognised as gestures that trigger sounds'
     caption: Two layers of interaction. What you write sets the mood, and how you move plays the music.
     keywords: [System, Interaction flow]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+chapter: touch
+order: 3
+short: 'Your body as the instrument: written words set the mood, and gestures recognised by a neural network play the sounds.'
+tools: ['MediaPipe', 'LSTM network', 'OCR', 'Python']
+mechanics: 'MediaPipe follows the face, body and both hands. A stacked LSTM network, trained on my own recordings, recognises two gestures — “wow” and “sing” — and plays a drum or voice sample.'
+human: 'The body is the instrument, with no controller and no keyboard: words held up to the camera set the mood, gestures play the sounds, and the height of a hand sets the volume.'
+body:
+  - at: whole
+    dir: in
+    label: 'Face, body and both hands, followed by the camera'
+  - at: rhand
+    dir: in
+    label: 'Gestures play the sounds; hand height sets the volume'
+  - at: ear
+    dir: out
+    label: 'Drum and voice samples over a mood track'
 ---
 
 ## The idea

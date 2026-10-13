@@ -40,6 +40,21 @@ gallery:
     alt: A Fritzing diagram of an Arduino Mega wired to a keypad, a 7-segment display, an ultrasonic sensor, LEDs and a servo
     caption: The circuit. An Arduino Mega with the keypad, display, ultrasonic sensor, LEDs and servo lock.
     keywords: [Circuit, Fritzing]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'An Arduino safe that wakes on approach and opens its servo lock for the right code.'
+chapter: motion
+order: 12
+body:
+  - at: whole
+    dir: in
+    label: 'It wakes when a body comes near'
+  - at: tip
+    dir: in
+    label: 'A code typed on the keypad'
+  - at: front
+    dir: out
+    label: 'The servo lock opens only for the right code'
 ---
 
 ## How it works

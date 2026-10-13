@@ -24,6 +24,21 @@ gallery:
     alt: A plot of fall time against height, a theoretical square-root curve and five measured points below it
     caption: 'An acoustic stopwatch: the phone starts and stops timing on sound, to time a free fall from five heights, compared with t = √(2h/g).'
     keywords: [Acoustic stopwatch, Free fall]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Pendulum and free-fall experiments measured with phone sensors, analysed in MATLAB.'
+chapter: signals
+order: 4
+body:
+  - at: front
+    dir: in
+    label: 'The phone itself swings as a pendulum and falls'
+  - at: rhand
+    dir: in
+    label: 'Letting it go'
+  - at: ear
+    dir: in
+    label: 'The fall is timed by its sound'
 ---
 
 ## The idea

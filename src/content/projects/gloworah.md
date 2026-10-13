@@ -85,6 +85,21 @@ gallery:
     alt: Technical drawings of the hanukkiah from several views
     caption: Technical drawings of the board and holder, from SolidWorks.
     keywords: [CAD, Technical drawing]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A connected hanukkiah wired to a neighbour’s, spreading light home to home.'
+chapter: motion
+order: 14
+body:
+  - at: rhand
+    dir: in
+    label: 'Each night you wire your hanukkiah to a neighbour’s'
+  - at: eyes
+    dir: out
+    label: 'The lights pass along the chain'
+  - at: beside
+    dir: out
+    label: 'The neighbour’s home, next in the chain of light'
 ---
 
 ## The story

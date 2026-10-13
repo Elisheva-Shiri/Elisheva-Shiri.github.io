@@ -188,6 +188,18 @@ gallery:
     alt: The underside of a board with many wires running to a breadboard and a controller
     caption: The electronics under the board.
     keywords: [Electronics, Wiring]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Three stacked boards turning on bearings, driven by a motor and gears.'
+chapter: motion
+order: 7
+body:
+  - at: rhand
+    dir: in
+    label: 'Moving a piece up three storeys of boards'
+  - at: eyes
+    dir: out
+    label: 'The boards turn, and the game changes'
 ---
 
 ## The game

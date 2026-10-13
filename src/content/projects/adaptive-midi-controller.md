@@ -4,7 +4,6 @@ summary: >
   A DJ controller built for accessibility. Oversized arcade buttons, faders and joysticks in a
   laser-cut box let you play music in Mixxx without fine finger movements. It runs on an Arduino
   and starts automatically on a Raspberry Pi.
-featured: true
 categories:
   - Electronics
 date: '2021-07'
@@ -145,6 +144,21 @@ gallery:
     alt: Inside the box, wires connecting the buttons and faders
     caption: The wiring inside.
     keywords: [Wiring]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Oversized buttons and joysticks let you DJ without fine finger movement.'
+chapter: assistive
+order: 1
+tools: ['Arduino / Teensy', 'MIDI · Mixxx', 'Raspberry Pi', 'Laser cutting']
+mechanics: 'Up to nine arcade buttons, three faders and two joysticks, read by an Arduino or Teensy and sent as MIDI to Mixxx. A Raspberry Pi starts it on boot, so it works as a standalone instrument.'
+human: 'Designed together with the person who uses it: buttons large enough to press with a whole hand, so DJing no longer needs fine finger control.'
+body:
+  - at: rhand
+    dir: in
+    label: 'Whole-hand presses on large buttons, long faders and joysticks'
+  - at: ear
+    dir: out
+    label: 'The music being mixed'
 ---
 
 ## The idea

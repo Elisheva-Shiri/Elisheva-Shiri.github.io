@@ -65,6 +65,18 @@ gallery:
     alt: Grid of calculation points with curved isolines across a rectangular room
     caption: "Isolines and calculation points for one room."
     keywords: [Calculation, Grid]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A full daylight-aware lighting plan in DIALux evo.'
+chapter: immersive
+order: 8
+body:
+  - at: whole
+    dir: out
+    label: 'Daylight and lamps planned around the body, room by room'
+  - at: eyes
+    dir: out
+    label: 'Enough light to see by, without glare'
 ---
 
 ## The design

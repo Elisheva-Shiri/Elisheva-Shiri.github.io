@@ -16,6 +16,15 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
 const ogImage = image && Astro.site ? new URL(withBase(image), Astro.site).href : undefined;
 const home = withBase('/');
 const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replace(/\/$/, '');
+const archive = withBase('/projects/');
+const [first, ...rest] = SITE.name.toUpperCase().split(' ');
+const nav = [
+  { label: 'Lab', href: withBase('/#lab') },
+  { label: 'What I bring', href: withBase('/#stack') },
+  { label: 'Work', href: withBase('/#work') },
+  { label: 'Archive', href: archive, current: Astro.url.pathname === archive },
+  { label: 'Contact', href: withBase('/#contact') },
+];
 ---
 
 <!doctype html>
@@ -23,6 +32,7 @@ const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replac
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07070b" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
@@ -32,7 +42,7 @@ const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replac
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700;800&display=swap"
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
@@ -44,15 +54,13 @@ const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replac
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <nav class="container" aria-label="Main">
-        <a class="site-name" href={home} aria-current={isHome ? 'page' : undefined}>
-          <span class="dot" aria-hidden="true"></span>{SITE.name}
-        </a>
+    <header class="site-header container">
+      <a class="site-name" href={home} aria-current={isHome ? 'page' : undefined} aria-label={SITE.name}>
+        {first}{rest.map((word, i) => <><span class={i % 2 ? 'cyan' : 'pink'} aria-hidden="true">·</span>{word}</>)}
+      </a>
+      <nav aria-label="Main">
         <ul>
-          <li><a href={withBase('/#index')}>Work</a></li>
-          {SITE.about.text.length > 0 && <li><a href={withBase('/#about')}>About</a></li>}
-          {SITE.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+          {nav.map((item) => <li><a href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a></li>)}
         </ul>
       </nav>
     </header>
@@ -61,13 +69,13 @@ const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replac
       <slot />
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer band band-alt">
       <div class="container footer-inner">
-        <p>© {new Date().getFullYear()} {SITE.name}</p>
-        <p class="footer-links">
+        <span>© {new Date().getFullYear()} {SITE.name}</span>
+        <span class="footer-links">
           {SITE.links.map((link) => <a href={link.href}>{link.label}</a>)}
-          <a href="#main">Back to top ↑</a>
-        </p>
+          <a href={isHome ? '#lab' : '#main'}>{isHome ? 'Back to the lab ↑' : 'Back to top ↑'}</a>
+        </span>
       </div>
     </footer>
   </body>
@@ -75,64 +83,42 @@ const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replac
 
 <style>
   .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    border-bottom: 1px solid var(--border);
-    background: color-mix(in srgb, var(--background) 94%, transparent);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-sm) var(--space-lg);
-    padding-block: 0.85rem;
+    gap: 16px;
+    padding-block: 22px;
+  }
+
+  .site-name {
+    color: var(--foreground);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .site-name:hover {
+    color: var(--foreground);
   }
 
   nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-lg);
+    gap: 8px 22px;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   nav a {
-    color: var(--foreground);
     font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-decoration: none;
+    font-size: 0.8125rem;
   }
 
-  nav a:hover {
-    color: var(--accent);
-  }
-
-  .site-name {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6em;
-  }
-
-  .dot {
-    width: 0.55rem;
-    height: 0.55rem;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2.4s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    50% {
-      opacity: 0.35;
-    }
+  nav a[aria-current='page'] {
+    color: var(--pink);
   }
 
   main:focus {
@@ -140,38 +126,22 @@ const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replac
   }
 
   .site-footer {
-    margin-top: var(--space-xl);
-    border-top: 1px solid var(--border);
     font-family: var(--font-mono);
     font-size: var(--font-size-xs);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--muted);
+    color: var(--faint);
   }
 
   .footer-inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: var(--space-md);
-    padding-block: var(--space-lg);
-  }
-
-  .footer-inner p {
-    margin: 0;
+    gap: 12px;
+    padding-block: 24px;
   }
 
   .footer-links {
     display: flex;
-    gap: var(--space-lg);
-  }
-
-  .footer-links a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .footer-links a:hover {
-    color: var(--accent);
+    flex-wrap: wrap;
+    gap: 8px 22px;
   }
 </style>

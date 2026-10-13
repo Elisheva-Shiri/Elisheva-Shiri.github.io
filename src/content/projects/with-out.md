@@ -44,7 +44,27 @@ gallery:
     alt: Screen recording scrolling through the code, with images, spectrograms and waveforms
     caption: Behind the scenes. Eight ways of turning an image into sound, each with its spectrogram and waveform.
     keywords: [Code, Process]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Photos turned into sound; subtracting a version without me leaves my sound.'
+chapter: immersive
+order: 6
+tools: ['Python', 'Spectrogram', 'Signal processing']
+mechanics: 'Each photo becomes a colourful spectrogram and then sound, in eight different ways. A version of the photo with me erased is subtracted from the original, sound from sound.'
+human: 'Friends and family each sent one moment that, in their eyes, is “me”. What is left after the subtraction is a distillation: the sound of my place among them.'
+body:
+  - at: eyes
+    dir: in
+    label: 'A photo of one moment that, to someone close, is “me”'
+  - at: ear
+    dir: out
+    label: 'The sound that remains when I am subtracted from it'
+  - at: beside
+    dir: in
+    label: 'Friends and family, who chose the moments'
 ---
+
+_Image · space · sound · belonging_
 
 ## The question
 

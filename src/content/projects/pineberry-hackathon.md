@@ -4,7 +4,6 @@ summary: >
   A winning hackathon concept from the International Startup Week at HNU in Germany. PineBerry is
   an AI assistant, with a friendly pineapple avatar, that supports after-sales service for a
   German–Kenyan solar energy platform. Our team won first place.
-featured: true
 categories:
   - Interaction Design
   - Design Research
@@ -65,6 +64,21 @@ gallery:
     alt: The pink pineapple avatar as a sticker on white
     caption: The PineBerry avatar as a sticker.
     keywords: [Avatar, Branding]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'An AI after-sales assistant with a pineapple avatar for a solar platform.'
+chapter: play
+order: 3
+body:
+  - at: mouth
+    dir: in
+    label: 'A question asked in plain words'
+  - at: eyes
+    dir: out
+    label: 'A friendly pineapple avatar answers'
+  - at: above
+    dir: in
+    label: 'The solar system on the roof that it looks after'
 ---
 
 ## The hackathon

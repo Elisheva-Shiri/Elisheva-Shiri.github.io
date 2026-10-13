@@ -5,6 +5,7 @@ summary: >
   see what the surgeon sees. Shared views, on-screen guidance and pseudo-haptic cues help close
   both gaps.
 categories:
+  - Robotics
   - Haptics
   - Immersive Experience
 date: '2024-06'
@@ -65,6 +66,27 @@ gallery:
     alt: 'Challenge slide listing cognitive overload, real-time computing and latency'
     caption: The open challenges are cognitive overload, real-time computing and latency.
     keywords: [Challenges, Constraints]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+chapter: touch
+order: 0.5
+short: 'A concept for robotic surgery: a shared, drawable view for the team, and visual and audio cues that stand in for the surgeon’s lost touch.'
+tools: ['Pseudo-haptics', 'Shared view', 'Systems mapping']
+mechanics: 'A concept for the surgical robot’s interface: a tablet mirrors the surgeon’s console view live, and a digital pen lets the team draw on it — highlight tissue, point to a spot, outline an area to avoid.'
+human: 'The surgeon cannot feel tissue through the robot, and the team cannot see what the surgeon sees. Colour, motion and sound stand in for touch, and the team can point instead of describe.'
+body:
+  - at: rhand
+    dir: in
+    label: 'The surgeon’s hands steer the robotic instruments from the console'
+  - at: eyes
+    dir: out
+    label: 'Marks from the team, layered onto the live view'
+  - at: tip
+    dir: out
+    label: 'Touch suggested through sight and sound (pseudo-haptics)'
+  - at: beside
+    dir: in
+    label: 'The team at the bedside draws on what the surgeon sees'
 ---
 
 ## The problem

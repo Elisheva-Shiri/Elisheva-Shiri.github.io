@@ -54,6 +54,25 @@ publication:
   url: https://example.com/paper
   pdf: /projects/my-project/paper.pdf
 
+# Cards, archive chapter, the two lenses and the body map.
+featured: false # true makes it a selected project on the homepage (and keeps it out of the archive)
+short: One line for cards and the quick-view pop-up. # the summary is used if missing
+chapter: touch # archive chapter: touch, signals, motion, immersive, assistive, play, research or art
+order: 1 # position inside the chapter (or among the selected projects); lower comes first
+tools: [Arduino, 3D printing] # chips on the homepage card; the first tags are used if missing
+mechanics: What was built - the mechanism, the actuation, the control.
+human: What it does for the person who touches it.
+body: # "Where it meets the body" on the project page
+  # On the body: hair, brain, eyes, ear, mouth, chest, heart, belly, seat, forearm, wrist, lhand,
+  # rhand, tip (fingertip), legs, feet. The whole body: whole. Outside it: front, beside, above,
+  # ground, away.
+  - at: forearm
+    dir: in # in = body to machine (pink), out = machine to body (cyan)
+    label: Muscle signals from the forearm
+  - at: tip
+    dir: out
+    label: Skin stretch on the fingertip
+
 draft: false # true hides the project from the site
 ---
 

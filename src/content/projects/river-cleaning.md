@@ -32,6 +32,18 @@ gallery:
     alt: Gameplay screen where several pieces of rubbish have turned into goldfish swimming away
     caption: Click a piece of rubbish and it becomes a fish. Every clean-up gives the river back to life.
     keywords: [Gameplay, Reward, Transformation]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Click floating rubbish and it turns into a fish that swims away.'
+chapter: play
+order: 6
+body:
+  - at: tip
+    dir: in
+    label: 'A click on each piece of floating rubbish'
+  - at: eyes
+    dir: out
+    label: 'It turns into a fish and swims away'
 ---
 
 ## The river

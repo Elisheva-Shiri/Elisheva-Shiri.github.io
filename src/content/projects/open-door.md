@@ -93,6 +93,24 @@ gallery:
     alt: "The controller board on the bench with a reel of LED strip, pliers and tools"
     caption: "The board with the LED strip it drives."
     keywords: [LED, Build]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Turn the handle and a gear train spins two cut-out spirals into shifting patterns.'
+chapter: motion
+order: 3
+tools: ['Planetary gears', 'Laser cutting', 'LED backlight']
+mechanics: 'A planetary gear train, laser-cut from plywood, turns two cut-out spiral mandalas against each other on a door panel backlit by LED strips.'
+human: 'One familiar gesture — turning a door handle — and the overlap of the spirals keeps changing into new patterns of colour and shadow.'
+body:
+  - at: rhand
+    dir: in
+    label: 'Turning the handle at the side of the door'
+  - at: eyes
+    dir: out
+    label: 'Two spirals turn into shifting patterns of colour and shadow'
+  - at: whole
+    dir: out
+    label: 'A door to stand in front of, alone in the desert'
 ---
 
 ## The installation

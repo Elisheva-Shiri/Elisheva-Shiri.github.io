@@ -5,6 +5,7 @@ summary: >
   steers itself to a goal with a PID controller and swerves around obstacles. Three robots meet
   at one point, and linearised pendulums swing.
 categories:
+  - Robotics
   - Creative Coding
 date: '2022-02'
 dateEnd: '2022-06'
@@ -39,6 +40,18 @@ gallery:
     alt: Animation of two pendulums of different lengths swinging at different rates
     caption: Two linearised pendulums, 0.5 m and 0.8 m long, solved in state space. The shorter one swings faster.
     keywords: [State space, Pendulum]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'PID-steered differential-drive robot, multi-robot rendezvous and pendulums in MATLAB.'
+chapter: motion
+order: 1
+tools: ['MATLAB', 'PID control', 'State space']
+mechanics: 'MATLAB simulations: a differential-drive robot steers to a goal with a PID controller on its heading error and turns away from obstacles within 0.5 m; three robots meet at one point.'
+human: 'No person in this loop yet — this is the control groundwork. I swept 8,000 PID gain sets to find motion that arrives fast and turns evenly.'
+body:
+  - at: front
+    dir: out
+    label: 'A robot that steers itself to a goal and around obstacles: no person in the loop yet'
 ---
 
 ## The course

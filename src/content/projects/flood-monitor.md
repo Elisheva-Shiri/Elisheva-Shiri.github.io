@@ -51,6 +51,18 @@ gallery:
     caption: An AI-generated visualisation of the sensors spread across the field.
     keywords: [AI render, System]
     credit: AI-generated with Draw3D.online from my sketch
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'Field sensor heads that help farmers capture flood water for reuse.'
+chapter: research
+order: 3
+body:
+  - at: ground
+    dir: in
+    label: 'Sensor heads spread across the field read the flood water'
+  - at: feet
+    dir: out
+    label: 'The farmer knows where the water stands before walking in'
 ---
 
 ## The idea

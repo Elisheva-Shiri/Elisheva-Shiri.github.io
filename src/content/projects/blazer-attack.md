@@ -32,6 +32,24 @@ gallery:
     alt: Pixel-art hero surrounded by trees, a slime and a skeleton, with the gun pointing at an angle
     caption: Enemies close in while the aim drifts. Steadiness has to be earned through movement.
     keywords: [Gameplay, Challenge]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+chapter: assistive
+order: 6
+short: 'A game whose superhero lives with Parkinson’s: the tremor is part of the controls, and movement makes him stronger.'
+tools: ['Python', 'Pygame', 'Game design']
+mechanics: 'A Pygame game where movement fills an energy meter: the more the player moves, the stronger and faster the shots. Stand still, and they turn slower and less accurate.'
+human: 'The hero, Alon, lives with Parkinson’s. Players feel in the controls why movement helps him, and meet a hidden disability as a source of strength.'
+body:
+  - at: rhand
+    dir: in
+    label: 'Hands on controls that carry the hero’s tremor'
+  - at: whole
+    dir: in
+    label: 'Keep moving: movement fills the energy meter'
+  - at: brain
+    dir: out
+    label: 'A hidden disability, met as a source of strength'
 ---
 
 ## Games as a learning space

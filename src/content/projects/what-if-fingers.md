@@ -48,6 +48,21 @@ gallery:
     alt: 3D renders of two wider caps that join two fingers together
     caption: Two-finger caps that join neighbouring fingers into one.
     keywords: [Merged fingers, CAD]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: '3D-printed finger extensions put through an everyday test: opening a jar.'
+chapter: touch
+order: 1
+tools: ['SolidWorks', '3D printing', 'Speculative design']
+mechanics: 'Finger extensions and caps modelled in SolidWorks and 3D-printed: one for each finger, plus two-finger pieces that merge neighbouring fingers.'
+human: 'I wore them and repeated one everyday task: opening a jar. Long fingers change reaching and pinching completely; merged fingers can push but hardly grasp.'
+body:
+  - at: rhand
+    dir: out
+    label: '3D-printed extensions make the fingers longer, capped or merged'
+  - at: front
+    dir: in
+    label: 'An everyday test: a jar to open'
 ---
 
 ## The question

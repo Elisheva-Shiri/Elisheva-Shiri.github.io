@@ -46,6 +46,21 @@ gallery:
     alt: The underside of the clear oval plate with dozens of red, blue and yellow wires soldered to a long microcontroller board
     caption: 'Rewiring the controller, March 2023: dozens of wires from every button, knob and fader to the board.'
     keywords: [Wiring, Soldering]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A custom control plate laid out for one user, enclosure designed in SolidWorks.'
+chapter: assistive
+order: 2
+body:
+  - at: lhand
+    dir: in
+    label: 'Knobs, buttons and faders laid out for one user'
+  - at: rhand
+    dir: in
+    label: 'Joysticks placed where this hand reaches'
+  - at: ear
+    dir: out
+    label: 'The sound the controller plays'
 ---
 
 ## The controller

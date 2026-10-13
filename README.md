@@ -39,8 +39,14 @@ You never edit the homepage, routing or components to add a project. The file na
 | ------------- | -------- | ----- |
 | `title`       | yes      | |
 | `summary`     | yes      | 1–2 sentences: card text, page intro, search/social description |
-| `categories`  | yes      | List. Each category becomes a filter button on the homepage index |
-| `featured`    | no       | `true` shows the project in "Selected work" at the top of the homepage |
+| `categories`  | yes      | List. Each category becomes a filter chip in the homepage work section |
+| `featured`    | no       | `true` makes it one of the selected projects: first on the homepage, and left out of the archive page |
+| `short`       | no       | One line for cards and the quick-view pop-up (the summary is used if missing) |
+| `chapter`     | no       | Archive chapter: `touch`, `signals`, `motion`, `immersive`, `assistive`, `play`, `research` or `art` (defined in `src/site.config.ts`) |
+| `order`       | no       | Position inside the chapter, or among the selected projects. Lower comes first |
+| `tools`       | no       | List of chips on the homepage card (the first tags are used if missing) |
+| `mechanics`, `human` | no | The two lenses: what was built, and what it does for the person. With both, the card shows them and the Mechanics / Human toggle applies |
+| `body`        | no       | "Where it meets the body": list of `{ at, dir, label }`. `at` is a place on the body (`hair`, `brain`, `eyes`, `ear`, `mouth`, `chest`, `heart`, `belly`, `seat`, `forearm`, `wrist`, `lhand`, `rhand`, `tip`, `legs`, `feet`), the whole body (`whole`), or a place outside it (`front`, `beside`, `above`, `ground`, `away`); `dir` is `in` (body → machine) or `out` (machine → body) |
 | `date`        | no       | `'2024'` or `'2024-11'` (in quotes). Shown as "November 2024"; projects are sorted newest first |
 | `dateEnd`     | no       | End of a project that ran over several months, e.g. `'2025-01'` → "November 2024 – January 2025" |
 | `tags`        | no       | List, shown as "Tools & topics" in the project's side panel |
@@ -48,6 +54,7 @@ You never edit the homepage, routing or components to add a project. The file na
 | `cover`       | no       | `/projects/<slug>/cover.webp`. Card image, page hero and social preview |
 | `coverAlt`    | no       | Description of the cover image for screen readers |
 | `gallery`     | no       | List of image/video paths, or `{ src, alt, caption, keywords, poster, credit }` entries. `credit` names the source of third-party material in the image. `caption` (1–2 sentences) shows under the item; `keywords` appear on hover (always visible on touch screens). `.mp4`/`.webm` files play as silent loops; `poster` is their still frame |
+| `immersive`   | no       | `true` shows the gallery as a full-screen walk, one image at a time, instead of a grid. A gallery item's `group` starts a new series with a title screen (see `photography.md`) |
 | `youtube`     | no       | Any normal YouTube link (`watch?v=`, `youtu.be/`, `shorts/`, `embed/`, `live/`) |
 | `github`      | no       | Repository URL → "View on GitHub" button |
 | `website`     | no       | External URL → "Visit website" button |
@@ -74,20 +81,23 @@ Sections only appear when they have content: no `youtube`, no video section, and
 src/
 ├── content.config.ts        Project schema (fields + validation)
 ├── content/projects/        One Markdown file per project (_template.md is ignored)
-├── site.config.ts           Site name, role, intro line, links and About text
+├── site.config.ts           Site name, role, intro, links, About text, "What I bring", archive chapters, body-map points
 ├── lib/
-│   ├── projects.ts          Loading/sorting projects, grouping by category, base-path helper
+│   ├── projects.ts          Loading/sorting projects, grouping by category and chapter, base-path helper
 │   └── youtube.ts           Extracts the video ID from YouTube URLs
 ├── components/
-│   ├── SignalHero.astro     Homepage header: name over interactive signal waves (canvas)
-│   ├── ProjectIndex.astro   Project index: filters, list/grid views, cover that follows the pointer
+│   ├── Lab.astro            Homepage lab: the interactive robot hand and headset view (SVG)
+│   ├── ProjectPopup.astro   Quick-view pop-up: cover, the two lenses, one button to the full project page
+│   ├── PhotoWalk.astro      Immersive gallery: a full-screen walk through a project's images
+│   ├── BodyMap.astro        "Where it meets the body" figure on project pages
 │   ├── Gallery.astro        Image/video grid with captions, hover keywords and a lightbox
 │   ├── YouTube.astro        Responsive privacy-enhanced embed
 │   └── Publication.astro    Citation block with PDF / URL / DOI links
 ├── layouts/BaseLayout.astro Page shell: <head> metadata, navigation, footer
 ├── pages/
-│   ├── index.astro          Homepage: hero, selected work, project index, About
-│   ├── projects/[id].astro  Project page: title, side panel, story, gallery, next/previous
+│   ├── index.astro          Homepage: headline, lab, What I bring, selected work, About & contact
+│   ├── projects/index.astro Archive: every other project, in chapters
+│   ├── projects/[id].astro  Project page: cover, body map, story, gallery, next project
 │   └── 404.astro
 └── styles/global.css        Design tokens (colours, spacing, widths) and base styles
 public/projects/<slug>/      Images and PDFs for each project

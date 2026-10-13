@@ -35,6 +35,24 @@ gallery:
     alt: A hand wearing the felt bird on a finger while the laptop plots a live pulse waveform from an Arduino
     caption: The toy on a finger, with the live pulse waveform on the laptop behind it.
     keywords: [Pulse, Live data]
+
+# Cards, archive chapter, the two lenses and the body map (see README).
+short: 'A felt bird hides a pulse sensor so measuring feels like play.'
+chapter: signals
+order: 3
+tools: ['Pulse sensor', 'Arduino', 'Felt']
+mechanics: 'A pulse sensor inside a felt finger puppet sends the heartbeat to an Arduino. It is plotted live on the computer, and a small light on the toy blinks with each beat.'
+human: 'The child plays with a friendly bird instead of wearing a medical clip — and can see their own heart beating.'
+body:
+  - at: tip
+    dir: in
+    label: 'Pulse read at the fingertip, inside a felt bird'
+  - at: heart
+    dir: in
+    label: 'The heartbeat being measured'
+  - at: eyes
+    dir: out
+    label: 'A light on the toy blinks with each beat'
 ---
 
 ## The idea
