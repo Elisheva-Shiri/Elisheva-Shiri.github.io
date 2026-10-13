@@ -15,22 +15,18 @@ tags:
   - Autonomous vehicles
   - Control
 
-cover: /projects/autonomous-cars/cover.webp
+cover: /projects/autonomous-cars/ring-road-sim.webp
 coverAlt: A traffic simulator on a green background showing an oval ring road with cars on it
 
 gallery:
   - src: /projects/autonomous-cars/ring-road-sim.webp
     alt: A traffic simulator showing an oval ring road on a green background, with small cars spread around it
-    caption: The ring road in the simulator, August 2022. Cars drive in a loop, each following the one in front.
+    caption: "The ring-road network loaded in the SUMO simulator, before the run."
     keywords: [Simulation, Ring road]
   - src: /projects/autonomous-cars/car-following-code.webp
     alt: A screen of Python code with a car-following function that finds the leader car and computes acceleration from speed and distance
     caption: The car-following model in Python. Each car finds the car in front and sets its acceleration from its speed, the speed difference and the gap.
     keywords: [Python, Car following]
-  - src: /projects/autonomous-cars/intersection-code.webp
-    alt: A screen of Python code computing car speed, steering angle and position, with comments about the safety zone and intersections
-    caption: Steering and position updates, with a safety zone around each car and rules for intersections.
-    keywords: [Python, Kinematics]
 ---
 
 ## The problem

@@ -12,7 +12,7 @@ tags:
   - Community
   - India
 
-cover: /projects/goa-beach-cleanup/cover.webp
+cover: /projects/goa-beach-cleanup/before.webp
 coverAlt: A beach covered in plastic waste, with fishing nets and huts in the background
 
 gallery:

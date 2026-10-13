@@ -12,7 +12,7 @@ tags:
   - Game
   - Shapes
 
-cover: /projects/tom-shape-puzzle/cover.webp
+cover: /projects/tom-shape-puzzle/puzzle-solved.webp
 coverAlt: A red 3D-printed tray with blue triangles, green circles and orange hexagons in its slots
 
 gallery:
@@ -20,18 +20,10 @@ gallery:
     alt: A red 3D-printed tray marked Shenkar with blue triangles, green circles and orange hexagons in its slots
     caption: The finished game. Each shape fits into its own slot in the tray.
     keywords: [Game, 3D printing]
-  - src: /projects/tom-shape-puzzle/puzzle-mixed.webp
-    alt: The tray with the shapes in different slots
-    caption: Playing, with shapes moved around.
-    keywords: [Play]
   - src: /projects/tom-shape-puzzle/puzzle-angle.webp
     alt: The tray from another angle
     caption: The shapes are split into pieces, so each one is a small puzzle.
     keywords: [Puzzle, Detail]
-  - src: /projects/tom-shape-puzzle/modelling.webp
-    alt: A laptop showing a 3D model of a triangle, a circle and a hexagon
-    caption: Modelling the shapes in Fusion 360.
-    keywords: [Fusion 360, CAD]
   - src: /projects/tom-shape-puzzle/modelling-detail.webp
     alt: Close-up of the 3D models of the three shapes, each split into parts
     caption: Each shape is split into parts that fit together.

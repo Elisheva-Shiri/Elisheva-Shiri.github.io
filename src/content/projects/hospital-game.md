@@ -12,13 +12,13 @@ tags:
   - Game design
   - 3D printing
 
-cover: /projects/hospital-game/cover.webp
+cover: /projects/hospital-game/kit-open.webp
 coverAlt: "A fold-out white booklet with a pen, crayons, a sheet of red round stickers and a yellow 3D-printed medal"
 
 gallery:
   - src: /projects/hospital-game/kit-open.webp
-    alt: "A fold-out white booklet with a pen, crayons, a sheet of red round stickers and a yellow 3D-printed medal held by elastic bands"
-    caption: "The kit opened out: a page to fill in, a pen and crayons, stickers, and a 3D-printed medal to win."
+    alt: "A hand holding an open booklet with a drawn timeline, handwritten notes and three round stickers"
+    caption: "A filled-in page of the kit: a timeline of the day, with handwritten notes and three round stickers."
     keywords: [Kit, Play]
 ---
 

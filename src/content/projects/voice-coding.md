@@ -17,7 +17,7 @@ tags:
 
 github: https://github.com/Elisheva-Shiri/voice-comments
 
-cover: /projects/voice-coding/cover.webp
+cover: /projects/voice-coding/icon.webp
 coverAlt: A blue banner reading Voice comment generator for VSC, with a comment slash and a microphone icon
 
 gallery:

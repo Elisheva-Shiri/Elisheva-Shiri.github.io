@@ -18,7 +18,7 @@ tags:
   - Python
   - OpenCV
 
-cover: /projects/sheet-music-reader/cover.webp
+cover: /projects/sheet-music-reader/detected-notes.webp
 coverAlt: Two staves with the detected notes marked in red, climbing up the treble and bass clefs
 
 gallery:

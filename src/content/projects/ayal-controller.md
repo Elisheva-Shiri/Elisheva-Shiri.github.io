@@ -13,7 +13,7 @@ tags:
   - SolidWorks
   - Accessibility
 
-cover: /projects/ayal-controller/cover.webp
+cover: /projects/ayal-controller/final-controls.webp
 coverAlt: A mint-green oval controller with coloured buttons, two joysticks, two slide faders and knobs
 
 gallery:
@@ -26,17 +26,13 @@ gallery:
     caption: The components mounted on a clear inner plate.
     keywords: [Assembly, Components]
   - src: /projects/ayal-controller/controls-fitted.webp
-    alt: A mint-green 3D-printed oval plate fitted with knobs, buttons, two slide faders and two joysticks
-    caption: The controls fitted. Rotary knobs around the edge, buttons, two slide faders and two joysticks.
-    keywords: [Layout, Controls]
-  - src: /projects/ayal-controller/printed-plate.webp
     alt: The empty mint-green printed plate on the 3D printer bed, with cut-outs for each control
     caption: The printed plate straight off the printer, with a cut-out for every control.
     keywords: [3D printing, Fabrication]
-  - src: /projects/ayal-controller/wiring.webp
-    alt: A small green microcontroller board on a cutting mat with coloured wires soldered to it
-    caption: Wiring the microcontroller.
-    keywords: [Electronics, Wiring]
+  - src: /projects/ayal-controller/printed-plate.webp
+    alt: A mint-green 3D-printed oval plate fitted with knobs, buttons, two slide faders and two joysticks
+    caption: The controls fitted. Rotary knobs around the edge, buttons, two slide faders and two joysticks.
+    keywords: [Layout, Controls]
   - src: /projects/ayal-controller/printing.mp4
     poster: /projects/ayal-controller/printing-poster.webp
     alt: A 3D printer printing a new mint-green plate, with an earlier plate on the desk beside it

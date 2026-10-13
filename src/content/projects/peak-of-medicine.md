@@ -19,7 +19,7 @@ tags:
 collaborators:
   - Karla Retaus
 
-cover: /projects/peak-of-medicine/cover.webp
+cover: /projects/peak-of-medicine/kit-open.webp
 coverAlt: Hands holding an open game box with a first-aid kit, coloured tokens, cards and a 3D-printed toy
 
 gallery:
@@ -51,10 +51,6 @@ gallery:
     alt: 'Task cards: the power of a hug, and give a surgical tool a name'
     caption: Task cards are about doing and feeling, like naming a surgical tool or telling about a time a hug helped.
     keywords: [Task cards, Emotion]
-  - src: /projects/peak-of-medicine/cards-in-hand.webp
-    alt: Hands unfolding a printed sheet from the kit
-    caption: Unfolding the printed materials from the kit.
-    keywords: [Printed materials]
   - src: /projects/peak-of-medicine/slide-components.webp
     alt: The kit's components with labels such as personalised, teaches, learning by doing, easy to make and getting to know medical equipment
     caption: Each component has a role. It can be personalised, teaches, lets children learn by doing and helps them process the experience. Everything is easy to make.

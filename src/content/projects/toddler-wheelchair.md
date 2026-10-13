@@ -13,7 +13,7 @@ tags:
   - Fabrication
   - Prototype
 
-cover: /projects/toddler-wheelchair/cover.webp
+cover: /projects/toddler-wheelchair/frame-side.webp
 coverAlt: A yellow baby seat on a curved plywood frame on a workbench
 
 gallery:
@@ -21,10 +21,6 @@ gallery:
     alt: A finished wooden toddler wheelchair with a yellow seat, big wheels and small front casters on a workbench
     caption: "The finished chair, December 2021, with a yellow seat, two large wheels and front casters."
     keywords: [Finished, Design]
-  - src: /projects/toddler-wheelchair/frame-wheels.webp
-    alt: The wooden frame with wheels and a yellow seat on a workshop floor
-    caption: "The chair on its wheels."
-    keywords: [Prototype]
   - src: /projects/toddler-wheelchair/seat-mount.webp
     alt: The underside of the seat fixed to a round plywood plate with brackets
     caption: "How the seat is fixed to its plate, so it can be adjusted as the child grows."
@@ -33,10 +29,6 @@ gallery:
     alt: Tables laid out with kits of wheels, plywood parts and baby seats at the build event
     caption: "The build event, with a kit of wheels, plywood parts and a seat on every table."
     keywords: [Build event, Kits]
-  - src: /projects/toddler-wheelchair/partners-slide.webp
-    alt: A slide with a drawing of the wheelchair and the logos of the partners
-    caption: "The project slide with its partners."
-    keywords: [Partners]
   - src: /projects/toddler-wheelchair/all-parts.webp
     alt: Guide page showing all parts of the wheelchair laid out and labelled, the soft baby seat, wheels, CNC plywood parts and hardware
     caption: Every part of the chair, from the soft seat and wheels to the CNC-cut plywood and metal fittings.
@@ -46,13 +38,9 @@ gallery:
     alt: A yellow baby seat on a curved plywood frame on a workbench in a large workshop
     caption: The first prototype, a baby seat on a curved plywood frame.
     keywords: [Prototype, Plywood]
-  - src: /projects/toddler-wheelchair/frame-angle.webp
-    alt: The same prototype from a slightly different angle
-    caption: The frame holds the seat low and stable.
-    keywords: [Structure]
   - src: /projects/toddler-wheelchair/assembled-chair.webp
     alt: Top view of an orange baby seat mounted on a plywood frame with two large wheels
-    caption: The assembled chair, with an orange seat and two large wheels.
+    caption: "Fixing the orange seat to the frame, seen from above."
     keywords: [Assembly, Wheels]
   - src: /projects/toddler-wheelchair/finished-chairs.webp
     alt: Several finished wooden toddler wheelchairs with yellow, orange and blue seats on a brick pavement

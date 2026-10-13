@@ -13,7 +13,7 @@ tags:
   - Teaser campaign
   - Events
 
-cover: /projects/cat-bar-jerusalem/cover.webp
+cover: /projects/cat-bar-jerusalem/teaser-something-new.webp
 coverAlt: A dark teaser graphic with glowing cat eyes, a pink question mark and the words Something new is coming
 
 gallery:

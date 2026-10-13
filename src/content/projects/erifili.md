@@ -18,7 +18,7 @@ tags:
   - Generative AI
   - Bezalel
 
-cover: /projects/erifili/cover.webp
+cover: /projects/erifili/avatar-moods.webp
 coverAlt: Ten app screens of an illustrated avatar with green wings, each showing a different facial expression
 
 gallery:
@@ -68,10 +68,6 @@ gallery:
     alt: 'Journal feed with three friends: 08:35 AM in Tel Aviv at 34°C, 07:35 AM in Stockholm at 14°C, and 11:05 PM in Stockholm at 16°C'
     caption: The shared journal. Each friend's post shows their local time and weather, and the scene changes with it.
     keywords: [Shared journal, Time zones]
-  - src: /projects/erifili/day-palette.webp
-    alt: Seven home screens of the avatar in a city, with the background colour shifting from light to dark
-    caption: The world follows the clock, with soft pastels in the morning and strong, neon-like colours at night.
-    keywords: [Time of day, Colour]
   - src: /projects/erifili/palettes-four.webp
     alt: The same avatar and city in four colour palettes, from mint and cyan to sage and a dark night
     caption: One scene, four moods. Colours shift with the time of day, the season and the weather where each friend lives.
@@ -84,14 +80,6 @@ gallery:
     alt: A journal post from a friend's avatar about a camping trip, with a map of the location
     caption: A post is a moment of the day with a photo and a place. Up to three a day, so there's no pressure to keep up.
     keywords: [Sharing, Calm technology]
-  - src: /projects/erifili/avatar-chat.webp
-    alt: Chat screen with three illustrated avatars at the top and a conversation below
-    caption: Chatting as avatars, an extra layer that makes it easier to share how you really feel.
-    keywords: [Chat, Avatars]
-  - src: /projects/erifili/app-flow.webp
-    alt: The app's splash screen with a rainbow ring logo, next to a flow diagram of its scenes
-    caption: The app's structure, from the landing page and login to home, send, get, chat and weekly, monthly and yearly views.
-    keywords: [Information architecture, Flow]
   - src: /projects/erifili/onboarding-flow.webp
     alt: Ten app screens covering onboarding, profile, tribe, posting, chat and a weekly activity summary
     caption: The full flow, from the first “Let's get you ready” to the tribe, posts, chat and a weekly summary of time spent together.
@@ -100,11 +88,6 @@ gallery:
     alt: Two profile screens, one with the designer's photo and one with her avatar, titled The Power of Your Tribe
     caption: Your profile, as yourself or as your avatar. “Stay close no matter where you are.”
     keywords: [Profile, Identity]
-  - src: /projects/erifili/style-reference.webp
-    alt: Two stills of animated characters, a trio of fighters and a boy band, lit in purple and green
-    caption: A style reference for the avatars' bold, expressive look.
-    keywords: [Reference, Visual language]
-    credit: 'Stills: KPop Demon Hunters, Sony Pictures Animation / Netflix (2025).'
   - src: /projects/erifili/exhibition-wall.webp
     alt: Exhibition wall with a large vertical screen playing the app film, printed app screens and headphones
     caption: At the Bezalel graduation exhibition, with the film on a vertical screen, printed screens and headphones.
@@ -113,10 +96,6 @@ gallery:
     alt: Three visitors watching the vertical screen at the exhibition
     caption: Visitors watching the film.
     keywords: [Exhibition, Audience]
-  - src: /projects/erifili/exhibition-screen.webp
-    alt: A visitor standing beside the vertical exhibition screen
-    caption: The vertical screen in the exhibition space.
-    keywords: [Exhibition]
 ---
 
 ## The problem

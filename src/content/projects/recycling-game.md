@@ -16,7 +16,7 @@ tags:
   - Servo motors
   - Arduino
 
-cover: /projects/recycling-game/cover.webp
+cover: /projects/recycling-game/wall-figure.webp
 coverAlt: A jointed figure made from recycled cans and cartons hanging from a control board on a wall
 
 gallery:
@@ -31,8 +31,8 @@ gallery:
     keywords: [Motion, Figure]
   - src: /projects/recycling-game/figure-moving-2.mp4
     poster: /projects/recycling-game/figure-moving-2-poster.webp
-    alt: The recycled figure moving in the frame, seen from the side
-    caption: The same figure from another angle.
+    alt: "Hands wiring a circuit board beside a yellow push-button box on a blue cutting mat"
+    caption: "Wiring a box with a big push button."
     keywords: [Motion]
   - src: /projects/recycling-game/building-figure.mp4
     poster: /projects/recycling-game/building-figure-poster.webp
@@ -44,29 +44,10 @@ gallery:
     alt: Players around a table assembling a figure from recycled electronics and a game controller
     caption: Players assembling a figure together.
     keywords: [Play, Collaboration]
-  - src: /projects/recycling-game/figure-swinging.mp4
-    poster: /projects/recycling-game/figure-swinging-poster.webp
-    alt: A figure made from recycled materials swinging inside a black metal frame
-    caption: A figure swinging in its frame.
-    keywords: [Motion, Figure]
-  - src: /projects/recycling-game/snake-figure.mp4
-    poster: /projects/recycling-game/snake-figure-poster.webp
-    alt: A long jointed figure of recycled circuit boards on a table, beside a game controller and salvaged parts
-    caption: A long jointed figure built from salvaged circuit boards, with a game controller to move it.
-    keywords: [Electronics, Upcycling]
-  - src: /projects/recycling-game/snake-figure-2.mp4
-    poster: /projects/recycling-game/snake-figure-2-poster.webp
-    alt: Hands adjusting the jointed circuit-board figure on the table
-    caption: Adjusting the joints of the circuit-board figure, August 2022.
-    keywords: [Making, Testing]
   - src: /projects/recycling-game/wall-figure.webp
     alt: A jointed figure made of recycled cans and cartons hanging from a control board on a wall
     caption: A figure built from cans and cartons. Each segment is a joint.
     keywords: [Figure, Upcycling]
-  - src: /projects/recycling-game/figure-frame.webp
-    alt: A long chain of recycled segments strung across a black metal frame
-    caption: A long figure strung across the frame.
-    keywords: [Figure, Structure]
   - src: /projects/recycling-game/figure-frame-close.webp
     alt: Closer view of the chain of recycled segments in the metal frame
     caption: The segments up close.
@@ -84,27 +65,14 @@ gallery:
     alt: A screwdriver prying open the plastic case of an old keyboard
     caption: 'Step one: open an old keyboard.'
     keywords: [Instructions, Disassembly]
-  - src: /projects/recycling-game/hidden-screw.webp
-    alt: A label on the underside of a keyboard case, covering a screw
-    caption: Look under the labels, screws are often hidden there.
-    keywords: [Instructions, Tip]
   - src: /projects/recycling-game/screw-found.webp
     alt: The label peeled back to show a screw
     caption: The hidden screw.
     keywords: [Instructions]
-  - src: /projects/recycling-game/keyboard-back.webp
-    alt: The back panel of a black keyboard on a tiled floor
-    caption: The keyboard's back panel, removed.
-    keywords: [Disassembly, Materials]
   - src: /projects/recycling-game/keyboard-membrane.webp
     alt: An opened keyboard with its clear membrane sheet and rubber domes
     caption: Inside, a clear membrane and rubber domes, all material for figures.
     keywords: [Materials, Upcycling]
-  - src: /projects/recycling-game/button-box.mp4
-    poster: /projects/recycling-game/button-box-poster.webp
-    alt: Hands soldering wires to a black box with a large yellow push button
-    caption: Wiring a box with a big push button.
-    keywords: [Electronics, Soldering]
 ---
 
 ## The game

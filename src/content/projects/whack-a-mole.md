@@ -17,19 +17,19 @@ tags:
 
 github: https://github.com/Elisheva-Shiri/Whack-a-Mole
 
-cover: /projects/whack-a-mole/cover.webp
+cover: /projects/whack-a-mole/board.webp
 coverAlt: A green 3×3 board with wooden half-sphere domes in each square
 
 gallery:
+  - src: /projects/whack-a-mole/lit-domes.webp
+    alt: The green board with nine wooden domes decorated with faces, lit from below
+    caption: The finished board, nine moles with faces, lit from underneath.
+    keywords: [Finished, Lighting]
   - src: /projects/whack-a-mole/gameplay.mp4
     poster: /projects/whack-a-mole/gameplay-poster.webp
     alt: Testing the electronics, then playing on the green board by hitting the wooden domes
     caption: From the first electronics test to playing on the board.
     keywords: [Gameplay, Testing]
-  - src: /projects/whack-a-mole/lit-domes.webp
-    alt: The green board with nine wooden domes decorated with faces, lit from below
-    caption: The finished board, nine moles with faces, lit from underneath.
-    keywords: [Finished, Lighting]
   - src: /projects/whack-a-mole/board-wiring.webp
     alt: The green board on a desk with its wiring and boards spread out in front of a monitor
     caption: Wiring the board.
@@ -79,11 +79,6 @@ gallery:
     alt: Pressing a row of buttons on a breadboard while the game responds on the screen
     caption: Testing the game with a row of buttons on a breadboard.
     keywords: [Prototype, Testing]
-  - src: /projects/whack-a-mole/screen-test.mp4
-    poster: /projects/whack-a-mole/screen-test-poster.webp
-    alt: Testing the game on a screen with a single button
-    caption: An early test of the game on screen.
-    keywords: [Testing]
   - src: /projects/whack-a-mole/play-2022.mp4
     poster: /projects/whack-a-mole/play-2022-poster.webp
     alt: A hand pressing the wooden domes on the green board
@@ -93,15 +88,6 @@ gallery:
     alt: A green 3×3 board with wooden half-sphere domes in each square
     caption: The board, nine wooden domes in a green frame, one for each hole in the game.
     keywords: [Board, Fabrication]
-  - src: /projects/whack-a-mole/board-play.webp
-    alt: A finger pressing one of the wooden domes on the board
-    caption: Hit the dome when its mole appears.
-    keywords: [Interaction]
-  - src: /projects/whack-a-mole/hit.mp4
-    poster: /projects/whack-a-mole/hit-poster.webp
-    alt: Hitting the wooden domes on the board
-    caption: Playing.
-    keywords: [Play]
 ---
 
 ## The game

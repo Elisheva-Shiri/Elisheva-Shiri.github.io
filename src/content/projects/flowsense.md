@@ -22,7 +22,7 @@ collaborators:
   - Gal Perlman
   - Alon Rosenbaum
 
-cover: /projects/flowsense/cover.webp
+cover: /projects/flowsense/render-front.webp
 coverAlt: A 3D render of a round disc-shaped device with a smartphone set into it, glowing at the rim
 
 gallery:
@@ -34,18 +34,10 @@ gallery:
     alt: The FlowSense disc seen from an angle, with a glowing ring around the phone
     caption: A glowing ring gives light feedback as the players move.
     keywords: [Light feedback, Design]
-  - src: /projects/flowsense/render-top.webp
-    alt: The FlowSense disc seen from above
-    caption: From above. The disc shape is simple and easy to hold.
-    keywords: [Form, Design]
   - src: /projects/flowsense/device-concept.webp
     alt: Two rounded pill-shaped devices, grey and pink, each holding a smartphone
     caption: "A concept render of two devices, one for each player, with the phone set into a soft rounded body."
     keywords: [Concept, Render]
-  - src: /projects/flowsense/storyboard-1.webp
-    alt: A whiteboard storyboard of stick-figure scenes on an easel
-    caption: "Storyboarding how a grandmother and grandchild would use FlowSense."
-    keywords: [Storyboard, Scenario]
   - src: /projects/flowsense/storyboard-2.webp
     alt: A second whiteboard storyboard on an easel
     caption: "A second storyboard, comparing life with and without the product."
@@ -55,8 +47,8 @@ gallery:
     caption: An early illustration of the device.
     keywords: [Concept, Illustration]
   - src: /projects/flowsense/grandmother-grandchild.webp
-    alt: An illustration of a grandmother and a grandchild, each holding a device
-    caption: Each player has their own device, in the same room or in different homes.
+    alt: "An illustration of a grandmother and a grandchild, each holding a purple book"
+    caption: "Each player takes part from their own place, in the same room or in different homes."
     keywords: [Users, Concept]
   - src: /projects/flowsense/grandmother-at-home.webp
     alt: An illustration of a grandmother sitting on a sofa holding the device

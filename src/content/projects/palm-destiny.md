@@ -16,7 +16,7 @@ tags:
   - Installation
   - Bezalel
 
-cover: /projects/palm-destiny/cover.webp
+cover: /projects/palm-destiny/installation.webp
 coverAlt: A fortune-teller's table with a red cloth, a glowing candle, two face-shaped plant pots, crystals and tarot cards
 
 gallery:

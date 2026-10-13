@@ -34,6 +34,15 @@ cover: /projects/earbetter/cover.webp
 coverAlt: The EarBetter logo, a glowing purple-to-teal monogram shaped like an ear
 
 gallery:
+  - src: /projects/earbetter/sonav-concept.mp4
+    poster: /projects/earbetter/sonav-concept-poster.webp
+    alt: Concept film of a man in a loud stadium whose earbuds sense his stress and soften the crowd noise
+    caption: The concept. In a roaring stadium, the earbuds sense rising stress and adapt the sound, not the experience.
+    keywords: [Concept film, Scenario]
+  - src: /projects/earbetter/deck-solution.webp
+    alt: "Pitch slide Our Solution: an exploded view of a silicone ear cover with GSR sensor, EEG module, biosignal module, antenna, battery, EEG electrodes and pulse sensor"
+    caption: "The solution: a silicone cover for the earbuds you already have, with skin-conductance, pulse and EEG sensing, a biosignal module, antenna and battery."
+    keywords: [Hardware, Exploded view]
   - src: /projects/earbetter/app-walkthrough.mp4
     poster: /projects/earbetter/app-walkthrough-poster.webp
     alt: Screen recording of the EarBetter app, from sign-in and avatar to the check-in, sound tuning and progress pages
@@ -44,14 +53,6 @@ gallery:
     alt: "The EarBetter app on a tablet: sign-in, choosing a buddy, first check-in, the home screen, and Tune your way with a slider for each street sound"
     caption: "The app on a tablet. In Tune your way, each street sound (voices, cars, bikes, footsteps, traffic lights, scooters, roadworks) gets its own slider."
     keywords: [App, Sound tuning]
-  - src: /projects/earbetter/deck-solution.webp
-    alt: "Pitch slide Our Solution: an exploded view of a silicone ear cover with GSR sensor, EEG module, biosignal module, antenna, battery, EEG electrodes and pulse sensor"
-    caption: "The solution: a silicone cover for the earbuds you already have, with skin-conductance, pulse and EEG sensing, a biosignal module, antenna and battery."
-    keywords: [Hardware, Exploded view]
-  - src: /projects/earbetter/deck-app.webp
-    alt: "Pitch slide with the EarBetter app on a phone and the words Helps remain present, connected, and in control"
-    caption: "Helps you stay present, connected and in control."
-    keywords: [App, Pitch]
   - src: /projects/earbetter/deck-survey.webp
     alt: "Pitch slide with two pie charts: which noises cause the most anxiety, and whether people use noise-cancelling headphones to ease anxiety (56.7% yes)"
     caption: "Survey of 40 headphone users. Chewing sounds and sudden sirens top the list (29% each), and 56.7% use noise cancelling to ease anxiety."
@@ -62,7 +63,7 @@ gallery:
     keywords: [Interviews, Evidence]
   - src: /projects/earbetter/deck-competition.webp
     alt: "Pitch slide comparing EarBetter with Loop, Sony, Apple, NextSense and Neurable on noise cancellation, personalised filtering, biosignal sensing, anxiety relief and compatibility"
-    caption: "Use the audio device you already love. EarBetter is the only one in the comparison that combines sensing, anxiety relief and works with all earphones."
+    caption: "Use the audio device you already love. In the comparison, EarBetter covers every row: noise cancellation, personalised filtering, biosignal sensing, anxiety relief and compatibility with all earphones."
     keywords: [Competition, Market]
   - src: /projects/earbetter/deck-market.webp
     alt: "Pitch slide on market growth with TAM, SAM and SOM and a chart of noise-cancelling headphone and mental-health app revenue to 2030"
@@ -76,15 +77,6 @@ gallery:
     alt: "A study plan: a crossover trial flowchart with 15 participants, baseline and visit questionnaires, GSR and heart-rate-variability thresholds, and expected results"
     caption: "The planned study: a randomised crossover of EarBetter against noise-cancelling headphones, with questionnaires and GSR and HRV stress thresholds."
     keywords: [Study design, Biosignals]
-  - src: /projects/earbetter/deck-demonstration.webp
-    alt: "Pitch slide Demonstration, with a pair of headphones on a stand"
-    caption: "The demonstration slide of the pitch."
-    keywords: [Pitch]
-  - src: /projects/earbetter/sonav-concept.mp4
-    poster: /projects/earbetter/sonav-concept-poster.webp
-    alt: Concept film of a man in a loud stadium whose earbuds sense his stress and soften the crowd noise
-    caption: The concept. In a roaring stadium, the earbuds sense rising stress and adapt the sound, not the experience.
-    keywords: [Concept film, Scenario]
   - src: /projects/earbetter/survey-key-findings.webp
     alt: 'Survey findings: 95% experience anxiety, 76% use noise-cancelling headphones, average relief 3.1 out of 5'
     caption: A survey of 38 people. 95% experience anxiety, 76% use noise-cancelling headphones, but relief averages only 3.1 out of 5.
@@ -117,23 +109,6 @@ gallery:
     alt: 3D renders of the two halves of a ventilated electronics enclosure
     caption: An enclosure for the ESP32 electronics, modelled in SolidWorks.
     keywords: [SolidWorks, Enclosure]
-  - src: /projects/earbetter/concept-render.webp
-    alt: Exploded concept render of a biosensing earbud cover with heart-rate, skin-conductance and temperature sensors
-    caption: An early concept, a soft cover that adds heart-rate, skin-conductance and temperature sensors to earbuds.
-    keywords: [Concept, Form]
-    credit: 'AI-generated concept render (ChatGPT).'
-  - src: /projects/earbetter/app-signin.webp
-    alt: App screen titled Sign in to your softer sound space
-    caption: A gentle start. The demo signs you in locally, with no account, microphone or live sensors.
-    keywords: [Onboarding]
-  - src: /projects/earbetter/app-buddy.webp
-    alt: App screen for choosing a companion buddy's colour, style and mood
-    caption: Choose your buddy, a companion whose colour, style and mood you pick.
-    keywords: [Companion, Personalisation]
-  - src: /projects/earbetter/app-checkin.webp
-    alt: Check-in screen rating overwhelm, restlessness, fatigue, trouble relaxing, focus and irritability from 1 to 5
-    caption: A first check-in, using the same questions as the research survey.
-    keywords: [Check-in]
   - src: /projects/earbetter/app-home.webp
     alt: Home screen greeting the user with a calm rate and a message from the companion
     caption: The home screen. A calm rate, a companion that notices progress, not pressure, and two modes, auto balancing and personal tune.
@@ -150,18 +125,10 @@ gallery:
     alt: Diary screen for short notes about how the day felt
     caption: Small notes, a diary for loud moments, like “Lunch was loud, but I could still follow my friend.”
     keywords: [Diary]
-  - src: /projects/earbetter/sorona-title.webp
-    alt: 'Title slide: Sorona Wav, Easy to hear again, by Elisheva Shiri Decktor and Prof. Reuven Ianconescu'
-    caption: Where it started. Sorona Wav, my earlier project on separating sounds for people with hearing loss.
-    keywords: [Sorona Wav, Origins]
   - src: /projects/earbetter/sorona-architecture.webp
     alt: Architecture diagram from audio stems to a Mel spectrogram, CNN and LSTM that estimate a mask and separate the sources
     caption: Sorona Wav's model turns a mix into a Mel spectrogram, and a CNN and LSTM learn a mask that separates each sound source.
     keywords: [Deep learning, Source separation]
-  - src: /projects/earbetter/sorona-evaluation.webp
-    alt: Spectrograms comparing the original input, Sorona Wav's deep mask and a Wiener filter
-    caption: The learned deep mask compared with a classic Wiener filter, against the ground truth.
-    keywords: [Evaluation, Spectrograms]
 ---
 
 ## The problem

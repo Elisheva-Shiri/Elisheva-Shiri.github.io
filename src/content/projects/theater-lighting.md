@@ -12,7 +12,7 @@ tags:
   - AutoCAD
   - Spatial design
 
-cover: /projects/theater-lighting/cover.webp
+cover: /projects/theater-lighting/seating-plan.webp
 coverAlt: A plan of a theatre hall with rows of seats, a stage at the top and a grid of calculation points
 
 gallery:

@@ -36,11 +36,6 @@ gallery:
     alt: The robot arm picking white blocks from a conveyor belt and placing them on a tray
     caption: The robot picks blocks from the conveyor and places them in order on the tray.
     keywords: [Pick and place, Robot]
-  - src: /projects/industrial-robot/pick-and-place-2.mp4
-    poster: /projects/industrial-robot/pick-and-place-2-poster.webp
-    alt: Another run of the pick-and-place program
-    caption: Another run of the program.
-    keywords: [Testing]
   - src: /projects/industrial-robot/ursim-program.mp4
     poster: /projects/industrial-robot/ursim-program-poster.webp
     alt: The URSim simulator on a screen, showing the program tree and a 3D view of the arm moving through waypoints
@@ -50,10 +45,6 @@ gallery:
     alt: The URSim screen with a robot program tree of waypoints and the 3D arm
     caption: 'The program tree, a loop of MoveL and MoveP steps through named waypoints.'
     keywords: [URSim, Waypoints]
-  - src: /projects/industrial-robot/ursim-program-tree.webp
-    alt: The URSim program on a screen, showing the waypoint list
-    caption: 'The waypoint list in URSim.'
-    keywords: [URSim, Program]
 ---
 
 ## The task

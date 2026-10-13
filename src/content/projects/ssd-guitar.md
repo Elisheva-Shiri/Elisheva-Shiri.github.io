@@ -20,7 +20,7 @@ tags:
 
 github: https://github.com/Elisheva-Shiri/SSD-Guitar
 
-cover: /projects/ssd-guitar/cover.webp
+cover: /projects/ssd-guitar/printed-parts.webp
 coverAlt: Blue 3D-printed parts, a wedge-shaped box with three button holes and a bracket
 
 gallery:
@@ -40,26 +40,14 @@ gallery:
     alt: Sketch of the wedge box with a blue board inside and one red and two yellow buttons on top
     caption: The control box with its board and three buttons.
     keywords: [Interface, Buttons]
-  - src: /projects/ssd-guitar/sketch-parts.webp
-    alt: Sketches of part A, the wedge box, and part B, the picker bracket
-    caption: The two parts side by side.
-    keywords: [Sketch, Design]
   - src: /projects/ssd-guitar/cad-parts.webp
     alt: SolidWorks renders of the control box and the bracket
     caption: Modelled in SolidWorks for 3D printing.
     keywords: [CAD, SolidWorks]
-  - src: /projects/ssd-guitar/sketch-board.webp
-    alt: Sketch of a perforated board with a row of components soldered along its edges
-    caption: The circuit board for the picker.
-    keywords: [Electronics]
   - src: /projects/ssd-guitar/sketch-wiring.webp
     alt: Wiring sketch connecting a microcontroller to one red and two yellow buttons
     caption: Wiring the buttons to the controller.
     keywords: [Wiring, Buttons]
-  - src: /projects/ssd-guitar/sketch-assembly.webp
-    alt: Sketch of the board placed inside the wedge box under the three buttons
-    caption: Placing the board inside the box.
-    keywords: [Assembly]
   - src: /projects/ssd-guitar/breadboard.webp
     alt: Fritzing diagram of an Arduino Uno wired to six servos and two buttons on a breadboard
     caption: The circuit. An Arduino drives six servos, one per string, and reads the buttons.

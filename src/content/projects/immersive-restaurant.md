@@ -15,7 +15,7 @@ tags:
   - Sketching
   - Spatial design
 
-cover: /projects/immersive-restaurant/cover.webp
+cover: /projects/immersive-restaurant/render-3.webp
 coverAlt: A rendered restaurant with pink and red chairs, a green wall and wall lights casting patterns of light
 
 gallery:
@@ -39,10 +39,6 @@ gallery:
     alt: A green plant wall with hanging lamps, red chairs and floor lamps shaped like cones
     caption: A quieter corner, with a plant wall, a pendant lamp and cone-shaped floor lamps.
     keywords: [Atmosphere, Corner]
-  - src: /projects/immersive-restaurant/render-7.webp
-    alt: The dining tables and pink chairs seen from above, with wall lights on the grey walls
-    caption: The tables from above.
-    keywords: [Render, Layout]
   - src: /projects/immersive-restaurant/render-top.webp
     alt: A top view of the whole lit restaurant, with dining areas on both sides, a central kitchen and restrooms
     caption: The whole restaurant from above, with dining on both sides around the kitchen, bar and restrooms.
@@ -51,10 +47,6 @@ gallery:
     alt: A cut-away model of the restaurant showing two dining rooms divided by a green wall
     caption: A cut-away of the model, two dining rooms either side of a green wall.
     keywords: [Model, Overview]
-  - src: /projects/immersive-restaurant/render-5.webp
-    alt: The bar area seen from above at an angle, with the blue wall and the shelves
-    caption: The bar area from another angle.
-    keywords: [Bar]
   - src: /projects/immersive-restaurant/sketch-2.webp
     alt: Chalk sketch on black paper of cones of yellow and blue light falling on round tables, with fan-shaped fittings above
     caption: Where it began. Cones of warm and cool light pick out each table in a chalk sketch.
@@ -69,7 +61,7 @@ gallery:
     keywords: [Sketch, Atmosphere]
   - src: /projects/immersive-restaurant/floor-plan.webp
     alt: Floor plan of the restaurant with dining tables, a bar, a kitchen and restrooms
-    caption: The floor plan.
+    caption: "The floor plan: dining tables around a central bar, kitchen and restrooms."
     keywords: [Floor plan, DIALux]
 ---
 

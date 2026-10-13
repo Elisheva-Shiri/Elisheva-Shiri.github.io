@@ -24,7 +24,7 @@ collaborators:
 
 pdf: /projects/jam-power/elco-poster.pdf
 
-cover: /projects/jam-power/cover.webp
+cover: /projects/jam-power/park-render.webp
 coverAlt: A 3D render of an outdoor exercise park with paired red exercise machines facing each other, screens and trees
 
 gallery:
@@ -33,22 +33,18 @@ gallery:
     caption: The final ELCO poster, from the challenge through research and the persona to the design and next steps.
     keywords: [Poster, Overview]
     credit: Inspiration images on the poster belong to their makers
-  - src: /projects/jam-power/park-render.webp
-    alt: A 3D render of an outdoor park with paired red exercise machines, a large screen, benches and trees
-    caption: The ELCO park. Exercise machines are placed in pairs so partners face each other, and a screen shows their progress.
-    keywords: [3D render, Space]
-  - src: /projects/jam-power/park-render-2.webp
-    alt: Another view of the park with figures using the paired machines
-    caption: Working out together, face to face, with eye contact built into the layout.
-    keywords: [Eye contact, Collaboration]
   - src: /projects/jam-power/park-render-3.webp
-    alt: A close view of a red exercise machine in the park
-    caption: A machine up close. Every movement generates electricity.
+    alt: "A render of the park with white figures exercising on paired machines beside tall screens"
+    caption: "The ELCO park. Exercise machines are placed in pairs so partners face each other, and a screen shows their progress."
     keywords: [Energy harvesting, Equipment]
-  - src: /projects/jam-power/park-plan.webp
-    alt: A top view of the park layout with machines arranged in a circle on green ground
-    caption: The machines are arranged in a circle, each pair next to its own screen.
-    keywords: [Layout, Plan]
+  - src: /projects/jam-power/park-render-2.webp
+    alt: "A close view of a red paired exercise machine in the park"
+    caption: "A machine up close. Every movement generates electricity."
+    keywords: [Eye contact, Collaboration]
+  - src: /projects/jam-power/park-render.webp
+    alt: "A top view of the park with exercise machines on a square pad, ringed by benches and trees"
+    caption: "The park from above: the machines on a central pad, surrounded by benches and trees."
+    keywords: [3D render, Space]
   - src: /projects/jam-power/device-sketch.webp
     alt: A line drawing of a paired exercise device
     caption: A drawing of a paired device.

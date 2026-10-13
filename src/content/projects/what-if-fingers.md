@@ -15,7 +15,7 @@ tags:
   - Wearable
   - Bezalel
 
-cover: /projects/what-if-fingers/cover.webp
+cover: /projects/what-if-fingers/long-fingers.webp
 coverAlt: A hand wearing long orange 3D-printed finger extensions, reaching towards a jar of sweets
 
 gallery:
@@ -25,8 +25,8 @@ gallery:
     caption: The experiment. The same hand and the same jar, tried with different imagined fingers.
     keywords: [Video, Experiment]
   - src: /projects/what-if-fingers/short-fingers.webp
-    alt: A hand with small orange caps on its fingertips reaching into a jar
-    caption: Capped fingertips. A small change that already alters how the hand grips.
+    alt: "A hand holding two orange toothed, gear-like pieces above a closed jar"
+    caption: "Two orange toothed pieces held above a closed jar."
     keywords: [Variation 1, Fingertips]
   - src: /projects/what-if-fingers/long-fingers.webp
     alt: A hand wearing long orange finger extensions above a jar of sweets

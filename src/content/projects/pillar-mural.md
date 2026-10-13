@@ -11,7 +11,7 @@ tags:
   - Painting
   - Wall art
 
-cover: /projects/pillar-mural/cover.webp
+cover: /projects/pillar-mural/meditating-figure.webp
 coverAlt: A painted pillar showing a green dragon above a meditating figure in a yellow sun
 
 gallery:
@@ -29,27 +29,18 @@ gallery:
     caption: A dancing figure balancing on an orange ball.
     keywords: [Figure, Movement]
   - src: /projects/pillar-mural/seated-figure.webp
-    alt: A seated figure with raised arms on a radiating yellow and red base
-    caption: A seated figure with raised arms.
+    alt: "The pillar seen from further back: the dancing figure on an orange ball above a green dragon, with the room behind"
+    caption: "The dancing figure in the room, with the dragon below."
     keywords: [Figure, Colour]
   - src: /projects/pillar-mural/patterns.mp4
     poster: /projects/pillar-mural/patterns-poster.webp
     alt: The camera moving down the pillar, showing blue patterns, red and yellow bands, clouds and a dragon's tail
     caption: Top to bottom, from blue patterns to red and yellow bands.
     keywords: [Patterns]
-  - src: /projects/pillar-mural/patterns.webp
-    alt: Blue geometric patterns painted on a white pillar
-    caption: Blue geometric patterns at the top of the pillar.
-    keywords: [Patterns, Detail]
   - src: /projects/pillar-mural/dragon-clouds.webp
     alt: A green dragon's body winding between blue clouds and orange strokes
     caption: The dragon winds between blue clouds.
     keywords: [Dragon, Detail]
-  - src: /projects/pillar-mural/all-sides.mp4
-    poster: /projects/pillar-mural/all-sides-poster.webp
-    alt: Another walk around the pillar showing the figures and the dragon on all sides
-    caption: Another look at all four sides.
-    keywords: [Mural]
 ---
 
 ## The mural

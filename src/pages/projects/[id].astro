@@ -32,6 +32,12 @@ const { title, summary, categories, tags, collaborators, cover, coverAlt, galler
 const { Content } = await render(project);
 const hasBody = Boolean(project.body?.trim());
 const hasLinks = Boolean(github || website || pdf || links.length > 0);
+// The cover is the page's hero. If the same file is also a gallery item, show its
+// caption under the hero and leave it out of the gallery so it isn't shown twice.
+const srcOf = (item: (typeof gallery)[number]) => (typeof item === 'string' ? item : item.src);
+const coverItem = gallery.find((item) => srcOf(item) === cover);
+const coverCaption = coverItem && typeof coverItem !== 'string' ? [coverItem.caption, coverItem.credit].filter(Boolean).join(' — ') : '';
+const galleryItems = gallery.filter((item) => srcOf(item) !== cover);
 ---
 
 <BaseLayout title={title} description={summary} image={cover}>
@@ -49,9 +55,10 @@ const hasLinks = Boolean(github || website || pdf || links.length > 0);
 
     {
       cover && (
-        <div class="container">
+        <figure class="container project-hero">
           <img class="project-cover" src={withBase(cover)} alt={coverAlt ?? ''} fetchpriority="high" decoding="async" />
-        </div>
+          {coverCaption && <figcaption>{coverCaption}</figcaption>}
+        </figure>
       )
     }
 
@@ -159,13 +166,13 @@ const hasLinks = Boolean(github || website || pdf || links.length > 0);
     </div>
 
     {
-      gallery.length > 0 && (
+      galleryItems.length > 0 && (
         <section class="container project-gallery" aria-labelledby="gallery-heading">
           <div class="section-head">
             <h2 id="gallery-heading">Process &amp; gallery</h2>
-            <span class="label">{gallery.length} items</span>
+            <span class="label">{galleryItems.length} items</span>
           </div>
-          <Gallery items={gallery} title={title} />
+          <Gallery items={galleryItems} title={title} />
         </section>
       )
     }
@@ -248,6 +255,16 @@ const hasLinks = Boolean(github || website || pdf || links.length > 0);
     font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
     line-height: 1.4;
     color: var(--muted);
+  }
+
+  .project-hero {
+    margin-block: 0;
+  }
+
+  .project-hero figcaption {
+    margin-top: var(--space-xs);
+    color: var(--muted);
+    font-size: 0.875rem;
   }
 
   .project-cover {

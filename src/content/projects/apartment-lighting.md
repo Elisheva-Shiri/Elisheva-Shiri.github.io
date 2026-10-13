@@ -16,7 +16,7 @@ tags:
 collaborators:
   - Dean Plobar
 
-cover: /projects/apartment-lighting/cover.webp
+cover: /projects/apartment-lighting/model-3d.webp
 coverAlt: A 3D model of a long apartment seen from above, furnished and lit
 
 gallery:
@@ -25,26 +25,18 @@ gallery:
     alt: Orbiting the 3D model of the apartment as its floors and walls change from yellow to purple in the light calculation
     caption: Orbiting the apartment model while the light levels are shown in false colour, June 2022.
     keywords: [3D model, Light levels]
+  - src: /projects/apartment-lighting/false-colour-plan.webp
+    alt: A rendered room corner with a curved floor lamp over a grey armchair, shelves and cool blue light
+    caption: 'A reading corner, with a curved floor lamp over the armchair and cool light for focus.'
+    keywords: [Render, Reading corner]
+  - src: /projects/apartment-lighting/render-room-corner.webp
+    alt: A cut-away render looking down into rooms lit by round ceiling lights
+    caption: 'Looking down into the rooms, each lit by its own round ceiling lights.'
+    keywords: [Render, Downlights]
   - src: /projects/apartment-lighting/model-3d.webp
     alt: A 3D model of the L-shaped apartment seen from above, with furniture and lights
     caption: The apartment, modelled in DIALux evo.
     keywords: [3D model, DIALux]
-  - src: /projects/apartment-lighting/render-room-corner.webp
-    alt: A rendered room corner with a curved floor lamp over a grey armchair, shelves and cool blue light
-    caption: 'A reading corner, with a curved floor lamp over the armchair and cool light for focus.'
-    keywords: [Render, Reading corner]
-  - src: /projects/apartment-lighting/render-bathrooms.webp
-    alt: A cut-away render looking down into rooms lit by round ceiling lights
-    caption: 'Looking down into the rooms, each lit by its own round ceiling lights.'
-    keywords: [Render, Downlights]
-  - src: /projects/apartment-lighting/model-colour-plan.webp
-    alt: The L-shaped apartment model on screen, every room furnished and coloured
-    caption: 'The furnished model on screen, room by room, June 2022.'
-    keywords: [Model, Plan]
-  - src: /projects/apartment-lighting/false-colour-plan.webp
-    alt: A false-colour plan of the apartment in green, yellow and purple showing light levels
-    caption: 'A false-colour plan of the light levels across the apartment.'
-    keywords: [Calculation, Light levels]
   - src: /projects/apartment-lighting/plan-top.webp
     alt: Top view of the apartment model, room by room
     caption: From above, every room furnished and lit.
@@ -57,13 +49,9 @@ gallery:
     alt: A 3D view of a corridor with its wall coloured by light levels
     caption: Checking the light in a corridor, kept high to make moving around easy.
     keywords: [Corridor, Calculation]
-  - src: /projects/apartment-lighting/isolines.webp
-    alt: Isoline plan of one area with light level values and the outline of a round lamp
-    caption: An isoline plan, with lines of equal light level across a room.
-    keywords: [Isolines, Analysis]
   - src: /projects/apartment-lighting/room-grid.webp
     alt: Grid of calculation points with curved isolines across a rectangular room
-    caption: A calculation grid for one room.
+    caption: "Isolines and calculation points for one room."
     keywords: [Calculation, Grid]
 ---
 

@@ -12,7 +12,7 @@ tags:
   - Data analysis
   - Physics
 
-cover: /projects/phone-physics-lab/cover.webp
+cover: /projects/phone-physics-lab/pendulum-gyro.webp
 coverAlt: Four plots of a pendulum's angular velocity over time, for string lengths of 5, 10, 15 and 20 cm
 
 gallery:

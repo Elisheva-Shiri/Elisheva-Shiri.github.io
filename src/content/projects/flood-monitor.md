@@ -15,15 +15,10 @@ tags:
   - Sketching
   - Concept
 
-cover: /projects/flood-monitor/cover.webp
+cover: /projects/flood-monitor/sketch-sensor-row.webp
 coverAlt: A pencil sketch of a sensor head on a pipe, with rows of small sensors across a field and blue lines of water
 
 gallery:
-  - src: /projects/flood-monitor/floodrop-report.webp
-    alt: "The FlooDrop sustainability report, with charts of US flood and drought losses and renders of the system"
-    caption: "The FlooDrop sustainability report: US flood losses reached $7.02 billion in 2021 and $7.23 billion in 2022, and drought losses $4.25 billion in 2021."
-    keywords: [Report, Data]
-    credit: Charts based on Statista data
   - src: /projects/flood-monitor/flooded-field.webp
     alt: A green agricultural field with large puddles of standing water, houses and palm trees behind
     caption: The problem, a field flooded after rain.
@@ -36,6 +31,11 @@ gallery:
     alt: A pencil sketch of a single slotted sensor head among plants with water around it
     caption: A single sensor head among the plants.
     keywords: [Sketch, Sensor]
+  - src: /projects/flood-monitor/floodrop-report.webp
+    alt: "The FlooDrop sustainability report, with charts of US flood and drought losses and renders of the system"
+    caption: "The FlooDrop sustainability report: US flood losses reached $7.02 billion in 2021 and $7.23 billion in 2022, and drought losses $4.25 billion in 2021."
+    keywords: [Report, Data]
+    credit: Charts based on Statista data
   - src: /projects/flood-monitor/ai-sensor-render.webp
     alt: An AI-generated image of a black slotted sensor head among green plants with water spraying
     caption: An AI-generated visualisation of the sensor head in the field.
@@ -45,11 +45,6 @@ gallery:
     alt: An AI-generated image of the sensor head on a pipe with water flowing
     caption: An AI-generated visualisation of the head on its pipe.
     keywords: [AI render, Concept]
-    credit: AI-generated with Draw3D.online from my sketch
-  - src: /projects/flood-monitor/ai-field-render.webp
-    alt: An AI-generated image of rows of small green sensors across a wet field
-    caption: An AI-generated visualisation of the sensors spread across the field.
-    keywords: [AI render, System]
     credit: AI-generated with Draw3D.online from my sketch
 ---
 

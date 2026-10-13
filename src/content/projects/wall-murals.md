@@ -13,7 +13,7 @@ tags:
   - Wall art
   - Street art
 
-cover: /projects/wall-murals/cover.webp
+cover: /projects/wall-murals/jaguar-woman.webp
 coverAlt: Mural of a woman with orange hair and a jaguar lying on her head, framed by purple triangles
 
 gallery:

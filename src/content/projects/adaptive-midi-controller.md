@@ -111,40 +111,28 @@ gallery:
     keywords: [Fabrication, Plywood]
   - src: /projects/adaptive-midi-controller/plywood-front.webp
     alt: The plywood box from the front, with holes for the controls
-    caption: "The plywood box from the front."
+    caption: "The plywood test box from the front, with holes for buttons and slots for faders."
     keywords: [Fabrication]
-  - src: /projects/adaptive-midi-controller/black-box-buttons.webp
-    alt: The black box with yellow, green and blue arcade buttons fitted
-    caption: "The final black box with the buttons fitted."
-    keywords: [Assembly]
-  - src: /projects/adaptive-midi-controller/black-box-side.webp
-    alt: The black controller box seen from the side
-    caption: "From the side, the angle that brings every button within reach."
-    keywords: [Ergonomics]
   - src: /projects/adaptive-midi-controller/fader-board.webp
-    alt: A board with three slide potentiometers and two joystick modules mounted on it
-    caption: The control board, with three slide potentiometers and two joysticks.
-    keywords: [Components, Layout]
+    alt: The black box with green, yellow, blue and red arcade buttons and slide faders fitted
+    caption: Arcade buttons and faders fitted into the box.
+    keywords: [Assembly, Colour coding]
   - src: /projects/adaptive-midi-controller/enclosure-cut.webp
     alt: Laser-cut black panels assembled into an angled box with holes for buttons and faders
     caption: The laser-cut enclosure, angled so every control is within easy reach.
     keywords: [Laser cutting, Enclosure]
   - src: /projects/adaptive-midi-controller/enclosure-assembled.webp
-    alt: The black enclosure assembled, seen from the front
-    caption: The assembled enclosure.
-    keywords: [Fabrication]
-  - src: /projects/adaptive-midi-controller/buttons-fitted.webp
-    alt: The black box with green, yellow, blue and red arcade buttons and slide faders fitted
-    caption: Arcade buttons and faders fitted into the box.
-    keywords: [Assembly, Colour coding]
-  - src: /projects/adaptive-midi-controller/joystick.webp
     alt: A hand fitting a thumb joystick module under a hole in the black panel
     caption: Fitting a joystick.
     keywords: [Assembly]
-  - src: /projects/adaptive-midi-controller/wiring-inside.webp
+  - src: /projects/adaptive-midi-controller/buttons-fitted.webp
     alt: Inside the box, wires connecting the buttons and faders
     caption: The wiring inside.
     keywords: [Wiring]
+  - src: /projects/adaptive-midi-controller/joystick.webp
+    alt: A board with three slide potentiometers and two joystick modules mounted on it
+    caption: The control board, with three slide potentiometers and two joysticks.
+    keywords: [Components, Layout]
 ---
 
 ## The idea

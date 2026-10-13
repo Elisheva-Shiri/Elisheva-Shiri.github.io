@@ -18,7 +18,7 @@ collaborators:
   - Chen Golzman
   - Tomer Paldi
 
-cover: /projects/volunteer-platform/cover.webp
+cover: /projects/volunteer-platform/survey-frequency.webp
 coverAlt: A bar chart of how often people would like to volunteer, with once a week the most common answer
 
 gallery:
@@ -28,7 +28,7 @@ gallery:
     keywords: [Survey, Barriers]
   - src: /projects/volunteer-platform/survey-frequency.webp
     alt: A bar chart of preferred volunteering frequency, with once a week the most common answer
-    caption: How often people would like to volunteer. Many want short, flexible commitments, now and then when they have free time.
+    caption: "Once a week was the most common answer, followed by now and then, when they have free time."
     keywords: [Survey, Commitment]
   - src: /projects/volunteer-platform/survey-pies.webp
     alt: Two pie charts, 35.4 percent have more free time since COVID-19, and 60.7 percent say their volunteering place needs more volunteers

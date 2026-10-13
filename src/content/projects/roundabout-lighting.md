@@ -15,7 +15,7 @@ tags:
   - EN 13201
   - Energy efficiency
 
-cover: /projects/roundabout-lighting/cover.webp
+cover: /projects/roundabout-lighting/render-top.webp
 coverAlt: A photorealistic top-down render of a lit roundabout with a green planted island and pedestrian crossings
 
 gallery:

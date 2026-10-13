@@ -12,7 +12,7 @@ tags:
   - Sketching
   - Food
 
-cover: /projects/futuristic-food/cover.webp
+cover: /projects/futuristic-food/render.webp
 coverAlt: A 3D render of a dark countertop with a grinding machine with a long handle, jars and plates
 
 gallery:

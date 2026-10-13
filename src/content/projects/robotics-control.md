@@ -15,7 +15,7 @@ tags:
   - State space
   - Multi-robot systems
 
-cover: /projects/robotics-control/cover.webp
+cover: /projects/robotics-control/paths.webp
 coverAlt: Two plots of a robot's path from start to goal, one straight and one curving around two obstacles
 
 gallery:

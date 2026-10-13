@@ -15,7 +15,7 @@ tags:
   - Natural building
   - Community
 
-cover: /projects/sabai-gardens/cover.webp
+cover: /projects/sabai-gardens/water-tanks.webp
 coverAlt: Stacked concrete water tanks on a metal frame among banana plants under a blue sky
 
 gallery:
@@ -53,7 +53,7 @@ gallery:
     keywords: [Bamboo, Structure]
   - src: /projects/sabai-gardens/huts.webp
     alt: Thatched round huts among green grass and banana plants under a cloudy sky
-    caption: Sabai Gardens.
+    caption: "Round thatched huts and banana plants along the path at Sabai Gardens."
     keywords: [Place, Community]
 ---
 

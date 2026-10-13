@@ -13,7 +13,7 @@ tags:
   - Storytelling
   - Bezalel
 
-cover: /projects/spike-life/cover.webp
+cover: /projects/spike-life/slide-title.webp
 coverAlt: 'Title slide: Spike Life, the life and born of a hairpin, with an illustrated hedgehog and plants'
 
 gallery:
@@ -34,10 +34,6 @@ gallery:
     alt: Diagram of a quill about 5 cm long, labelled broken top, fibers, shell and darker tip
     caption: The quill's anatomy, with its shell, fibers, darker tip and a broken top, about 5 cm long.
     keywords: [Anatomy, Material study]
-  - src: /projects/spike-life/slide-private-biography.webp
-    alt: 'Slide titled Private Biography with a timeline starting in 2002'
-    caption: The private biography, the life of this particular quill, begins on a timeline.
-    keywords: [Private biography, Timeline]
   - src: /projects/spike-life/slide-forest.webp
     alt: A forest floor at the Hebrew University with an illustrated hedgehog, on a timeline at 2014–2015
     caption: The quill falls out in the Hebrew University's “forest”, where porcupines still roam the campus at night.

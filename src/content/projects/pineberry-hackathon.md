@@ -17,7 +17,7 @@ tags:
   - Paper prototyping
   - Renewable energy
 
-cover: /projects/pineberry-hackathon/cover.webp
+cover: /projects/pineberry-hackathon/mascot.webp
 coverAlt: A cute pink pineapple character with big eyes and headphones on a pink background
 
 gallery:
@@ -49,26 +49,6 @@ gallery:
     alt: A close view of sketched app screens taped to the wall
     caption: Screen sketches up close.
     keywords: [Wireframes]
-  - src: /projects/pineberry-hackathon/screen-sketches-2.webp
-    alt: More sketched screens on the wall
-    caption: Iterating on the flows.
-    keywords: [Iteration]
-  - src: /projects/pineberry-hackathon/screen-sketches-3.webp
-    alt: Sketched screens and sticky notes on the wall
-    caption: More screens on the wall.
-    keywords: [Wireframes]
-  - src: /projects/pineberry-hackathon/work-desk.webp
-    alt: A desk with a monitor showing the app, a laptop and coloured blocks
-    caption: Building the prototype.
-    keywords: [Prototype, Build]
-  - src: /projects/pineberry-hackathon/startup-league-banner.webp
-    alt: An International Startup League banner in a building entrance
-    caption: The International Startup League at HNU.
-    keywords: [Event, Venue]
-  - src: /projects/pineberry-hackathon/mascot-sticker.webp
-    alt: The pink pineapple avatar as a sticker on white
-    caption: The PineBerry avatar as a sticker.
-    keywords: [Avatar, Branding]
 ---
 
 ## The hackathon

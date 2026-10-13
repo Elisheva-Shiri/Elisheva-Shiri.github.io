@@ -15,10 +15,14 @@ tags:
   - Drawing
   - Anatomy
 
-cover: /projects/posture-light-box/cover.webp
+cover: /projects/posture-light-box/box-blue.webp
 coverAlt: Inside a white box lit blue by five LEDs, a drawing of a human figure made of lines
 
 gallery:
+  - src: /projects/posture-light-box/anatomy-colour.webp
+    alt: A drawing of a standing human figure with muscles and veins in layers of pink, green, blue and yellow
+    caption: A colour-layered anatomy study. Each colour holds a different layer of the body, so coloured light can reveal one layer at a time.
+    keywords: [Anatomy, Layers]
   - src: /projects/posture-light-box/box-blue.webp
     alt: Inside a white box lit blue by five LEDs, a drawing of a human figure made of lines
     caption: The box in blue light. The figure is drawn in lines that react to the colour.
@@ -31,10 +35,6 @@ gallery:
     alt: The same box lit red
     caption: In red, the figure changes again.
     keywords: [Red, Change]
-  - src: /projects/posture-light-box/glow-green.webp
-    alt: A glowing green light test through a translucent form in the dark
-    caption: Light tests in the dark, December 2022.
-    keywords: [Testing, Light]
   - src: /projects/posture-light-box/glow-violet.webp
     alt: A violet light shining through a translucent form with fine lines
     caption: Violet light through a translucent form.
@@ -43,10 +43,6 @@ gallery:
     alt: A pink-lit crystal shape held up in the dark
     caption: A pink-lit crystal form.
     keywords: [Material, Light]
-  - src: /projects/posture-light-box/anatomy-colour.webp
-    alt: A drawing of a standing human figure with muscles and veins in layers of pink, green, blue and yellow
-    caption: A colour-layered anatomy study. Each colour holds a different layer of the body, so coloured light can reveal one layer at a time.
-    keywords: [Anatomy, Layers]
 ---
 
 ## The idea

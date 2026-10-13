@@ -14,7 +14,7 @@ tags:
   - Sketching
   - Spatial design
 
-cover: /projects/office-lighting/cover.webp
+cover: /projects/office-lighting/render-desks.webp
 coverAlt: A rendered office with rows of white desks between green partitions under linear ceiling lights
 
 gallery:
@@ -34,14 +34,14 @@ gallery:
     alt: A long section through the office showing desks, a green wall and a glass meeting room
     caption: A section through the office, from the desks past the green wall to the meeting room.
     keywords: [Section, Model]
-  - src: /projects/office-lighting/sketch-2.webp
-    alt: Chalk sketch on black paper of desks under pendant lamps with fans of yellow light
-    caption: The first sketch. Pendant lamps pour light over the desks.
-    keywords: [Sketch, Task lighting]
   - src: /projects/office-lighting/sketch-1.webp
     alt: Chalk plan of the office from above with coloured marks for the lights over desks and plants
     caption: The office from above, with light zones for desks, meeting tables and green areas.
     keywords: [Sketch, Plan]
+  - src: /projects/office-lighting/sketch-2.webp
+    alt: Chalk sketch on black paper of desks under pendant lamps with fans of yellow light
+    caption: "Pendant lamps pour light over the desks."
+    keywords: [Sketch, Task lighting]
   - src: /projects/office-lighting/sketch-3.webp
     alt: Chalk sketch of a glass-walled meeting room with high tables under pendant lights
     caption: A glass meeting room with high tables.

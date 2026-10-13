@@ -43,18 +43,6 @@ gallery:
     alt: A long line of black PCB hanukkiahs in perspective on a table
     caption: Many hanukkiahs lined up in perspective. The more homes join, the longer the line.
     keywords: [Repetition, Community, Perspective]
-  - src: /projects/gloworah/line.webp
-    alt: Several PCB hanukkiahs in a row, photographed at a steep angle against a window
-    caption: The sharp, toothed silhouette repeated along the line.
-    keywords: [Form, Rhythm]
-  - src: /projects/gloworah/pair.webp
-    alt: Two PCB hanukkiahs connected by cables, with small red LEDs lit
-    caption: Two units wired together, with small red LEDs glowing.
-    keywords: [Wiring, Pair, Detail]
-  - src: /projects/gloworah/single.webp
-    alt: A single PCB hanukkiah with its cable, photographed against a wooden frame and window
-    caption: A single Gloworah. The first candle is lit alone.
-    keywords: [First night, Solitude]
   - src: /projects/gloworah/arched-window.webp
     alt: A small hanukkiah on a table in front of a tall open arched window
     caption: One small hanukkiah in front of a tall arched window.
@@ -72,10 +60,6 @@ gallery:
     alt: 'PCB layout render of the hanukkiah, labelled Am Israel Chai, by Evyatar Lior, v1.2, 11.2024'
     caption: The circuit board is the hanukkiah's body. Version 1.2, labelled "Am Israel Chai".
     keywords: [PCB design, Circuit board]
-  - src: /projects/gloworah/model-render.webp
-    alt: 3D render of the black hanukkiah standing on a thin base
-    caption: A 3D model of the board standing in its printed holder.
-    keywords: [3D model, SolidWorks]
   - src: /projects/gloworah/chain-render.webp
     alt: 3D render of three hanukkiahs standing side by side, connected along the bottom
     caption: Three units connected, the chain of light in miniature.

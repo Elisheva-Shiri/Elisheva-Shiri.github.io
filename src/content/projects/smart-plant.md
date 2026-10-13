@@ -16,14 +16,14 @@ tags:
 
 github: https://github.com/Elisheva-Shiri/SmartPlant
 
-cover: /projects/smart-plant/cover.webp
+cover: /projects/smart-plant/setup.webp
 coverAlt: A succulent in a white pot on a sensor box marked iPlant, next to a laptop with a dashboard
 
 gallery:
   - src: /projects/smart-plant/demo.mp4
     poster: /projects/smart-plant/demo-poster.webp
     alt: The iPlant pot with its control panel and wiring, filmed close up
-    caption: The iPlant system running.
+    caption: "The iPlant pot on its cardboard control panel, with the status LED on."
     keywords: [Demo]
   - src: /projects/smart-plant/shade-demo.mp4
     poster: /projects/smart-plant/shade-demo-poster.webp
@@ -48,10 +48,6 @@ gallery:
     alt: 'Cardboard control panel labelled iplant with an on/off switch, an LED and buttons labelled Love you, Miss you, Want you'
     caption: 'The control panel, with on/off, a status LED and three message buttons: “Love you”, “Miss you”, “Want you”.'
     keywords: [Interface, Emotion]
-  - src: /projects/smart-plant/pot-top.webp
-    alt: Succulents in a terracotta pot inside a white ceramic pot, with a sensor wire in the soil
-    caption: A moisture sensor sits in the soil.
-    keywords: [Sensors]
   - src: /projects/smart-plant/dashboard.mp4
     poster: /projects/smart-plant/dashboard-poster.webp
     alt: The plant system next to a laptop showing the serial monitor and live readings

@@ -19,26 +19,22 @@ tags:
 
 github: https://github.com/Elisheva-Shiri/Image2Sound
 
-cover: /projects/with-out/cover.webp
+cover: /projects/with-out/exhibition-screens.webp
 coverAlt: Exhibition table with several screens and laptops showing photos of friends and a large spectrogram
 
 gallery:
-  - src: /projects/with-out/exhibition-screens.webp
-    alt: Exhibition table with several screens and laptops showing photos of friends and a large spectrogram
-    caption: The exhibition. The photos people sent of “me” play on many screens, with the sound they became shown as a spectrogram above.
-    keywords: [Exhibition, Multi-screen]
   - src: /projects/with-out/with-and-without.webp
     alt: The same photo of the designer at a dinner table shown with her and with her erased, above a grid of waveforms and spectrograms
     caption: With and without. The same moment, once with me and once with me erased. Each version becomes a sound, and the difference between them is the sound of me.
     keywords: [Method, Subtraction]
+  - src: /projects/with-out/exhibition-screens.webp
+    alt: Exhibition table with several screens and laptops showing photos of friends and a large spectrogram
+    caption: The exhibition. The photos people sent of “me” play on many screens, with the sound they became shown as a spectrogram above.
+    keywords: [Exhibition, Multi-screen]
   - src: /projects/with-out/exhibition-spectrogram.webp
     alt: Close-up of screens showing a pink and purple spectrogram above video of a crowd
     caption: Every piece of information becomes a colourful spectrogram, the bridge between the world of images and the world of sound.
     keywords: [Spectrogram, Sound]
-  - src: /projects/with-out/exhibition-projection.webp
-    alt: A projected portrait in shifting colours above a wall of screens and laptops
-    caption: Portraits projected and transformed as their sound plays.
-    keywords: [Projection, Transformation]
   - src: /projects/with-out/notebook-walkthrough.mp4
     poster: /projects/with-out/notebook-walkthrough-poster.webp
     alt: Screen recording scrolling through the code, with images, spectrograms and waveforms

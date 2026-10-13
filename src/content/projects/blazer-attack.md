@@ -15,7 +15,7 @@ tags:
   - Accessibility
   - Bezalel
 
-cover: /projects/blazer-attack/cover.webp
+cover: /projects/blazer-attack/hero-art.webp
 coverAlt: Illustrated young superhero in a mask shooting flames, with an energy bar and a "Blazes Attack" button
 
 gallery:

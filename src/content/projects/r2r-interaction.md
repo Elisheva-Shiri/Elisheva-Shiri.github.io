@@ -15,7 +15,7 @@ tags:
   - Python
   - Sound
 
-cover: /projects/r2r-interaction/cover.webp
+cover: /projects/r2r-interaction/pipeline.webp
 coverAlt: Diagram showing words leading to a mood and background music, and body movement leading to gestures and sounds
 
 gallery:

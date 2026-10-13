@@ -20,21 +20,16 @@ cover: /projects/pulse-finger-toy/cover.webp
 coverAlt: A felt bird character in orange and light blue worn on a fingertip, in front of a laptop showing a pulse waveform
 
 gallery:
-  - src: /projects/pulse-finger-toy/bpm-plot.mp4
-    poster: /projects/pulse-finger-toy/bpm-plot-poster.webp
-    alt: A laptop plotting the pulse signal and the BPM, with the sensor and an Arduino on the desk
-    caption: First test, August 2023. The serial plotter shows the raw pulse and the heart rate in beats per minute.
-    keywords: [Testing, BPM]
-  - src: /projects/pulse-finger-toy/pulse-reading.mp4
-    poster: /projects/pulse-finger-toy/pulse-reading-poster.webp
-    alt: A hand wearing the felt bird on a finger while the laptop plots a live pulse waveform from an Arduino
-    caption: The toy on a finger, with the live pulse waveform on the laptop behind it.
-    keywords: [Pulse, Live data]
   - src: /projects/pulse-finger-toy/pulse-closeup.mp4
     poster: /projects/pulse-finger-toy/pulse-closeup-poster.webp
     alt: A close-up of the felt bird on a fingertip, with a small light blinking in time with the pulse
     caption: Up close. A small light on the bird blinks with each heartbeat.
     keywords: [Feedback, Heartbeat]
+  - src: /projects/pulse-finger-toy/bpm-plot.mp4
+    poster: /projects/pulse-finger-toy/bpm-plot-poster.webp
+    alt: A laptop plotting the pulse signal and the BPM, with the sensor and an Arduino on the desk
+    caption: First test, August 2023. The serial plotter shows the raw pulse and the heart rate in beats per minute.
+    keywords: [Testing, BPM]
 ---
 
 ## The idea

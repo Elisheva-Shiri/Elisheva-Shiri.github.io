@@ -16,7 +16,7 @@ tags:
   - Music
   - Performance
 
-cover: /projects/monster-theater/cover.webp
+cover: /projects/monster-theater/servo-rig.webp
 coverAlt: An Arduino on a wooden frame wired to a row of servo motors
 
 gallery:
@@ -34,19 +34,11 @@ gallery:
     alt: An Arduino on a wooden frame wired to a row of servo motors
     caption: The rig. An Arduino, a breadboard and a row of servos mounted on a wooden frame.
     keywords: [Hardware, Build]
-  - src: /projects/monster-theater/electronics.webp
-    alt: Side view of the wooden frame with the Arduino and a bundle of wires
-    caption: The electronics, wired and mounted.
-    keywords: [Wiring, Electronics]
   - src: /projects/monster-theater/servo-test-2022.mp4
     poster: /projects/monster-theater/servo-test-2022-poster.webp
     alt: A micro servo connected to an Arduino through a small breadboard, turning back and forth
     caption: A later servo test, January 2022.
     keywords: [Servo, Testing]
-  - src: /projects/monster-theater/servo-arduino-2022.webp
-    alt: An Arduino Uno-compatible board wired to a mini breadboard and a micro servo on a chipboard surface
-    caption: The test setup, an Arduino, a mini breadboard and a micro servo.
-    keywords: [Arduino, Servo]
 ---
 
 ## The show

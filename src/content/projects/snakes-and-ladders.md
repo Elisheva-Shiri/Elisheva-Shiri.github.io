@@ -16,7 +16,7 @@ tags:
   - Gears
   - Prototype
 
-cover: /projects/snakes-and-ladders/cover.webp
+cover: /projects/snakes-and-ladders/tower.webp
 coverAlt: A 3D-printed tower of three pink game boards on yellow columns
 
 gallery:
@@ -25,15 +25,6 @@ gallery:
     alt: An overhead view of players around a table moving pieces on the pink three-tier tower and rolling a die
     caption: Playtesting the finished tower. Players roll, move their pieces, and the tiers turn.
     keywords: [Playtest, Gameplay]
-  - src: /projects/snakes-and-ladders/playtest-2.mp4
-    poster: /projects/snakes-and-ladders/playtest-2-poster.webp
-    alt: Hands reaching in to move pieces on the tower during a game
-    caption: Another round of the playtest.
-    keywords: [Playtest, Users]
-  - src: /projects/snakes-and-ladders/playtest-top.webp
-    alt: The pink tower from above on a white table, with game pieces in its holes and players' hands around it
-    caption: The tower from above during play.
-    keywords: [Playtest, Top view]
   - src: /projects/snakes-and-ladders/tower-turning.mp4
     poster: /projects/snakes-and-ladders/tower-turning-poster.webp
     alt: The pink and yellow printed tower with its boards turning
@@ -53,10 +44,6 @@ gallery:
     alt: The finished two-tier pink tower with a yellow column, an orange ladder and coloured pieces, wired to cables
     caption: "The finished tower, January 2022, with a ladder between the tiers and pieces in the holes."
     keywords: [Finished, Tower]
-  - src: /projects/snakes-and-ladders/finished-tower-2.webp
-    alt: The finished tower from the front, with the orange ladder and a crown on top
-    caption: "The tower from the front."
-    keywords: [Finished]
   - src: /projects/snakes-and-ladders/tower-on-plinth.webp
     alt: The three-tier tower on a white plinth
     caption: "On display, three tiers on a plinth."
@@ -81,18 +68,10 @@ gallery:
     alt: A hand holding a small DC motor inside a blue 3D-printed holder
     caption: A motor in a 3D-printed holder, to turn the boards.
     keywords: [Motor, 3D printing]
-  - src: /projects/snakes-and-ladders/sketch.webp
-    alt: A whiteboard sketch of two parts that interlock
-    caption: Sketching how the parts lock together.
-    keywords: [Sketch, Mechanism]
   - src: /projects/snakes-and-ladders/turntable-bearing.webp
     alt: A square metal turntable bearing on a plastic bag
     caption: A turntable bearing, so each board can rotate.
     keywords: [Bearing, Rotation]
-  - src: /projects/snakes-and-ladders/ball-bearing.webp
-    alt: Side view of the turntable bearing showing its row of steel balls
-    caption: Looking inside the bearing.
-    keywords: [Bearing, Research]
   - src: /projects/snakes-and-ladders/gear-ring.mp4
     poster: /projects/snakes-and-ladders/gear-ring-poster.webp
     alt: A finger turning a blue printed planetary gear set
@@ -120,25 +99,17 @@ gallery:
     alt: A 3D printer printing a pink part
     caption: Printing a board.
     keywords: [3D printing, Fabrication]
-  - src: /projects/snakes-and-ladders/wiring-tier.webp
-    alt: A pink disc held in a helping-hand clamp, with wires through it, on a soldering desk
-    caption: Wiring a board.
-    keywords: [Electronics, Soldering]
-  - src: /projects/snakes-and-ladders/soldering-tier.webp
-    alt: A pink printed tier held in a flexible clamp, with wires through it, at a soldering station
-    caption: Soldering the wiring of a tier.
-    keywords: [Soldering, Electronics]
   - src: /projects/snakes-and-ladders/foam-tiers.webp
-    alt: Two pink foam tiers with drawn snakes and ladders on a table
-    caption: "Foam tiers with the snakes and ladders drawn on."
+    alt: "Two pink 3D-printed tiers on a table with red and blue wires threaded through their holes"
+    caption: "Two printed tiers with a wire threaded through every hole."
     keywords: [Prototype, Foam]
   - src: /projects/snakes-and-ladders/tier-measure.webp
     alt: A pink tier with a blue printed hub, measured with a ruler
     caption: "Measuring a tier and its printed hub."
     keywords: [Measuring, Fit]
   - src: /projects/snakes-and-ladders/pink-tier.webp
-    alt: A round pink printed tier
-    caption: "A printed tier."
+    alt: "A hand holding a flat pink printed tier with a small planetary gear in its centre"
+    caption: "The underside of a tier, with the planetary gear at its centre."
     keywords: [3D printing]
   - src: /projects/snakes-and-ladders/tier-holes.webp
     alt: A pink tier with rings of holes for the pieces
@@ -184,10 +155,6 @@ gallery:
     alt: Two parts of the game laid out, showing yellow printed gears, a motor and a cardboard board
     caption: The drive. Printed gears and a motor turn the boards.
     keywords: [Gears, Motor]
-  - src: /projects/snakes-and-ladders/gears-detail.webp
-    alt: Close-up of an internal gear ring and a motor mount
-    caption: Gear ring and motor mount, close up.
-    keywords: [Gears, Detail]
   - src: /projects/snakes-and-ladders/electronics.webp
     alt: The underside of a board with many wires running to a breadboard and a controller
     caption: The electronics under the board.
