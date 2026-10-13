@@ -26,6 +26,10 @@ gallery:
     alt: Looking up and across clear turquoise water, with sunlight patterns on the floor below
     caption: Being just below the surface, where light from above dances on the ground.
     keywords: [Surface, Caustics]
+  - src: /projects/underwater/deep-blue.webp
+    alt: A deep blue underwater space with soft light patterns across the floor
+    caption: Deeper and bluer. The colour shifts as you sink.
+    keywords: [Depth, Colour, Atmosphere]
   - src: /projects/underwater/sunlight.webp
     alt: Sunlight breaking through the water surface, seen from below
     caption: Looking up, the sun breaks through the water.

@@ -43,6 +43,10 @@ gallery:
     alt: "Pitch slide Our Solution: an exploded view of a silicone ear cover with GSR sensor, EEG module, biosignal module, antenna, battery, EEG electrodes and pulse sensor"
     caption: "The solution: a silicone cover for the earbuds you already have, with skin-conductance, pulse and EEG sensing, a biosignal module, antenna and battery."
     keywords: [Hardware, Exploded view]
+  - src: /projects/earbetter/deck-app.webp
+    alt: "Pitch slide with the EarBetter app on a phone and the words Helps remain present, connected, and in control"
+    caption: "Helps you stay present, connected and in control."
+    keywords: [App, Pitch]
   - src: /projects/earbetter/app-walkthrough.mp4
     poster: /projects/earbetter/app-walkthrough-poster.webp
     alt: Screen recording of the EarBetter app, from sign-in and avatar to the check-in, sound tuning and progress pages
@@ -77,6 +81,10 @@ gallery:
     alt: "A study plan: a crossover trial flowchart with 15 participants, baseline and visit questionnaires, GSR and heart-rate-variability thresholds, and expected results"
     caption: "The planned study: a randomised crossover of EarBetter against noise-cancelling headphones, with questionnaires and GSR and HRV stress thresholds."
     keywords: [Study design, Biosignals]
+  - src: /projects/earbetter/deck-demonstration.webp
+    alt: "Pitch slide Demonstration, with a pair of headphones on a stand"
+    caption: "The demonstration slide of the pitch."
+    keywords: [Pitch]
   - src: /projects/earbetter/survey-key-findings.webp
     alt: 'Survey findings: 95% experience anxiety, 76% use noise-cancelling headphones, average relief 3.1 out of 5'
     caption: A survey of 38 people. 95% experience anxiety, 76% use noise-cancelling headphones, but relief averages only 3.1 out of 5.
@@ -109,6 +117,23 @@ gallery:
     alt: 3D renders of the two halves of a ventilated electronics enclosure
     caption: An enclosure for the ESP32 electronics, modelled in SolidWorks.
     keywords: [SolidWorks, Enclosure]
+  - src: /projects/earbetter/concept-render.webp
+    alt: Exploded concept render of a biosensing earbud cover with heart-rate, skin-conductance and temperature sensors
+    caption: An early concept, a soft cover that adds heart-rate, skin-conductance and temperature sensors to earbuds.
+    keywords: [Concept, Form]
+    credit: 'AI-generated concept render (ChatGPT).'
+  - src: /projects/earbetter/app-signin.webp
+    alt: App screen titled Sign in to your softer sound space
+    caption: A gentle start. The demo signs you in locally, with no account, microphone or live sensors.
+    keywords: [Onboarding]
+  - src: /projects/earbetter/app-buddy.webp
+    alt: App screen for choosing a companion buddy's colour, style and mood
+    caption: Choose your buddy, a companion whose colour, style and mood you pick.
+    keywords: [Companion, Personalisation]
+  - src: /projects/earbetter/app-checkin.webp
+    alt: Check-in screen rating overwhelm, restlessness, fatigue, trouble relaxing, focus and irritability from 1 to 5
+    caption: A first check-in, using the same questions as the research survey.
+    keywords: [Check-in]
   - src: /projects/earbetter/app-home.webp
     alt: Home screen greeting the user with a calm rate and a message from the companion
     caption: The home screen. A calm rate, a companion that notices progress, not pressure, and two modes, auto balancing and personal tune.
@@ -125,10 +150,18 @@ gallery:
     alt: Diary screen for short notes about how the day felt
     caption: Small notes, a diary for loud moments, like “Lunch was loud, but I could still follow my friend.”
     keywords: [Diary]
+  - src: /projects/earbetter/sorona-title.webp
+    alt: 'Title slide: Sorona Wav, Easy to hear again, by Elisheva Shiri Decktor and Prof. Reuven Ianconescu'
+    caption: Where it started. Sorona Wav, my earlier project on separating sounds for people with hearing loss.
+    keywords: [Sorona Wav, Origins]
   - src: /projects/earbetter/sorona-architecture.webp
     alt: Architecture diagram from audio stems to a Mel spectrogram, CNN and LSTM that estimate a mask and separate the sources
     caption: Sorona Wav's model turns a mix into a Mel spectrogram, and a CNN and LSTM learn a mask that separates each sound source.
     keywords: [Deep learning, Source separation]
+  - src: /projects/earbetter/sorona-evaluation.webp
+    alt: Spectrograms comparing the original input, Sorona Wav's deep mask and a Wiener filter
+    caption: The learned deep mask compared with a classic Wiener filter, against the ground truth.
+    keywords: [Evaluation, Spectrograms]
 ---
 
 ## The problem

@@ -33,6 +33,10 @@ gallery:
     alt: "The lit door standing in the desert at dusk, with a hand reaching for the handle"
     caption: "At dusk, a hand on the handle."
     keywords: [Interaction, Desert]
+  - src: /projects/open-door/lit-night.webp
+    alt: "The door glowing pink and orange at night, its spirals lit from behind"
+    caption: "Lit from behind, the colours shift with the light."
+    keywords: [Night, Colour]
   - src: /projects/open-door/door-design.webp
     alt: "A design drawing of the door: a large gear ring with green and purple spirals, a black centre gear and a crank handle below"
     caption: "The design: a ring gear, two spirals and a crank handle."
@@ -69,6 +73,10 @@ gallery:
     alt: "A hand-drawn site plan with the door, a mosaic circle, LED lines and dimensions"
     caption: "The site sketch, with the door, a mosaic and lines of light, all measured out."
     keywords: [Sketch, Plan]
+  - src: /projects/open-door/door-model.webp
+    alt: "A 3D model of a door in its frame on a white floor"
+    caption: "The door in 3D."
+    keywords: [Model]
   - src: /projects/open-door/door-render.webp
     alt: "A render of the door installation"
     caption: "An early render: the door as a grid of rainbow LEDs."
@@ -77,6 +85,10 @@ gallery:
     alt: "A small perfboard controller with soldered wiring and a coloured ribbon cable on a blue work mat"
     caption: "The controller board, soldered on perfboard."
     keywords: [Electronics, Soldering]
+  - src: /projects/open-door/controller-board-2.webp
+    alt: "The controller board from above, with its connectors and ribbon cable"
+    caption: "The board and its connectors."
+    keywords: [Electronics]
   - src: /projects/open-door/board-and-strip.webp
     alt: "The controller board on the bench with a reel of LED strip, pliers and tools"
     caption: "The board with the LED strip it drives."

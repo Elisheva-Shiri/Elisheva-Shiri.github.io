@@ -16,4 +16,8 @@ gallery:
     alt: A circle of dancers in white costumes in a square below forested mountains
     caption: Dancers in white costumes form a circle in a square below forested mountains.
     keywords: [Dance, Tradition, Mountains]
+  - src: /projects/places/image-03.webp
+    alt: A busy roadside shop front with people and motorbikes gathered outside
+    caption: People and motorbikes gather in front of a busy roadside shop.
+    keywords: [Street life, Market, Community]
 ---

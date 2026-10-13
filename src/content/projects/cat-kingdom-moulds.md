@@ -31,14 +31,26 @@ gallery:
     alt: Twenty-two pink cast pieces sitting in an egg carton
     caption: The pieces cast in an egg carton, the carton itself is the mould.
     keywords: [Moulds, Upcycling]
+  - src: /projects/cat-kingdom-moulds/lights-threaded.webp
+    alt: The pink pieces in an egg carton with a string of fairy lights threaded through them
+    caption: A string of fairy lights threaded through the pieces.
+    keywords: [Light, Assembly]
   - src: /projects/cat-kingdom-moulds/lights-close.webp
     alt: Close-up of the pink cast pieces, each with a fairy light in its hollow centre
     caption: Each light sits in the hollow centre of a piece.
     keywords: [Light, Detail]
+  - src: /projects/cat-kingdom-moulds/pattern-study.webp
+    alt: A sketchbook page with a repeating pattern of blue geometric shapes and a purple twisted form
+    caption: "A pattern study in the sketchbook, April 2021."
+    keywords: [Sketch, Pattern]
   - src: /projects/cat-kingdom-moulds/totem-night.webp
     alt: "A cat totem glowing red at night in the desert, surrounded by lit felt flowers"
     caption: "The cat totem at night, Midburn 2025."
     keywords: [Night, Totem]
+  - src: /projects/cat-kingdom-moulds/totem-night-2.webp
+    alt: "The glowing totem from another angle, with red light running along the ground"
+    caption: "Red light running along the ground around the totem."
+    keywords: [Night, Light]
   - src: /projects/cat-kingdom-moulds/camp-plan.webp
     alt: "A plan of the 15 by 15 metre area with curved shaggy-rug paths edged with LED strips, inflatable figures, speakers and a central mosaic"
     caption: "The plan: a 15 × 15 m area with curving shaggy-rug paths edged with LED strips, inflatable dancing figures, speakers, and a central mosaic with a surprise box."
@@ -72,6 +84,10 @@ gallery:
     alt: "Parts of the statue, the head, tails and body, laid out on print beds in slicer software"
     caption: "Split into parts to fit the printer."
     keywords: [3D printing, Parts]
+  - src: /projects/cat-kingdom-moulds/slicer-tails.webp
+    alt: "Tail sections of the statue arranged on virtual print beds"
+    caption: "The tails, printed section by section."
+    keywords: [3D printing, Tails]
   - src: /projects/cat-kingdom-moulds/printing-head.webp
     alt: "A hand holding the red 3D-printed cat head beside the printer"
     caption: "The head, off the printer."
@@ -108,6 +124,10 @@ gallery:
     alt: "About ten small loudspeaker drivers with amplifier boards and wiring spread on a table"
     caption: "The speakers and amplifier boards before assembly."
     keywords: [Electronics]
+  - src: /projects/cat-kingdom-moulds/desert-site.webp
+    alt: Bags and crates on the ground in a desert landscape at dusk
+    caption: "Arriving at the desert site, November 2025."
+    keywords: [Site, Desert]
   - src: /projects/cat-kingdom-moulds/felt-flowers-workshop.webp
     alt: A workshop table covered with colourful felt flowers, fabric and tools
     caption: "Making felt flowers, October 2025."

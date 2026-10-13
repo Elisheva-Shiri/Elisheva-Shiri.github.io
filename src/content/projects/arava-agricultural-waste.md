@@ -86,6 +86,14 @@ gallery:
     alt: AR camera view with a green three-eyed monster waving hi above a waste pile
     caption: Each monster has its own character, turning documentation into play.
     keywords: [Character design, Engagement]
+  - src: /projects/arava-agricultural-waste/app-mockup.webp
+    alt: 3D phone mockup displaying the monster collection screen
+    caption: The monster collection screen shown in a 3D phone mockup.
+    keywords: [Mockup, Mobile app]
+  - src: /projects/arava-agricultural-waste/maze-prototype-01.webp
+    alt: 3D render of a maze with blue and red walls, open in a game editor
+    caption: An early maze-game prototype built in a 3D game engine.
+    keywords: [Prototype, Game design, 3D]
   - src: /projects/arava-agricultural-waste/maze-prototype-02.webp
     alt: Top view of a stone maze over lava with a bright green path traced through it
     caption: A second maze level over lava, with the player's path traced through it.
@@ -94,6 +102,10 @@ gallery:
     alt: Map interface with waste reports pinned over satellite imagery and a list of dated report cards
     caption: The professional interface for the environmental unit, showing reports pinned to the map with date, waste type and volume.
     keywords: [Dashboard, GIS, Data visualisation]
+  - src: /projects/arava-agricultural-waste/map-interface.webp
+    alt: Close-up of the environmental unit's map with coloured waste markers and report cards
+    caption: Report markers are coloured by pollution level, so the unit can see where to act first.
+    keywords: [Map UI, Prioritisation]
   - src: /projects/arava-agricultural-waste/slide-roadmap.webp
     alt: 'Roadmap timeline: documentation protocol, aerial drone photography, app development, data collection and a community campaign'
     caption: A roadmap of about a year, from a documentation protocol and drone photography to app development, data collection and a community campaign.

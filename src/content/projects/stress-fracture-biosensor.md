@@ -44,6 +44,14 @@ gallery:
     alt: Line plot of field strength along the electrode gap, peaking near the middle
     caption: Field strength along the gap, peaking near the midpoint.
     keywords: [Field strength, Analysis]
+  - src: /projects/stress-fracture-biosensor/field-gradient.webp
+    alt: Line plot of the field gradient across the electrode gap, decreasing almost linearly
+    caption: A near-linear field gradient across the gap.
+    keywords: [Field gradient]
+  - src: /projects/stress-fracture-biosensor/energy-density.webp
+    alt: Line plot of electric energy density along the electrode gap
+    caption: The energy-density profile, used to compare electrode geometries.
+    keywords: [Energy density, Optimisation]
 ---
 
 ## The problem

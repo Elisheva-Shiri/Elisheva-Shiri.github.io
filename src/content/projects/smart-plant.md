@@ -48,6 +48,10 @@ gallery:
     alt: 'Cardboard control panel labelled iplant with an on/off switch, an LED and buttons labelled Love you, Miss you, Want you'
     caption: 'The control panel, with on/off, a status LED and three message buttons: “Love you”, “Miss you”, “Want you”.'
     keywords: [Interface, Emotion]
+  - src: /projects/smart-plant/pot-top.webp
+    alt: Succulents in a terracotta pot inside a white ceramic pot, with a sensor wire in the soil
+    caption: A moisture sensor sits in the soil.
+    keywords: [Sensors]
   - src: /projects/smart-plant/dashboard.mp4
     poster: /projects/smart-plant/dashboard-poster.webp
     alt: The plant system next to a laptop showing the serial monitor and live readings

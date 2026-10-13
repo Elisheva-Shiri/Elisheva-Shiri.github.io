@@ -33,6 +33,10 @@ gallery:
     alt: A mint-green 3D-printed oval plate fitted with knobs, buttons, two slide faders and two joysticks
     caption: The controls fitted. Rotary knobs around the edge, buttons, two slide faders and two joysticks.
     keywords: [Layout, Controls]
+  - src: /projects/ayal-controller/wiring.webp
+    alt: A small green microcontroller board on a cutting mat with coloured wires soldered to it
+    caption: Wiring the microcontroller.
+    keywords: [Electronics, Wiring]
   - src: /projects/ayal-controller/printing.mp4
     poster: /projects/ayal-controller/printing-poster.webp
     alt: A 3D printer printing a new mint-green plate, with an earlier plate on the desk beside it

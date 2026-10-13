@@ -41,6 +41,11 @@ gallery:
     alt: A green dragon's body winding between blue clouds and orange strokes
     caption: The dragon winds between blue clouds.
     keywords: [Dragon, Detail]
+  - src: /projects/pillar-mural/all-sides.mp4
+    poster: /projects/pillar-mural/all-sides-poster.webp
+    alt: Another walk around the pillar showing the figures and the dragon on all sides
+    caption: Another look at all four sides.
+    keywords: [Mural]
 ---
 
 ## The mural

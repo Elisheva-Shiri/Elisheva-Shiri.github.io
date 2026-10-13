@@ -113,6 +113,14 @@ gallery:
     alt: The plywood box from the front, with holes for the controls
     caption: "The plywood test box from the front, with holes for buttons and slots for faders."
     keywords: [Fabrication]
+  - src: /projects/adaptive-midi-controller/black-box-buttons.webp
+    alt: The black box with yellow, green and blue arcade buttons fitted
+    caption: "The final black box with the buttons fitted."
+    keywords: [Assembly]
+  - src: /projects/adaptive-midi-controller/black-box-side.webp
+    alt: The black controller box seen from the side
+    caption: "From the side, the angle that brings every button within reach."
+    keywords: [Ergonomics]
   - src: /projects/adaptive-midi-controller/fader-board.webp
     alt: The black box with green, yellow, blue and red arcade buttons and slide faders fitted
     caption: Arcade buttons and faders fitted into the box.
@@ -133,6 +141,10 @@ gallery:
     alt: A board with three slide potentiometers and two joystick modules mounted on it
     caption: The control board, with three slide potentiometers and two joysticks.
     keywords: [Components, Layout]
+  - src: /projects/adaptive-midi-controller/wiring-inside.webp
+    alt: Inside the box, wires connecting the buttons and faders
+    caption: The wiring inside.
+    keywords: [Wiring]
 ---
 
 ## The idea

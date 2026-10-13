@@ -33,6 +33,14 @@ gallery:
     alt: A cut-away render looking down into rooms lit by round ceiling lights
     caption: 'Looking down into the rooms, each lit by its own round ceiling lights.'
     keywords: [Render, Downlights]
+  - src: /projects/apartment-lighting/render-bathrooms.webp
+    alt: "A photo of a screen showing a false-colour plan of the apartment with a lux legend"
+    caption: "A false-colour plan of the light levels, on screen."
+    keywords: [Render, Downlights]
+  - src: /projects/apartment-lighting/model-colour-plan.webp
+    alt: The L-shaped apartment model on screen, every room furnished and coloured
+    caption: 'The furnished model on screen, room by room, June 2022.'
+    keywords: [Model, Plan]
   - src: /projects/apartment-lighting/model-3d.webp
     alt: A 3D model of the L-shaped apartment seen from above, with furniture and lights
     caption: The apartment, modelled in DIALux evo.
@@ -49,6 +57,10 @@ gallery:
     alt: A 3D view of a corridor with its wall coloured by light levels
     caption: Checking the light in a corridor, kept high to make moving around easy.
     keywords: [Corridor, Calculation]
+  - src: /projects/apartment-lighting/isolines.webp
+    alt: Isoline plan of one area with light level values and the outline of a round lamp
+    caption: An isoline plan, with lines of equal light level across a room.
+    keywords: [Isolines, Analysis]
   - src: /projects/apartment-lighting/room-grid.webp
     alt: Grid of calculation points with curved isolines across a rectangular room
     caption: "Isolines and calculation points for one room."

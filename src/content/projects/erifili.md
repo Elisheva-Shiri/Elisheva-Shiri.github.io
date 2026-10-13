@@ -68,6 +68,10 @@ gallery:
     alt: 'Journal feed with three friends: 08:35 AM in Tel Aviv at 34°C, 07:35 AM in Stockholm at 14°C, and 11:05 PM in Stockholm at 16°C'
     caption: The shared journal. Each friend's post shows their local time and weather, and the scene changes with it.
     keywords: [Shared journal, Time zones]
+  - src: /projects/erifili/day-palette.webp
+    alt: Seven home screens of the avatar in a city, with the background colour shifting from light to dark
+    caption: The world follows the clock, with soft pastels in the morning and strong, neon-like colours at night.
+    keywords: [Time of day, Colour]
   - src: /projects/erifili/palettes-four.webp
     alt: The same avatar and city in four colour palettes, from mint and cyan to sage and a dark night
     caption: One scene, four moods. Colours shift with the time of day, the season and the weather where each friend lives.
@@ -80,6 +84,10 @@ gallery:
     alt: A journal post from a friend's avatar about a camping trip, with a map of the location
     caption: A post is a moment of the day with a photo and a place. Up to three a day, so there's no pressure to keep up.
     keywords: [Sharing, Calm technology]
+  - src: /projects/erifili/app-flow.webp
+    alt: The app's splash screen with a rainbow ring logo, next to a flow diagram of its scenes
+    caption: The app's structure, from the landing page and login to home, send, get, chat and weekly, monthly and yearly views.
+    keywords: [Information architecture, Flow]
   - src: /projects/erifili/onboarding-flow.webp
     alt: Ten app screens covering onboarding, profile, tribe, posting, chat and a weekly activity summary
     caption: The full flow, from the first “Let's get you ready” to the tribe, posts, chat and a weekly summary of time spent together.
@@ -96,6 +104,10 @@ gallery:
     alt: Three visitors watching the vertical screen at the exhibition
     caption: Visitors watching the film.
     keywords: [Exhibition, Audience]
+  - src: /projects/erifili/exhibition-screen.webp
+    alt: A visitor standing beside the vertical exhibition screen
+    caption: The vertical screen in the exhibition space.
+    keywords: [Exhibition]
 ---
 
 ## The problem

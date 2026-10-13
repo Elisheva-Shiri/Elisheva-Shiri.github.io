@@ -30,6 +30,10 @@ gallery:
     alt: "A slide reading Bring Some Life, beside a social post with a row of reaction emojis including a chilli"
     caption: "Bring some life: the chilli as a reaction next to the familiar like, love and laugh."
     keywords: [Reactions, Social media]
+  - src: /projects/emoji-suggestion/chilli.webp
+    alt: "An illustration of a bowl of red and orange chilli peppers on a cream background"
+    caption: "A first image of the chilli."
+    keywords: [Sketch]
   - src: /projects/emoji-suggestion/chili-event-poster.webp
     alt: "A colourful event poster for Chili at Chili, a hot pepper contest"
     caption: "The idea in real life: a Chili @ Chili evening, December 2023."

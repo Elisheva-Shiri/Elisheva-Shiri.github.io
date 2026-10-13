@@ -29,6 +29,14 @@ gallery:
     alt: Two halves of a grey printed lid with button holes
     caption: The lid is printed in two halves.
     keywords: [3D printing]
+  - src: /projects/monster-theater-button-box/clamp-bracket.webp
+    alt: A hand holding a printed bracket and a clothes peg clamp
+    caption: Clamping a printed bracket while the glue sets.
+    keywords: [Assembly]
+  - src: /projects/monster-theater-button-box/lid-joined.webp
+    alt: The inside of the box with the two halves joined by wooden strips
+    caption: The halves joined with wooden strips.
+    keywords: [Assembly, Structure]
   - src: /projects/monster-theater-button-box/box-and-arm.webp
     alt: The box with a printed side unit attached at one end
     caption: The box with its side unit attached.

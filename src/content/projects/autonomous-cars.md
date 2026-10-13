@@ -27,6 +27,10 @@ gallery:
     alt: A screen of Python code with a car-following function that finds the leader car and computes acceleration from speed and distance
     caption: The car-following model in Python. Each car finds the car in front and sets its acceleration from its speed, the speed difference and the gap.
     keywords: [Python, Car following]
+  - src: /projects/autonomous-cars/intersection-code.webp
+    alt: A screen of Python code computing car speed, steering angle and position, with comments about the safety zone and intersections
+    caption: Steering and position updates, with a safety zone around each car and rules for intersections.
+    keywords: [Python, Kinematics]
 ---
 
 ## The problem

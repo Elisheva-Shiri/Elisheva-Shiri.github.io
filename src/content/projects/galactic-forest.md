@@ -50,6 +50,10 @@ gallery:
     alt: "A wide view of the installation in the desert at sunrise"
     caption: "Sunrise over the installation."
     keywords: [Desert, Site]
+  - src: /projects/galactic-forest/v2-dawn-field.webp
+    alt: "The tubes spread on the ground in the empty desert plain"
+    caption: "The tubes on the desert plain."
+    keywords: [Site]
   - src: /projects/galactic-forest/v2-standing-test.webp
     alt: "Tubes standing upright among trees at night, glowing purple"
     caption: "A night test with the tubes standing upright, May 2024."
@@ -72,6 +76,11 @@ gallery:
     alt: A 3D preview of the whole forest, poles lighting up in waves of white, teal, blue and violet over a green grid
     caption: The whole forest in the 3D preview. Light sweeps through the poles in waves of colour.
     keywords: [Light show, 3D preview]
+  - src: /projects/galactic-forest/forest-colours.mp4
+    poster: /projects/galactic-forest/forest-colours-poster.webp
+    alt: The forest preview cycling through cyan, blue, green, orange and purple
+    caption: A sequence cycling through the palette.
+    keywords: [Colour, Sequence]
   - src: /projects/galactic-forest/light-sequence.mp4
     poster: /projects/galactic-forest/light-sequence-poster.webp
     alt: A front view of rows of glowing poles, with green, white and blue light running up and down them
@@ -85,6 +94,10 @@ gallery:
     alt: "A notebook sketch of a hexagonal central box with dimensions, surrounded by poles"
     caption: "Sketching the central box among the poles, with its dimensions."
     keywords: [Sketch, Pole]
+  - src: /projects/galactic-forest/sketch-pole-2.webp
+    alt: A second pen sketch of the pole base with wiring notes
+    caption: 'The pole base and wiring, sketched.'
+    keywords: [Sketch, Wiring]
   - src: /projects/galactic-forest/pole-map-phone.webp
     alt: A phone screenshot of the forest map, rings of yellow and green lines
     caption: 'The map of the forest, rings of poles seen from above.'
@@ -117,6 +130,16 @@ gallery:
     alt: A grid view on a screen mapping every pole's LEDs, in red and white
     caption: Mapping the LEDs of every pole onto the grid.
     keywords: [Mapping, Setup]
+  - src: /projects/galactic-forest/wave-effect.mp4
+    poster: /projects/galactic-forest/wave-effect-poster.webp
+    alt: A screen showing a wave effect being designed and previewed on the poles
+    caption: Designing a wave effect.
+    keywords: [Effects, Design]
+  - src: /projects/galactic-forest/early-simulation.mp4
+    poster: /projects/galactic-forest/early-simulation-poster.webp
+    alt: An early 3D simulation of the forest, poles flashing white, orange and green
+    caption: An early simulation of the forest, September 2023.
+    keywords: [Simulation, Early test]
   - src: /projects/galactic-forest/numbered-pole.mp4
     poster: /projects/galactic-forest/numbered-pole-poster.webp
     alt: A white pole marked with the number 44 and symbols, standing on straw

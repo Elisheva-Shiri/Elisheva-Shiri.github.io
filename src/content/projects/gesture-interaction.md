@@ -21,6 +21,10 @@ gallery:
     alt: A hand moving in the air while a 3D cube on the monitor turns and moves to follow it
     caption: Moving a hand in the air turns and moves the 3D cube on screen.
     keywords: [Gestures, Demo]
+  - src: /projects/gesture-interaction/tracking-setup.webp
+    alt: The setup, a laptop and a monitor showing the webcam view and the 3D cube, with a hand raised to the side
+    caption: The setup. The webcam view in the corner shows what the tracker sees.
+    keywords: [Setup, Computer vision]
 ---
 
 ## The aim

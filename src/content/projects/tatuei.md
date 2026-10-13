@@ -37,10 +37,18 @@ gallery:
     alt: "A spiral of rainbow-coloured pieces lit by a bulb at its centre"
     caption: "Concept render: the spiral of colour around the bulb."
     keywords: [Visual, Spiral]
+  - src: /projects/tatuei/render-2.webp
+    alt: "Close-up of iridescent tiles reflecting rainbow colours"
+    caption: "Iridescent pieces up close."
+    keywords: [Material, Iridescence]
   - src: /projects/tatuei/render-3.webp
     alt: "A field of small iridescent tiles catching light"
     caption: "Concept render: a field of tiles catching the light."
     keywords: [Material, Pattern]
+  - src: /projects/tatuei/render-4.webp
+    alt: "A star-shaped pattern of light around a hanging bulb"
+    caption: "The star pattern around the bulb."
+    keywords: [Visual, Light]
 ---
 
 ## The piece

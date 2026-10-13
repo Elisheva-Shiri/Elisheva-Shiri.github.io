@@ -56,10 +56,19 @@ gallery:
     alt: Three breadboards with a microcontroller, a temperature sensor and a servo
     caption: "Spreading the parts over three breadboards to test each one."
     keywords: [Prototype, Testing]
+  - src: /projects/hamster-feeder/breadboard-detail.webp
+    alt: A breadboard of components with a pink arrow pointing to one part
+    caption: "A breadboard detail, with the part being tested marked."
+    keywords: [Detail, Debugging]
   - src: /projects/hamster-feeder/dashboard.webp
     alt: A cloud dashboard with gauges for humidity and light level
     caption: "Humidity, light and proximity readings on a cloud dashboard, May 2021."
     keywords: [Dashboard, IoT]
+  - src: /projects/hamster-feeder/breadboard.mp4
+    poster: /projects/hamster-feeder/breadboard-poster.webp
+    alt: A breadboard with a microcontroller, a sensor and a blinking red LED
+    caption: The first breadboard version, May 2021.
+    keywords: [Prototype]
 ---
 
 ## The system

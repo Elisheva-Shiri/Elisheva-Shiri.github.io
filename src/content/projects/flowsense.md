@@ -34,10 +34,18 @@ gallery:
     alt: The FlowSense disc seen from an angle, with a glowing ring around the phone
     caption: A glowing ring gives light feedback as the players move.
     keywords: [Light feedback, Design]
+  - src: /projects/flowsense/render-top.webp
+    alt: The FlowSense disc seen from above
+    caption: From above. The disc shape is simple and easy to hold.
+    keywords: [Form, Design]
   - src: /projects/flowsense/device-concept.webp
     alt: Two rounded pill-shaped devices, grey and pink, each holding a smartphone
     caption: "A concept render of two devices, one for each player, with the phone set into a soft rounded body."
     keywords: [Concept, Render]
+  - src: /projects/flowsense/storyboard-1.webp
+    alt: A whiteboard storyboard of stick-figure scenes on an easel
+    caption: "Storyboarding how a grandmother and grandchild would use FlowSense."
+    keywords: [Storyboard, Scenario]
   - src: /projects/flowsense/storyboard-2.webp
     alt: A second whiteboard storyboard on an easel
     caption: "A second storyboard, comparing life with and without the product."

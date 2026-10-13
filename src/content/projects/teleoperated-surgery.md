@@ -49,6 +49,10 @@ gallery:
     alt: Causal loop diagram linking surgeon, patient, family, anaesthesia, robot, sensors, display, AI assistance, motion tracking and developers with reinforcing loops
     caption: A causal loop diagram. Better sensing, displays and AI assistance reinforce the surgeon's performance, and through the operation, the patient and family.
     keywords: [Causal loops, Reinforcing loops]
+  - src: /projects/teleoperated-surgery/slide-feedback-senses.webp
+    alt: 'Slide listing tactile, visual and audio feedback next to a wheel of the five senses'
+    caption: Replacing lost touch. Tactile, visual and audio feedback can stand in for it, which is the basis of pseudo-haptics.
+    keywords: [Pseudo-haptics, Multisensory, Feedback]
   - src: /projects/teleoperated-surgery/slide-suggestion.webp
     alt: 'Suggestion slide: a tablet showing the nurse what the surgeon sees, a digital pen as the input tool, and a simple drawing interface'
     caption: The proposal. A tablet shows the nurse what the surgeon sees, with a digital pen and a simple drawing interface for marking it.
@@ -57,6 +61,10 @@ gallery:
     alt: Mockup of a basic drawing interface over a surgical camera view, with an area of tissue highlighted in blue
     caption: Drawing on the live view. A highlighted area becomes visual guidance that the whole team can share.
     keywords: [Guidance, Annotation, Mockup]
+  - src: /projects/teleoperated-surgery/slide-challenges.webp
+    alt: 'Challenge slide listing cognitive overload, real-time computing and latency'
+    caption: The open challenges are cognitive overload, real-time computing and latency.
+    keywords: [Challenges, Constraints]
 ---
 
 ## The problem

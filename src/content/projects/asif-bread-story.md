@@ -30,6 +30,11 @@ gallery:
     caption: 'Asif shared the project on Instagram. The title reads “The Story of Wheat: a display solution for the narrow space of the Asif gallery”.'
     keywords: [Press, Instagram]
     credit: Instagram story by Asif (@asif.tlv)
+  - src: /projects/asif-bread-story/pr-story-2.webp
+    alt: A second Asif Instagram story with an illustration of a bowl and orange slices on green
+    caption: "A second story from the same campaign."
+    keywords: [Press, Instagram]
+    credit: Instagram story by Asif (@asif.tlv)
   - src: /projects/asif-bread-story/prototype-strip.mp4
     poster: /projects/asif-bread-story/prototype-strip-poster.webp
     alt: The photo strip of the wheat story moving as the millstone is turned
@@ -44,6 +49,16 @@ gallery:
     alt: A sketch of visitors watching a tall loop of photographs that turns behind a glass wall
     caption: The concept sketch. A tall loop of photographs uses the high ceiling and faces the glass wall, inviting passers-by in.
     keywords: [Sketch, Concept]
+  - src: /projects/asif-bread-story/hand-mill.mp4
+    poster: /projects/asif-bread-story/hand-mill-poster.webp
+    alt: Hands turning the handle of a black hand mill next to bowls of grain and wheat stalks
+    caption: Turning the hand mill beside bowls of grain and wheat.
+    keywords: [Interaction, Grinding]
+  - src: /projects/asif-bread-story/stepper-test.mp4
+    poster: /projects/asif-bread-story/stepper-test-poster.webp
+    alt: A stepper motor on a desk connected to a driver board and a laptop
+    caption: Testing the stepper motor and its driver from the laptop.
+    keywords: [Stepper motor, Testing]
   - src: /projects/asif-bread-story/turntable-test.mp4
     poster: /projects/asif-bread-story/turntable-test-poster.webp
     alt: Round printed discs turning on top of the stepper motor
@@ -54,6 +69,10 @@ gallery:
     alt: The head of a laser cutter moving over a wooden sheet
     caption: Laser-cutting parts.
     keywords: [Laser cutting, Fabrication]
+  - src: /projects/asif-bread-story/screen-station.webp
+    alt: A yellow stand holding a tablet screen on a table in a workshop
+    caption: "A screen station for the story, an early idea."
+    keywords: [Prototype, Station]
   - src: /projects/asif-bread-story/rig-in-space.webp
     alt: "A rope-and-pulley rig hanging in a workshop beside a wall of tools and shelves"
     caption: "Testing the rope-and-pulley rig in the workshop, before the photographs went on."
@@ -62,14 +81,26 @@ gallery:
     alt: A grey printed millstone hanging under dried wheat stalks
     caption: "The millstone among the wheat."
     keywords: [Detail, Millstone]
+  - src: /projects/asif-bread-story/gear-slicing.webp
+    alt: A large gear model in FlashPrint slicing software
+    caption: Slicing a gear for the mechanism.
+    keywords: [Gears, 3D printing]
   - src: /projects/asif-bread-story/preparing-prints.webp
     alt: Photographs and tools laid out on a rug in the exhibition space during setup
     caption: "Prints and tools laid out on the rug during setup."
     keywords: [Installation, Setup]
+  - src: /projects/asif-bread-story/installation-corner.webp
+    alt: A strip of photographs hanging in a corner by the windows
+    caption: The strip of photographs in place by the windows.
+    keywords: [Installation]
   - src: /projects/asif-bread-story/installation-column.webp
     alt: A wide view of the installation in the room
     caption: The installation in the room.
     keywords: [Exhibition, Space]
+  - src: /projects/asif-bread-story/mechanism-top.webp
+    alt: Looking up at the clips and rope holding the photographs, and a print of a millstone
+    caption: "The installation lit at night."
+    keywords: [Detail, Mechanism]
   - src: /projects/asif-bread-story/photo-strip.webp
     alt: The photo strip hanging next to a concrete column, with the mechanism at the top
     caption: The mechanism at the top of the column moves the strip.

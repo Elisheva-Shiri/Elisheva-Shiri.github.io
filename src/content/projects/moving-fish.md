@@ -29,6 +29,11 @@ gallery:
     alt: The fish glowing purple, blue and white from the LEDs in its base
     caption: The LEDs shift through purple, blue and white beneath the fish.
     keywords: [RGB LEDs, Colour]
+  - src: /projects/moving-fish/red-glow.mp4
+    poster: /projects/moving-fish/red-glow-poster.webp
+    alt: The base of the fish glowing deep red in a dark room
+    caption: The base glowing red in the dark, December 2023.
+    keywords: [Light, Night]
   - src: /projects/moving-fish/light-test.mp4
     poster: /projects/moving-fish/light-test-poster.webp
     alt: Testing the lights in the base, which glow white, green and red
@@ -39,6 +44,10 @@ gallery:
     alt: Close-up of the motor turning a white gear that rocks the arm
     caption: The mechanism. A small DC motor turns a gear that rocks the arm.
     keywords: [Mechanism, Gears]
+  - src: /projects/moving-fish/gear-detail.webp
+    alt: The motor, the white gear and the metal strip glued onto the base
+    caption: The motor, gear and arm, close up.
+    keywords: [Detail, Build]
 ---
 
 ## The object

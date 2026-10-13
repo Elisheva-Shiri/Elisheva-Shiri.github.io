@@ -35,6 +35,10 @@ gallery:
     alt: The same box lit red
     caption: In red, the figure changes again.
     keywords: [Red, Change]
+  - src: /projects/posture-light-box/glow-green.webp
+    alt: A glowing green light test through a translucent form in the dark
+    caption: Light tests in the dark, December 2022.
+    keywords: [Testing, Light]
   - src: /projects/posture-light-box/glow-violet.webp
     alt: A violet light shining through a translucent form with fine lines
     caption: Violet light through a translucent form.

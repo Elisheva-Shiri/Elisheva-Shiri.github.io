@@ -30,6 +30,11 @@ gallery:
     alt: A laptop plotting the pulse signal and the BPM, with the sensor and an Arduino on the desk
     caption: First test, August 2023. The serial plotter shows the raw pulse and the heart rate in beats per minute.
     keywords: [Testing, BPM]
+  - src: /projects/pulse-finger-toy/pulse-reading.mp4
+    poster: /projects/pulse-finger-toy/pulse-reading-poster.webp
+    alt: A hand wearing the felt bird on a finger while the laptop plots a live pulse waveform from an Arduino
+    caption: The toy on a finger, with the live pulse waveform on the laptop behind it.
+    keywords: [Pulse, Live data]
 ---
 
 ## The idea

@@ -79,6 +79,11 @@ gallery:
     alt: Pressing a row of buttons on a breadboard while the game responds on the screen
     caption: Testing the game with a row of buttons on a breadboard.
     keywords: [Prototype, Testing]
+  - src: /projects/whack-a-mole/screen-test.mp4
+    poster: /projects/whack-a-mole/screen-test-poster.webp
+    alt: Testing the game on a screen with a single button
+    caption: An early test of the game on screen.
+    keywords: [Testing]
   - src: /projects/whack-a-mole/play-2022.mp4
     poster: /projects/whack-a-mole/play-2022-poster.webp
     alt: A hand pressing the wooden domes on the green board
@@ -88,6 +93,15 @@ gallery:
     alt: A green 3×3 board with wooden half-sphere domes in each square
     caption: The board, nine wooden domes in a green frame, one for each hole in the game.
     keywords: [Board, Fabrication]
+  - src: /projects/whack-a-mole/board-play.webp
+    alt: A finger pressing one of the wooden domes on the board
+    caption: Hit the dome when its mole appears.
+    keywords: [Interaction]
+  - src: /projects/whack-a-mole/hit.mp4
+    poster: /projects/whack-a-mole/hit-poster.webp
+    alt: Hitting the wooden domes on the board
+    caption: Playing.
+    keywords: [Play]
 ---
 
 ## The game

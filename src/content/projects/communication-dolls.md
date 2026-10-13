@@ -33,6 +33,10 @@ gallery:
     alt: A large group of handmade soft dinosaur dolls in red, black and patterned fabrics on a wooden shelf
     caption: The whole family of dolls.
     keywords: [Dolls, Collection]
+  - src: /projects/communication-dolls/all-dolls-2.webp
+    alt: The group of dolls from another angle
+    caption: Every doll is different, so each child can choose one.
+    keywords: [Characters, Variety]
   - src: /projects/communication-dolls/workshop-doll.webp
     alt: A finished black plush dinosaur doll standing on a white table at the workshop
     caption: "A doll finished on the day, 29 March 2022."
@@ -45,6 +49,11 @@ gallery:
     alt: Finished dinosaur dolls standing on a round table in a kindergarten
     caption: The dolls arrive at the kindergarten.
     keywords: [Delivery, Kindergarten]
+    credit: Still from the Good Deeds Day event video
+  - src: /projects/communication-dolls/dolls-basket.webp
+    alt: Dinosaur dolls in a wicker basket, one with tiger stripes and one with a bead necklace
+    caption: A basket of dolls, ready for the children to choose from.
+    keywords: [Delivery, Choice]
     credit: Still from the Good Deeds Day event video
   - src: /projects/communication-dolls/event-poster.webp
     alt: A poster in Hebrew announcing Good Deeds Day, building talking dinosaur dolls, Tuesday 29.3, 10:00 to 14:00
@@ -87,6 +96,14 @@ gallery:
     alt: A black dinosaur doll with small yellow pompoms on its head
     caption: A black dinosaur with yellow pompoms.
     keywords: [Character]
+  - src: /projects/communication-dolls/red-crown.webp
+    alt: A dark dinosaur doll with a red felt crown and a blue cape
+    caption: A dinosaur with a red crown and blue cape.
+    keywords: [Character, Accessories]
+  - src: /projects/communication-dolls/guide-materials.webp
+    alt: Guidebook page listing work tools and materials, including fabric, filling and an electrical circuit with speaker, battery and controller
+    caption: 'From the guidebook: the tools and materials, including a sound circuit with a speaker, battery and controller.'
+    keywords: [Guidebook, Materials]
   - src: /projects/communication-dolls/guide-cutting.webp
     alt: Guidebook page showing the paper pattern traced onto black fabric
     caption: 'From the guidebook: tracing the pattern onto the fabric.'
@@ -103,6 +120,10 @@ gallery:
     alt: A recordable sound module with a speaker, a battery and a cable, next to a bottle of glue
     caption: The recordable sound module, with its speaker and battery.
     keywords: [Electronics, Sound]
+  - src: /projects/communication-dolls/unsealing-circuit.webp
+    alt: Hands taking the circuit out of its sealed plastic case
+    caption: Taking the circuit out of its case.
+    keywords: [Electronics, Making]
   - src: /projects/communication-dolls/circuit-inside.webp
     alt: The sound circuit placed inside the half-sewn black doll
     caption: The circuit goes in before the stuffing.
@@ -115,6 +136,10 @@ gallery:
     alt: Gluing the charging cable at the edge of the doll's foot
     caption: The cable is glued at the foot, so the doll can be recharged and re-recorded.
     keywords: [Assembly, Detail]
+  - src: /projects/communication-dolls/finished-doll.webp
+    alt: The finished black plush dinosaur doll standing on a desk
+    caption: The first finished doll, the sample for the workshop.
+    keywords: [Prototype, Finished]
   - src: /projects/communication-dolls/doll-prototype.webp
     alt: A black plush doll wearing a red felt crown and a blue cape on a workbench
     caption: An early doll on the workbench.
@@ -123,6 +148,10 @@ gallery:
     alt: Many small circuit boards with wires laid out on a desk next to a soldering station
     caption: The electronics for the dolls, ready to be sewn in.
     keywords: [Electronics, Soldering]
+  - src: /projects/communication-dolls/doll-family.webp
+    alt: A pile of colourful soft dolls with pompoms and button eyes
+    caption: Dolls ready to go.
+    keywords: [Dolls]
 ---
 
 ## The dolls

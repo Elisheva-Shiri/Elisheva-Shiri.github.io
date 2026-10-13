@@ -24,6 +24,10 @@ gallery:
     alt: 'Intro screen: bottles and bags floating on a cartoon river with the text Enter Any Key To Start The Game'
     caption: The intro screen. Rubbish is already drifting up the river before you start playing.
     keywords: [Intro, Game UI]
+  - src: /projects/river-cleaning/play-rubbish.webp
+    alt: Gameplay screen with many plastic bags and bottles on the river and a score counter
+    caption: The river fills up with bottles and bags. If no one cleans it, the rubbish piles up at the top.
+    keywords: [Gameplay, The problem]
   - src: /projects/river-cleaning/play-fish.webp
     alt: Gameplay screen where several pieces of rubbish have turned into goldfish swimming away
     caption: Click a piece of rubbish and it becomes a fish. Every clean-up gives the river back to life.

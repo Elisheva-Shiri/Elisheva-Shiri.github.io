@@ -35,6 +35,10 @@ gallery:
     alt: Close-up of screens showing a pink and purple spectrogram above video of a crowd
     caption: Every piece of information becomes a colourful spectrogram, the bridge between the world of images and the world of sound.
     keywords: [Spectrogram, Sound]
+  - src: /projects/with-out/exhibition-projection.webp
+    alt: A projected portrait in shifting colours above a wall of screens and laptops
+    caption: Portraits projected and transformed as their sound plays.
+    keywords: [Projection, Transformation]
   - src: /projects/with-out/notebook-walkthrough.mp4
     poster: /projects/with-out/notebook-walkthrough-poster.webp
     alt: Screen recording scrolling through the code, with images, spectrograms and waveforms

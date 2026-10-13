@@ -46,6 +46,11 @@ gallery:
     caption: An AI-generated visualisation of the head on its pipe.
     keywords: [AI render, Concept]
     credit: AI-generated with Draw3D.online from my sketch
+  - src: /projects/flood-monitor/ai-field-render.webp
+    alt: An AI-generated image of rows of small green sensors across a wet field
+    caption: An AI-generated visualisation of the sensors spread across the field.
+    keywords: [AI render, System]
+    credit: AI-generated with Draw3D.online from my sketch
 ---
 
 ## The idea
