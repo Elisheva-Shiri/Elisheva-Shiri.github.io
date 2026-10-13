@@ -16,6 +16,8 @@ tags:
   - Music
   - Performance
 
+github: https://github.com/Elisheva-Shiri/-Monster-Theater
+
 cover: /projects/monster-theater/servo-rig.webp
 coverAlt: An Arduino on a wooden frame wired to a row of servo motors
 

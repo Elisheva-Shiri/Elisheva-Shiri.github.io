@@ -19,6 +19,8 @@ tags:
   - Generative AI
   - Bezalel
 
+github: https://github.com/Elisheva-Shiri/Erifili---an-Intimate-Social-Network
+
 cover: /projects/erifili/avatar-moods.webp
 coverAlt: Ten app screens of an illustrated avatar with green wings, each showing a different facial expression
 

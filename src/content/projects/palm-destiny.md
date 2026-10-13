@@ -16,6 +16,8 @@ tags:
   - Installation
   - Bezalel
 
+github: https://github.com/Elisheva-Shiri/Palm-Destiny
+
 cover: /projects/palm-destiny/installation.webp
 coverAlt: A fortune-teller's table with a red cloth, a glowing candle, two face-shaped plant pots, crystals and tarot cards
 
