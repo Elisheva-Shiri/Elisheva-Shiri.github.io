@@ -76,24 +76,6 @@
   color-scheme: light;
 }
 
-/* The lab is an instrument panel: it stays dark in both themes. */
-:root[data-theme='light'] .lab-grid {
-  --surface: #0f0f17;
-  --surface-2: #12121c;
-  --foreground: #f2f1f7;
-  --text: #d4d2e2;
-  --muted: #b4b2c6;
-  --faint: #9c9aae;
-  --border: #24243a;
-  --border-soft: #1c1c2c;
-  --border-strong: #34344c;
-  --cyan: #4df0d8;
-  --pink: #ff6fb5;
-  --violet: #8f7df0;
-  --accent-foreground: #07070b;
-  color-scheme: dark;
-}
-
 /* Phones: tighter side margins and section spacing */
 @media (max-width: 40rem) {
   :root {
