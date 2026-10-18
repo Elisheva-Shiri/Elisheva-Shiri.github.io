@@ -208,12 +208,22 @@ let shownSoFar = 0;
 </BaseLayout>
 
 <script>
-  // "Email me": the address is only put together at the moment of the click.
+  // "Email me": the address is only put together in the browser, so it is never in the
+  // page source for spam robots to collect. A click opens the mail app and, because many
+  // computers have none set up, copies the address and shows it on the button.
   for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-mail]')) {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      const [name, domain] = [...link.dataset.mail!].reverse().join('').split('|');
-      location.href = `mailto:${name}@${domain}`;
+    const [name, domain] = [...link.dataset.mail!].reverse().join('').split('|');
+    const address = `${name}@${domain}`;
+    const label = link.textContent!;
+    let back = 0;
+    link.href = `mailto:${address}`;
+    link.title = address;
+    link.addEventListener('click', () => {
+      navigator.clipboard?.writeText(address).then(() => {
+        link.textContent = `${address} · copied`;
+        clearTimeout(back);
+        back = window.setTimeout(() => (link.textContent = label), 5000);
+      }, () => {});
     });
   }
 
