@@ -147,6 +147,7 @@ const grasps = [
       startleUntil: 0,
       prevMove: null as { x: number; y: number; t: number } | null,
       mode: 'power' as Grasp,
+      pinch: 0, // which finger the thumb pinches against: 0 index … 3 pinky
       yaw: 0,
       pitch: 0,
       yawT: 0,
@@ -164,6 +165,10 @@ const grasps = [
     const r = (v: number) => Math.round(v * 10) / 10;
     const clamp = (v: number) => Math.max(0, Math.min(1, v));
     const MULT: Record<Grasp, number[]> = { power: [1, 1, 1, 1, 1], pinch: [0.85, 0.6, 0.12, 0.1, 0.1], point: [0.9, 0.03, 1, 1, 1] };
+    // Pinch: the thumb meets one finger while the others stay out of the way.
+    // The thumb reaches a little further for the fingers further along the hand.
+    const PINCH_FINGERS = ['index', 'middle', 'ring', 'pinky'];
+    const pinchMult = (pick: number) => [0.8 + pick * 0.07, ...PINCH_FINGERS.map((_, i) => (i === pick ? 0.62 : 0.1))];
     const FMAX: Record<Grasp, number> = { power: 22, pinch: 9, point: 4 };
     const FINGERS = [
       { bx: 140, L: [50, 31, 23] },
@@ -214,7 +219,7 @@ const grasps = [
     // ---- Drawing ----
     const render = (now: number) => {
       const g = s.g;
-      const mult = MULT[s.mode];
+      const mult = s.mode === 'pinch' ? pinchMult(s.pinch) : MULT[s.mode];
       const startled = now < s.startleUntil;
       const handIdle = now - s.lastHand > IDLE_AFTER;
       const xrIdle = now - s.lastXr > IDLE_AFTER;
@@ -275,7 +280,9 @@ const grasps = [
       text('tendonN', r(tendonF));
       text('hMode', startled ? 'YIELD' : handIdle ? (reducedMotion ? 'IDLE' : 'IDLE DEMO') : 'TRACKING YOU');
       attr('hMode', 'data-state', startled ? 'alert' : handIdle ? 'idle' : 'live');
-      text('robotResp', startled ? 'Open hand, hold still, yield' : picked ? 'Grasp closed — picking the XR target' : g > 0.05 ? 'Closing: index → middle → ring → pinky → thumb' : 'Open, waiting');
+      const closing =
+        s.mode === 'pinch' ? `Pinching: thumb → ${PINCH_FINGERS[s.pinch]}` : s.mode === 'point' ? 'Pointing: index out, the rest closed' : 'Closing: index → middle → ring → pinky → thumb';
+      text('robotResp', startled ? 'Open hand, hold still, yield' : picked ? 'Grasp closed — picking the XR target' : g > 0.05 ? closing : 'Open, waiting');
 
       // Headset view: a floor grid, two landmarks, the grasp target and the hand proxy.
       const seg = (from: number[], to: number[]) => {
@@ -389,9 +396,19 @@ const grasps = [
     xrStage.addEventListener('pointerleave', () => (s.lastXr = 0));
 
     const graspButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-grasp]')];
+    const pinchButton = graspButtons.find((b) => b.dataset.grasp === 'pinch');
+    // Tapping "Pinch" again moves the thumb on to the next finger.
+    const showPinch = () =>
+      pinchButton?.setAttribute('aria-label', `Pinch, thumb against the ${PINCH_FINGERS[s.pinch]} finger. Press again for the next finger.`);
+    showPinch();
     for (const button of graspButtons) {
       button.addEventListener('click', () => {
-        s.mode = button.dataset.grasp as Grasp;
+        const mode = button.dataset.grasp as Grasp;
+        if (mode === 'pinch') {
+          if (s.mode === 'pinch') s.pinch = (s.pinch + 1) % PINCH_FINGERS.length;
+          showPinch();
+        }
+        s.mode = mode;
         graspButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
       });
     }
