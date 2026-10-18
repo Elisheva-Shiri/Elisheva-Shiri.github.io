@@ -133,6 +133,7 @@ const grasps = [
     };
     const attr = (key: string, name: string, value: string | number) => write(key, name, value, (el, v) => el.setAttribute(name, v));
     const text = (key: string, value: string | number) => write(key, '#text', value, (el, v) => (el.textContent = v));
+    const flag = (key: string, name: string, on: boolean) => write(key, name, on ? '1' : '0', (el, v) => el.classList.toggle(name, v === '1'));
     const width = (key: string, percent: number) => write(key, 'width', percent, (el, v) => ((el as HTMLElement).style.width = v + '%'));
 
     // ---- State ----
@@ -154,6 +155,9 @@ const grasps = [
       pitchT: 0,
       lastXr: 0,
       gazeHold: 0,
+      aim: '' as '' | 'ring' | 'sphere', // the landmark the reticle is resting on
+      lastAim: '' as '' | 'ring' | 'sphere',
+      aimAt: 0,
       noise: [0.5, 0.5, 0.5],
       noiseAt: 0,
     };
@@ -322,13 +326,26 @@ const grasps = [
       attr('cubeLabel', 'fill', cubeColour);
       text('cubeLabel', cubeOk ? (picked ? `PICKED · ${r(contactF)} N` : gazeOn ? 'SELECTED · 0.91 m' : 'GRASP TARGET') : '');
 
+      // The two landmarks, and which one the reticle is resting on.
       const sphere = project(1.2, 0.25, 4.4), ring = project(-1.8, 0.55, 5.2);
+      const sphereR = sphere.z > NEAR ? (FL * 0.3) / sphere.z : 0;
+      const ringR = ring.z > NEAR ? (FL * 0.38) / ring.z : 0;
       attr('sphere', 'cx', r(sphere.x));
       attr('sphere', 'cy', r(sphere.y));
-      attr('sphere', 'r', r(sphere.z > NEAR ? (FL * 0.3) / sphere.z : 0));
+      attr('sphere', 'r', r(sphereR));
       attr('ring', 'cx', r(ring.x));
       attr('ring', 'cy', r(ring.y));
-      attr('ring', 'r', r(ring.z > NEAR ? (FL * 0.38) / ring.z : 0));
+      attr('ring', 'r', r(ringR));
+      // A wider edge once a landmark is held, so a small drift does not drop it.
+      const onMark = (q: { x: number; y: number }, rad: number, k: string) =>
+        rad > 0 && Math.hypot(q.x - 200, q.y - 220) < rad + (s.aim === k ? 24 : 6);
+      s.aim = gazeOn ? '' : onMark(sphere, sphereR, 'sphere') ? 'sphere' : onMark(ring, ringR, 'ring') ? 'ring' : '';
+      if (s.aim) {
+        s.lastAim = s.aim;
+        s.aimAt = now;
+      }
+      flag('sphere', 'aimed', s.aim === 'sphere');
+      flag('ring', 'aimed', s.aim === 'ring');
 
       // The hand proxy hovers beside the target and moves in as the real hand closes.
       const approach = clamp(g / 0.85), far = 1 - approach;
@@ -358,8 +375,11 @@ const grasps = [
       text('pitchDeg', r(s.pitch / D));
       text('m2p', r(17.6 + s.noise[2] * 2.4));
       text('hapMm', (picked ? 0.8 + lift * 1.2 : gazeOn ? 0.9 - (gazeDist / 40) * 0.4 : 0).toFixed(1));
-      text('gazeState', xrIdle ? 'Scanning the scene' : gazeOn ? 'Fixating on target' : 'Searching');
-      text('xrResp', picked ? 'Object picked · grip mirrored to fingertip' : gazeOn ? 'Target locked · hand will grasp' : 'Reticle free · no cue');
+      text('gazeState', gazeOn ? 'Fixating on target' : s.aim ? 'Resting on a landmark' : xrIdle ? 'Scanning the scene' : 'Searching');
+      text(
+        'xrResp',
+        picked ? 'Object picked · grip mirrored to fingertip' : gazeOn ? 'Target locked · hand will grasp' : s.aim ? 'Landmark in the reticle · click to fill it' : 'Reticle free · no cue',
+      );
       text('xrMode', xrIdle ? (reducedMotion ? 'IDLE' : 'IDLE DEMO') : 'HEAD TRACKED');
       attr('xrMode', 'data-state', xrIdle ? 'idle' : 'alert');
     };
@@ -401,10 +421,11 @@ const grasps = [
       s.lastXr = Date.now();
     });
     xrStage.addEventListener('pointerleave', () => (s.lastXr = 0));
-    // Clicking a landmark in the headset view fills it in, and clicking again empties it.
-    xrStage.addEventListener('click', (e) => {
-      const mark = (e.target as Element).closest('.landmark');
-      mark?.classList.toggle('solid');
+    // Rest the reticle on a landmark, then click anywhere in the view to fill it in.
+    xrStage.addEventListener('click', () => {
+      // The click counts for whatever the reticle held in the past half second.
+      const mark = s.aim || (Date.now() - s.aimAt < 500 ? s.lastAim : '');
+      if (mark) root.querySelector(`[data-k="${mark}"]`)?.classList.toggle('solid');
     });
 
     const graspButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-grasp]')];
@@ -558,14 +579,15 @@ const grasps = [
 
   /* The two landmarks: click one to fill it in. */
   .landmark {
-    /* `all` so the empty middle of the outlined circle is clickable too */
-    pointer-events: all;
-    cursor: pointer;
+    pointer-events: none;
     transition: fill var(--transition);
   }
 
-  .landmark:hover {
+  /* The reticle is resting on it: ready for a click. */
+  .landmark.aimed {
     stroke: var(--violet);
+    stroke-width: 3;
+    filter: drop-shadow(0 0 6px rgb(143 125 240 / 0.8));
   }
 
   .landmark.solid {
