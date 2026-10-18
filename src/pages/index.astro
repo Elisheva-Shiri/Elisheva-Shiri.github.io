@@ -349,10 +349,15 @@ let shownSoFar = 0;
   }
 
   /* ---------- What I bring ---------- */
+  /* One box at every width: mechanics, human and intelligence side by side,
+     split by single lines — it never wraps into separate cards. */
   .bring {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
   }
 
   .bring-card {
@@ -360,11 +365,12 @@ let shownSoFar = 0;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    min-width: 0;
     padding: 28px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    background: var(--surface);
-    transition: border-color var(--transition), transform var(--transition);
+  }
+
+  .bring-card + .bring-card {
+    border-left: 1px solid var(--border);
   }
 
   .bring-card.human {
@@ -373,11 +379,6 @@ let shownSoFar = 0;
 
   .bring-card.mind {
     --col: var(--foreground);
-  }
-
-  .bring-card:hover {
-    border-color: color-mix(in srgb, var(--col) 45%, var(--border));
-    transform: translateY(-3px);
   }
 
   .bring-label {
@@ -813,33 +814,30 @@ let shownSoFar = 0;
       font-size: 0.8125rem;
     }
 
-    /* What I bring: the three columns become a sideways row you swipe through */
+    /* What I bring: still three columns in one box, at a smaller scale */
     .bring {
-      grid-template-columns: none;
-      grid-auto-flow: column;
-      grid-auto-columns: 82%;
-      gap: 10px;
-      margin-inline: calc(var(--gutter) * -1);
-      padding-inline: var(--gutter);
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-padding-inline: var(--gutter);
-      scrollbar-width: none;
+      border-radius: 14px;
     }
 
     .bring-card {
-      gap: 10px;
-      padding: 18px;
-      scroll-snap-align: start;
+      gap: 6px;
+      padding: 10px 8px;
+    }
+
+    .bring-label {
+      font-size: 0.5rem;
     }
 
     .bring-card h3 {
-      font-size: 1rem;
+      font-size: 0.75rem;
+      line-height: 1.25;
     }
 
     .bring-card ul {
-      gap: 6px;
-      font-size: 0.8125rem;
+      gap: 5px;
+      padding-left: 10px;
+      font-size: 0.625rem;
+      line-height: 1.35;
     }
 
     .loop {
