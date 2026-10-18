@@ -155,8 +155,8 @@ const grasps = [
       pitchT: 0,
       lastXr: 0,
       gazeHold: 0,
-      aim: '' as '' | 'ring' | 'sphere', // the landmark the reticle is resting on
-      lastAim: '' as '' | 'ring' | 'sphere',
+      aim: '' as '' | 'ring' | 'sphere' | 'cube', // what the reticle is resting on
+      lastAim: '' as '' | 'ring' | 'sphere' | 'cube',
       aimAt: 0,
       noise: [0.5, 0.5, 0.5],
       noiseAt: 0,
@@ -320,7 +320,14 @@ const grasps = [
       attr('cubeEdges', 'd', cubeOk ? EDGES.map((e) => `M ${at(e[0])} L ${at(e[1])}`).join(' ') : '');
       attr('cubeFaces', 'd', cubeOk ? FACES.map((f) => `M ${f.map(at).join(' L ')} Z`).join(' ') : '');
       attr('cubeEdges', 'stroke', cubeColour);
-      attr('cubeFaces', 'fill', hot ? 'rgba(255,111,181,.22)' : 'rgba(77,240,216,.07)');
+      // The cube steps through the same three looks as the landmarks.
+      const cubeLook = MARK_STATES[marks.cube.at];
+      attr('cubeEdges', 'stroke-dasharray', cubeLook === 'dashed' ? '5 6' : 'none');
+      attr(
+        'cubeFaces',
+        'fill',
+        cubeLook === 'full' ? (hot ? 'rgba(255,111,181,.3)' : 'rgba(77,240,216,.24)') : hot ? 'rgba(255,111,181,.1)' : 'transparent',
+      );
       attr('cubeLabel', 'x', r(pc.x + 34));
       attr('cubeLabel', 'y', r(pc.y - 4));
       attr('cubeLabel', 'fill', cubeColour);
@@ -339,7 +346,7 @@ const grasps = [
       // A wider edge once a landmark is held, so a small drift does not drop it.
       const onMark = (q: { x: number; y: number }, rad: number, k: string) =>
         rad > 0 && Math.hypot(q.x - 200, q.y - 220) < rad + (s.aim === k ? 24 : 6);
-      s.aim = gazeOn ? '' : onMark(sphere, sphereR, 'sphere') ? 'sphere' : onMark(ring, ringR, 'ring') ? 'ring' : '';
+      s.aim = gazeOn ? 'cube' : onMark(sphere, sphereR, 'sphere') ? 'sphere' : onMark(ring, ringR, 'ring') ? 'ring' : '';
       if (s.aim) {
         s.lastAim = s.aim;
         s.aimAt = now;
@@ -378,7 +385,13 @@ const grasps = [
       text('gazeState', gazeOn ? 'Fixating on target' : s.aim ? 'Resting on a landmark' : xrIdle ? 'Scanning the scene' : 'Searching');
       text(
         'xrResp',
-        picked ? 'Object picked · grip mirrored to fingertip' : gazeOn ? 'Target locked · hand will grasp' : s.aim ? 'Landmark in the reticle · click to fill it' : 'Reticle free · no cue',
+        picked
+          ? 'Object picked · grip mirrored to fingertip'
+          : gazeOn
+            ? 'Target locked · click to change its look'
+            : s.aim
+              ? 'Landmark in the reticle · click to change its look'
+              : 'Reticle free · no cue',
       );
       text('xrMode', xrIdle ? (reducedMotion ? 'IDLE' : 'IDLE DEMO') : 'HEAD TRACKED');
       attr('xrMode', 'data-state', xrIdle ? 'idle' : 'alert');
@@ -423,23 +436,32 @@ const grasps = [
     xrStage.addEventListener('pointerleave', () => (s.lastXr = 0));
     // The three looks a landmark steps through, and where each one has got to.
     const MARK_STATES = ['dashed', 'outline', 'full'];
-    const marks: Record<string, { at: number; dir: number }> = { ring: { at: 0, dir: 1 }, sphere: { at: 1, dir: 1 } };
+    const marks: Record<string, { at: number; dir: number }> = {
+      ring: { at: 0, dir: 1 },
+      sphere: { at: 1, dir: 1 },
+      cube: { at: 1, dir: 1 },
+    };
     // Rest the reticle on a landmark, then click anywhere in the view to step it along.
     xrStage.addEventListener('click', () => {
       // The click counts for whatever the reticle held in the past half second.
       const mark = s.aim || (Date.now() - s.aimAt < 500 ? s.lastAim : '');
-      const el = mark && root.querySelector(`[data-k="${mark}"]`);
-      if (!el) return;
+      if (!mark) return;
       // Step one place along the sequence, turning round at either end.
       const step = marks[mark];
       step.at += step.dir;
       if (step.at >= MARK_STATES.length - 1) (step.at = MARK_STATES.length - 1), (step.dir = -1);
       if (step.at <= 0) (step.at = 0), (step.dir = 1);
-      el.setAttribute('data-state', MARK_STATES[step.at]);
+      // The cube is redrawn every frame, so only the two circles carry the look as an attribute.
+      if (mark !== 'cube') root.querySelector(`[data-k="${mark}"]`)?.setAttribute('data-state', MARK_STATES[step.at]);
       // Restart the pop so repeated clicks keep answering.
-      el.classList.remove('pop');
-      void el.getBoundingClientRect();
-      el.classList.add('pop');
+      const popping = mark === 'cube' ? ['cubeEdges', 'cubeFaces'] : [mark];
+      for (const key of popping) {
+        const el = root.querySelector(`[data-k="${key}"]`);
+        if (!el) continue;
+        el.classList.remove('pop');
+        void el.getBoundingClientRect();
+        el.classList.add('pop');
+      }
     });
 
     const graspButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-grasp]')];
@@ -617,7 +639,7 @@ const grasps = [
 
   /* Every click gives the same little jump, filling or emptying. */
   @media (prefers-reduced-motion: no-preference) {
-    .landmark.pop {
+    .stage-xr .pop {
       transform-box: fill-box;
       transform-origin: center;
       animation: landmark-pop 340ms var(--ease);
