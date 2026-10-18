@@ -81,8 +81,8 @@ const grasps = [
         <svg viewBox="0 0 400 440" role="img" aria-label="Headset view of a virtual teleoperation scene. Move your pointer to turn your head; looking at the grasp target selects it and triggers a fingertip haptic cue">
           <rect width="400" height="440" fill="#08080F"></rect>
           <path data-k="xrGrid" fill="none" stroke="#1F4A4A" stroke-width="1"></path>
-          <circle class="landmark" data-k="ring" fill="none" stroke="#6E5BD6" stroke-width="2" stroke-dasharray="4 5"></circle>
-          <circle class="landmark" data-k="sphere" fill="#1A1630" stroke="#8F7DF0" stroke-width="1.5"></circle>
+          <circle class="landmark" data-k="ring" data-state="dashed" fill="none" stroke="#6E5BD6" stroke-width="2"></circle>
+          <circle class="landmark" data-k="sphere" data-state="outline" fill="none" stroke="#8F7DF0" stroke-width="1.5"></circle>
           <path data-k="cubeFaces" fill="rgba(77,240,216,.07)" stroke="none"></path>
           <path data-k="cubeEdges" fill="none" stroke="#4DF0D8" stroke-width="2" stroke-linejoin="round"></path>
           <line data-k="proxyLine" stroke="#4DF0D8" stroke-width="1" stroke-dasharray="2 4" opacity="0"></line>
@@ -421,13 +421,21 @@ const grasps = [
       s.lastXr = Date.now();
     });
     xrStage.addEventListener('pointerleave', () => (s.lastXr = 0));
-    // Rest the reticle on a landmark, then click anywhere in the view to fill it in.
+    // The three looks a landmark steps through, and where each one has got to.
+    const MARK_STATES = ['dashed', 'outline', 'full'];
+    const marks: Record<string, { at: number; dir: number }> = { ring: { at: 0, dir: 1 }, sphere: { at: 1, dir: 1 } };
+    // Rest the reticle on a landmark, then click anywhere in the view to step it along.
     xrStage.addEventListener('click', () => {
       // The click counts for whatever the reticle held in the past half second.
       const mark = s.aim || (Date.now() - s.aimAt < 500 ? s.lastAim : '');
       const el = mark && root.querySelector(`[data-k="${mark}"]`);
       if (!el) return;
-      el.classList.toggle('solid');
+      // Step one place along the sequence, turning round at either end.
+      const step = marks[mark];
+      step.at += step.dir;
+      if (step.at >= MARK_STATES.length - 1) (step.at = MARK_STATES.length - 1), (step.dir = -1);
+      if (step.at <= 0) (step.at = 0), (step.dir = 1);
+      el.setAttribute('data-state', MARK_STATES[step.at]);
       // Restart the pop so repeated clicks keep answering.
       el.classList.remove('pop');
       void el.getBoundingClientRect();
@@ -596,11 +604,15 @@ const grasps = [
     filter: drop-shadow(0 0 6px rgb(143 125 240 / 0.8));
   }
 
-  .landmark.solid {
+  /* Each click steps a landmark along: dashed → outline → full → outline → dashed … */
+  .landmark[data-state='dashed'] {
+    stroke-dasharray: 4 5;
+  }
+
+  .landmark[data-state='full'] {
     fill: var(--violet);
     fill-opacity: 0.45;
     stroke: var(--violet);
-    stroke-dasharray: none;
   }
 
   /* Every click gives the same little jump, filling or emptying. */
