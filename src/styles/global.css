@@ -54,25 +54,25 @@
 /* The bright theme. The dark one above is the default; the switch in the header
    puts data-theme="light" on <html> and the choice is remembered. */
 :root[data-theme='light'] {
-  --background: #fbfafd;
-  --background-alt: #f2f0f8;
+  --background: #f7f5fa;
+  --background-alt: #ece9f3;
   --surface: #ffffff;
-  --surface-2: #f5f3fb;
-  --surface-human: #fdf1f7;
-  --foreground: #14121f;
-  --text: #3c3950;
-  --muted: #56526c;
-  --faint: #6a6683;
-  --border: #dcd8ea;
-  --border-soft: #e8e5f2;
-  --border-strong: #bdb7d2;
-  --rule: #e3e0ef;
-  --cyan: #0a8c7a;
-  --pink: #c22f7c;
-  --violet: #5b45cc;
+  --surface-2: #f0edf7;
+  --surface-human: #fbeaf3;
+  --foreground: #100e1a;
+  --text: #2e2b40;
+  --muted: #474359;
+  --faint: #5b5772;
+  --border: #d2cde0;
+  --border-soft: #e2dfec;
+  --border-strong: #a9a2bf;
+  --rule: #ddd9e8;
+  --cyan: #06695d;
+  --pink: #a81f63;
+  --violet: #46329f;
   --accent-foreground: #ffffff;
-  --overlay: rgb(20 18 31 / 0.72);
-  --placeholder: #efecf8;
+  --overlay: rgb(16 14 26 / 0.74);
+  --placeholder: #e8e4f2;
   color-scheme: light;
 }
 
