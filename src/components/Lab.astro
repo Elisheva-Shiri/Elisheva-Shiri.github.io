@@ -23,7 +23,7 @@ const grasps = [
         </div>
       </div>
       <div class="stage stage-hand" data-stage="hand">
-        <svg viewBox="0 0 400 440" role="img" aria-label="Robotic hand that pre-shapes and grasps as your pointer approaches, and opens to yield when you move abruptly">
+        <svg viewBox="0 0 400 440" role="img" aria-label="Robotic hand that pre-shapes and grasps as your pointer approaches, and opens to yield when you move abruptly. Tap a finger to pinch it against the thumb.">
           <rect x="150" y="380" width="96" height="60" rx="10" fill="#14141F" stroke="#34344C" stroke-width="1.5"></rect>
           <line x1="170" y1="392" x2="170" y2="440" stroke="#24243A" stroke-width="2"></line>
           <line x1="198" y1="392" x2="198" y2="440" stroke="#24243A" stroke-width="2"></line>
@@ -38,10 +38,10 @@ const grasps = [
             <circle cx="198" cy="358" r="5"></circle>
           </g>
           <g fill="none" stroke="#2C2C42" stroke-linecap="round" stroke-linejoin="round">
-            <path data-k="f0" stroke-width="22" d="M 140 252 L 140 203 L 140 172 L 140 149"></path>
-            <path data-k="f1" stroke-width="23" d="M 178 252 L 178 197 L 178 162 L 178 137"></path>
-            <path data-k="f2" stroke-width="22" d="M 216 252 L 216 201 L 216 169 L 216 146"></path>
-            <path data-k="f3" stroke-width="19" d="M 254 252 L 254 213 L 254 188 L 254 169"></path>
+            <path class="finger" data-k="f0" data-finger="0" stroke-width="22" d="M 140 252 L 140 203 L 140 172 L 140 149"></path>
+            <path class="finger" data-k="f1" data-finger="1" stroke-width="23" d="M 178 252 L 178 197 L 178 162 L 178 137"></path>
+            <path class="finger" data-k="f2" data-finger="2" stroke-width="22" d="M 216 252 L 216 201 L 216 169 L 216 146"></path>
+            <path class="finger" data-k="f3" data-finger="3" stroke-width="19" d="M 254 252 L 254 213 L 254 188 L 254 169"></path>
             <path data-k="f4" stroke-width="24" d="M 124 346 L 100.6 316.1 L 82.1 292.5 L 67.3 273.6"></path>
           </g>
           <path data-k="tendons" fill="none" stroke="#4DF0D8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></path>
@@ -381,6 +381,13 @@ const grasps = [
       s.lastHand = now;
       s.prevMove = { x: e.clientX, y: e.clientY, t: now };
     });
+    // Tapping a finger in the drawing pinches it against the thumb.
+    handStage.addEventListener('click', (e) => {
+      const picked = (e.target as Element).closest<SVGElement>('[data-finger]');
+      if (!picked) return;
+      s.pinch = Number(picked.dataset.finger);
+      setGrasp('pinch');
+    });
     handStage.addEventListener('pointerleave', () => {
       s.lastHand = 0;
       s.prevMove = null;
@@ -397,19 +404,20 @@ const grasps = [
 
     const graspButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-grasp]')];
     const pinchButton = graspButtons.find((b) => b.dataset.grasp === 'pinch');
-    // Tapping "Pinch" again moves the thumb on to the next finger.
-    const showPinch = () =>
+    const fingerPaths = [...root.querySelectorAll<SVGElement>('[data-finger]')];
+    const setGrasp = (mode: Grasp) => {
+      s.mode = mode;
+      graspButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.grasp === mode)));
       pinchButton?.setAttribute('aria-label', `Pinch, thumb against the ${PINCH_FINGERS[s.pinch]} finger. Press again for the next finger.`);
-    showPinch();
+      fingerPaths.forEach((f) => f.classList.toggle('picked', mode === 'pinch' && Number(f.dataset.finger) === s.pinch));
+    };
+    setGrasp(s.mode);
     for (const button of graspButtons) {
       button.addEventListener('click', () => {
         const mode = button.dataset.grasp as Grasp;
-        if (mode === 'pinch') {
-          if (s.mode === 'pinch') s.pinch = (s.pinch + 1) % PINCH_FINGERS.length;
-          showPinch();
-        }
-        s.mode = mode;
-        graspButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+        // Pressing "Pinch" again moves the thumb on to the next finger.
+        if (mode === 'pinch' && s.mode === 'pinch') s.pinch = (s.pinch + 1) % PINCH_FINGERS.length;
+        setGrasp(mode);
       });
     }
 
@@ -507,6 +515,29 @@ const grasps = [
     width: 100%;
     height: auto;
     max-height: 520px;
+  }
+
+  /* The finger casings are the tap targets; everything drawn over them lets clicks through. */
+  .finger {
+    cursor: pointer;
+    transition: stroke var(--transition);
+  }
+
+  .stage-hand:hover .finger {
+    stroke: #3a3a58;
+  }
+
+  .finger:hover,
+  .finger.picked {
+    stroke: #4a4a74;
+  }
+
+  .stage-hand [data-k='tendons'],
+  .stage-hand [data-k='joints'],
+  .stage-hand [data-k='tips'],
+  .stage-hand [data-k='cursor'],
+  .stage-hand [data-k='contact'] {
+    pointer-events: none;
   }
 
   .stage-hand {
