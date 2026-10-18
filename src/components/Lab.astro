@@ -612,45 +612,74 @@ const grasps = [
     font-size: 0.875rem;
   }
 
-  /* Phones: shorter panels, the drawing first; the secondary readouts are left out. */
+  /* Phones: the two panels stay side by side, as on desktop, at a smaller scale.
+     The drawings and the human/robot dialogue remain; the secondary readouts are left out. */
   @media (max-width: 40rem) {
     .lab {
       padding-block: 4px 40px;
     }
 
     .lab-grid {
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .panel {
+      border-radius: 12px;
     }
 
     .panel-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
       min-height: 0;
-      padding: 10px 14px;
+      padding: 8px;
     }
 
     .panel-title {
+      font-size: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .panel-head .segmented {
+      padding: 2px;
+    }
+
+    .panel-head .pill {
+      padding: 3px 7px;
       font-size: 0.625rem;
     }
 
-    .stage svg {
-      max-height: 280px;
+    .stage-xr {
+      display: flex;
+      align-items: center;
     }
 
     .readout,
+    .flex-bars,
     .panel-note {
       display: none;
     }
 
-    .flex-bars {
-      padding-block: 10px;
-    }
-
     .dialogue {
-      font-size: 0.8125rem;
+      grid-template-columns: minmax(0, 1fr);
+      margin-top: auto;
+      font-size: 0.6875rem;
+      line-height: 1.35;
     }
 
     .dialogue > div {
       min-height: 0;
-      padding: 10px 14px;
+      padding: 6px 8px;
+    }
+
+    .dialogue > div + div {
+      border-top: 1px solid var(--border-soft);
+      border-left: 0;
+    }
+
+    .dialogue dt {
+      font-size: 0.5rem;
     }
   }
 
