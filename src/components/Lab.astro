@@ -612,6 +612,48 @@ const grasps = [
     font-size: 0.875rem;
   }
 
+  /* Phones: shorter panels, the drawing first; the secondary readouts are left out. */
+  @media (max-width: 40rem) {
+    .lab {
+      padding-block: 4px 40px;
+    }
+
+    .lab-grid {
+      gap: 12px;
+    }
+
+    .panel-head {
+      min-height: 0;
+      padding: 10px 14px;
+    }
+
+    .panel-title {
+      font-size: 0.625rem;
+    }
+
+    .stage svg {
+      max-height: 280px;
+    }
+
+    .readout,
+    .panel-note {
+      display: none;
+    }
+
+    .flex-bars {
+      padding-block: 10px;
+    }
+
+    .dialogue {
+      font-size: 0.8125rem;
+    }
+
+    .dialogue > div {
+      min-height: 0;
+      padding: 10px 14px;
+    }
+  }
+
   @media (max-width: 30rem) {
     .readout {
       grid-template-columns: repeat(2, minmax(0, 1fr));

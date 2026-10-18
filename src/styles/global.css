@@ -51,6 +51,14 @@
   color-scheme: dark;
 }
 
+/* Phones: tighter side margins and section spacing */
+@media (max-width: 40rem) {
+  :root {
+    --gutter: 1rem;
+    --space-xl: 3rem;
+  }
+}
+
 /* Base */
 *,
 *::before,

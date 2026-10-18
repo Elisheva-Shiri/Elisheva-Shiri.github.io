@@ -21,12 +21,8 @@ export const SITE = {
   about: {
     heading: 'Let’s build machines people want to stand next to.',
     text: [
-      'I work between electrical engineering and interaction design: circuits, code and the people who touch them. Many of my projects are built with and for one specific person — a one-handed guitarist, children who communicate without words — and I bring that same closeness to robots, haptics and wearable devices.',
-    ],
-    education: [
-      { year: '2019 –', what: 'B.Sc. Electrical Engineering & Design', where: 'Shenkar' },
-      { year: '2021', what: 'Entrepreneurship & Management', where: 'Tel Aviv University' },
-      { year: '2015', what: 'Theoretical Mathematics', where: 'The Hebrew University of Jerusalem' },
+      'I’m a creative technologist working across electrical engineering, biomedical engineering and industrial design. I build human-centred technologies for an interconnected future, and I’m curious about the role interfaces play in shaping how people communicate — with each other and with machines.',
+      'The human body is my natural interface, and one question runs through my work: how can human senses be expanded? I answer it with circuits, mechanisms, code and virtual environments, and often with one specific person — a one-handed guitarist, children who communicate without words. My M.Sc. research at Ben-Gurion University looks at cognition and behaviour in virtual environments, haptics and human–robot interaction.',
     ],
   },
 };
@@ -132,3 +128,53 @@ export const BODY_ANCHORS: Partial<Record<keyof typeof BODY_POINTS, readonly [nu
 };
 
 export type BodyPoint = keyof typeof BODY_POINTS;
+
+// The Resume page. Projects are left out on purpose: they live on the homepage and archive.
+export const RESUME = {
+  education: [
+    {
+      when: 'Aug 2026',
+      title: 'Practicum in Embodied Brain Technology',
+      where: 'Brown University · Summer school',
+      text: 'Hands-on neuroscience out of the lab and into working products.',
+      focus: [],
+    },
+    { when: '2023 – 2026', title: 'M.Sc. Biomedical Engineering', where: 'Ben-Gurion University of the Negev', focus: ['Haptic device development', 'Human–robot interaction'] },
+    { when: '2023 – 2025', title: 'M.Des. Industrial Design', where: 'Bezalel Academy of Arts and Design', focus: ['Innovation technology', 'Metaverse research'] },
+    { when: '2019 – 2023', title: 'B.Sc. Electrical Engineering', where: 'Shenkar — Engineering. Design. Art.', focus: ['Signal & image processing', 'Human–computer interaction'] },
+    { when: '2015 – 2017', title: 'Theoretical Mathematics', where: 'The Hebrew University of Jerusalem · six of eight semesters', focus: ['Algebraic structures', 'Economics & psychology'] },
+  ],
+  experience: [
+    { when: '2024 –', org: 'Ben-Gurion University', place: 'Biomedical Engineering department, Be’er Sheva', roles: ['Lab instructor: medical equipment & electronics', 'Robotics lab: technical support for adaptive manufacturing, soldering stations and motor systems'] },
+    { when: '2022 – 2023', org: 'Intel', place: 'Ignite department, global', roles: ['Technology analysis: building blocks of new technologies', 'Market analysis: ecosystem needs and competitors'] },
+    { when: '2022', org: 'General Motors', place: 'Research department, Herzliya', roles: ['Simulation engineer: Python-based environment development', 'Research assistant: autonomous vehicle control'] },
+    { when: '2021 – 2022', org: 'Tikkun Olam Makers', place: 'Universities department, Tel Aviv', roles: ['Project manager: product development teams of up to 15 members', 'Developing and running collaborations'] },
+    { when: '2019 – 2021', org: 'Shenkar', place: 'Advancement department, Ramat Gan', roles: ['Advancement centre: calculus, algebra, statistics and discrete mathematics', 'Academic mentoring: task management, methods and study'] },
+    { when: '2018 – 2019', org: 'Sabai Garden', place: 'Pai, Thailand', roles: ['Project manager: social innovation & qualitative research', 'Developing a hydroelectric system build'] },
+  ],
+  skills: [
+    { group: 'Python', items: 'NumPy, PyTorch, TensorFlow, OpenCV, Pandas, SQL, Matplotlib, MNE, Librosa, Scrapy, Robotics, ROS, Gym' },
+    { group: 'C++ & embedded', items: 'Arduino, ESP32, MQTT, Wi-Fi, MIDI' },
+    { group: 'Other languages', items: 'MATLAB, R, JavaScript, HTML, Flutter' },
+    { group: 'XR & design', items: 'Unity, Figma, Canva' },
+    { group: 'CAD & fabrication', items: 'SolidWorks, AutoCAD, Blender, 3D printing' },
+    { group: 'Electronics', items: 'HDL, OrCAD, LTspice, Multisim, soldering' },
+    { group: 'Lighting & optics', items: 'AGi32, DIALux, Xlight' },
+  ],
+  certificates: [
+    { when: '2023', what: 'Startup Associate', where: 'HUN University, Germany' },
+    { when: '2021 – 2022', what: 'Board Design', where: 'Impact Labs, Israel' },
+    { when: '2020 – 2021', what: 'Entrepreneurship & Management', where: 'Tel Aviv University' },
+    { when: '2020', what: 'Investment Analyst', where: 'Fresh.Fund, Israel' },
+  ],
+  volunteering: [
+    { when: '2020 – 2023', what: 'Student mentor', where: 'Shenkar', text: 'Accompanying students as they enter the education system' },
+    { when: '2016 – 2017', what: 'Head of the mathematics student union', where: 'The Hebrew University of Jerusalem', text: 'Elected to mediate between students, professors and administration' },
+    { when: '2013 – 2014', what: 'National service, two years', where: 'ALUT', text: 'Association for autistic people and their families' },
+  ],
+  languages: [
+    { name: 'Hebrew', level: 'Native' },
+    { name: 'English', level: 'Full professional' },
+  ],
+  interests: ['Brain–computer interfaces', 'VR, AR & MR', 'DIY making', 'Asian culture'],
+};

@@ -1,0 +1,297 @@
+---
+// Resume: education, experience, skills and the rest of the CV. Everything shown here
+// is edited in RESUME (src/site.config.ts). Projects are not repeated — they live on
+// the homepage and in the archive.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/projects';
+import { RESUME, SITE } from '../site.config';
+---
+
+<BaseLayout title="Resume" description={`Education, experience and skills of ${SITE.name}.`}>
+  <section class="container intro">
+    <p class="kicker kicker-pink">RESUME</p>
+    <h1>{SITE.name}</h1>
+    <p class="lead">
+      Creative technologist across electrical engineering, biomedical engineering and industrial design, building human-centred
+      technologies with the body as the interface. M.Sc. research at Ben-Gurion University on cognition and behaviour in virtual
+      environments, haptics and human–robot interaction.
+      For projects, see the <a href={withBase('/#work')}>work</a> and the <a href={withBase('/projects/')}>archive</a>.
+    </p>
+    <p class="links">
+      <a href={withBase('/#contact')}>Contact</a>
+      {SITE.links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </p>
+  </section>
+
+  <section class="band" aria-labelledby="education">
+    <div class="container block">
+      <h2 id="education">Education</h2>
+      <ol class="rows">
+        {
+          RESUME.education.map((entry) => (
+            <li>
+              <span class="when">{entry.when}</span>
+              <div>
+                <h3>{entry.title}</h3>
+                <p class="where">{entry.where}</p>
+                {entry.text && <p class="text">{entry.text}</p>}
+                {entry.focus.length > 0 && <p class="text">{entry.focus.join(' · ')}</p>}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="experience">
+    <div class="container block">
+      <h2 id="experience">Experience</h2>
+      <ol class="rows">
+        {
+          RESUME.experience.map((entry) => (
+            <li>
+              <span class="when">{entry.when}</span>
+              <div>
+                <h3>{entry.org}</h3>
+                <p class="where">{entry.place}</p>
+                <ul class="text">
+                  {entry.roles.map((role) => <li>{role}</li>)}
+                </ul>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="skills">
+    <div class="container block">
+      <h2 id="skills">Skills</h2>
+      <dl class="rows">
+        {
+          RESUME.skills.map((skill) => (
+            <div>
+              <dt class="when">{skill.group}</dt>
+              <dd class="text">{skill.items}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="certificates">
+    <div class="container block">
+      <h2 id="certificates">Certificates</h2>
+      <ol class="rows">
+        {
+          RESUME.certificates.map((entry) => (
+            <li>
+              <span class="when">{entry.when}</span>
+              <div>
+                <h3>{entry.what}</h3>
+                <p class="where">{entry.where}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="volunteering">
+    <div class="container block">
+      <h2 id="volunteering">Volunteering</h2>
+      <ol class="rows">
+        {
+          RESUME.volunteering.map((entry) => (
+            <li>
+              <span class="when">{entry.when}</span>
+              <div>
+                <h3>{entry.what}</h3>
+                <p class="where">{entry.where}</p>
+                <p class="text">{entry.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="more">
+    <div class="container block">
+      <h2 id="more">Languages &amp; interests</h2>
+      <dl class="rows">
+        {
+          RESUME.languages.map((language) => (
+            <div>
+              <dt class="when">{language.name}</dt>
+              <dd class="text">{language.level}</dd>
+            </div>
+          ))
+        }
+        <div>
+          <dt class="when">Interests</dt>
+          <dd class="text">{RESUME.interests.join(' · ')}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 40px 48px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 5.6vw, 4.75rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .lead {
+    max-width: 680px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+
+  /* Each section: its heading on the left, the rows on the right (stacked on phones). */
+  .block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding-block: 48px;
+  }
+
+  @media (min-width: 900px) {
+    .block {
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 48px;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--pink);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .rows > li,
+  .rows > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px 24px;
+  }
+
+  @media (min-width: 640px) {
+    .rows > li,
+    .rows > div {
+      grid-template-columns: 140px minmax(0, 1fr);
+    }
+  }
+
+  .when {
+    color: var(--faint);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .where {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .text {
+    max-width: 640px;
+    margin: 8px 0 0;
+    color: var(--text);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  dd.text {
+    margin: 0;
+  }
+
+  ul.text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 18px;
+  }
+  @media (max-width: 40rem) {
+    .intro {
+      gap: 14px;
+      padding-block: 20px 28px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .lead {
+      font-size: 0.9375rem;
+    }
+
+    .block {
+      gap: 16px;
+      padding-block: 32px;
+    }
+
+    .rows {
+      gap: 20px;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    .where,
+    .text {
+      font-size: 0.875rem;
+    }
+  }
+</style>

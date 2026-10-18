@@ -403,4 +403,79 @@ const pad = (n: number) => String(n).padStart(2, '0');
     background: var(--foreground);
     color: var(--accent-foreground);
   }
+  /* Phones: chapter chips in one sideways row, and two small cards per row */
+  @media (max-width: 40rem) {
+    .intro {
+      gap: 14px;
+      padding-block: 20px 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .lead {
+      font-size: 0.9375rem;
+    }
+
+    .controls .pills {
+      flex-wrap: nowrap;
+      margin-inline: calc(var(--gutter) * -1);
+      padding-inline: var(--gutter);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .controls .pill {
+      flex: none;
+    }
+
+    .chapter-inner {
+      gap: 16px;
+      padding-block: 32px;
+    }
+
+    .chapter-head {
+      gap: 6px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    .chapter-blurb {
+      font-size: 0.8125rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .card {
+      border-radius: 12px;
+    }
+
+    .card-body {
+      gap: 4px;
+      padding: 8px 10px 12px;
+    }
+
+    .card-meta {
+      font-size: 0.625rem;
+    }
+
+    .card-view,
+    .card-line {
+      display: none;
+    }
+
+    .card-title {
+      font-size: 0.8125rem;
+    }
+
+    .back {
+      padding-block: 32px;
+    }
+  }
 </style>

@@ -17,13 +17,15 @@ const ogImage = image && Astro.site ? new URL(withBase(image), Astro.site).href 
 const home = withBase('/');
 const isHome = Astro.url.pathname === home || Astro.url.pathname === home.replace(/\/$/, '');
 const archive = withBase('/projects/');
+const resume = withBase('/resume/');
 const [first, ...rest] = SITE.name.toUpperCase().split(' ');
 const nav = [
   { label: 'Lab', href: withBase('/#lab') },
-  { label: 'What I bring', href: withBase('/#stack') },
+  { label: 'About', href: withBase('/#contact') },
   { label: 'Work', href: withBase('/#work') },
+  { label: 'What I bring', href: withBase('/#stack') },
   { label: 'Archive', href: archive, current: Astro.url.pathname === archive },
-  { label: 'Contact', href: withBase('/#contact') },
+  { label: 'Resume', href: resume, current: Astro.url.pathname.replace(/\/$/, '') === resume.replace(/\/$/, '') },
 ];
 ---
 
@@ -119,6 +121,30 @@ const nav = [
 
   nav a[aria-current='page'] {
     color: var(--pink);
+  }
+
+  /* Phones: name and nav stay compact; the nav scrolls sideways in one row. */
+  @media (max-width: 40rem) {
+    .site-header {
+      gap: 10px;
+      padding-block: 14px;
+    }
+
+    nav {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    nav ul {
+      flex-wrap: nowrap;
+      gap: 18px;
+      white-space: nowrap;
+    }
+
+    nav a {
+      font-size: 0.75rem;
+    }
   }
 
   main:focus {
