@@ -19,7 +19,7 @@ export const SITE = {
   ] as { label: string; href: string }[],
   // Shown in the About & contact section of the homepage. Leave empty to hide it.
   about: {
-    heading: 'Hi, I’m Elisheva.',
+    heading: 'Hi, I’m Elisheva Shiri.',
     text: [
       'I’m a creative technologist working across electrical engineering, biomedical engineering and industrial design. I build human-centred technologies for an interconnected future, and I’m curious about the role interfaces play in shaping how people communicate — with each other and with machines.',
       'The human body is my natural interface, and one question runs through my work: how can human senses be expanded? I answer it with circuits, mechanisms, code and virtual environments, and often with one specific person — a one-handed guitarist, children who communicate without words. My M.Sc. research at Ben-Gurion University looks at cognition and behaviour in virtual environments, haptics and human–robot interaction.',
