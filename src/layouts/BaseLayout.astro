@@ -22,8 +22,8 @@ const [first, ...rest] = SITE.name.toUpperCase().split(' ');
 const nav = [
   { label: 'Home', href: home, current: isHome },
   { label: 'About', href: withBase('/#contact') },
-  { label: 'What I bring', href: withBase('/#stack') },
   { label: 'Works', href: archive, current: Astro.url.pathname === archive },
+  { label: 'What I bring', href: withBase('/#stack') },
   { label: 'Resume', href: resume, current: Astro.url.pathname.replace(/\/$/, '') === resume.replace(/\/$/, '') },
 ];
 ---
