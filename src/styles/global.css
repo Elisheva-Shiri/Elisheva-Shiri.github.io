@@ -1,28 +1,31 @@
 /* Design tokens. Change these to restyle the whole site.
    Identity: a robotics lab at night — a wide display face for headlines, a
-   monospace for labels and data, rounded panels, and two signal colours:
-   cyan for the machine, pink for the human. */
+   monospace for labels and data, rounded panels, and one palette of traditional
+   Japanese colours: shikkoku (ink black), geppaku (moon white), ai-iro (indigo
+   blue) for the machine, akane-iro (madder red) for the human, and tetsukon
+   (iron navy) as the third note. --cyan and --pink keep their names from the
+   earlier palette; they now hold the blue and the red. */
 :root {
-  --background: #07070b;
-  --background-alt: #0a0a10;
-  --surface: #0f0f17;
-  --surface-2: #12121c;
-  --surface-human: #1a1220;
-  --foreground: #f2f1f7;
-  --text: #d4d2e2;
-  --muted: #b4b2c6;
-  --faint: #9c9aae;
-  --border: #24243a;
-  --border-soft: #1c1c2c;
-  --border-strong: #34344c;
-  --rule: #16162a;
-  --cyan: #4df0d8;
-  --pink: #ff6fb5;
-  --violet: #8f7df0;
+  --background: #0a1016;
+  --background-alt: #101820;
+  --surface: #121c26;
+  --surface-2: #16222e;
+  --surface-human: #1e1419;
+  --foreground: #e7e2e8;
+  --text: #c4cad2;
+  --muted: #9ca7b3;
+  --faint: #7f8b99;
+  --border: #1f2f3d;
+  --border-soft: #18232e;
+  --border-strong: #2d4255;
+  --rule: #142029;
+  --cyan: #3e8fcb;
+  --pink: #d64550;
+  --violet: #5b7fa6;
   --accent: var(--cyan);
-  --accent-foreground: #07070b;
-  --overlay: rgb(4 4 8 / 0.88);
-  --placeholder: #12121c;
+  --accent-foreground: #0a1016;
+  --overlay: rgb(8 16 22 / 0.9);
+  --placeholder: #16222e;
 
   --font-display: 'Unbounded', system-ui, sans-serif;
   --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -54,25 +57,25 @@
 /* The bright theme. The dark one above is the default; the switch in the header
    puts data-theme="light" on <html> and the choice is remembered. */
 :root[data-theme='light'] {
-  --background: #f7f5fa;
-  --background-alt: #ece9f3;
+  --background: #f3f0f4;
+  --background-alt: #e7e2e8;
   --surface: #ffffff;
-  --surface-2: #f0edf7;
-  --surface-human: #fbeaf3;
-  --foreground: #100e1a;
-  --text: #2e2b40;
-  --muted: #474359;
-  --faint: #5b5772;
-  --border: #d2cde0;
-  --border-soft: #e2dfec;
-  --border-strong: #a9a2bf;
-  --rule: #ddd9e8;
-  --cyan: #06695d;
-  --pink: #a81f63;
-  --violet: #46329f;
+  --surface-2: #efebf1;
+  --surface-human: #fbeeee;
+  --foreground: #101820;
+  --text: #27333f;
+  --muted: #45525f;
+  --faint: #5c6a77;
+  --border: #d3ccd5;
+  --border-soft: #e2dce4;
+  --border-strong: #a8a1ae;
+  --rule: #ded8e0;
+  --cyan: #00548f;
+  --pink: #af272f;
+  --violet: #16405e;
   --accent-foreground: #ffffff;
-  --overlay: rgb(16 14 26 / 0.74);
-  --placeholder: #e8e4f2;
+  --overlay: rgb(16 24 32 / 0.76);
+  --placeholder: #e8e3e9;
   color-scheme: light;
 }
 

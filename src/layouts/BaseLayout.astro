@@ -32,7 +32,7 @@ const nav = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#07070b" />
+    <meta name="theme-color" content="#0a1016" />
     <script is:inline>
       // Runs before anything is drawn, so a remembered choice shows straight away.
       try {
@@ -100,7 +100,7 @@ const nav = [
           button.setAttribute('aria-pressed', String(light));
           button.setAttribute('aria-label', light ? 'Switch to the dark theme' : 'Switch to the bright theme');
           label.textContent = light ? 'Bright' : 'Dark';
-          meta?.setAttribute('content', light ? '#fbfafd' : '#07070b');
+          meta?.setAttribute('content', light ? '#f3f0f4' : '#0a1016');
         };
         paint();
         button.addEventListener('click', () => {

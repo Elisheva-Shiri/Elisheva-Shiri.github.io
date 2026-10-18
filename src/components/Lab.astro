@@ -24,12 +24,12 @@ const grasps = [
       </div>
       <div class="stage stage-hand" data-stage="hand">
         <svg viewBox="0 0 400 440" role="img" aria-label="Robotic hand that pre-shapes and grasps as your pointer approaches, and opens to yield when you move abruptly. Tap a finger to pinch it against the thumb.">
-          <rect class="chassis" x="150" y="380" width="96" height="60" rx="10" fill="#14141F" stroke="#34344C" stroke-width="1.5"></rect>
-          <line class="slot" x1="170" y1="392" x2="170" y2="440" stroke="#24243A" stroke-width="2"></line>
-          <line class="slot" x1="198" y1="392" x2="198" y2="440" stroke="#24243A" stroke-width="2"></line>
-          <line class="slot" x1="226" y1="392" x2="226" y2="440" stroke="#24243A" stroke-width="2"></line>
-          <rect class="chassis" x="116" y="236" width="164" height="156" rx="34" fill="#14141F" stroke="#34344C" stroke-width="1.5"></rect>
-          <g class="contact" fill="#FF6FB5" opacity="0" data-k="contact">
+          <rect class="chassis" x="150" y="380" width="96" height="60" rx="10" fill="#101820" stroke="#2D4255" stroke-width="1.5"></rect>
+          <line class="slot" x1="170" y1="392" x2="170" y2="440" stroke="#1A2733" stroke-width="2"></line>
+          <line class="slot" x1="198" y1="392" x2="198" y2="440" stroke="#1A2733" stroke-width="2"></line>
+          <line class="slot" x1="226" y1="392" x2="226" y2="440" stroke="#1A2733" stroke-width="2"></line>
+          <rect class="chassis" x="116" y="236" width="164" height="156" rx="34" fill="#101820" stroke="#2D4255" stroke-width="1.5"></rect>
+          <g class="contact" fill="#D64550" opacity="0" data-k="contact">
             <circle cx="168" cy="300" r="5"></circle>
             <circle cx="198" cy="290" r="5"></circle>
             <circle cx="228" cy="300" r="5"></circle>
@@ -37,19 +37,19 @@ const grasps = [
             <circle cx="213" cy="330" r="5"></circle>
             <circle cx="198" cy="358" r="5"></circle>
           </g>
-          <g class="casings" fill="none" stroke="#2C2C42" stroke-linecap="round" stroke-linejoin="round">
+          <g class="casings" fill="none" stroke="#22313F" stroke-linecap="round" stroke-linejoin="round">
             <path class="finger" data-k="f0" data-finger="0" stroke-width="22" d="M 140 252 L 140 203 L 140 172 L 140 149"></path>
             <path class="finger" data-k="f1" data-finger="1" stroke-width="23" d="M 178 252 L 178 197 L 178 162 L 178 137"></path>
             <path class="finger" data-k="f2" data-finger="2" stroke-width="22" d="M 216 252 L 216 201 L 216 169 L 216 146"></path>
             <path class="finger" data-k="f3" data-finger="3" stroke-width="19" d="M 254 252 L 254 213 L 254 188 L 254 169"></path>
             <path data-k="f4" stroke-width="24" d="M 124 346 L 100.6 316.1 L 82.1 292.5 L 67.3 273.6"></path>
           </g>
-          <path class="tendons" data-k="tendons" fill="none" stroke="#4DF0D8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></path>
-          <path class="joints" data-k="joints" fill="none" stroke="#4DF0D8" stroke-width="8" stroke-linecap="round"></path>
-          <path class="tips" data-k="tips" fill="none" stroke="#FF6FB5" stroke-width="9" stroke-linecap="round"></path>
+          <path class="tendons" data-k="tendons" fill="none" stroke="#3E8FCB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></path>
+          <path class="joints" data-k="joints" fill="none" stroke="#3E8FCB" stroke-width="8" stroke-linecap="round"></path>
+          <path class="tips" data-k="tips" fill="none" stroke="#D64550" stroke-width="9" stroke-linecap="round"></path>
           <g data-k="cursor" opacity="0">
-            <circle class="ping cursor-ring" data-k="cursorDot" cx="200" cy="200" r="6" fill="none" stroke="#FF6FB5" stroke-width="1.5"></circle>
-            <circle class="cursor-dot" data-k="cursorDot" cx="200" cy="200" r="3" fill="#FF6FB5"></circle>
+            <circle class="ping cursor-ring" data-k="cursorDot" cx="200" cy="200" r="6" fill="none" stroke="#D64550" stroke-width="1.5"></circle>
+            <circle class="cursor-dot" data-k="cursorDot" cx="200" cy="200" r="3" fill="#D64550"></circle>
           </g>
         </svg>
       </div>
@@ -77,24 +77,24 @@ const grasps = [
       </div>
       <div class="stage stage-xr" data-stage="xr">
         <svg viewBox="0 0 400 440" role="img" aria-label="Headset view of a virtual teleoperation scene. Move your pointer to turn your head; looking at the grasp target selects it and triggers a fingertip haptic cue">
-          <rect class="sky" width="400" height="440" fill="#08080F"></rect>
-          <path class="floor" data-k="xrGrid" fill="none" stroke="#1F4A4A" stroke-width="1"></path>
-          <circle class="landmark soft" data-k="ring" data-state="dashed" fill="none" stroke="#6E5BD6" stroke-width="2"></circle>
-          <circle class="landmark" data-k="sphere" data-state="outline" fill="none" stroke="#8F7DF0" stroke-width="1.5"></circle>
-          <path class="cube-faces" data-k="cubeFaces" fill="#4DF0D8" fill-opacity="0" stroke="none"></path>
-          <path class="cube-edges" data-k="cubeEdges" fill="none" stroke="#4DF0D8" stroke-width="2" stroke-linejoin="round"></path>
-          <line class="proxy-stroke" data-k="proxyLine" stroke="#4DF0D8" stroke-width="1" stroke-dasharray="2 4" opacity="0"></line>
-          <circle class="proxy-fill" data-k="proxyHalo" fill="#4DF0D8" opacity=".14"></circle>
-          <circle class="ping proxy-stroke" data-k="proxyPing" cx="-50" cy="-50" r="6" fill="none" stroke="#4DF0D8" stroke-width="1.2"></circle>
-          <circle class="proxy-fill" data-k="proxyDot" fill="#4DF0D8"></circle>
-          <text class="hud cyan-text" data-k="linkLabel" x="364" y="44" text-anchor="end" fill="#4DF0D8">HAND PROXY · HOVERING</text>
-          <text class="hud hud-lg cube-label" data-k="cubeLabel" fill="#4DF0D8"></text>
-          <path class="frame" d="M 24 60 V 24 H 60 M 340 24 H 376 V 60 M 376 380 V 416 H 340 M 60 416 H 24 V 380" fill="none" stroke="#34344C" stroke-width="2"></path>
-          <circle class="reticle" data-k="reticle" cx="200" cy="220" r="10" fill="none" stroke="#F2F1F7" stroke-width="2"></circle>
-          <circle class="reticle-dot" data-k="reticleDot" cx="200" cy="220" r="2.5" fill="#F2F1F7"></circle>
-          <circle class="ping pink-stroke" data-k="reticlePing" cx="200" cy="220" r="6" fill="none" stroke="#FF6FB5" stroke-width="1.5" opacity="0"></circle>
-          <text class="hud dim-text" x="36" y="44" fill="#9C9AAE">REMOTE CELL · CAM 01</text>
-          <text class="hud dim-text" data-k="hudHaptic" x="364" y="404" text-anchor="end" fill="#9C9AAE">HAPTIC IDLE</text>
+          <rect class="sky" width="400" height="440" fill="#091319"></rect>
+          <path class="floor" data-k="xrGrid" fill="none" stroke="#1E4A63" stroke-width="1"></path>
+          <circle class="landmark soft" data-k="ring" data-state="dashed" fill="none" stroke="#4A6B90" stroke-width="2"></circle>
+          <circle class="landmark" data-k="sphere" data-state="outline" fill="none" stroke="#5B7FA6" stroke-width="1.5"></circle>
+          <path class="cube-faces" data-k="cubeFaces" fill="#3E8FCB" fill-opacity="0" stroke="none"></path>
+          <path class="cube-edges" data-k="cubeEdges" fill="none" stroke="#3E8FCB" stroke-width="2" stroke-linejoin="round"></path>
+          <line class="proxy-stroke" data-k="proxyLine" stroke="#3E8FCB" stroke-width="1" stroke-dasharray="2 4" opacity="0"></line>
+          <circle class="proxy-fill" data-k="proxyHalo" fill="#3E8FCB" opacity=".14"></circle>
+          <circle class="ping proxy-stroke" data-k="proxyPing" cx="-50" cy="-50" r="6" fill="none" stroke="#3E8FCB" stroke-width="1.2"></circle>
+          <circle class="proxy-fill" data-k="proxyDot" fill="#3E8FCB"></circle>
+          <text class="hud cyan-text" data-k="linkLabel" x="364" y="44" text-anchor="end" fill="#3E8FCB">HAND PROXY · HOVERING</text>
+          <text class="hud hud-lg cube-label" data-k="cubeLabel" fill="#3E8FCB"></text>
+          <path class="frame" d="M 24 60 V 24 H 60 M 340 24 H 376 V 60 M 376 380 V 416 H 340 M 60 416 H 24 V 380" fill="none" stroke="#2D4255" stroke-width="2"></path>
+          <circle class="reticle" data-k="reticle" cx="200" cy="220" r="10" fill="none" stroke="#E7E2E8" stroke-width="2"></circle>
+          <circle class="reticle-dot" data-k="reticleDot" cx="200" cy="220" r="2.5" fill="#E7E2E8"></circle>
+          <circle class="ping pink-stroke" data-k="reticlePing" cx="200" cy="220" r="6" fill="none" stroke="#D64550" stroke-width="1.5" opacity="0"></circle>
+          <text class="hud dim-text" x="36" y="44" fill="#7F8B99">REMOTE CELL · CAM 01</text>
+          <text class="hud dim-text" data-k="hudHaptic" x="364" y="404" text-anchor="end" fill="#7F8B99">HAPTIC IDLE</text>
         </svg>
       </div>
       <dl class="readout">
@@ -506,37 +506,37 @@ const grasps = [
 <style>
   /* The colours of the two drawings. They follow the theme like the rest of the page. */
   .lab-grid {
-    --lab-sky: #08080f;
-    --lab-chassis: #14141f;
-    --lab-slot: #24243a;
-    --lab-edge: #34344c;
-    --lab-casing: #2c2c42;
-    --lab-casing-hover: #3a3a58;
-    --lab-casing-on: #4a4a74;
-    --lab-floor: #1f4a4a;
-    --lab-dim: #9c9aae;
-    --lab-ink: #f2f1f7;
-    --lab-cyan: #4df0d8;
-    --lab-pink: #ff6fb5;
-    --lab-violet: #8f7df0;
-    --lab-violet-soft: #6e5bd6;
+    --lab-sky: #091319;
+    --lab-chassis: #101820;
+    --lab-slot: #1a2733;
+    --lab-edge: #2d4255;
+    --lab-casing: #22313f;
+    --lab-casing-hover: #2d4255;
+    --lab-casing-on: #3a5771;
+    --lab-floor: #1e4a63;
+    --lab-dim: #7f8b99;
+    --lab-ink: #e7e2e8;
+    --lab-cyan: #3e8fcb;
+    --lab-pink: #d64550;
+    --lab-violet: #5b7fa6;
+    --lab-violet-soft: #4a6b90;
   }
 
   :root[data-theme='light'] .lab-grid {
-    --lab-sky: #eeebf6;
-    --lab-chassis: #e0dcee;
-    --lab-slot: #bfb8d6;
-    --lab-edge: #948cb2;
-    --lab-casing: #c6c0db;
-    --lab-casing-hover: #ada5c8;
-    --lab-casing-on: #8c84ab;
-    --lab-floor: #2f8575;
-    --lab-dim: #5b5772;
-    --lab-ink: #100e1a;
-    --lab-cyan: #06695d;
-    --lab-pink: #a81f63;
-    --lab-violet: #46329f;
-    --lab-violet-soft: #57429f;
+    --lab-sky: #e9e5ea;
+    --lab-chassis: #dcd6de;
+    --lab-slot: #c3bcc6;
+    --lab-edge: #9a93a0;
+    --lab-casing: #cfc8d1;
+    --lab-casing-hover: #bab2bd;
+    --lab-casing-on: #9e95a3;
+    --lab-floor: #2e6c94;
+    --lab-dim: #5c6a77;
+    --lab-ink: #101820;
+    --lab-cyan: #00548f;
+    --lab-pink: #af272f;
+    --lab-violet: #16405e;
+    --lab-violet-soft: #1f5076;
   }
 
   .lab {
