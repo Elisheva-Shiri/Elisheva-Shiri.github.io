@@ -81,8 +81,8 @@ const grasps = [
         <svg viewBox="0 0 400 440" role="img" aria-label="Headset view of a virtual teleoperation scene. Move your pointer to turn your head; looking at the grasp target selects it and triggers a fingertip haptic cue">
           <rect width="400" height="440" fill="#08080F"></rect>
           <path data-k="xrGrid" fill="none" stroke="#1F4A4A" stroke-width="1"></path>
-          <circle data-k="ring" fill="none" stroke="#6E5BD6" stroke-width="2" stroke-dasharray="4 5"></circle>
-          <circle data-k="sphere" fill="#1A1630" stroke="#8F7DF0" stroke-width="1.5"></circle>
+          <circle class="landmark" data-k="ring" data-solid="off" fill="none" stroke="#6E5BD6" stroke-width="2" stroke-dasharray="4 5"></circle>
+          <circle class="landmark solid" data-k="sphere" data-solid="on" fill="#1A1630" stroke="#8F7DF0" stroke-width="1.5"></circle>
           <path data-k="cubeFaces" fill="rgba(77,240,216,.07)" stroke="none"></path>
           <path data-k="cubeEdges" fill="none" stroke="#4DF0D8" stroke-width="2" stroke-linejoin="round"></path>
           <line data-k="proxyLine" stroke="#4DF0D8" stroke-width="1" stroke-dasharray="2 4" opacity="0"></line>
@@ -401,6 +401,11 @@ const grasps = [
       s.lastXr = Date.now();
     });
     xrStage.addEventListener('pointerleave', () => (s.lastXr = 0));
+    // Clicking a landmark in the headset view fills it in, and clicking again empties it.
+    xrStage.addEventListener('click', (e) => {
+      const mark = (e.target as Element).closest('.landmark');
+      mark?.classList.toggle('solid');
+    });
 
     const graspButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-grasp]')];
     const pinchButton = graspButtons.find((b) => b.dataset.grasp === 'pinch');
@@ -549,6 +554,31 @@ const grasps = [
     flex-grow: 1;
     cursor: move;
     background: #08080f;
+  }
+
+  /* The two landmarks: click one to fill it in. */
+  .landmark {
+    /* `all` so the empty middle of the outlined circle is clickable too */
+    pointer-events: all;
+    cursor: pointer;
+    transition: fill var(--transition);
+  }
+
+  .landmark:hover {
+    stroke: var(--violet);
+  }
+
+  .landmark.solid {
+    fill: #241c50;
+    stroke-dasharray: none;
+  }
+
+  .stage-xr text,
+  .stage-xr .ping,
+  .stage-xr [data-k='xrGrid'],
+  .stage-xr [data-k='reticle'],
+  .stage-xr [data-k='reticleDot'] {
+    pointer-events: none;
   }
 
   .hud {
