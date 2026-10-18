@@ -3,6 +3,7 @@
 // is edited in RESUME (src/site.config.ts). Projects are not repeated — they live on
 // the homepage and in the archive.
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Bring from '../components/Bring.astro';
 import { withBase } from '../lib/projects';
 import { RESUME, SITE } from '../site.config';
 ---
@@ -22,6 +23,8 @@ import { RESUME, SITE } from '../site.config';
       {SITE.links.map((link) => <a href={link.href}>{link.label}</a>)}
     </p>
   </section>
+
+  <Bring />
 
   <section class="band" aria-labelledby="education">
     <div class="container block">
