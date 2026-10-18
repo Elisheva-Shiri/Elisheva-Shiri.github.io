@@ -31,6 +31,9 @@ const prefixBaseInMarkdown = {
 export default defineConfig({
   site: SITE,
   base: BASE,
+  // The styles travel inside each page. They are small, and this way a page kept in
+  // a browser's cache can never point at a stylesheet that a later deploy renamed.
+  build: { inlineStylesheets: 'always' },
   markdown: {
     processor: satteri({ hastPlugins: [prefixBaseInMarkdown] }),
   },
