@@ -492,25 +492,33 @@ let shownSoFar = 0;
     font-size: 0.75rem;
   }
 
+  /* One unit at every width: a single frame holding a 2 × 2 (or 2 × 3) grid of projects.
+     The 1px gaps show each card's shadow as the dividing lines; the outer edges are clipped. */
   .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 560px), 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
   }
 
   .work-card {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    min-width: 0;
     padding: 26px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
     background: var(--surface);
-    transition: border-color var(--transition);
+    box-shadow:
+      1px 0 0 var(--border),
+      0 1px 0 var(--border);
+    transition: background var(--transition);
   }
 
   .work-card:hover {
-    border-color: #4a4a6a;
+    background: var(--surface-2);
   }
 
   .work-card.enter {
@@ -777,14 +785,12 @@ let shownSoFar = 0;
     }
 
     .work-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      border-radius: 14px;
     }
 
     .work-card {
       gap: 8px;
       padding: 8px 8px 12px;
-      border-radius: 14px;
     }
 
     .work-media {
