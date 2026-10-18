@@ -349,7 +349,40 @@ const data = Object.fromEntries(Astro.props.projects.map((project) => [project.i
     }
 
     .popup-info {
+      gap: 16px;
       padding: 18px;
+    }
+
+    /* A smaller picture, so the text gets the room */
+    .popup-media {
+      padding: 10px 10px 0;
+    }
+
+    .popup-media img,
+    .popup-media .placeholder {
+      max-height: 170px;
+    }
+
+    .popup h2 {
+      font-size: 1.375rem;
+    }
+
+    .popup-meta {
+      font-size: 0.8125rem;
+    }
+
+    .popup-short {
+      font-size: 1.125rem;
+      line-height: 1.55;
+    }
+
+    .popup-info .lens p {
+      font-size: 1.0625rem;
+      line-height: 1.55;
+    }
+
+    .popup-info .lens-label {
+      font-size: 0.75rem;
     }
   }
 </style>

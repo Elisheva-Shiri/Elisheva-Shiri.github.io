@@ -132,7 +132,7 @@ let shownSoFar = 0;
                   )}
                 </a>
                 <p class="work-meta">
-                  <span><span class="pink" data-number>{pad(number)}</span><span class="cats"> · {cats.join(' · ').toUpperCase()}</span></span>
+                  <span><span class="pink" data-number>{pad(number)}</span> · {cats.join(' · ').toUpperCase()}</span>
                   <span>{projectYear(project.data)}</span>
                 </p>
                 <h3><a href={url} data-open={project.id}>{title}</a></h3>
@@ -772,7 +772,7 @@ let shownSoFar = 0;
     .work-card .lenses,
     .work-summary,
     .work-foot,
-    .cats {
+    .work-meta {
       display: none;
     }
 
@@ -792,14 +792,9 @@ let shownSoFar = 0;
       border-radius: 10px;
     }
 
-    .work-meta {
-      padding-inline: 4px;
-      font-size: 0.625rem;
-    }
-
     .work-card h3 {
       padding-inline: 4px;
-      font-size: 0.875rem;
+      font-size: 0.9375rem;
       line-height: 1.3;
     }
 
