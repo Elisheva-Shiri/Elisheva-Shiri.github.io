@@ -20,7 +20,7 @@ const archive = withBase('/projects/');
 const resume = withBase('/resume/');
 const [first, ...rest] = SITE.name.toUpperCase().split(' ');
 const nav = [
-  { label: 'Lab', href: withBase('/#lab') },
+  { label: 'Home', href: home, current: isHome },
   { label: 'About', href: withBase('/#contact') },
   { label: 'Work', href: withBase('/#work') },
   { label: 'What I bring', href: withBase('/#stack') },
