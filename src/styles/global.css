@@ -1,31 +1,40 @@
 /* Design tokens. Change these to restyle the whole site.
    Identity: a robotics lab at night — a wide display face for headlines, a
-   monospace for labels and data, rounded panels, and one palette of traditional
-   Japanese colours: shikkoku (ink black), geppaku (moon white), ai-iro (indigo
-   blue) for the machine, akane-iro (madder red) for the human, and tetsukon
-   (iron navy) as the third note. --cyan and --pink keep their names from the
-   earlier palette; they now hold the blue and the red. */
+   monospace for labels and data, rounded panels, and one palette of three hues,
+   each in three tiers: red for the human, green for the machine, orange as the
+   third note, plus a very bright tier for highlights.
+     deep    #F90F00  #F76E02  #679365   (the dark theme's accents)
+     light   #FF4D42  #FC9544  #90B28F   (the bright theme's accents)
+     bright  #FF9089  #FDBD8B  #BACFB9   (highlights in both)
+   --pink, --violet and --cyan keep their names from the first palette; they now
+   hold the red, the orange and the green. */
 :root {
-  --background: #0a1016;
-  --background-alt: #101820;
-  --surface: #121c26;
-  --surface-2: #16222e;
-  --surface-human: #1e1419;
-  --foreground: #e7e2e8;
-  --text: #c4cad2;
-  --muted: #9ca7b3;
-  --faint: #7f8b99;
-  --border: #1f2f3d;
-  --border-soft: #18232e;
-  --border-strong: #2d4255;
-  --rule: #142029;
-  --cyan: #3e8fcb;
-  --pink: #d64550;
-  --violet: #5b7fa6;
+  --background: #100d0c;
+  --background-alt: #171312;
+  --surface: #1a1615;
+  --surface-2: #221c1a;
+  --surface-human: #281311;
+  --foreground: #f6f1ee;
+  --text: #ded5d0;
+  --muted: #b7aba5;
+  --faint: #978b83;
+  --border: #2f2825;
+  --border-soft: #241e1c;
+  --border-strong: #473d38;
+  --rule: #1f1a18;
+  --pink: #f90f00;
+  --violet: #f76e02;
+  --cyan: #679365;
+  --pink-soft: #ff4d42;
+  --violet-soft: #fc9544;
+  --cyan-soft: #90b28f;
+  --pink-bright: #ff9089;
+  --violet-bright: #fdbd8b;
+  --cyan-bright: #bacfb9;
   --accent: var(--cyan);
-  --accent-foreground: #0a1016;
-  --overlay: rgb(8 16 22 / 0.9);
-  --placeholder: #16222e;
+  --accent-foreground: #100d0c;
+  --overlay: rgb(10 8 7 / 0.9);
+  --placeholder: #221c1a;
 
   --font-display: 'Unbounded', system-ui, sans-serif;
   --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -57,25 +66,32 @@
 /* The bright theme. The dark one above is the default; the switch in the header
    puts data-theme="light" on <html> and the choice is remembered. */
 :root[data-theme='light'] {
-  --background: #f3f0f4;
-  --background-alt: #e7e2e8;
+  --background: #faf6f3;
+  --background-alt: #f2ebe6;
   --surface: #ffffff;
-  --surface-2: #efebf1;
-  --surface-human: #fbeeee;
-  --foreground: #101820;
-  --text: #27333f;
-  --muted: #45525f;
-  --faint: #5c6a77;
-  --border: #d3ccd5;
-  --border-soft: #e2dce4;
-  --border-strong: #a8a1ae;
-  --rule: #ded8e0;
-  --cyan: #00548f;
-  --pink: #af272f;
-  --violet: #16405e;
-  --accent-foreground: #ffffff;
-  --overlay: rgb(16 24 32 / 0.76);
-  --placeholder: #e8e3e9;
+  --surface-2: #f7f1ed;
+  --surface-human: #ffedeb;
+  --foreground: #1a1412;
+  --text: #332b28;
+  --muted: #4e443f;
+  --faint: #6a5e58;
+  --border: #e0d6d0;
+  --border-soft: #ede6e1;
+  --border-strong: #bcaea6;
+  --rule: #e8e0db;
+  /* Text needs weight against white, so the deep tier writes and the light tier fills. */
+  --pink: #f90f00;
+  --violet: #f76e02;
+  --cyan: #679365;
+  --pink-soft: #ff4d42;
+  --violet-soft: #fc9544;
+  --cyan-soft: #90b28f;
+  --pink-bright: #ff9089;
+  --violet-bright: #fdbd8b;
+  --cyan-bright: #bacfb9;
+  --accent-foreground: #1a1412;
+  --overlay: rgb(26 20 18 / 0.78);
+  --placeholder: #f2ebe6;
   color-scheme: light;
 }
 
