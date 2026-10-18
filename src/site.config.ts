@@ -77,14 +77,14 @@ export const LOOP = [
 
 // Archive chapters, in order. A project picks one with `chapter: <id>`.
 export const CHAPTERS = [
-  { id: 'motion', title: 'Robots, motion & mechanisms', color: '#4DF0D8', blurb: 'Control, actuation and kinetic builds — from PID simulations to servo-driven theatres.' },
-  { id: 'touch', title: 'Touch, hand & gesture', color: '#FF6FB5', blurb: 'The hand as both sensor and interface: reshaping it, tracking it, reading it.' },
-  { id: 'signals', title: 'Body signals & health sensing', color: '#4DF0D8', blurb: 'Listening to the body: sound, pulse, biomarkers and motion as data.' },
-  { id: 'immersive', title: 'Immersive & spatial experience', color: '#8F7DF0', blurb: 'Spaces people step into: light, sound and scale shaping how a body feels.' },
-  { id: 'assistive', title: 'Assistive tech & co-design', color: '#FF6FB5', blurb: 'Built with and for one specific person — controllers, mobility and care.' },
-  { id: 'play', title: 'Interaction, play & connection', color: '#4DF0D8', blurb: 'Apps, games and devices about how people connect — with each other and with machines.' },
-  { id: 'research', title: 'Design research & ventures', color: '#8F7DF0', blurb: 'Fieldwork, speculation and entrepreneurship — asking the right question first.' },
-  { id: 'art', title: 'Art & image', color: '#F2F1F7', blurb: 'Murals and painting — the observation of bodies and places underneath the engineering.' },
+  { id: 'motion', title: 'Robots, motion & mechanisms', color: 'var(--cyan)', blurb: 'Control, actuation and kinetic builds — from PID simulations to servo-driven theatres.' },
+  { id: 'touch', title: 'Touch, hand & gesture', color: 'var(--pink)', blurb: 'The hand as both sensor and interface: reshaping it, tracking it, reading it.' },
+  { id: 'signals', title: 'Body signals & health sensing', color: 'var(--cyan)', blurb: 'Listening to the body: sound, pulse, biomarkers and motion as data.' },
+  { id: 'immersive', title: 'Immersive & spatial experience', color: 'var(--violet)', blurb: 'Spaces people step into: light, sound and scale shaping how a body feels.' },
+  { id: 'assistive', title: 'Assistive tech & co-design', color: 'var(--pink)', blurb: 'Built with and for one specific person — controllers, mobility and care.' },
+  { id: 'play', title: 'Interaction, play & connection', color: 'var(--cyan)', blurb: 'Apps, games and devices about how people connect — with each other and with machines.' },
+  { id: 'research', title: 'Design research & ventures', color: 'var(--violet)', blurb: 'Fieldwork, speculation and entrepreneurship — asking the right question first.' },
+  { id: 'art', title: 'Art & image', color: 'var(--foreground)', blurb: 'Murals and painting — the observation of bodies and places underneath the engineering.' },
 ] as const;
 
 export type ChapterId = (typeof CHAPTERS)[number]['id'];

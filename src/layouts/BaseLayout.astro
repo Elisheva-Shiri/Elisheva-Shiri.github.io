@@ -33,6 +33,13 @@ const nav = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#07070b" />
+    <script is:inline>
+      // Runs before anything is drawn, so a remembered choice shows straight away.
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
@@ -63,6 +70,10 @@ const nav = [
           {nav.map((item) => <li><a href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a></li>)}
         </ul>
       </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to the bright theme">
+        <span class="theme-dot" aria-hidden="true"></span>
+        <span data-theme-label>Dark</span>
+      </button>
     </header>
 
     <main id="main" tabindex="-1">
@@ -78,6 +89,29 @@ const nav = [
         </span>
       </div>
     </footer>
+    <script>
+      // The switch between the dark and the bright theme.
+      const root = document.documentElement;
+      const meta = document.querySelector('meta[name="theme-color"]');
+      for (const button of document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]')) {
+        const label = button.querySelector('[data-theme-label]')!;
+        const paint = () => {
+          const light = root.dataset.theme === 'light';
+          button.setAttribute('aria-pressed', String(light));
+          button.setAttribute('aria-label', light ? 'Switch to the dark theme' : 'Switch to the bright theme');
+          label.textContent = light ? 'Bright' : 'Dark';
+          meta?.setAttribute('content', light ? '#fbfafd' : '#07070b');
+        };
+        paint();
+        button.addEventListener('click', () => {
+          root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+          try {
+            localStorage.setItem('theme', root.dataset.theme);
+          } catch {}
+          paint();
+        });
+      }
+    </script>
   </body>
 </html>
 
@@ -143,6 +177,39 @@ const nav = [
     nav a {
       font-size: 0.75rem;
     }
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: border-color var(--transition), color var(--transition);
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--border-strong);
+    color: var(--foreground);
+  }
+
+  .theme-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--cyan);
+    border-radius: 50%;
+    /* Half filled: the half that is lit swaps with the theme. */
+    background: linear-gradient(90deg, var(--cyan) 50%, transparent 50%);
+  }
+
+  :root[data-theme='light'] .theme-dot {
+    background: linear-gradient(90deg, transparent 50%, var(--cyan) 50%);
   }
 
   main:focus {

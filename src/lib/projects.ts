@@ -55,7 +55,7 @@ export function groupByCategory(projects: Project[]) {
     .sort((a, b) => b.projects.length - a.projects.length || a.name.localeCompare(b.name));
 }
 
-const ACCENT = '#4DF0D8';
+const ACCENT = 'var(--cyan)';
 
 const byOrder = (a: Project, b: Project) => (a.data.order ?? 1e9) - (b.data.order ?? 1e9);
 

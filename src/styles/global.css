@@ -51,6 +51,49 @@
   color-scheme: dark;
 }
 
+/* The bright theme. The dark one above is the default; the switch in the header
+   puts data-theme="light" on <html> and the choice is remembered. */
+:root[data-theme='light'] {
+  --background: #fbfafd;
+  --background-alt: #f2f0f8;
+  --surface: #ffffff;
+  --surface-2: #f5f3fb;
+  --surface-human: #fdf1f7;
+  --foreground: #14121f;
+  --text: #3c3950;
+  --muted: #56526c;
+  --faint: #6a6683;
+  --border: #dcd8ea;
+  --border-soft: #e8e5f2;
+  --border-strong: #bdb7d2;
+  --rule: #e3e0ef;
+  --cyan: #0a8c7a;
+  --pink: #c22f7c;
+  --violet: #5b45cc;
+  --accent-foreground: #ffffff;
+  --overlay: rgb(20 18 31 / 0.72);
+  --placeholder: #efecf8;
+  color-scheme: light;
+}
+
+/* The lab is an instrument panel: it stays dark in both themes. */
+:root[data-theme='light'] .lab-grid {
+  --surface: #0f0f17;
+  --surface-2: #12121c;
+  --foreground: #f2f1f7;
+  --text: #d4d2e2;
+  --muted: #b4b2c6;
+  --faint: #9c9aae;
+  --border: #24243a;
+  --border-soft: #1c1c2c;
+  --border-strong: #34344c;
+  --cyan: #4df0d8;
+  --pink: #ff6fb5;
+  --violet: #8f7df0;
+  --accent-foreground: #07070b;
+  color-scheme: dark;
+}
+
 /* Phones: tighter side margins and section spacing */
 @media (max-width: 40rem) {
   :root {
